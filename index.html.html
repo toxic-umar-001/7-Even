@@ -12,7 +12,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -209,6 +209,7 @@
           <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="banknote" class="h-3.5 w-3.5 text-gold"></i>Cash on delivery</li>
           <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="truck" class="h-3.5 w-3.5 text-gold"></i>Free delivery</li>
           <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="refresh-cw" class="h-3.5 w-3.5 text-gold"></i>7-day replacement</li>
+          <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="clock" class="h-3.5 w-3.5 text-gold"></i>PKT <time class="pkt-clock font-semibold tabular-nums text-gold-light">--:--:--</time></li>
         </ul>
       </div>
     </div>
@@ -223,6 +224,10 @@
         <li class="flex items-center gap-2"><i data-lucide="watch" class="h-4 w-4 text-gold"></i>Sweeping second hand</li>
         <li class="flex items-center gap-2"><i data-lucide="package" class="h-4 w-4 text-gold"></i>Comes in a gift box</li>
       </ul>
+      <div class="mt-4 flex items-center justify-between border-t border-white/10 pt-4 text-xs text-white/45">
+        <span>Pakistan Standard Time</span>
+        <time class="pkt-clock font-semibold tabular-nums text-gold-light">--:--:--</time>
+      </div>
     </aside>
 
     <!-- Customizer dock -->
@@ -545,7 +550,6 @@
 
 <!-- ============ LIBRARIES ============ -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
 
 <!-- ============ 3D WATCH (Three.js) ============ -->
@@ -572,7 +576,7 @@
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.outputEncoding = THREE.sRGBEncoding;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.2;
+  renderer.toneMappingExposure = .85;
 
   var scene = new THREE.Scene();
   var camera = new THREE.PerspectiveCamera(28, 1, 0.1, 100);
@@ -586,8 +590,8 @@
     gr.addColorStop(0, '#4a3822'); gr.addColorStop(.42, '#15100b'); gr.addColorStop(.55, '#0a0a0b'); gr.addColorStop(1, '#2c1f12');
     g.fillStyle = gr; g.fillRect(0, 0, 1024, 512);
     function box(x, y, w, h, col) { g.fillStyle = col; g.fillRect(x, y, w, h); }
-    box(60, 110, 150, 220, '#fff4d6'); box(400, 50, 240, 90, '#ffffff'); box(740, 130, 130, 230, '#f3e5ab');
-    box(290, 300, 90, 120, '#c8896a'); box(900, 50, 90, 70, '#ffffff'); box(560, 330, 160, 40, '#d4af37');
+    box(60, 110, 150, 220, '#7a6748'); box(400, 50, 240, 90, '#9a9488'); box(740, 130, 130, 230, '#8a7538');
+    box(290, 300, 90, 120, '#6a4b3a'); box(900, 50, 90, 70, '#8f8a80'); box(560, 330, 160, 40, '#7a6024');
     var tex = new THREE.CanvasTexture(c); tex.encoding = THREE.sRGBEncoding;
     var envScene = new THREE.Scene();
     envScene.add(new THREE.Mesh(new THREE.SphereGeometry(50, 64, 32), new THREE.MeshBasicMaterial({ map: tex, side: THREE.BackSide })));
@@ -623,14 +627,6 @@
     g.save(); g.translate(C, C); g.fillStyle = d.idx;
     for (var m = 0; m < 60; m++) { g.rotate(Math.PI * 2 / 60); var big = m % 5 === 4; g.fillRect(-(big ? 3 : 1.5), -(C - 34), big ? 6 : 3, big ? 34 : 16); }
     g.restore();
-    for (var h = 0; h < 12; h++) {
-      g.save(); g.translate(C, C); g.rotate(h * Math.PI / 6);
-      var grad = g.createLinearGradient(0, -(C - 100), 0, -(C - 190)); grad.addColorStop(0, d.idx); grad.addColorStop(1, d.txt);
-      g.fillStyle = grad; g.shadowColor = 'rgba(0,0,0,.5)'; g.shadowBlur = 8; g.shadowOffsetY = 3;
-      if (h === 0) { g.fillRect(-26, -(C - 100), 18, 92); g.fillRect(8, -(C - 100), 18, 92); }
-      else { g.fillRect(-11, -(C - 100), 22, 92); }
-      g.restore();
-    }
     function spaced(txt, x, y, sp) {
       var w = 0, k; for (k = 0; k < txt.length; k++) w += g.measureText(txt[k]).width + sp; w -= sp;
       var px = x - w / 2; for (k = 0; k < txt.length; k++) { g.fillText(txt[k], px, y); px += g.measureText(txt[k]).width + sp; }
@@ -657,13 +653,13 @@
   }
 
   /* ---------- Materials ---------- */
-  var caseMat = new THREE.MeshStandardMaterial({ color: 0xdcb64c, metalness: 1, roughness: .2, envMapIntensity: 1.35 });
-  var bezelMat = new THREE.MeshStandardMaterial({ color: 0xf5dc8c, metalness: 1, roughness: .14, envMapIntensity: 1.7, side: THREE.DoubleSide });
-  var dialMat = new THREE.MeshStandardMaterial({ metalness: .5, roughness: .42, envMapIntensity: .9 });
-  var handMat = new THREE.MeshStandardMaterial({ color: 0xf6e7b0, metalness: 1, roughness: .2, envMapIntensity: 1.4 });
-  var secMat = new THREE.MeshStandardMaterial({ color: 0xc8896a, metalness: .8, roughness: .3, emissive: 0x2a1208, envMapIntensity: 1.2 });
+  var caseMat = new THREE.MeshStandardMaterial({ color: 0xdcb64c, metalness: .78, roughness: .5, envMapIntensity: .55 });
+  var bezelMat = new THREE.MeshStandardMaterial({ color: 0xf5dc8c, metalness: .8, roughness: .42, envMapIntensity: .65, side: THREE.DoubleSide });
+  var dialMat = new THREE.MeshStandardMaterial({ metalness: .25, roughness: .62, envMapIntensity: .4 });
+  var handMat = new THREE.MeshStandardMaterial({ color: 0xf6e7b0, metalness: .7, roughness: .48, envMapIntensity: .55 });
+  var secMat = new THREE.MeshStandardMaterial({ color: 0xc8896a, metalness: .55, roughness: .52, emissive: 0x120701, envMapIntensity: .5 });
   var strapMat = new THREE.MeshStandardMaterial({ roughness: .68, metalness: .05, bumpScale: 1.6 });
-  var glassMat = new THREE.MeshPhysicalMaterial({ color: 0xffffff, metalness: 0, roughness: .03, transparent: true, opacity: .1, clearcoat: 1, clearcoatRoughness: .02, envMapIntensity: 1.6, depthWrite: false });
+  var glassMat = new THREE.MeshPhysicalMaterial({ color: 0xffffff, metalness: 0, roughness: .18, transparent: true, opacity: .06, clearcoat: .4, clearcoatRoughness: .2, envMapIntensity: .6, depthWrite: false });
 
   /* ---------- Geometry ---------- */
   var rig = new THREE.Group(); scene.add(rig);
@@ -687,6 +683,28 @@
   watch.add(flutes);
 
   var dial = new THREE.Mesh(new THREE.CircleGeometry(1.38, 128), dialMat); dial.position.z = .2; watch.add(dial);
+
+  var markerGeo = new THREE.BoxGeometry(.05, .16, .022);
+  [0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11].forEach(function (n) {
+    var big = n % 3 === 0, geo = big ? new THREE.BoxGeometry(.075, .2, .026) : markerGeo;
+    var mk = new THREE.Mesh(geo, handMat), a = n / 12 * Math.PI * 2, r = 1.14;
+    mk.position.set(Math.sin(a) * r, Math.cos(a) * r, .225); mk.rotation.z = -a; watch.add(mk);
+  });
+
+  var dateCv = document.createElement('canvas'); dateCv.width = 128; dateCv.height = 96;
+  var dateTex = new THREE.CanvasTexture(dateCv); dateTex.encoding = THREE.sRGBEncoding;
+  var dateMat = new THREE.MeshBasicMaterial({ map: dateTex });
+  var dateWin = new THREE.Mesh(new THREE.PlaneGeometry(.16, .12), dateMat); dateWin.position.set(1.12, 0, .228); watch.add(dateWin);
+  var frameMat = new THREE.MeshStandardMaterial({ color: 0x0c0a08, metalness: .5, roughness: .5 });
+  var dateFrame = new THREE.Mesh(new THREE.RingGeometry(.09, .105, 4), frameMat); dateFrame.position.set(1.12, 0, .226); watch.add(dateFrame);
+  function drawDate() {
+    var g = dateCv.getContext('2d'); g.fillStyle = '#f2efe8'; g.fillRect(0, 0, 128, 96);
+    var day = new Date(Date.now() + 5 * 3600000).getUTCDate();
+    g.fillStyle = '#111'; g.font = '700 62px Arial'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(String(day), 64, 52);
+    dateTex.needsUpdate = true;
+  }
+  drawDate(); setInterval(drawDate, 60000);
+
   var glass = new THREE.Mesh(new THREE.CircleGeometry(1.4, 96), glassMat); glass.position.z = .335; watch.add(glass);
 
   var lugShape = new THREE.Shape(); rr(lugShape, -.3, -.45, .6, .9, .17);
@@ -725,13 +743,26 @@
   watch.add(hourP, minP, secP, pin);
 
   /* ---------- Lighting (ambient + gold directional reflections) ---------- */
-  scene.add(new THREE.AmbientLight(0x2a2016, .8));
-  var key = new THREE.DirectionalLight(0xf3e5ab, 2.3); key.position.set(4, 5, 7); scene.add(key);
-  var rim = new THREE.DirectionalLight(0xc8896a, 1.8); rim.position.set(-6, 2, -3); scene.add(rim);
-  var fill = new THREE.DirectionalLight(0xffffff, .6); fill.position.set(-4, -3, 5); scene.add(fill);
-  var glow = new THREE.PointLight(0xd4af37, 3, 16); glow.position.set(2, 2, 4); scene.add(glow);
+  scene.add(new THREE.AmbientLight(0x3a2f20, 1.25));
+  var key = new THREE.DirectionalLight(0xf3e5ab, 1.05); key.position.set(4, 5, 7); scene.add(key);
+  var rim = new THREE.DirectionalLight(0xc8896a, .8); rim.position.set(-6, 2, -3); scene.add(rim);
+  var fill = new THREE.DirectionalLight(0xffffff, .4); fill.position.set(-4, -3, 5); scene.add(fill);
+  var glow = new THREE.PointLight(0xd4af37, .5, 14); glow.position.set(2, 2, 4); scene.add(glow);
 
   /* ---------- Theme switching ---------- */
+  var pulseRAF = 0;
+  function pulseScale() {
+    if (reduce) return;
+    cancelAnimationFrame(pulseRAF);
+    var dur = 420, t0 = performance.now();
+    function step(now) {
+      var p = Math.min(1, (now - t0) / dur), e = p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+      var s = .95 + .05 * e; watch.scale.set(s, s, s);
+      if (p < 1) pulseRAF = requestAnimationFrame(step); else watch.scale.set(1, 1, 1);
+    }
+    pulseRAF = requestAnimationFrame(step);
+  }
+
   var current = null;
   function setTheme(key, instant) {
     var T = THEMES[key]; if (!T) return; current = key;
@@ -739,7 +770,7 @@
     handMat.color.setHex(T.hands); secMat.color.setHex(T.sec);
     if (dialMat.map) dialMat.map.dispose(); dialMat.map = makeDial(T.dial); dialMat.needsUpdate = true;
     if (strapMat.map) strapMat.map.dispose(); var st = makeStrap(T.strap); strapMat.map = st; strapMat.bumpMap = st; strapMat.needsUpdate = true;
-    if (!instant && window.gsap && !reduce) gsap.fromTo(watch.scale, { x: .94, y: .94, z: .94 }, { x: 1, y: 1, z: 1, duration: .7, ease: 'elastic.out(1,.6)' });
+    if (!instant) pulseScale();
   }
   setTheme('gold', true);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { setTheme(current, true); });
@@ -755,8 +786,13 @@
   ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (n) { canvas.addEventListener(n, function () { S.dragging = false; }); });
 
   function spin360() {
-    if (window.gsap) gsap.to(S, { spin: S.spin + Math.PI * 2, duration: 2, ease: 'power3.inOut' });
-    else S.spin += Math.PI * 2;
+    var startSpin = S.spin, target = startSpin + Math.PI * 2, dur = 1300, t0 = performance.now();
+    function step(now) {
+      var p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      S.spin = startSpin + (target - startSpin) * e;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
   }
 
   /* ---------- Sizing ---------- */
@@ -782,10 +818,11 @@
     rig.rotation.y = S.spin + S.drag + S.tx * .42;
     rig.rotation.x = -S.ty * .3;
     rig.rotation.z = (wide ? -.3 : -.18) + S.tx * .05;
-    glow.position.set(S.tx * 4 + 1, -S.ty * 3 + 2, 4);
+    glow.position.set(S.tx * 1.5 + 1, -S.ty * 1.2 + 2, 4);
 
-    var d = new Date(), s = d.getSeconds() + d.getMilliseconds() / 1000, m = d.getMinutes() + s / 60, h = (d.getHours() % 12) + m / 60;
-    secP.rotation.z = -(s / 60) * Math.PI * 2; minP.rotation.z = -(m / 60) * Math.PI * 2; hourP.rotation.z = -(h / 12) * Math.PI * 2;
+    var pktSecs = (Math.floor(Date.now() / 1000) + 5 * 3600) % 86400; // seconds since PKT midnight, UTC+5 fixed
+    var s = pktSecs % 60, m = (Math.floor(pktSecs / 60)) % 60, h = (Math.floor(pktSecs / 3600)) % 12;
+    secP.rotation.z = -(s / 60) * Math.PI * 2; minP.rotation.z = -((m + s / 60) / 60) * Math.PI * 2; hourP.rotation.z = -((h + m / 60) / 12) * Math.PI * 2;
 
     renderer.render(scene, camera);
     raf = requestAnimationFrame(tick);
@@ -1060,6 +1097,15 @@
     var c = e.target.closest && e.target.closest('.glow-card'); if (!c) return;
     var r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px');
   }, { passive: true });
+
+  /* ---------- Live Pakistan Standard Time (UTC+5, fixed) ---------- */
+  function updatePKT() {
+    var pk = new Date(Date.now() + 5 * 3600000);
+    var hh = String(pk.getUTCHours()).padStart(2, '0'), mm = String(pk.getUTCMinutes()).padStart(2, '0'), ss = String(pk.getUTCSeconds()).padStart(2, '0');
+    var txt = hh + ':' + mm + ':' + ss;
+    $$('.pkt-clock').forEach(function (el) { el.textContent = txt; });
+  }
+  updatePKT(); setInterval(updatePKT, 1000);
 
   /* ---------- Init ---------- */
   $('#yr').textContent = new Date().getFullYear();
