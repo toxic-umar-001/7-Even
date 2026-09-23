@@ -4,135 +4,130 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>7Even | Luxury Watches with Cash on Delivery in Pakistan</title>
-<meta name="description" content="7Even — premium steel-cased watches with free nationwide delivery, cash on delivery and a 7-day replacement warranty. Message us on WhatsApp for pricing.">
+<meta name="description" content="7Even — premium watches with free nationwide delivery, cash on delivery and 7-day replacement warranty. DM us on WhatsApp for pricing.">
 <meta name="theme-color" content="#09090b">
-<meta property="og:title" content="7Even: Elegance Defined in Every Second">
-<meta property="og:description" content="Premium watches, free delivery, cash on delivery, 7-day replacement. DM us for pricing.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2309090b'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23d4af37' stroke-width='3'/%3E%3Cpath d='M32 32V18M32 32l9 5' stroke='%23f3e5ab' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://wsrv.nl" crossorigin>
+<link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
 <script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: { extend: {
-      colors: { ink: '#09090b', gold: { DEFAULT: '#d4af37', light: '#f3e5ab' }, copper: '#c8896a' },
-      fontFamily: { display: ['"Playfair Display"', 'serif'], sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'] }
-    } }
-  };
-</script>
+<script>tailwind.config={theme:{extend:{colors:{ink:'#09090b',gold:{DEFAULT:'#d4af37',light:'#f3e5ab'}},fontFamily:{display:['"Playfair Display"','serif'],sans:['"Plus Jakarta Sans"','system-ui','sans-serif']}}}}</script>
 
 <style>
-  :root { --gold:#d4af37; --champ:#f3e5ab; --copper:#c8896a; --ink:#09090b; }
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-  body { background: var(--ink); color: #e9e6df; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-weight: 400; overflow-x: hidden; -webkit-tap-highlight-color: transparent; }
-  section[id], header[id] { scroll-margin-top: 96px; }
+:root{--gold:#d4af37;--champ:#f3e5ab;--ink:#09090b}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:#e9e6df;font-family:'Plus Jakarta Sans',system-ui,sans-serif;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+section[id],header[id]{scroll-margin-top:96px}
+.font-display{font-family:'Playfair Display',serif;font-weight:400!important;letter-spacing:.005em}
+h1,h2,h3,h4{font-weight:400}
+.font-semibold{font-weight:500!important}
+.font-bold,.gold-btn,strong{font-weight:500}
 
-  /* LIGHT FONT WEIGHT */
-  .font-display { font-family: 'Playfair Display', serif; font-weight: 400 !important; letter-spacing: .005em; }
-  h1, h2, h3, h4 { font-weight: 400; }
-  .font-semibold { font-weight: 500 !important; }
-  .font-bold, .gold-btn, strong, b { font-weight: 500; }
+img{image-rendering:auto;display:block}
+.card-media{overflow:hidden;background:#0b0a0b;position:relative}
+.card-media img{width:100%;height:100%;object-fit:cover;object-position:center}
 
-  /* CRISP PICS */
-  img { image-rendering: auto; }
-  .card-media { overflow: hidden; background: #0b0a0b; }
-  .card-media > .zoom { transition: transform .5s cubic-bezier(.2,.7,.2,1); }
-  .glow-card:hover .card-media > .zoom { transform: none; }
-  .glow-card:hover .card-media { filter: brightness(1.05); transition: filter .3s ease; }
-  #product-grid img, #gallery img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(55% 45% at 88% -5%,rgba(200,137,106,.28),transparent 70%),radial-gradient(45% 40% at 5% 25%,rgba(212,175,55,.09),transparent 70%),radial-gradient(60% 50% at 50% 110%,rgba(120,80,45,.20),transparent 70%)}
 
-  body::before { content:""; position: fixed; inset: 0; z-index: -2; pointer-events: none;
-    background:
-      radial-gradient(55% 45% at 88% -5%, rgba(200,137,106,.30), transparent 70%),
-      radial-gradient(45% 40% at 5% 25%, rgba(212,175,55,.10), transparent 70%),
-      radial-gradient(60% 50% at 50% 110%, rgba(120,80,45,.22), transparent 70%); }
-  body::after { content:""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .05; mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.glass{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.glass-solid{background:linear-gradient(180deg,#17130f,#0e0c0a);border:1px solid rgba(212,175,55,.18)}
 
-  .glass { background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.025)); border: 1px solid rgba(255,255,255,.09); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); }
-  .glass-solid { background: linear-gradient(180deg, #17130f, #0e0c0a); border: 1px solid rgba(212,175,55,.18); }
+.gold-btn{position:relative;overflow:hidden;background:linear-gradient(135deg,#f3e5ab 0%,#d4af37 55%,#b8902a 100%);color:#1a1205;font-weight:500;box-shadow:0 8px 24px -10px rgba(212,175,55,.55);transition:transform .25s,box-shadow .25s,filter .25s}
+.gold-btn::after{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);transition:left .7s ease}
+.gold-btn:hover{transform:translateY(-2px);box-shadow:0 14px 38px -8px rgba(212,175,55,.75);filter:brightness(1.05)}
+.gold-btn:hover::after{left:100%}
+.gold-btn:active{transform:translateY(0) scale(.98)}
 
-  .gold-btn { background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 55%, #b8902a 100%); color: #1a1205; font-weight: 500;
-    box-shadow: 0 10px 30px -10px rgba(212,175,55,.6), inset 0 1px 0 rgba(255,255,255,.5); transition: transform .25s ease, box-shadow .25s ease, filter .25s ease; }
-  .gold-btn:hover { transform: translateY(-2px); box-shadow: 0 16px 44px -8px rgba(212,175,55,.8), inset 0 1px 0 rgba(255,255,255,.6); filter: brightness(1.05); }
-  .gold-btn:active { transform: translateY(0) scale(.98); }
-  .ghost-btn { border: 1px solid rgba(212,175,55,.45); color: #f3e5ab; background: rgba(255,255,255,.03); transition: all .25s ease; }
-  .ghost-btn:hover { background: rgba(212,175,55,.12); box-shadow: 0 0 28px -4px rgba(212,175,55,.45); border-color: var(--gold); }
-  .pill { border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04); }
+.ghost-btn{border:1px solid rgba(212,175,55,.45);color:#f3e5ab;background:rgba(255,255,255,.03);transition:all .25s}
+.ghost-btn:hover{background:rgba(212,175,55,.12);box-shadow:0 0 24px -4px rgba(212,175,55,.45);border-color:var(--gold)}
+.pill{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04)}
+:focus-visible{outline:2px solid var(--champ);outline-offset:3px;border-radius:12px}
+.glow-card{position:relative;transition:transform .35s,border-color .35s,box-shadow .35s}
+.glow-card:hover{border-color:rgba(212,175,55,.45);box-shadow:0 24px 60px -30px rgba(212,175,55,.35);transform:translateY(-4px)}
 
-  :focus-visible { outline: 2px solid var(--champ); outline-offset: 3px; border-radius: 12px; }
+.hero-panel{background:radial-gradient(60% 80% at 74% 35%,rgba(140,92,52,.38),transparent 65%),radial-gradient(40% 50% at 8% 100%,rgba(212,175,55,.09),transparent 70%),linear-gradient(160deg,#141214 0%,#0a0a0c 60%);border:1px solid rgba(255,255,255,.08);box-shadow:0 50px 120px -40px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.06)}
+.pulse-dot{position:relative;width:8px;height:8px;border-radius:99px;background:#ff8a4c}
+.pulse-dot::after{content:"";position:absolute;inset:-4px;border-radius:99px;background:#ff8a4c;opacity:.5;animation:ping 1.6s cubic-bezier(0,0,.2,1) infinite}
+@keyframes ping{75%,100%{transform:scale(2.2);opacity:0}}
 
-  .glow-card { position: relative; isolation: isolate; transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease; }
-  .glow-card::before { content:""; position:absolute; inset:0; border-radius:inherit; z-index:-1; opacity:0; transition: opacity .3s;
-    background: radial-gradient(420px circle at var(--mx,50%) var(--my,0%), rgba(212,175,55,.16), transparent 60%); }
-  .glow-card:hover { border-color: rgba(212,175,55,.45); box-shadow: 0 30px 70px -30px rgba(212,175,55,.35); transform: translateY(-4px); }
-  .glow-card:hover::before { opacity: 1; }
+.sec-title{position:relative;display:inline-block;padding-bottom:14px}
+.sec-title::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:60px;background:linear-gradient(90deg,var(--gold),transparent)}
 
-  .hero-panel { background:
-      radial-gradient(60% 80% at 74% 35%, rgba(140,92,52,.38), transparent 65%),
-      radial-gradient(40% 50% at 8% 100%, rgba(212,175,55,.09), transparent 70%),
-      linear-gradient(160deg, #141214 0%, #0a0a0c 60%); border: 1px solid rgba(255,255,255,.08);
-      box-shadow: 0 50px 120px -40px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,255,255,.06); }
-  .swatch { width: 36px; height: 36px; border-radius: 999px; background: var(--sw); border: 1px solid rgba(255,255,255,.25);
-    box-shadow: inset 0 0 0 2px rgba(0,0,0,.35); transition: box-shadow .25s, transform .25s; }
-  .swatch:hover { transform: scale(1.1); }
-  .swatch[aria-checked="true"] { box-shadow: 0 0 0 2px #09090b, 0 0 0 4px var(--gold), 0 0 20px rgba(212,175,55,.55); }
+.brand-strip{position:relative;overflow:hidden;padding:12px 0;border-top:1px solid rgba(212,175,55,.18);border-bottom:1px solid rgba(212,175,55,.18);background:linear-gradient(180deg,rgba(212,175,55,.04),rgba(212,175,55,.01));-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.brand-track{display:flex;width:max-content;animation:brandScroll 30s linear infinite;will-change:transform}
+.brand-item{font-family:'Playfair Display',serif;font-size:clamp(14px,1.8vw,20px);letter-spacing:.22em;color:#fbf3da;opacity:.85;padding:0 1.75rem;white-space:nowrap;display:inline-flex;align-items:center;gap:1.75rem}
+.brand-item .dot{display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:.7}
+@keyframes brandScroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
 
-  .pulse-dot { position: relative; width: 8px; height: 8px; border-radius: 99px; background: #ff8a4c; }
-  .pulse-dot::after { content:""; position:absolute; inset:-4px; border-radius:99px; background:#ff8a4c; opacity:.5; animation: ping 1.6s cubic-bezier(0,0,.2,1) infinite; }
-  @keyframes ping { 75%,100% { transform: scale(2.2); opacity: 0; } }
+/* ===== PINNED WAVE STRIP — 1 SCROLL ===== */
+.wave-pin{position:relative;height:180vh} /* was 400vh — ab 1 scroll */
+.wave-pin-inner{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.wave-hint{text-align:center;margin-bottom:22px;transition:opacity .4s}
+.wave-hint span{display:inline-block;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:rgba(243,229,171,.75);animation:hintPulse 2s ease-in-out infinite}
+@keyframes hintPulse{0%,100%{opacity:.5}50%{opacity:1}}
+.wave-hint .line{display:block;width:36px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:10px auto 0}
+.wave-outer{width:100%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.wave-track{display:flex;gap:22px;padding:0 24px;width:max-content;transform:translate3d(0,0,0);will-change:transform}
+.wave-item{position:relative;width:180px;height:240px;flex:0 0 auto;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#0b0a0b;box-shadow:0 16px 38px -20px rgba(0,0,0,.9);transform:translate3d(0,var(--y,0px),0);will-change:transform;transition:border-color .4s,box-shadow .4s}
+.wave-item:hover{border-color:rgba(212,175,55,.4);box-shadow:0 22px 48px -18px rgba(212,175,55,.28)}
+.wave-item img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.wave-item .wave-label{position:absolute;left:0;right:0;bottom:0;padding:30px 10px 12px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.92));text-align:center;pointer-events:none}
+.wave-item .wave-label strong{display:block;font-family:'Playfair Display',serif;font-weight:400;font-size:12px;letter-spacing:.24em;color:#fbf3da;text-shadow:0 2px 8px rgba(0,0,0,.9)}
+.wave-item .wave-label em{display:block;font-style:normal;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(243,229,171,.68);margin-top:3px}
+@media (min-width:640px){.wave-item{width:210px;height:270px}}
 
-  .modal { position: fixed; inset: 0; z-index: 70; display: flex; align-items: flex-end; justify-content: center; padding: 0; opacity: 0; pointer-events: none; transition: opacity .3s ease; }
-  .modal[aria-hidden="false"] { opacity: 1; pointer-events: auto; }
-  .modal-backdrop { position: absolute; inset: 0; background: rgba(4,4,5,.78); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
-  .modal-card { position: relative; width: 100%; max-width: 620px; max-height: 94dvh; overflow-y: auto; overscroll-behavior: contain;
-    transform: translateY(30px) scale(.98); transition: transform .35s cubic-bezier(.2,.8,.2,1); border-radius: 28px 28px 0 0; }
-  .modal[aria-hidden="false"] .modal-card { transform: none; }
-  @media (min-width: 640px) { .modal { align-items: center; padding: 24px; } .modal-card { border-radius: 28px; } }
+.wave-progress{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);width:200px;height:2px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden}
+.wave-progress-bar{height:100%;width:0%;background:linear-gradient(90deg,#f3e5ab,#d4af37);transition:width .1s linear}
 
-  .field { width: 100%; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 13px 14px; color: #fff; font-size: 16px; transition: border-color .2s, box-shadow .2s, background .2s; }
-  .field::placeholder { color: rgba(255,255,255,.35); }
-  .field:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(212,175,55,.18); background: rgba(255,255,255,.07); }
-  .field[aria-invalid="true"] { border-color: #ff6b6b; }
-  select.field { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; }
-  select.field option { background: #15120e; color: #fff; }
-  .err { color: #ff8a8a; font-size: 12px; margin-top: 4px; min-height: 0; }
-  input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 99px; background: linear-gradient(90deg, #d4af37, #f3e5ab); outline-offset: 6px; }
-  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px; border-radius: 50%; background: #09090b; border: 3px solid #f3e5ab; box-shadow: 0 0 18px rgba(212,175,55,.7); cursor: pointer; }
-  input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: #09090b; border: 3px solid #f3e5ab; box-shadow: 0 0 18px rgba(212,175,55,.7); cursor: pointer; }
-  .size-chip { min-width: 62px; padding: 10px 12px; border-radius: 14px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); font-weight: 500; transition: all .2s; position: relative; }
-  .size-chip:hover { border-color: var(--gold); }
-  .size-chip[aria-pressed="true"] { background: linear-gradient(135deg,#f3e5ab,#d4af37); color: #1a1205; border-color: transparent; box-shadow: 0 8px 24px -8px rgba(212,175,55,.7); }
-  .size-chip .rec { position:absolute; top:-8px; left:50%; transform:translateX(-50%); font-size:9px; padding:1px 6px; border-radius:99px; background:#c8896a; color:#1a0d07; font-weight:600; white-space:nowrap; }
+@media (prefers-reduced-motion:reduce){
+  .brand-track{animation-duration:120s}
+  .wave-item{transform:none!important}
+  .wave-pin{height:auto}
+  .wave-pin-inner{position:static;height:auto;padding:80px 0}
+}
 
-  details.faq { border-bottom: 1px solid rgba(255,255,255,.08); }
-  details.faq summary { list-style: none; cursor: pointer; padding: 20px 4px; display:flex; justify-content: space-between; align-items:center; gap:16px; font-weight: 500; font-size: 17px; }
-  details.faq summary::-webkit-details-marker { display: none; }
-  details.faq[open] summary .chev { transform: rotate(180deg); }
-  .chev { transition: transform .3s; color: var(--gold); flex-shrink:0; }
+.modal{position:fixed;inset:0;z-index:70;display:flex;align-items:flex-end;justify-content:center;padding:0;opacity:0;pointer-events:none;transition:opacity .3s}
+.modal[aria-hidden="false"]{opacity:1;pointer-events:auto}
+.modal-backdrop{position:absolute;inset:0;background:rgba(4,4,5,.78);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.modal-card{position:relative;width:100%;max-width:620px;max-height:94dvh;overflow-y:auto;overscroll-behavior:contain;transform:translateY(30px) scale(.98);transition:transform .35s cubic-bezier(.2,.8,.2,1);border-radius:28px 28px 0 0}
+.modal[aria-hidden="false"] .modal-card{transform:none}
+@media(min-width:640px){.modal{align-items:center;padding:24px}.modal-card{border-radius:28px}}
 
-  #toast { position: fixed; left: 50%; bottom: 96px; transform: translate(-50%, 20px); opacity: 0; pointer-events: none; z-index: 90; transition: all .35s ease; }
-  #toast.show { opacity: 1; transform: translate(-50%, 0); }
-  #chat-panel { transform-origin: bottom right; transform: scale(.92) translateY(10px); opacity: 0; pointer-events: none; transition: all .28s cubic-bezier(.2,.8,.2,1); }
-  #chat-panel.open { transform: none; opacity: 1; pointer-events: auto; }
+.field{width:100%;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:13px 14px;color:#fff;font-size:16px;transition:border-color .2s,box-shadow .2s,background .2s}
+.field::placeholder{color:rgba(255,255,255,.35)}
+.field:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.18);background:rgba(255,255,255,.07)}
+.field[aria-invalid="true"]{border-color:#ff6b6b}
+select.field{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+select.field option{background:#15120e;color:#fff}
+.err{color:#ff8a8a;font-size:12px;margin-top:4px;min-height:0}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:99px;background:linear-gradient(90deg,#d4af37,#f3e5ab)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:#09090b;border:3px solid #f3e5ab;box-shadow:0 0 18px rgba(212,175,55,.7);cursor:pointer}
+.size-chip{min-width:62px;padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);font-weight:500;transition:all .2s;position:relative}
+.size-chip:hover{border-color:var(--gold)}
+.size-chip[aria-pressed="true"]{background:linear-gradient(135deg,#f3e5ab,#d4af37);color:#1a1205;border-color:transparent}
+.size-chip .rec{position:absolute;top:-8px;left:50%;transform:translateX(-50%);font-size:9px;padding:1px 6px;border-radius:99px;background:#c8896a;color:#1a0d07;font-weight:600;white-space:nowrap}
 
-  /* Product name badge overlay */
-  .watch-name-badge { position: absolute; left: 0; right: 0; bottom: 0; padding: 30px 16px 14px; background: linear-gradient(180deg, transparent, rgba(0,0,0,.85)); pointer-events: none; }
-  .watch-name-badge h4 { font-family: 'Playfair Display', serif; font-weight: 400; color: #fbf3da; font-size: 15px; letter-spacing: .01em; line-height: 1.2; text-shadow: 0 2px 10px rgba(0,0,0,.9); }
-  .watch-name-badge span { display: block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 11px; color: rgba(243,229,171,.85); margin-top: 2px; letter-spacing: .04em; text-transform: uppercase; }
+details.faq{border-bottom:1px solid rgba(255,255,255,.08)}
+details.faq summary{list-style:none;cursor:pointer;padding:20px 4px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:500;font-size:17px}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq[open] summary .chev{transform:rotate(180deg)}
+.chev{transition:transform .3s;color:var(--gold);flex-shrink:0}
 
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
-  }
+#toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:90;transition:all .35s}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+#chat-panel{transform-origin:bottom right;transform:scale(.92) translateY(10px);opacity:0;pointer-events:none;transition:all .28s cubic-bezier(.2,.8,.2,1)}
+#chat-panel.open{transform:none;opacity:1;pointer-events:auto}
+
+.watch-name-badge{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.92));pointer-events:none;z-index:2}
+.watch-name-badge h4{font-family:'Playfair Display',serif;color:#fbf3da;font-size:16px;letter-spacing:.22em;line-height:1.2;text-shadow:0 2px 10px rgba(0,0,0,.9);font-weight:400}
+.watch-name-badge span{display:block;font-size:11px;color:rgba(243,229,171,.85);margin-top:3px;letter-spacing:.06em;text-transform:uppercase}
+
+.tag-badge{position:absolute;right:14px;top:14px;z-index:10;font-size:9px;letter-spacing:.18em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:linear-gradient(135deg,#f3e5ab,#d4af37);color:#1a1205;font-weight:600;box-shadow:0 6px 18px -6px rgba(212,175,55,.7)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp .9s cubic-bezier(.2,.8,.2,1) both}
+.d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}
 </style>
 </head>
 
@@ -140,168 +135,103 @@
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-wa" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></symbol></svg>
 
-<!-- ============ HEADER ============ -->
-<div class="sticky top-0 z-50 px-3 pt-3 sm:px-6" style="padding-top: max(12px, env(safe-area-inset-top));">
-  <header id="site-header" class="glass mx-auto flex max-w-[1400px] items-center justify-between gap-3 rounded-full py-2.5 pl-5 pr-2.5 transition-colors">
-    <a href="#top" class="flex items-center gap-2.5" aria-label="7Even home">
-      <svg width="30" height="30" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="26" stroke="url(#lg)" stroke-width="3.5"/><circle cx="32" cy="32" r="20" stroke="#d4af37" stroke-opacity=".4" stroke-width="1"/><path d="M32 32V16M32 32l10 6" stroke="#f3e5ab" stroke-width="3.5" stroke-linecap="round"/><defs><linearGradient id="lg" x1="8" y1="8" x2="56" y2="56"><stop stop-color="#f3e5ab"/><stop offset="1" stop-color="#b8902a"/></linearGradient></defs></svg>
+<!-- HEADER -->
+<div class="sticky top-0 z-50 px-3 pt-3 sm:px-6" style="padding-top:max(12px,env(safe-area-inset-top))">
+  <header id="site-header" class="glass mx-auto flex max-w-[1400px] items-center justify-between gap-3 rounded-full py-2.5 pl-5 pr-2.5">
+    <a href="#top" class="flex items-center gap-2.5">
+      <svg width="30" height="30" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="26" stroke="url(#lg)" stroke-width="3.5"/><circle cx="32" cy="32" r="20" stroke="#d4af37" stroke-opacity=".4" stroke-width="1"/><path d="M32 32V16M32 32l10 6" stroke="#f3e5ab" stroke-width="3.5" stroke-linecap="round"/><defs><linearGradient id="lg" x1="8" y1="8" x2="56" y2="56"><stop stop-color="#f3e5ab"/><stop offset="1" stop-color="#b8902a"/></linearGradient></defs></svg>
       <span class="font-display text-[17px] tracking-[.18em] text-white sm:text-lg">7<span class="text-gold-light">EVEN</span></span>
     </a>
-
-    <nav class="hidden items-center gap-1 lg:flex" aria-label="Main">
-      <a class="rounded-full px-4 py-2 text-sm text-white/70 transition hover:bg-white/5 hover:text-gold-light" href="#collection">Collection</a>
-      <a class="rounded-full px-4 py-2 text-sm text-white/70 transition hover:bg-white/5 hover:text-gold-light" href="#why">Why 7Even</a>
-      <a class="rounded-full px-4 py-2 text-sm text-white/70 transition hover:bg-white/5 hover:text-gold-light" href="#reviews">Reviews</a>
-      <a class="rounded-full px-4 py-2 text-sm text-white/70 transition hover:bg-white/5 hover:text-gold-light" href="#faq">FAQ</a>
-      <button data-action="open-size" class="rounded-full px-4 py-2 text-sm text-white/70 transition hover:bg-white/5 hover:text-gold-light">Size guide</button>
+    <nav class="hidden items-center gap-1 lg:flex">
+      <a class="rounded-full px-4 py-2 text-sm text-white/70 hover:bg-white/5 hover:text-gold-light" href="#collection">Collection</a>
+      <a class="rounded-full px-4 py-2 text-sm text-white/70 hover:bg-white/5 hover:text-gold-light" href="#why">Why 7Even</a>
+      <a class="rounded-full px-4 py-2 text-sm text-white/70 hover:bg-white/5 hover:text-gold-light" href="#reviews">Reviews</a>
+      <a class="rounded-full px-4 py-2 text-sm text-white/70 hover:bg-white/5 hover:text-gold-light" href="#faq">FAQ</a>
+      <button data-action="open-size" class="rounded-full px-4 py-2 text-sm text-white/70 hover:bg-white/5 hover:text-gold-light">Size guide</button>
     </nav>
-
     <div class="flex items-center gap-2">
-      <a href="tel:+923258582375" class="ghost-btn flex h-11 items-center gap-2 rounded-full px-4 text-sm font-medium" aria-label="Call 7Even">
-        <span class="flex h-6 w-6 items-center justify-center rounded-full bg-gold/15">
-          <i data-lucide="phone" class="h-3.5 w-3.5 text-gold-light"></i>
-        </span>
+      <a href="tel:+923258582375" class="ghost-btn flex h-11 items-center gap-2 rounded-full px-4 text-sm font-medium">
+        <span class="flex h-6 w-6 items-center justify-center rounded-full bg-gold/15"><i data-lucide="phone" class="h-3.5 w-3.5 text-gold-light"></i></span>
         <span class="hidden md:inline">0325 8582375</span>
       </a>
-      <a data-wa="header" href="https://wa.me/923258582375?text=Hello%207Even%2C%20I%20want%20to%20know%20the%20price%20of%20a%20watch." target="_blank" rel="noopener" class="gold-btn hidden h-11 items-center gap-2 rounded-full px-5 text-sm sm:flex">
-        <span class="flex h-6 w-6 items-center justify-center rounded-full bg-[#1a1205]/15">
-          <svg class="h-4 w-4" fill="currentColor" aria-hidden="true"><use href="#i-wa"></use></svg>
-        </span>
-        DM for Price
+      <a href="https://wa.me/923258582375?text=Hello%207Even%2C%20I%20want%20to%20know%20the%20price%20of%20a%20watch." target="_blank" rel="noopener" class="gold-btn hidden h-11 items-center gap-2 rounded-full px-5 text-sm sm:flex">
+        <span class="flex h-6 w-6 items-center justify-center rounded-full bg-[#1a1205]/15"><svg class="h-4 w-4" fill="currentColor"><use href="#i-wa"></use></svg></span>DM for Price
       </a>
-      <button id="menu-btn" data-action="menu" class="pill flex h-11 w-11 items-center justify-center rounded-full lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><i data-lucide="menu" class="h-5 w-5 text-gold-light"></i></button>
+      <button id="menu-btn" data-action="menu" class="pill flex h-11 w-11 items-center justify-center rounded-full lg:hidden"><i data-lucide="menu" class="h-5 w-5 text-gold-light"></i></button>
     </div>
   </header>
-  <nav id="mobile-menu" class="glass mx-auto mt-2 hidden max-w-[1400px] rounded-3xl p-3 lg:hidden" aria-label="Mobile">
+  <nav id="mobile-menu" class="glass mx-auto mt-2 hidden max-w-[1400px] rounded-3xl p-3 lg:hidden">
     <a class="block rounded-2xl px-4 py-3 text-white/85 active:bg-white/5" href="#collection">Collection</a>
     <a class="block rounded-2xl px-4 py-3 text-white/85 active:bg-white/5" href="#why">Why 7Even</a>
     <a class="block rounded-2xl px-4 py-3 text-white/85 active:bg-white/5" href="#reviews">Reviews</a>
     <a class="block rounded-2xl px-4 py-3 text-white/85 active:bg-white/5" href="#faq">FAQ</a>
-    <button data-action="open-size" class="block w-full rounded-2xl px-4 py-3 text-left text-white/85 active:bg-white/5">Size guide</button>
-    <a data-wa="header" href="https://wa.me/923258582375" target="_blank" rel="noopener" class="gold-btn mt-2 flex h-12 items-center justify-center gap-2 rounded-full text-sm sm:hidden"><svg class="h-4 w-4" fill="currentColor" aria-hidden="true"><use href="#i-wa"></use></svg>DM for Price</a>
+    <button data-action="open-size" class="block w-full rounded-2xl px-4 py-3 text-left text-white/85">Size guide</button>
   </nav>
 </div>
 
 <main id="top">
 
-<!-- ============ HERO (NO 3D) ============ -->
-<section class="px-3 pb-6 pt-4 sm:px-6" aria-label="Featured watch">
-  <div class="hero-panel relative mx-auto grid max-w-[1400px] gap-6 overflow-hidden rounded-[28px] p-6 sm:rounded-[36px] sm:p-10 lg:grid-cols-[1.15fr_1fr] lg:gap-10 lg:p-14">
-
-    <div class="relative z-10 flex flex-col justify-center">
-      <div class="max-w-[560px]">
-        <div class="pill mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs text-gold-light">
-          <span class="pulse-dot"></span>Limited batch, only a few pieces per finish
-        </div>
-        <h1 class="font-display text-[40px] leading-[1.06] text-[#fbf3da] sm:text-5xl lg:text-[64px]" style="text-shadow:0 10px 60px rgba(212,175,55,.18)">
-          Elegance Defined in Every Second
-        </h1>
-        <p class="mt-6 max-w-[460px] text-base leading-relaxed text-white/65 sm:text-lg">
-          Refined steel-cased timepieces with a sweeping second hand and a hand-finished strap, delivered across Pakistan. Pay when it reaches your door.
-        </p>
-
-        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a id="hero-wa" data-wa="hero" href="https://wa.me/923258582375" target="_blank" rel="noopener" class="gold-btn flex h-14 items-center justify-center gap-2.5 rounded-full px-8 text-[15px]">
-            <span class="flex h-7 w-7 items-center justify-center rounded-full bg-[#1a1205]/15">
-              <svg class="h-5 w-5" fill="currentColor" aria-hidden="true"><use href="#i-wa"></use></svg>
-            </span>
-            DM for Price
-          </a>
-          <a href="#collection" class="ghost-btn flex h-14 items-center justify-center gap-2 rounded-full px-8 text-[15px] font-medium">Explore Collection</a>
-        </div>
-
-        <ul class="mt-7 flex flex-wrap gap-2 text-xs text-white/70">
-          <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="banknote" class="h-3.5 w-3.5 text-gold"></i>Cash on delivery</li>
-          <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="truck" class="h-3.5 w-3.5 text-gold"></i>Free delivery</li>
-          <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="refresh-cw" class="h-3.5 w-3.5 text-gold"></i>7-day replacement</li>
-          <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="clock" class="h-3.5 w-3.5 text-gold"></i>PKT <time class="pkt-clock font-medium tabular-nums text-gold-light">--:--:--</time></li>
-        </ul>
+<!-- HERO -->
+<section class="px-3 pb-6 pt-4 sm:px-6">
+  <div class="hero-panel relative mx-auto max-w-[1400px] overflow-hidden rounded-[28px] p-6 sm:rounded-[36px] sm:p-10 lg:p-14">
+    <div class="relative z-10 mx-auto max-w-3xl text-center">
+      <div class="pill fade-up d1 mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs text-gold-light"><span class="pulse-dot"></span>Limited batch, only a few pieces per finish</div>
+      <h1 class="fade-up d2 font-display text-[40px] leading-[1.06] text-[#fbf3da] sm:text-5xl lg:text-[68px]" style="text-shadow:0 10px 60px rgba(212,175,55,.18)">Elegance Defined in Every Second</h1>
+      <p class="fade-up d3 mx-auto mt-6 max-w-[520px] text-base leading-relaxed text-white/65 sm:text-lg">Refined steel-cased timepieces with a sweeping second hand and a hand-finished strap, delivered across Pakistan. Pay when it reaches your door.</p>
+      <div class="fade-up d4 mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a id="hero-wa" href="https://wa.me/923258582375" target="_blank" rel="noopener" class="gold-btn flex h-14 items-center justify-center gap-2.5 rounded-full px-8 text-[15px]"><span class="flex h-7 w-7 items-center justify-center rounded-full bg-[#1a1205]/15"><svg class="h-5 w-5" fill="currentColor"><use href="#i-wa"></use></svg></span>DM for Price</a>
+        <a href="#collection" class="ghost-btn flex h-14 items-center justify-center gap-2 rounded-full px-8 text-[15px] font-medium">Explore Collection</a>
       </div>
+      <ul class="fade-up d4 mt-7 flex flex-wrap justify-center gap-2 text-xs text-white/70">
+        <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="banknote" class="h-3.5 w-3.5 text-gold"></i>Cash on delivery</li>
+        <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="truck" class="h-3.5 w-3.5 text-gold"></i>Free delivery</li>
+        <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="refresh-cw" class="h-3.5 w-3.5 text-gold"></i>7-day replacement</li>
+        <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="clock" class="h-3.5 w-3.5 text-gold"></i>PKT <time class="pkt-clock font-medium tabular-nums text-gold-light">--:--:--</time></li>
+      </ul>
     </div>
+  </div>
+</section>
 
-    <!-- Hero visual: featured watch image -->
-    <div class="relative z-10 flex items-center justify-center">
-      <div class="relative w-full max-w-[420px] aspect-[4/4.6] overflow-hidden rounded-[32px]" style="background:radial-gradient(70% 60% at 50% 40%,rgba(160,110,50,.55),transparent 75%),linear-gradient(180deg,#131114,#0b0a0b)">
-        <img id="hero-feature-img" src="https://wsrv.nl/?url=https%3A%2F%2Fi.postimg.cc%2Fd133jKqH%2FWatch-9.webp&w=800&output=webp&q=82&we&il" alt="7Even Sovereign Gold — featured watch" width="800" height="920" fetchpriority="high" decoding="async" class="absolute inset-0 h-full w-full object-cover">
-        <div class="pointer-events-none absolute inset-0 rounded-[32px]" style="box-shadow:inset 0 0 80px rgba(0,0,0,.5)"></div>
-        <div class="watch-name-badge" id="hero-feature-label">
-          <h4>7Even Sovereign Gold</h4>
-          <span>Sovereign Gold · 7E-10</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Customizer dock -->
-    <div class="relative z-10 lg:col-span-2">
-      <div class="glass mx-auto flex flex-wrap items-center justify-between gap-x-6 gap-y-4 rounded-[26px] px-4 py-4 sm:px-6">
-        <div class="flex items-center gap-4">
-          <div>
-            <div class="text-xs text-white/45">Finish</div>
-            <div id="finish-label" class="text-sm font-medium text-white">Gold</div>
-          </div>
-          <div class="flex items-center gap-2.5" role="radiogroup" aria-label="Choose finish">
-            <button class="swatch" data-action="theme" data-theme="gold" role="radio" aria-checked="true" aria-label="Gold" style="--sw:linear-gradient(135deg,#f3e5ab,#d4af37 55%,#8a6d1f)"></button>
-            <button class="swatch" data-action="theme" data-theme="black" role="radio" aria-checked="false" aria-label="Obsidian Black" style="--sw:linear-gradient(135deg,#55555e,#111114 70%)"></button>
-            <button class="swatch" data-action="theme" data-theme="silver" role="radio" aria-checked="false" aria-label="Silver" style="--sw:linear-gradient(135deg,#ffffff,#9aa0a8 70%)"></button>
-          </div>
-        </div>
-
-        <div class="hidden h-9 w-px bg-white/10 sm:block"></div>
-
-        <button data-action="open-size" class="group flex items-center gap-3 text-left">
-          <span class="pill flex h-11 w-11 items-center justify-center rounded-full transition group-hover:border-gold"><i data-lucide="ruler" class="h-5 w-5 text-gold"></i></span>
-          <span>
-            <span class="block text-xs text-white/45">Case size</span>
-            <span class="block text-sm font-medium text-white"><span id="size-label">42</span> mm <span class="font-normal text-gold-light/80">· find your fit</span></span>
-          </span>
-        </button>
-
-        <div class="hidden h-9 w-px bg-white/10 sm:block"></div>
-
-        <button data-action="open-order" class="gold-btn flex h-12 w-full items-center justify-center gap-2 rounded-full px-6 text-sm sm:w-auto">Buy Now</button>
+<!-- BRAND TEXT STRIP -->
+<section class="px-3 sm:px-6">
+  <div class="mx-auto max-w-[1400px] rounded-2xl overflow-hidden">
+    <div class="brand-strip">
+      <div class="brand-track">
+        <span class="brand-item">SEIKO <span class="dot"></span></span>
+        <span class="brand-item">ROLEX <span class="dot"></span></span>
+        <span class="brand-item">CURREN <span class="dot"></span></span>
+        <span class="brand-item">TURBINE <span class="dot"></span></span>
+        <span class="brand-item">SEIKO <span class="dot"></span></span>
+        <span class="brand-item">ROLEX <span class="dot"></span></span>
+        <span class="brand-item">CURREN <span class="dot"></span></span>
+        <span class="brand-item">TURBINE <span class="dot"></span></span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ VALUE GRID ============ -->
-<section id="why" class="px-3 py-10 sm:px-6 sm:py-16" aria-labelledby="why-title">
+<!-- WHY -->
+<section id="why" class="px-3 py-10 sm:px-6 sm:py-16">
   <div class="mx-auto max-w-[1400px]">
     <div class="mb-10 max-w-2xl px-2">
-      <h2 id="why-title" class="font-display text-3xl text-white sm:text-5xl">Buy with complete peace of mind</h2>
+      <h2 class="sec-title font-display text-3xl text-white sm:text-5xl">Buy with complete peace of mind</h2>
       <p class="mt-4 text-white/60">You see the watch, confirm on WhatsApp, and pay only when it is in your hands.</p>
     </div>
     <div class="glass grid overflow-hidden rounded-[32px] sm:grid-cols-2 lg:grid-cols-4">
-      <div class="border-b border-white/[.07] p-7 sm:border-r lg:border-b-0">
-        <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 text-gold"><i data-lucide="badge-check" class="h-6 w-6"></i></div>
-        <h3 class="text-lg font-medium text-white">100% original quality</h3>
-        <p class="mt-2 text-sm leading-relaxed text-white/60">Every watch is inspected before dispatch and ships in a protective gift box.</p>
-      </div>
-      <div class="border-b border-white/[.07] p-7 lg:border-b-0 lg:border-r">
-        <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 text-gold"><i data-lucide="truck" class="h-6 w-6"></i></div>
-        <h3 class="text-lg font-medium text-white">Free nationwide delivery</h3>
-        <p class="mt-2 text-sm leading-relaxed text-white/60">To your door in any city in Pakistan, usually within 2 to 4 working days.</p>
-      </div>
-      <div class="border-b border-white/[.07] p-7 sm:border-r sm:border-b-0">
-        <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 text-gold"><i data-lucide="banknote" class="h-6 w-6"></i></div>
-        <h3 class="text-lg font-medium text-white">Cash on delivery</h3>
-        <p class="mt-2 text-sm leading-relaxed text-white/60">No advance payment. Hand the cash to the courier when your watch arrives.</p>
-      </div>
-      <div class="p-7">
-        <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 text-gold"><i data-lucide="shield-check" class="h-6 w-6"></i></div>
-        <h3 class="text-lg font-medium text-white">7-day replacement warranty</h3>
-        <p class="mt-2 text-sm leading-relaxed text-white/60">Faulty or wrong piece? Message us within 7 days and we replace it.</p>
-      </div>
+      <div class="border-b border-white/[.07] p-7 sm:border-r lg:border-b-0"><div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 text-gold"><i data-lucide="badge-check" class="h-6 w-6"></i></div><h3 class="text-lg font-medium text-white">100% original quality</h3><p class="mt-2 text-sm leading-relaxed text-white/60">Every watch is inspected before dispatch and ships in a protective gift box.</p></div>
+      <div class="border-b border-white/[.07] p-7 lg:border-b-0 lg:border-r"><div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 text-gold"><i data-lucide="truck" class="h-6 w-6"></i></div><h3 class="text-lg font-medium text-white">Free nationwide delivery</h3><p class="mt-2 text-sm leading-relaxed text-white/60">To your door in any city in Pakistan, usually within 2 to 4 working days.</p></div>
+      <div class="border-b border-white/[.07] p-7 sm:border-r sm:border-b-0"><div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 text-gold"><i data-lucide="banknote" class="h-6 w-6"></i></div><h3 class="text-lg font-medium text-white">Cash on delivery</h3><p class="mt-2 text-sm leading-relaxed text-white/60">No advance payment. Hand the cash to the courier when your watch arrives.</p></div>
+      <div class="p-7"><div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 text-gold"><i data-lucide="shield-check" class="h-6 w-6"></i></div><h3 class="text-lg font-medium text-white">7-day replacement warranty</h3><p class="mt-2 text-sm leading-relaxed text-white/60">Faulty or wrong piece? Message us within 7 days and we replace it.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============ COLLECTION ============ -->
-<section id="collection" class="px-3 py-10 sm:px-6 sm:py-16" aria-labelledby="col-title">
+<!-- COLLECTION -->
+<section id="collection" class="px-3 py-10 sm:px-6 sm:py-16">
   <div class="mx-auto max-w-[1400px]">
     <div class="mb-10 flex flex-col justify-between gap-5 px-2 sm:flex-row sm:items-end">
       <div class="max-w-2xl">
-        <h2 id="col-title" class="font-display text-3xl text-white sm:text-5xl">The 7Even collection</h2>
+        <h2 class="sec-title font-display text-3xl text-white sm:text-5xl">The 7Even collection</h2>
         <p class="mt-4 text-white/60">Our signature pieces. Message us on WhatsApp for pricing and current availability.</p>
       </div>
       <button data-action="open-size" class="ghost-btn flex h-12 items-center gap-2 self-start rounded-full px-6 text-sm font-medium sm:self-auto"><i data-lucide="ruler" class="h-4 w-4"></i>Wrist size guide</button>
@@ -310,66 +240,58 @@
   </div>
 </section>
 
-<!-- ============ HOW IT WORKS ============ -->
-<section id="how" class="px-3 py-10 sm:px-6 sm:py-16" aria-labelledby="how-title">
+<!-- PINNED WAVE STRIP — 1 SCROLL -->
+<section class="wave-pin" id="wave-pin">
+  <div class="wave-pin-inner">
+    <div class="wave-hint" id="wave-hint">
+      <span>Scroll to explore</span>
+      <span class="line"></span>
+    </div>
+    <div class="wave-outer">
+      <div class="wave-track" id="wave-track"></div>
+    </div>
+    <div class="wave-progress">
+      <div class="wave-progress-bar" id="wave-progress"></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how" class="px-3 py-10 sm:px-6 sm:py-16">
   <div class="glass-solid mx-auto grid max-w-[1400px] gap-10 rounded-[36px] p-7 sm:p-12 lg:grid-cols-[1fr_1.5fr] lg:gap-16">
     <div>
-      <h2 id="how-title" class="font-display text-3xl text-white sm:text-4xl">Order in under two minutes</h2>
+      <h2 class="font-display text-3xl text-white sm:text-4xl">Order in under two minutes</h2>
       <p class="mt-4 text-white/60">No account, no card details. Just your address and a WhatsApp message.</p>
       <button data-action="open-order" class="gold-btn mt-8 flex h-14 items-center gap-2 rounded-full px-8">Place a COD order</button>
     </div>
     <ol class="grid gap-6 sm:grid-cols-3">
-      <li class="relative rounded-3xl bg-white/[.03] p-6">
-        <div class="font-display text-4xl text-gold/70">1</div>
-        <h3 class="mt-3 font-medium text-white">Choose your watch</h3>
-        <p class="mt-2 text-sm text-white/60">Pick a finish and case size, then tap Buy Now.</p>
-      </li>
-      <li class="relative rounded-3xl bg-white/[.03] p-6">
-        <div class="font-display text-4xl text-gold/70">2</div>
-        <h3 class="mt-3 font-medium text-white">We confirm on WhatsApp</h3>
-        <p class="mt-2 text-sm text-white/60">Your order arrives as a ready message. We confirm the address and dispatch.</p>
-      </li>
-      <li class="relative rounded-3xl bg-white/[.03] p-6">
-        <div class="font-display text-4xl text-gold/70">3</div>
-        <h3 class="mt-3 font-medium text-white">Pay on delivery</h3>
-        <p class="mt-2 text-sm text-white/60">The courier brings it to your door. Pay cash on arrival.</p>
-      </li>
+      <li class="rounded-3xl bg-white/[.03] p-6 border border-white/[.05] hover:border-gold/30 transition"><div class="font-display text-4xl text-gold/70">1</div><h3 class="mt-3 font-medium text-white">Choose your watch</h3><p class="mt-2 text-sm text-white/60">Pick a finish and case size, then tap Buy Now.</p></li>
+      <li class="rounded-3xl bg-white/[.03] p-6 border border-white/[.05] hover:border-gold/30 transition"><div class="font-display text-4xl text-gold/70">2</div><h3 class="mt-3 font-medium text-white">We confirm on WhatsApp</h3><p class="mt-2 text-sm text-white/60">Your order arrives as a ready message. We confirm the address and dispatch.</p></li>
+      <li class="rounded-3xl bg-white/[.03] p-6 border border-white/[.05] hover:border-gold/30 transition"><div class="font-display text-4xl text-gold/70">3</div><h3 class="mt-3 font-medium text-white">Pay on delivery</h3><p class="mt-2 text-sm text-white/60">The courier brings it to your door. Pay cash on arrival.</p></li>
     </ol>
   </div>
 </section>
 
-<!-- ============ REVIEWS ============ -->
-<section id="reviews" class="px-3 py-10 sm:px-6 sm:py-16" aria-labelledby="rev-title">
+<!-- REVIEWS -->
+<section id="reviews" class="px-3 py-10 sm:px-6 sm:py-16">
   <div class="mx-auto max-w-[1400px]">
     <div class="mb-10 flex flex-col justify-between gap-6 px-2 sm:flex-row sm:items-end">
-      <div>
-        <h2 id="rev-title" class="font-display text-3xl text-white sm:text-5xl">Loved by watch lovers across Pakistan</h2>
-      </div>
+      <h2 class="sec-title font-display text-3xl text-white sm:text-5xl">Loved by watch lovers across Pakistan</h2>
       <div class="glass flex items-center gap-4 self-start rounded-3xl px-6 py-4">
         <div class="font-display text-5xl text-gold-light">4.8</div>
-        <div>
-          <div class="flex gap-0.5" id="avg-stars"></div>
-          <div class="mt-1 text-xs text-white/55">Average customer rating</div>
-        </div>
+        <div><div class="flex gap-0.5" id="avg-stars"></div><div class="mt-1 text-xs text-white/55">Average customer rating</div></div>
       </div>
     </div>
     <div id="review-grid" class="grid gap-5 md:grid-cols-2 lg:grid-cols-3"></div>
-
-    <div class="mt-16 px-2">
-      <h3 class="font-display text-2xl text-white sm:text-3xl">7Even on the wrist</h3>
-      <p class="mt-2 text-sm text-white/55">A closer look at the collection.</p>
-    </div>
+    <div class="mt-16 px-2"><h3 class="font-display text-2xl text-white sm:text-3xl">7Even on the wrist</h3><p class="mt-2 text-sm text-white/55">A closer look at the collection.</p></div>
     <div id="gallery" class="mt-6 grid auto-rows-[180px] grid-cols-2 gap-3 sm:auto-rows-[220px] md:grid-cols-4"></div>
   </div>
 </section>
 
-<!-- ============ FAQ ============ -->
-<section id="faq" class="px-3 py-10 sm:px-6 sm:py-16" aria-labelledby="faq-title">
+<!-- FAQ -->
+<section id="faq" class="px-3 py-10 sm:px-6 sm:py-16">
   <div class="mx-auto grid max-w-[1100px] gap-10 lg:grid-cols-[1fr_1.6fr]">
-    <div>
-      <h2 id="faq-title" class="font-display text-3xl text-white sm:text-4xl">Questions before you order</h2>
-      <p class="mt-4 text-white/60">Still unsure? Message us and a real person replies on WhatsApp.</p>
-    </div>
+    <div><h2 class="sec-title font-display text-3xl text-white sm:text-4xl">Questions before you order</h2><p class="mt-4 text-white/60">Still unsure? Message us and a real person replies on WhatsApp.</p></div>
     <div>
       <details class="faq"><summary>How does cash on delivery work?<i data-lucide="chevron-down" class="chev h-5 w-5"></i></summary><p class="pb-5 pr-8 text-sm leading-relaxed text-white/60">You place the order on WhatsApp, we confirm it, and the courier delivers the watch to your address. You pay the courier in cash. No advance payment is needed.</p></details>
       <details class="faq"><summary>How long does delivery take?<i data-lucide="chevron-down" class="chev h-5 w-5"></i></summary><p class="pb-5 pr-8 text-sm leading-relaxed text-white/60">Most orders reach major cities in 2 to 4 working days. Remote areas can take a little longer. Delivery is free everywhere in Pakistan.</p></details>
@@ -379,432 +301,338 @@
   </div>
 </section>
 
-<!-- ============ FINAL CTA ============ -->
-<section class="px-3 pb-16 pt-6 sm:px-6" aria-label="Order now">
+<!-- CTA -->
+<section class="px-3 pb-16 pt-6 sm:px-6">
   <div class="hero-panel relative mx-auto max-w-[1400px] overflow-hidden rounded-[36px] px-6 py-14 text-center sm:px-12 sm:py-20">
     <h2 class="font-display mx-auto max-w-3xl text-3xl text-[#fbf3da] sm:text-5xl">Your next watch is one message away</h2>
     <p class="mx-auto mt-5 max-w-xl text-white/65">Free delivery, cash on delivery and a 7-day replacement warranty on every order.</p>
     <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
       <button data-action="open-order" class="gold-btn flex h-14 w-full items-center justify-center gap-2 rounded-full px-9 sm:w-auto">Buy Now</button>
-      <a data-wa="header" href="https://wa.me/923258582375" target="_blank" rel="noopener" class="ghost-btn flex h-14 w-full items-center justify-center gap-2 rounded-full px-9 font-medium sm:w-auto"><svg class="h-5 w-5" fill="currentColor" aria-hidden="true"><use href="#i-wa"></use></svg>Chat on WhatsApp</a>
+      <a href="https://wa.me/923258582375" target="_blank" rel="noopener" class="ghost-btn flex h-14 w-full items-center justify-center gap-2 rounded-full px-9 font-medium sm:w-auto"><svg class="h-5 w-5" fill="currentColor"><use href="#i-wa"></use></svg>Chat on WhatsApp</a>
     </div>
   </div>
 </section>
 </main>
 
-<!-- ============ FOOTER ============ -->
+<!-- FOOTER -->
 <footer class="border-t border-white/[.07] px-6 pb-28 pt-14 sm:pb-16">
   <div class="mx-auto grid max-w-[1400px] gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
     <div>
       <div class="font-display text-2xl tracking-[.18em] text-white">7<span class="font-normal text-gold-light/80">EVEN</span></div>
       <p class="mt-4 max-w-sm text-sm leading-relaxed text-white/55">Premium-styled watches delivered across Pakistan with cash on delivery. DM us for pricing and availability.</p>
-      <a href="https://www.instagram.com/7even.pk?stkn=ejRrYmdoc3d5Nzc5" target="_blank" rel="noopener" class="ghost-btn mt-5 inline-flex h-11 items-center gap-2 rounded-full px-5 text-sm font-medium" aria-label="Follow 7Even on Instagram"><i data-lucide="instagram" class="h-4 w-4"></i>Follow @7even.pk</a>
+      <a href="https://www.instagram.com/7even.pk" target="_blank" rel="noopener" class="ghost-btn mt-5 inline-flex h-11 items-center gap-2 rounded-full px-5 text-sm font-medium"><i data-lucide="instagram" class="h-4 w-4"></i>Follow @7even.pk</a>
     </div>
-    <div>
-      <div class="mb-4 text-sm font-medium text-white">Explore</div>
-      <ul class="space-y-2.5 text-sm text-white/60">
-        <li><a class="hover:text-gold-light" href="#collection">Collection</a></li>
-        <li><a class="hover:text-gold-light" href="#why">Why 7Even</a></li>
-        <li><a class="hover:text-gold-light" href="#reviews">Reviews</a></li>
-        <li><a class="hover:text-gold-light" href="#faq">FAQ</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="mb-4 text-sm font-medium text-white">Contact</div>
-      <ul class="space-y-2.5 text-sm text-white/60">
-        <li><a class="flex items-center gap-2 hover:text-gold-light" href="tel:+923258582375"><i data-lucide="phone" class="h-4 w-4 text-gold"></i>+92 325 8582375</a></li>
-        <li><a class="flex items-center gap-2 hover:text-gold-light" data-wa="header" href="https://wa.me/923258582375" target="_blank" rel="noopener"><svg class="h-4 w-4 text-gold" fill="currentColor" aria-hidden="true"><use href="#i-wa"></use></svg>WhatsApp us</a></li>
-        <li><a class="flex items-center gap-2 hover:text-gold-light" href="https://www.instagram.com/7even.pk?stkn=ejRrYmdoc3d5Nzc5" target="_blank" rel="noopener"><i data-lucide="instagram" class="h-4 w-4 text-gold"></i>@7even.pk</a></li>
-        <li class="flex items-center gap-2"><i data-lucide="map-pin" class="h-4 w-4 text-gold"></i>Delivering all over Pakistan</li>
-      </ul>
-    </div>
+    <div><div class="mb-4 text-sm font-medium text-white">Explore</div><ul class="space-y-2.5 text-sm text-white/60"><li><a class="hover:text-gold-light" href="#collection">Collection</a></li><li><a class="hover:text-gold-light" href="#why">Why 7Even</a></li><li><a class="hover:text-gold-light" href="#reviews">Reviews</a></li><li><a class="hover:text-gold-light" href="#faq">FAQ</a></li></ul></div>
+    <div><div class="mb-4 text-sm font-medium text-white">Contact</div><ul class="space-y-2.5 text-sm text-white/60">
+      <li><a class="flex items-center gap-2 hover:text-gold-light" href="tel:+923258582375"><i data-lucide="phone" class="h-4 w-4 text-gold"></i>+92 325 8582375</a></li>
+      <li><a class="flex items-center gap-2 hover:text-gold-light" href="https://wa.me/923258582375" target="_blank" rel="noopener"><svg class="h-4 w-4 text-gold" fill="currentColor"><use href="#i-wa"></use></svg>WhatsApp us</a></li>
+      <li><a class="flex items-center gap-2 hover:text-gold-light" href="https://www.instagram.com/7even.pk" target="_blank" rel="noopener"><i data-lucide="instagram" class="h-4 w-4 text-gold"></i>@7even.pk</a></li>
+      <li class="flex items-center gap-2"><i data-lucide="map-pin" class="h-4 w-4 text-gold"></i>Delivering all over Pakistan</li>
+    </ul></div>
   </div>
-  <div class="mx-auto mt-12 flex max-w-[1400px] flex-col justify-between gap-2 border-t border-white/[.07] pt-6 text-xs text-white/40 sm:flex-row">
-    <span>© <span id="yr"></span> 7Even. All rights reserved.</span>
-    <span>Prices in Pakistani Rupees. Images are illustrative.</span>
-  </div>
+  <div class="mx-auto mt-12 flex max-w-[1400px] flex-col justify-between gap-2 border-t border-white/[.07] pt-6 text-xs text-white/40 sm:flex-row"><span>© <span id="yr"></span> 7Even. All rights reserved.</span><span>Prices in Pakistani Rupees. Images are illustrative.</span></div>
 </footer>
 
-<!-- ============ FLOATING WHATSAPP ============ -->
-<div class="fixed bottom-4 right-4 z-[60] sm:bottom-6 sm:right-6" style="bottom: max(16px, env(safe-area-inset-bottom)); right: max(16px, env(safe-area-inset-right));">
-  <div id="chat-panel" class="glass-solid absolute bottom-[72px] right-0 w-[min(340px,calc(100vw-32px))] rounded-3xl p-5 shadow-2xl" role="dialog" aria-label="Quick WhatsApp chat" aria-hidden="true">
-    <div class="flex items-center gap-3">
-      <div class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-gold-light to-gold text-[#1a1205]"><i data-lucide="headphones" class="h-5 w-5"></i></div>
-      <div>
-        <div class="font-medium text-white">7Even Concierge</div>
-        <div class="flex items-center gap-1.5 text-xs text-emerald-400"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Replies on WhatsApp</div>
-      </div>
-    </div>
+<!-- FLOATING WHATSAPP -->
+<div class="fixed bottom-4 right-4 z-[60] sm:bottom-6 sm:right-6" style="bottom:max(16px,env(safe-area-inset-bottom));right:max(16px,env(safe-area-inset-right))">
+  <div id="chat-panel" class="glass-solid absolute bottom-[72px] right-0 w-[min(340px,calc(100vw-32px))] rounded-3xl p-5 shadow-2xl" role="dialog" aria-hidden="true">
+    <div class="flex items-center gap-3"><div class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-gold-light to-gold text-[#1a1205]"><i data-lucide="headphones" class="h-5 w-5"></i></div><div><div class="font-medium text-white">7Even Concierge</div><div class="flex items-center gap-1.5 text-xs text-emerald-400"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Replies on WhatsApp</div></div></div>
     <p class="mt-4 rounded-2xl rounded-tl-sm bg-white/[.06] p-3 text-sm text-white/80">Assalam o Alaikum! How can we help you today?</p>
     <div id="chat-quick" class="mt-3 grid gap-2"></div>
   </div>
-  <div id="chat-nudge" class="glass absolute bottom-[72px] right-0 hidden w-max max-w-[220px] rounded-2xl rounded-br-sm px-4 py-2.5 text-sm text-white/85">Need help choosing a watch?</div>
-  <button id="chat-btn" data-action="chat" class="relative flex h-16 w-16 items-center justify-center rounded-full text-white shadow-[0_12px_40px_-8px_rgba(37,211,102,.7)] transition hover:scale-105 active:scale-95" style="background:linear-gradient(135deg,#2be075,#12a24a)" aria-label="Open WhatsApp chat" aria-expanded="false">
-    <span class="absolute inset-0 animate-ping rounded-full bg-[#25d366]/40" style="animation-duration:2.4s"></span>
-    <svg class="relative h-7 w-7" fill="currentColor" aria-hidden="true"><use href="#i-wa"></use></svg>
-  </button>
+  <button id="chat-btn" data-action="chat" class="relative flex h-16 w-16 items-center justify-center rounded-full text-white shadow-[0_12px_40px_-8px_rgba(37,211,102,.7)] transition hover:scale-105 active:scale-95" style="background:linear-gradient(135deg,#2be075,#12a24a)"><span class="absolute inset-0 animate-ping rounded-full bg-[#25d366]/40" style="animation-duration:2.4s"></span><svg class="relative h-7 w-7" fill="currentColor"><use href="#i-wa"></use></svg></button>
 </div>
 
 <div id="toast" class="glass-solid flex items-center gap-2 rounded-full px-5 py-3 text-sm text-white shadow-xl" role="status" aria-live="polite"></div>
 
-<!-- ============ SIZE GUIDE MODAL ============ -->
-<div id="size-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="size-title">
+<!-- SIZE MODAL -->
+<div id="size-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
   <div class="modal-backdrop" data-action="close-modal"></div>
   <div class="modal-card glass-solid p-6 sm:p-8">
     <div class="flex items-start justify-between gap-4">
-      <div>
-        <h2 id="size-title" class="font-display text-2xl text-white sm:text-3xl">Find your fit</h2>
-        <p class="mt-1 text-sm text-white/55">Sizes from 38 mm to 44 mm. Slide to your wrist size.</p>
-      </div>
-      <button data-action="close-modal" class="pill flex h-11 w-11 shrink-0 items-center justify-center rounded-full" aria-label="Close"><i data-lucide="x" class="h-5 w-5"></i></button>
+      <div><h2 class="font-display text-2xl text-white sm:text-3xl">Find your fit</h2><p class="mt-1 text-sm text-white/55">Sizes from 38 mm to 44 mm. Slide to your wrist size.</p></div>
+      <button data-action="close-modal" class="pill flex h-11 w-11 items-center justify-center rounded-full"><i data-lucide="x" class="h-5 w-5"></i></button>
     </div>
-
     <div class="mt-6 rounded-3xl bg-black/30 p-3"><div id="fit-svg" class="mx-auto max-w-[360px]"></div></div>
-
     <div class="mt-6">
-      <div class="mb-3 flex items-center justify-between text-sm">
-        <label for="wrist" class="text-white/70">Wrist circumference</label>
-        <span class="font-medium text-gold-light"><span id="wrist-val">16.0</span> cm</span>
-      </div>
-      <input id="wrist" type="range" min="13" max="21" step="0.5" value="16" aria-describedby="wrist-tip">
-      <p id="wrist-tip" class="mt-2 text-xs text-white/45">Wrap a string around your wrist just above the bone, then measure it against a ruler.</p>
+      <div class="mb-3 flex items-center justify-between text-sm"><label for="wrist" class="text-white/70">Wrist circumference</label><span class="font-medium text-gold-light"><span id="wrist-val">16.0</span> cm</span></div>
+      <input id="wrist" type="range" min="13" max="21" step="0.5" value="16">
     </div>
-
-    <div id="size-chips" class="mt-8 flex flex-wrap gap-2.5" role="group" aria-label="Case size"></div>
+    <div id="size-chips" class="mt-8 flex flex-wrap gap-2.5"></div>
     <div id="fit-text" class="mt-5 rounded-2xl bg-gold/10 p-4 text-sm leading-relaxed text-gold-light"></div>
-
     <button data-action="use-size" class="gold-btn mt-6 flex h-14 w-full items-center justify-center gap-2 rounded-full">Use <span id="use-size-label" class="mx-1">42</span> mm</button>
   </div>
 </div>
 
-<!-- ============ COD ORDER MODAL ============ -->
-<div id="order-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="order-title">
+<!-- ORDER MODAL -->
+<div id="order-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
   <div class="modal-backdrop" data-action="close-modal"></div>
   <div class="modal-card glass-solid p-6 sm:p-8">
     <div class="flex items-start justify-between gap-4">
-      <div>
-        <h2 id="order-title" class="font-display text-2xl text-white sm:text-3xl">Fast COD order</h2>
-        <p class="mt-1 text-sm text-white/55">Fill in your details. We open WhatsApp with your order ready to send — price is confirmed there.</p>
-      </div>
-      <button data-action="close-modal" class="pill flex h-11 w-11 shrink-0 items-center justify-center rounded-full" aria-label="Close"><i data-lucide="x" class="h-5 w-5"></i></button>
+      <div><h2 class="font-display text-2xl text-white sm:text-3xl">Fast COD order</h2><p class="mt-1 text-sm text-white/55">Fill in your details. We open WhatsApp with your order ready to send.</p></div>
+      <button data-action="close-modal" class="pill flex h-11 w-11 items-center justify-center rounded-full"><i data-lucide="x" class="h-5 w-5"></i></button>
     </div>
-
     <form id="order-form" class="mt-6 grid gap-4" novalidate>
       <div class="grid gap-4 sm:grid-cols-2">
-        <div class="sm:col-span-2">
-          <label class="mb-1.5 block text-sm text-white/70" for="f-product">Watch</label>
-          <select id="f-product" class="field"></select>
-        </div>
-        <div>
-          <label class="mb-1.5 block text-sm text-white/70" for="f-size">Case size</label>
-          <select id="f-size" class="field"></select>
-        </div>
-        <div>
-          <span class="mb-1.5 block text-sm text-white/70" id="qty-label">Quantity</span>
-          <div class="field flex items-center justify-between !py-1.5" role="group" aria-labelledby="qty-label">
-            <button type="button" data-qty="-1" class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-white/10" aria-label="Decrease quantity"><i data-lucide="minus" class="h-4 w-4"></i></button>
-            <output id="f-qty" class="text-lg font-medium">1</output>
-            <button type="button" data-qty="1" class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-white/10" aria-label="Increase quantity"><i data-lucide="plus" class="h-4 w-4"></i></button>
-          </div>
-        </div>
+        <div class="sm:col-span-2"><label class="mb-1.5 block text-sm text-white/70" for="f-product">Watch</label><select id="f-product" class="field"></select></div>
+        <div><label class="mb-1.5 block text-sm text-white/70" for="f-size">Case size</label><select id="f-size" class="field"></select></div>
+        <div><span class="mb-1.5 block text-sm text-white/70">Quantity</span><div class="field flex items-center justify-between !py-1.5"><button type="button" data-qty="-1" class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-white/10"><i data-lucide="minus" class="h-4 w-4"></i></button><output id="f-qty" class="text-lg font-medium">1</output><button type="button" data-qty="1" class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-white/10"><i data-lucide="plus" class="h-4 w-4"></i></button></div></div>
       </div>
-
-      <div>
-        <label class="mb-1.5 block text-sm text-white/70" for="f-name">Full name</label>
-        <input id="f-name" class="field" type="text" autocomplete="name" placeholder="Your full name" aria-describedby="e-name">
-        <p id="e-name" class="err"></p>
-      </div>
-      <div>
-        <label class="mb-1.5 block text-sm text-white/70" for="f-phone">Phone number</label>
-        <input id="f-phone" class="field" type="tel" inputmode="tel" autocomplete="tel" placeholder="03XX XXXXXXX" aria-describedby="e-phone">
-        <p id="e-phone" class="err"></p>
-      </div>
-      <div>
-        <label class="mb-1.5 block text-sm text-white/70" for="f-city">City</label>
-        <input id="f-city" class="field" type="text" list="cities" autocomplete="address-level2" placeholder="Start typing your city" aria-describedby="e-city">
-        <datalist id="cities"><option>Lahore</option><option>Karachi</option><option>Islamabad</option><option>Rawalpindi</option><option>Faisalabad</option><option>Multan</option><option>Peshawar</option><option>Quetta</option><option>Sialkot</option><option>Gujranwala</option><option>Hyderabad</option><option>Bahawalpur</option></datalist>
-        <p id="e-city" class="err"></p>
-      </div>
-      <div>
-        <label class="mb-1.5 block text-sm text-white/70" for="f-address">Delivery address</label>
-        <textarea id="f-address" class="field resize-none" rows="3" autocomplete="street-address" placeholder="House no., street, area, nearest landmark" aria-describedby="e-address"></textarea>
-        <p id="e-address" class="err"></p>
-      </div>
-
-      <div class="flex items-center gap-3 rounded-2xl bg-white/[.04] px-4 py-3 text-sm text-white/60">
-        <i data-lucide="lock" class="h-4 w-4 shrink-0 text-gold"></i>Price is not shown here — we'll confirm it with you on WhatsApp before dispatch. Cash on delivery, free delivery.
-      </div>
-
-      <details class="rounded-2xl bg-black/30 p-4 text-sm">
-        <summary class="cursor-pointer text-white/70">Preview WhatsApp message</summary>
-        <pre id="msg-preview" class="mt-3 whitespace-pre-wrap break-words text-xs leading-relaxed text-white/60" style="font-family:inherit"></pre>
-      </details>
-
-      <button type="submit" class="gold-btn flex h-14 w-full items-center justify-center gap-2 rounded-full text-[15px]"><svg class="h-5 w-5" fill="currentColor" aria-hidden="true"><use href="#i-wa"></use></svg>Send order on WhatsApp</button>
+      <div><label class="mb-1.5 block text-sm text-white/70" for="f-name">Full name</label><input id="f-name" class="field" type="text" autocomplete="name" placeholder="Your full name"><p id="e-name" class="err"></p></div>
+      <div><label class="mb-1.5 block text-sm text-white/70" for="f-phone">Phone number</label><input id="f-phone" class="field" type="tel" inputmode="tel" autocomplete="tel" placeholder="03XX XXXXXXX"><p id="e-phone" class="err"></p></div>
+      <div><label class="mb-1.5 block text-sm text-white/70" for="f-city">City</label><input id="f-city" class="field" type="text" list="cities" placeholder="Your city"><datalist id="cities"><option>Lahore</option><option>Karachi</option><option>Islamabad</option><option>Rawalpindi</option><option>Faisalabad</option><option>Multan</option><option>Peshawar</option><option>Quetta</option></datalist><p id="e-city" class="err"></p></div>
+      <div><label class="mb-1.5 block text-sm text-white/70" for="f-address">Delivery address</label><textarea id="f-address" class="field resize-none" rows="3" placeholder="House no., street, area, nearest landmark"></textarea><p id="e-address" class="err"></p></div>
+      <div class="flex items-center gap-3 rounded-2xl bg-white/[.04] px-4 py-3 text-sm text-white/60"><i data-lucide="lock" class="h-4 w-4 shrink-0 text-gold"></i>Price confirmed on WhatsApp. COD, free delivery.</div>
+      <button type="submit" class="gold-btn flex h-14 w-full items-center justify-center gap-2 rounded-full text-[15px]"><svg class="h-5 w-5" fill="currentColor"><use href="#i-wa"></use></svg>Send order on WhatsApp</button>
     </form>
   </div>
 </div>
 
-<!-- ============ LIBRARIES ============ -->
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
 
-<!-- ============ APP LOGIC ============ -->
 <script>
-(function () {
+(function(){
   'use strict';
-  var WA = '923258582375';
-  var $ = function (s, r) { return (r || document).querySelector(s); };
-  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
-  var waUrl = function (t) { return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(t); };
-  function openWA(t) { var w = window.open(waUrl(t), '_blank'); if (!w) window.location.href = waUrl(t); }
-  function icons() { if (window.lucide) lucide.createIcons(); }
+  var WA='923258582375';
+  var $=function(s,r){return (r||document).querySelector(s)};
+  var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var waUrl=function(t){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(t)};
+  function openWA(t){var w=window.open(waUrl(t),'_blank');if(!w)window.location.href=waUrl(t)}
+  function icons(){if(window.lucide)lucide.createIcons()}
 
-  /* ⚡ IMAGE OPTIMIZER — wsrv.nl (free CDN, converts to WebP, super fast) */
-  function img(url, w) {
-    return 'https://wsrv.nl/?url=' + encodeURIComponent(url) + '&w=' + w + '&output=webp&q=82&we&il';
-  }
+  /* ⚡ CRISP + LIGHT IMAGES
+     c_fit → no cropping/zoom (original aspect ratio preserved)
+     q_auto:best → high quality (no blur)
+     dpr_2.0 → retina sharp
+     w_800 for cards, w_500 for strip */
+  function cld(url,w){return url.replace('/upload/','/upload/w_'+w+',q_auto:best,f_auto,dpr_2.0,c_fit/')}
 
-  /* ============ PRODUCTS ============ */
-  var PRODUCTS = [
-    { id: '7E-01', name: '7Even Classic Steel',    theme: 'silver', finish: 'Silver',           photo: 'https://i.postimg.cc/fLyyfhwd/Watch-1.webp',      tags: ['Steel case', 'Steel bracelet', 'Gift box'] },
-    { id: '7E-02', name: '7Even Gilt Sport',        theme: 'gold',   finish: 'Gold',             photo: 'https://i.postimg.cc/sXxx4RVS/Watch-2.webp',      tags: ['Gold-tone case', 'Sport bezel', 'Gift box'] },
-    { id: '7E-03', name: '7Even Noir Diver',        theme: 'black',  finish: 'Obsidian Black',   photo: 'https://i.postimg.cc/Y900zwpY/Watch-3-same.webp', tags: ['Black case', 'Diver-style bezel', 'Gift box'] },
-    { id: '7E-04', name: '7Even Noir Diver II',     theme: 'black',  finish: 'Black Steel',      photo: 'https://i.postimg.cc/j5224rsh/Watch-3.webp',      tags: ['Black steel case', 'Sport bracelet', 'Gift box'] },
-    { id: '7E-05', name: '7Even Two-Tone Gold',     theme: 'gold',   finish: 'Two-Tone Gold',    photo: 'https://i.postimg.cc/k4GGvdnF/watch-4.webp',      tags: ['Two-tone case', 'Steel & gold bracelet', 'Gift box'] },
-    { id: '7E-06', name: '7Even Argent Sport',      theme: 'silver', finish: 'Silver Sport',     photo: 'https://i.postimg.cc/1tXXrZ9H/Watch-5.webp',      tags: ['Steel case', 'Sport bezel', 'Gift box'] },
-    { id: '7E-07', name: '7Even Rose Elite',        theme: 'rose',   finish: 'Rose Gold',        photo: 'https://i.postimg.cc/DZ00PK26/watch-6.webp',      tags: ['Rose gold-tone case', 'Steel bracelet', 'Gift box'] },
-    { id: '7E-08', name: '7Even Onyx Square',       theme: 'black',  finish: 'Black Square',     photo: 'https://i.postimg.cc/xC883S0t/Watch-7.webp',      tags: ['Square case', 'Black dial', 'Gift box'] },
-    { id: '7E-09', name: '7Even Gold Square',       theme: 'gold',   finish: 'Gold Square',      photo: 'https://i.postimg.cc/mDkkyGbd/Watch-8.webp',      tags: ['Square case', 'Gold-tone finish', 'Gift box'] },
-    { id: '7E-10', name: '7Even Sovereign Gold',    theme: 'gold',   finish: 'Sovereign Gold',   photo: 'https://i.postimg.cc/d133jKqH/Watch-9.webp',      tags: ['Gold-tone case', 'Steel bracelet', 'Gift box'] },
-    { id: '7E-11', name: '7Even Classic Silver',    theme: 'silver', finish: 'Classic Silver',   photo: 'https://i.postimg.cc/FR6RPnR0/Watch-10.webp',     tags: ['Steel case', 'Classic dial', 'Gift box'] },
-    { id: '7E-12', name: '7Even Heritage Gold',     theme: 'gold',   finish: 'Heritage Gold',    photo: 'https://i.postimg.cc/RFYFPbFc/Watch-11.webp',     tags: ['Gold-tone case', 'Heritage dial', 'Gift box'] }
-  ];
-  var REVIEWS = [
-    { n: 'Hamza R.', c: 'Lahore',      s: 5, t: 'Bought the gold one for my brother\'s wedding. Looks far more expensive than the price, and the strap is soft.', d: '7Even Sovereign' },
-    { n: 'Ayesha K.', c: 'Karachi',    s: 5, t: 'Order confirmed on WhatsApp within minutes and it arrived in 3 days. Paid on delivery, no stress at all.', d: '7Even Argent' },
-    { n: 'Usman T.', c: 'Faisalabad',  s: 5, t: 'The black case is stunning in person. The size guide helped me pick 42 mm and it fits perfectly.', d: '7Even Obsidian' },
-    { n: 'Bilal A.', c: 'Islamabad',   s: 4, t: 'Good packaging and the second hand sweeps smoothly. Would order again.', d: '7Even Sovereign' },
-    { n: 'Sana M.', c: 'Multan',       s: 5, t: 'Ordered two, one for me and one as a gift. Both were exactly as shown.', d: '7Even Argent' },
-    { n: 'Zain H.', c: 'Rawalpindi',   s: 5, t: 'The rose gold skeleton gets compliments everywhere I go.', d: '7Even Rose Elite' }
-  ];
-  var GALLERY = [
-    { src: 'https://i.postimg.cc/fLyyfhwd/Watch-1.webp',      name: 'Classic Steel',   theme: 'silver', span: 'row-span-2 col-span-1' },
-    { src: 'https://i.postimg.cc/sXxx4RVS/Watch-2.webp',      name: 'Gilt Sport',      theme: 'gold',   span: '' },
-    { src: 'https://i.postimg.cc/Y900zwpY/Watch-3-same.webp', name: 'Noir Diver',      theme: 'black',  span: 'md:col-span-2' },
-    { src: 'https://i.postimg.cc/j5224rsh/Watch-3.webp',      name: 'Noir Diver II',   theme: 'black',  span: 'row-span-2' },
-    { src: 'https://i.postimg.cc/k4GGvdnF/watch-4.webp',      name: 'Two-Tone Gold',   theme: 'gold',   span: '' },
-    { src: 'https://i.postimg.cc/1tXXrZ9H/Watch-5.webp',      name: 'Argent Sport',    theme: 'silver', span: 'md:col-span-2' },
-    { src: 'https://i.postimg.cc/DZ00PK26/watch-6.webp',      name: 'Rose Elite',      theme: 'rose',   span: '' },
-    { src: 'https://i.postimg.cc/xC883S0t/Watch-7.webp',      name: 'Onyx Square',     theme: 'black',  span: 'row-span-2' },
-    { src: 'https://i.postimg.cc/mDkkyGbd/Watch-8.webp',      name: 'Gold Square',     theme: 'gold',   span: 'md:col-span-2' },
-    { src: 'https://i.postimg.cc/d133jKqH/Watch-9.webp',      name: 'Sovereign Gold',  theme: 'gold',   span: '' },
-    { src: 'https://i.postimg.cc/FR6RPnR0/Watch-10.webp',     name: 'Classic Silver',  theme: 'silver', span: '' },
-    { src: 'https://i.postimg.cc/RFYFPbFc/Watch-11.webp',     name: 'Heritage Gold',   theme: 'gold',   span: 'md:col-span-2' }
+  var PRODUCTS=[
+    {id:'7E-01',brand:'SEIKO',  model:'Classic Steel',  finish:'Silver',        photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192381/Watch_1.webp',      tag:''},
+    {id:'7E-02',brand:'SEIKO',  model:'Gilt Sport',     finish:'Gold',          photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192381/Watch_2.webp',      tag:'NEW'},
+    {id:'7E-03',brand:'ROLEX',  model:'Noir Diver',     finish:'Obsidian',      photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192381/Watch_3_same.webp', tag:'HOT'},
+    {id:'7E-04',brand:'ROLEX',  model:'Noir Diver II',  finish:'Black Steel',   photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192381/Watch_3.webp',      tag:''},
+    {id:'7E-05',brand:'SEIKO',  model:'Two-Tone Gold',  finish:'Two-Tone Gold', photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192381/watch_4.webp',      tag:''},
+    {id:'7E-06',brand:'CURREN', model:'Argent Sport',   finish:'Silver Sport',  photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192381/Watch_5.webp',      tag:''},
+    {id:'7E-07',brand:'TURBINE',model:'Rose Elite',     finish:'Rose Gold',     photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192382/watch_6.webp',      tag:'HOT'},
+    {id:'7E-08',brand:'TURBINE',model:'Onyx Square',    finish:'Black Square',  photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192383/Watch_7.webp',      tag:''},
+    {id:'7E-09',brand:'TURBINE',model:'Gold Square',    finish:'Gold Square',   photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192386/Watch_8.webp',      tag:''},
+    {id:'7E-10',brand:'CURREN', model:'Sovereign Gold', finish:'Sovereign Gold',photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192384/Watch_9.webp',      tag:'NEW'},
+    {id:'7E-11',brand:'TURBINE',model:'Classic Silver', finish:'Classic Silver',photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192385/Watch_10.webp',     tag:''},
+    {id:'7E-12',brand:'CURREN', model:'Heritage Gold',  finish:'Heritage Gold', photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192385/Watch_11.webp',     tag:''}
   ];
 
-  var state = { theme: 'gold', size: 42, productId: '7E-10' };
-  var byId = function (id) { return PRODUCTS.filter(function (p) { return p.id === id; })[0] || PRODUCTS[0]; };
+  var REVIEWS=[
+    {n:'Hamza R.',c:'Lahore',s:5,t:'Bought the ROLEX for my brother\'s wedding. Looks far more expensive than the price, and the strap is soft.',d:'ROLEX'},
+    {n:'Ayesha K.',c:'Karachi',s:5,t:'Order confirmed on WhatsApp within minutes and it arrived in 3 days. Paid on delivery, no stress at all.',d:'SEIKO'},
+    {n:'Usman T.',c:'Faisalabad',s:5,t:'The CURREN black case is stunning in person. The size guide helped me pick 42 mm.',d:'CURREN'},
+    {n:'Bilal A.',c:'Islamabad',s:4,t:'Good packaging and the second hand sweeps smoothly. Would order again.',d:'TURBINE'},
+    {n:'Sana M.',c:'Multan',s:5,t:'Ordered two, one for me and one as a gift. Both were exactly as shown.',d:'SEIKO'},
+    {n:'Zain H.',c:'Rawalpindi',s:5,t:'The TURBINE rose gold gets compliments everywhere I go.',d:'TURBINE'}
+  ];
 
-  /* ============ PRODUCT GRID (with watch NAME overlay on image) ============ */
-  var grid = $('#product-grid');
-  grid.innerHTML = PRODUCTS.map(function (p, idx) {
-    var finish = p.finish || p.theme, tags = p.tags || [];
-    var msg = 'Hello 7Even, please share the price for *' + p.name + '* (' + finish + ', code ' + p.id + ').';
-    var eager = idx < 4 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy" fetchpriority="low"';
-    return '<article class="glass glow-card flex flex-col overflow-hidden rounded-[30px]">' +
-      '<div class="card-media relative aspect-[4/4.6] rounded-b-[26px]" style="background:radial-gradient(70% 60% at 50% 40%,rgba(160,110,50,.4),transparent 75%),linear-gradient(180deg,#131114,#0b0a0b)">' +
-        '<img src="' + img(p.photo, 700) + '" alt="' + p.name + ' — ' + finish + ' watch by 7Even" width="700" height="805" ' + eager + ' decoding="async" class="absolute inset-0 h-full w-full object-cover">' +
-        '<div class="absolute left-4 top-4 rounded-full bg-black/55 px-3 py-1.5 text-xs font-medium text-white backdrop-blur">' + p.id + '</div>' +
-        '<div class="watch-name-badge"><h4>' + p.name + '</h4><span>' + finish + '</span></div>' +
-      '</div>' +
-      '<div class="flex flex-1 flex-col p-6">' +
-        '<h3 class="font-display mt-1 text-2xl text-white">' + p.name + '</h3>' +
-        '<div class="text-sm text-gold-light/80">' + finish + '</div>' +
-        '<div class="mt-4 flex flex-wrap gap-1.5">' + tags.map(function (t) { return '<span class="pill rounded-full px-3 py-1 text-[11px] text-white/70">' + t + '</span>'; }).join('') + '</div>' +
-        '<div class="mt-5 flex items-center gap-2 text-sm text-white/55"><i data-lucide="lock" class="h-4 w-4 text-gold"></i>Price on request</div>' +
-        '<div class="mt-auto flex gap-2 pt-6">' +
-          '<a href="' + waUrl(msg) + '" target="_blank" rel="noopener" class="gold-btn flex h-12 flex-1 items-center justify-center gap-2 rounded-full text-sm"><span class="flex h-6 w-6 items-center justify-center rounded-full bg-[#1a1205]/15"><svg class="h-4 w-4" fill="currentColor" aria-hidden="true"><use href="#i-wa"></use></svg></span>DM for Price</a>' +
-          '<button data-action="open-order" data-id="' + p.id + '" class="ghost-btn flex h-12 w-12 items-center justify-center rounded-full" aria-label="Order ' + p.name + '"><i data-lucide="shopping-bag" class="h-5 w-5"></i></button>' +
-        '</div>' +
+  var state={size:42};
+  var byId=function(id){return PRODUCTS.filter(function(p){return p.id===id})[0]||PRODUCTS[0]};
+
+  /* PRODUCT GRID — bigger image (800) + c_fit (no zoom/crop) */
+  $('#product-grid').innerHTML=PRODUCTS.map(function(p,i){
+    var msg='Hello 7Even, please share the price for *'+p.brand+' '+p.model+'* (code '+p.id+').';
+    var eager=i<8?'loading="eager" fetchpriority="high"':'loading="lazy" fetchpriority="low"';
+    var tagHtml=p.tag==='HOT'?'<div class="tag-badge">HOT</div>':p.tag==='NEW'?'<div class="tag-badge">NEW</div>':'';
+    return '<article class="glass glow-card flex flex-col overflow-hidden rounded-[30px]">'+
+      '<div class="card-media relative aspect-[4/4.6] rounded-b-[26px]" style="background:#0b0a0b">'+
+        '<img src="'+cld(p.photo,800)+'" alt="'+p.brand+' '+p.model+'" '+eager+' decoding="async" style="object-fit:contain">'+
+        '<div class="absolute left-4 top-4 rounded-full bg-black/55 px-3 py-1.5 text-xs font-medium text-white backdrop-blur z-10">'+p.id+'</div>'+
+        tagHtml+
+        '<div class="watch-name-badge"><h4>'+p.brand+'</h4><span>'+p.model+'</span></div>'+
+      '</div>'+
+      '<div class="flex flex-1 flex-col p-6">'+
+        '<h3 class="font-display text-2xl text-white">'+p.brand+'</h3>'+
+        '<div class="text-sm text-gold-light/80 mt-1">'+p.model+'</div>'+
+        '<div class="text-xs text-white/45 mt-1">'+p.finish+'</div>'+
+        '<div class="mt-6 flex gap-2 pt-6 border-t border-white/[.06]">'+
+          '<a href="'+waUrl(msg)+'" target="_blank" rel="noopener" class="gold-btn flex h-12 flex-1 items-center justify-center gap-2 rounded-full text-sm"><span class="flex h-6 w-6 items-center justify-center rounded-full bg-[#1a1205]/15"><svg class="h-4 w-4" fill="currentColor"><use href="#i-wa"></use></svg></span>DM for Price</a>'+
+          '<button data-action="open-order" data-id="'+p.id+'" class="ghost-btn flex h-12 w-12 items-center justify-center rounded-full"><i data-lucide="shopping-bag" class="h-5 w-5"></i></button>'+
+        '</div>'+
       '</div></article>';
   }).join('');
 
-  function stars(n, cls) { var s = ''; for (var i = 0; i < 5; i++) s += '<svg class="' + (cls || 'h-4 w-4') + '" viewBox="0 0 24 24" fill="' + (i < n ? '#d4af37' : 'none') + '" stroke="#d4af37" stroke-width="1.6" stroke-linejoin="round"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/></svg>'; return s; }
-  $('#avg-stars').innerHTML = stars(5, 'h-5 w-5');
-  $('#review-grid').innerHTML = REVIEWS.map(function (r) {
-    return '<figure class="glass glow-card flex flex-col rounded-[28px] p-6">' +
-      '<div class="flex gap-0.5" aria-label="' + r.s + ' out of 5 stars">' + stars(r.s) + '</div>' +
-      '<blockquote class="mt-4 flex-1 text-[15px] leading-relaxed text-white/80">' + r.t + '</blockquote>' +
-      '<figcaption class="mt-6 flex items-center justify-between gap-3">' +
-        '<div class="flex items-center gap-3"><div class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-gold-light to-gold font-medium text-[#1a1205]">' + r.n[0] + '</div>' +
-        '<div><div class="text-sm font-medium text-white">' + r.n + '</div><div class="text-xs text-white/45">' + r.c + ' · ' + r.d + '</div></div></div>' +
-        '<span class="flex shrink-0 items-center gap-1 rounded-full bg-emerald-500/10 px-2.5 py-1 text-[11px] font-medium text-emerald-400"><i data-lucide="badge-check" class="h-3.5 w-3.5"></i>Verified buyer</span>' +
+  /* PINNED WAVE STRIP */
+  var waveTrack=$('#wave-track');
+  var waveItems;
+  var pinSection=document.getElementById('wave-pin');
+  var pinHint=document.getElementById('wave-hint');
+  var pinProgress=document.getElementById('wave-progress');
+
+  var oneSet=PRODUCTS.map(function(p,i){
+    var dir=(i%2===0)?-1:1;
+    return '<div class="wave-item" data-dir="'+dir+'">'+
+      '<img src="'+cld(p.photo,500)+'" alt="'+p.brand+' '+p.model+'" loading="lazy" decoding="async">'+
+      '<div class="wave-label"><strong>'+p.brand+'</strong><em>'+p.model+'</em></div>'+
+    '</div>';
+  }).join('');
+  waveTrack.innerHTML=oneSet+oneSet;
+  waveItems=$$('.wave-item');
+
+  var trackWidth=0,pinTop=0,pinScrollDistance=0;
+  var targetX=0,currentX=0,targetWave=0,currentWave=0;
+  var lastHintOpacity=1;
+
+  function measurePin(){
+    if(!pinSection||!waveTrack) return;
+    trackWidth=waveTrack.scrollWidth;
+    var r=pinSection.getBoundingClientRect();
+    pinTop=r.top+window.scrollY;
+    pinScrollDistance=pinSection.offsetHeight-window.innerHeight;
+  }
+
+  function updateTargets(){
+    if(!pinSection||!pinScrollDistance) return;
+    var scrollY=window.scrollY||window.pageYOffset;
+    var raw=(scrollY-pinTop)/pinScrollDistance;
+    raw=Math.max(0,Math.min(1,raw));
+
+    // Move whole track across
+    var maxMove=Math.max(0,trackWidth-window.innerWidth);
+    targetX=-raw*maxMove;
+
+    // Wave: 1.5 oscillations (smooth)
+    targetWave=Math.sin(raw*Math.PI*1.5);
+
+    if(pinProgress) pinProgress.style.width=(raw*100).toFixed(1)+'%';
+
+    var hintOp=raw<0.08?1:(raw>0.4?0:1-(raw-0.08)/0.32);
+    if(Math.abs(hintOp-lastHintOpacity)>0.02){
+      pinHint.style.opacity=hintOp.toFixed(2);
+      lastHintOpacity=hintOp;
+    }
+  }
+
+  function tick(){
+    var dx=targetX-currentX;
+    if(Math.abs(dx)>0.05){
+      currentX+=dx*0.16;
+      waveTrack.style.transform='translate3d('+currentX.toFixed(1)+'px,0,0)';
+    }
+    var dw=targetWave-currentWave;
+    if(Math.abs(dw)>0.003){
+      currentWave+=dw*0.12;
+      for(var i=0;i<waveItems.length;i++){
+        var el=waveItems[i];
+        var dir=parseFloat(el.dataset.dir);
+        var y=currentWave*dir*30;
+        el.style.transform='translate3d(0,'+y.toFixed(1)+'px,0)';
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function stars(n,c){var s='';for(var i=0;i<5;i++)s+='<svg class="'+(c||'h-4 w-4')+'" viewBox="0 0 24 24" fill="'+(i<n?'#d4af37':'none')+'" stroke="#d4af37" stroke-width="1.6" stroke-linejoin="round"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/></svg>';return s}
+  $('#avg-stars').innerHTML=stars(5,'h-5 w-5');
+  $('#review-grid').innerHTML=REVIEWS.map(function(r){
+    return '<figure class="glass glow-card flex flex-col rounded-[28px] p-6">'+
+      '<div class="flex gap-0.5">'+stars(r.s)+'</div>'+
+      '<blockquote class="mt-4 flex-1 text-[15px] leading-relaxed text-white/80">'+r.t+'</blockquote>'+
+      '<figcaption class="mt-6 flex items-center justify-between gap-3">'+
+        '<div class="flex items-center gap-3"><div class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-gold-light to-gold font-medium text-[#1a1205]">'+r.n[0]+'</div>'+
+        '<div><div class="text-sm font-medium text-white">'+r.n+'</div><div class="text-xs text-white/45">'+r.c+' · '+r.d+'</div></div></div>'+
+        '<span class="flex shrink-0 items-center gap-1 rounded-full bg-emerald-500/10 px-2.5 py-1 text-[11px] font-medium text-emerald-400"><i data-lucide="badge-check" class="h-3.5 w-3.5"></i>Verified</span>'+
       '</figcaption></figure>';
   }).join('');
 
-  /* ============ GALLERY (with watch NAME on each image) ============ */
-  $('#gallery').innerHTML = GALLERY.map(function (g) {
-    return '<div class="card-media glow-card rounded-3xl ' + g.span + '" style="overflow:hidden;background:#0b0a0b;position:relative">' +
-      '<img src="' + img(g.src, 500) + '" alt="' + g.name + ' watch by 7Even" loading="lazy" fetchpriority="low" decoding="async" class="h-full w-full object-cover">' +
-      '<div class="watch-name-badge"><h4>' + g.name + '</h4></div>' +
-    '</div>';
+  var spans=['row-span-2','','md:col-span-2','row-span-2','','md:col-span-2','','row-span-2','md:col-span-2','','','md:col-span-2'];
+  $('#gallery').innerHTML=PRODUCTS.map(function(p,i){
+    return '<div class="card-media glow-card rounded-3xl '+spans[i]+'"><img src="'+cld(p.photo,500)+'" alt="'+p.brand+'" loading="lazy" decoding="async" style="object-fit:cover"><div class="watch-name-badge"><h4>'+p.brand+'</h4></div></div>';
   }).join('');
 
   var toastT;
-  function toast(msg) { var t = $('#toast'); t.innerHTML = '<i data-lucide="check-circle-2" class="h-4 w-4 text-emerald-400"></i>' + msg; icons(); t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(function () { t.classList.remove('show'); }, 3200); }
+  function toast(m){var t=$('#toast');t.innerHTML='<i data-lucide="check-circle-2" class="h-4 w-4 text-emerald-400"></i>'+m;icons();t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('show')},3200)}
+  var lastFocus=null;
+  function openModal(id){var m=document.getElementById(id);lastFocus=document.activeElement;m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';setTimeout(function(){var f=$('input:not([type=range]),select,textarea',m);if(f&&window.innerWidth>640)f.focus()},60)}
+  function closeModals(){$$('.modal[aria-hidden="false"]').forEach(function(m){m.setAttribute('aria-hidden','true')});document.body.style.overflow='';if(lastFocus&&lastFocus.focus)lastFocus.focus()}
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeModals();closeChat()}});
 
-  var lastFocus = null;
-  function openModal(id) {
-    var m = document.getElementById(id); lastFocus = document.activeElement;
-    m.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden';
-    setTimeout(function () { var f = $('input:not([type=range]), select, textarea, button[data-action=use-size]', m) || $('button', m); if (f && window.innerWidth > 640) f.focus(); }, 60);
+  var SIZES=[38,39,40,41,42,43,44],sizeDraft=state.size;
+  var recSize=function(w){return Math.max(38,Math.min(44,Math.round(38+(w-14)*.923)))};
+  function renderFit(){
+    var w=parseFloat($('#wrist').value),rec=recSize(w),sel=sizeDraft;
+    $('#wrist-val').textContent=w.toFixed(1);$('#use-size-label').textContent=sel;
+    var k=3.4,ww=(w*10/Math.PI)*1.12*k,r=sel/2*k,cx=180;
+    var ratio=sel/((w*10/Math.PI)*1.12),label=ratio<.62?'Slim and understated':ratio<=.78?'Ideal proportion':'Bold, oversized look';
+    $('#fit-svg').innerHTML='<svg viewBox="0 0 360 200" class="w-full"><defs><linearGradient id="skin" x1="0" x2="1"><stop offset="0" stop-color="#8d5f45"/><stop offset=".5" stop-color="#b98564"/><stop offset="1" stop-color="#8d5f45"/></linearGradient><linearGradient id="fc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e7b0"/><stop offset=".55" stop-color="#b8902a"/><stop offset="1" stop-color="#f6e7b0"/></linearGradient></defs>'+
+      '<rect x="'+(cx-ww/2)+'" y="10" width="'+ww+'" height="180" rx="34" fill="url(#skin)"/>'+
+      '<rect x="'+(cx-ww/2)+'" y="74" width="'+ww+'" height="52" fill="#1c130d" opacity=".9"/>'+
+      '<circle cx="'+cx+'" cy="100" r="'+r+'" fill="url(#fc)"/><circle cx="'+cx+'" cy="100" r="'+(r*.88)+'" fill="#120d08"/>'+
+      '<text x="'+cx+'" y="196" text-anchor="middle" font-size="11" fill="#f3e5ab">'+sel+' mm on a '+w.toFixed(1)+' cm wrist</text></svg>';
+    $('#size-chips').innerHTML=SIZES.map(function(s){return '<button type="button" class="size-chip" data-size="'+s+'" aria-pressed="'+(s===sel)+'">'+(s===rec?'<span class="rec">Best fit</span>':'')+s+' mm</button>'}).join('');
+    var lo=(14+(sel-38)/.923-.54).toFixed(1),hi=(14+(sel-38)/.923+.54).toFixed(1);
+    $('#fit-text').innerHTML='<strong>'+label+'.</strong> A '+sel+' mm case suits wrists of about '+lo+' to '+hi+' cm.';
   }
-  function closeModals() {
-    $$('.modal[aria-hidden="false"]').forEach(function (m) { m.setAttribute('aria-hidden', 'true'); });
-    document.body.style.overflow = ''; if (lastFocus && lastFocus.focus) lastFocus.focus();
-  }
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeModals(); closeChat(); } });
+  $('#wrist').addEventListener('input',function(){sizeDraft=recSize(parseFloat(this.value));renderFit()});
+  $('#size-chips').addEventListener('click',function(e){var b=e.target.closest('[data-size]');if(b){sizeDraft=+b.dataset.size;renderFit()}});
 
-  var FINISH_INFO = {
-    gold:   { name: '7Even Sovereign Gold', finish: 'Gold',          photo: 'https://i.postimg.cc/d133jKqH/Watch-9.webp',  code: '7E-10' },
-    black:  { name: '7Even Obsidian',       finish: 'Obsidian Black', photo: 'https://i.postimg.cc/j5224rsh/Watch-3.webp',  code: '7E-04' },
-    silver: { name: '7Even Argent',         finish: 'Silver',         photo: 'https://i.postimg.cc/1tXXrZ9H/Watch-5.webp',  code: '7E-06' },
-    rose:   { name: '7Even Rose Elite',     finish: 'Rose Gold',      photo: 'https://i.postimg.cc/DZ00PK26/watch-6.webp',  code: '7E-07' }
-  };
-  function syncHero() {
-    var f = FINISH_INFO[state.theme];
-    $('#finish-label').textContent = f.finish;
-    $('#size-label').textContent = state.size;
-    var feat = $('#hero-feature-img');
-    var lbl = $('#hero-feature-label');
-    if (feat) feat.src = img(f.photo, 800);
-    if (lbl) lbl.innerHTML = '<h4>' + f.name + '</h4><span>' + f.finish + ' · ' + f.code + '</span>';
-    $$('.swatch').forEach(function (b) { b.setAttribute('aria-checked', b.dataset.theme === state.theme ? 'true' : 'false'); });
-    var msg = 'Hello 7Even, please share the price for *' + f.name + '* (' + f.finish + '), case size ' + state.size + ' mm.';
-    $('#hero-wa').href = waUrl(msg);
+  var F={product:$('#f-product'),size:$('#f-size'),qty:$('#f-qty'),name:$('#f-name'),phone:$('#f-phone'),city:$('#f-city'),address:$('#f-address')};
+  F.product.innerHTML=PRODUCTS.map(function(p){return '<option value="'+p.id+'">'+p.brand+' — '+p.model+'</option>'}).join('');
+  F.size.innerHTML=SIZES.map(function(s){return '<option value="'+s+'">'+s+' mm</option>'}).join('');
+  var qty=1;
+  function buildMsg(){
+    var p=byId(F.product.value),v=function(x){return (x.value||'').trim()||'-'};
+    return '*NEW COD ORDER | 7EVEN*\n━━━━━━━━━━━━━━\n*Watch:* '+p.brand+' — '+p.model+'\n*Code:* '+p.id+'\n*Case size:* '+F.size.value+' mm\n*Quantity:* '+qty+'\n\n*Name:* '+v(F.name)+'\n*Phone:* '+v(F.phone)+'\n*City:* '+v(F.city)+'\n*Address:* '+v(F.address)+'\n━━━━━━━━━━━━━━\nPlease confirm the price. Thank you!';
   }
+  function updateOrder(){F.qty.textContent=qty}
+  ['input','change'].forEach(function(ev){$('#order-form').addEventListener(ev,updateOrder)});
+  $$('[data-qty]').forEach(function(b){b.addEventListener('click',function(){qty=Math.max(1,Math.min(5,qty+(+b.dataset.qty)));updateOrder()})});
+  function setErr(id,f,m){$('#e-'+id).textContent=m||'';f.setAttribute('aria-invalid',m?'true':'false');return !m}
+  function validate(){
+    var phone=F.phone.value.replace(/[\s-]/g,'');
+    return [
+      setErr('name',F.name,F.name.value.trim().length<3?'Please enter your full name.':''),
+      setErr('phone',F.phone,/^(\+92|0092|92|0)?3\d{9}$/.test(phone)?'':'Enter a valid mobile number.'),
+      setErr('city',F.city,F.city.value.trim().length<2?'Please enter your city.':''),
+      setErr('address',F.address,F.address.value.trim().length<10?'Add your full address.':'')
+    ].every(Boolean);
+  }
+  $('#order-form').addEventListener('submit',function(e){e.preventDefault();if(!validate())return;openWA(buildMsg());toast('Opening WhatsApp');closeModals()});
+  function openOrder(id){F.product.value=id||PRODUCTS[0].id;F.size.value=state.size;qty=1;updateOrder();openModal('order-modal')}
 
-  var SIZES = [38, 39, 40, 41, 42, 43, 44], sizeDraft = state.size;
-  var recSize = function (w) { return Math.max(38, Math.min(44, Math.round(38 + (w - 14) * .923))); };
-  function renderFit() {
-    var w = parseFloat($('#wrist').value), rec = recSize(w), sel = sizeDraft;
-    $('#wrist-val').textContent = w.toFixed(1); $('#use-size-label').textContent = sel;
-    var k = 3.4, wristW = (w * 10 / Math.PI) * 1.12, r = sel / 2 * k, ww = wristW * k, cx = 180, top = 10;
-    var ratio = sel / wristW, label = ratio < .62 ? 'Slim and understated' : ratio <= .78 ? 'Ideal proportion' : 'Bold, oversized look';
-    $('#fit-svg').innerHTML = '<svg viewBox="0 0 360 200" class="w-full" role="img" aria-label="Preview of a ' + sel + ' millimetre watch on a wrist">' +
-      '<defs><linearGradient id="skin" x1="0" x2="1"><stop offset="0" stop-color="#8d5f45"/><stop offset=".5" stop-color="#b98564"/><stop offset="1" stop-color="#8d5f45"/></linearGradient>' +
-      '<linearGradient id="fc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e7b0"/><stop offset=".55" stop-color="#b8902a"/><stop offset="1" stop-color="#f6e7b0"/></linearGradient></defs>' +
-      '<rect x="' + (cx - ww / 2) + '" y="' + top + '" width="' + ww + '" height="180" rx="34" fill="url(#skin)"/>' +
-      '<rect x="' + (cx - ww / 2) + '" y="' + (100 - 26) + '" width="' + ww + '" height="52" fill="#1c130d" opacity=".9"/>' +
-      '<circle cx="' + cx + '" cy="100" r="' + r + '" fill="url(#fc)"/><circle cx="' + cx + '" cy="100" r="' + (r * .88) + '" fill="#120d08"/>' +
-      '<g stroke="#f3e5ab" stroke-width="2" stroke-linecap="round"><line x1="' + cx + '" y1="100" x2="' + cx + '" y2="' + (100 - r * .6) + '"/><line x1="' + cx + '" y1="100" x2="' + (cx + r * .45) + '" y2="' + (100 + r * .2) + '"/></g>' +
-      '<text x="' + cx + '" y="196" text-anchor="middle" font-size="11" fill="#f3e5ab" font-family="Plus Jakarta Sans, sans-serif">' + sel + ' mm on a ' + w.toFixed(1) + ' cm wrist</text></svg>';
-    $('#size-chips').innerHTML = SIZES.map(function (s) { return '<button type="button" class="size-chip" data-size="' + s + '" aria-pressed="' + (s === sel) + '">' + (s === rec ? '<span class="rec">Best fit</span>' : '') + s + ' mm</button>'; }).join('');
-    var lo = (14 + (sel - 38) / .923 - .54).toFixed(1), hi = (14 + (sel - 38) / .923 + .54).toFixed(1);
-    $('#fit-text').innerHTML = '<strong class="font-medium">' + label + '.</strong> A ' + sel + ' mm case suits wrists of about ' + lo + ' to ' + hi + ' cm. ' + (sel === rec ? 'This is our recommended size for your wrist.' : 'For a ' + w.toFixed(1) + ' cm wrist we recommend ' + rec + ' mm.');
-  }
-  $('#wrist').addEventListener('input', function () { sizeDraft = recSize(parseFloat(this.value)); renderFit(); });
-  $('#size-chips').addEventListener('click', function (e) { var b = e.target.closest('[data-size]'); if (b) { sizeDraft = +b.dataset.size; renderFit(); } });
+  $('#chat-quick').innerHTML='<a href="'+waUrl('Hello 7Even, is the watch in stock?')+'" target="_blank" class="pill flex items-center justify-between gap-2 rounded-2xl px-4 py-2.5 text-sm text-white/85">Is this watch in stock?<i data-lucide="chevron-right" class="h-4 w-4 text-gold"></i></a>'+
+    '<a href="'+waUrl('Hello 7Even, how long will delivery take?')+'" target="_blank" class="pill flex items-center justify-between gap-2 rounded-2xl px-4 py-2.5 text-sm text-white/85">Delivery time?<i data-lucide="chevron-right" class="h-4 w-4 text-gold"></i></a>'+
+    '<a href="https://wa.me/'+WA+'" target="_blank" class="gold-btn mt-1 flex h-12 items-center justify-center gap-2 rounded-full text-sm"><svg class="h-4 w-4" fill="currentColor"><use href="#i-wa"></use></svg>Open WhatsApp</a>';
+  function closeChat(){$('#chat-panel').classList.remove('open')}
+  function toggleChat(){$('#chat-panel').classList.toggle('open')}
 
-  var F = { product: $('#f-product'), size: $('#f-size'), qty: $('#f-qty'), name: $('#f-name'), phone: $('#f-phone'), city: $('#f-city'), address: $('#f-address') };
-  F.product.innerHTML = PRODUCTS.map(function (p) { return '<option value="' + p.id + '">' + p.name + ' (' + p.finish + ')</option>'; }).join('');
-  F.size.innerHTML = SIZES.map(function (s) { return '<option value="' + s + '">' + s + ' mm</option>'; }).join('');
-  var qty = 1;
-  function buildMsg() {
-    var p = byId(F.product.value), v = function (x) { return (x.value || '').trim() || '-'; };
-    return '*NEW COD ORDER | 7EVEN*\n' +
-      '━━━━━━━━━━━━━━\n' +
-      '*Product:* ' + p.name + ' (' + p.finish + ')\n' +
-      '*Code:* ' + p.id + '\n' +
-      '*Case size:* ' + F.size.value + ' mm\n' +
-      '*Quantity:* ' + qty + '\n' +
-      '(Cash on Delivery, free delivery — please confirm price)\n' +
-      '━━━━━━━━━━━━━━\n' +
-      '*Name:* ' + v(F.name) + '\n' +
-      '*Phone:* ' + v(F.phone) + '\n' +
-      '*City:* ' + v(F.city) + '\n' +
-      '*Address:* ' + v(F.address) + '\n' +
-      '━━━━━━━━━━━━━━\n' +
-      'Please confirm the price and my order. Thank you!';
-  }
-  function updateOrder() { F.qty.textContent = qty; $('#msg-preview').textContent = buildMsg(); }
-  ['input', 'change'].forEach(function (ev) { $('#order-form').addEventListener(ev, updateOrder); });
-  $$('[data-qty]').forEach(function (b) { b.addEventListener('click', function () { qty = Math.max(1, Math.min(5, qty + (+b.dataset.qty))); updateOrder(); }); });
-
-  function setErr(id, field, msg) { $('#e-' + id).textContent = msg || ''; field.setAttribute('aria-invalid', msg ? 'true' : 'false'); return !msg; }
-  function validate() {
-    var phone = F.phone.value.replace(/[\s-]/g, '');
-    var ok = [
-      setErr('name', F.name, F.name.value.trim().length < 3 ? 'Please enter your full name.' : ''),
-      setErr('phone', F.phone, /^(\+92|0092|92|0)?3\d{9}$/.test(phone) ? '' : 'Enter a valid mobile number, for example 0325 8582375.'),
-      setErr('city', F.city, F.city.value.trim().length < 2 ? 'Please enter your city.' : ''),
-      setErr('address', F.address, F.address.value.trim().length < 10 ? 'Add your full address so the courier can find you.' : '')
-    ];
-    var bad = [F.name, F.phone, F.city, F.address].filter(function (f) { return f.getAttribute('aria-invalid') === 'true'; })[0];
-    if (bad) bad.focus();
-    return ok.every(Boolean);
-  }
-  $('#order-form').addEventListener('submit', function (e) {
-    e.preventDefault(); if (!validate()) return;
-    openWA(buildMsg()); toast('Opening WhatsApp with your order'); closeModals();
+  document.addEventListener('click',function(e){
+    var el=e.target.closest('[data-action]');
+    if(el){
+      var a=el.dataset.action;
+      if(a==='open-size'){sizeDraft=state.size;$('#wrist').value=Math.max(13,Math.min(21,14+(state.size-38)/.923)).toFixed(1);renderFit();closeMenu();openModal('size-modal')}
+      else if(a==='use-size'){state.size=sizeDraft;closeModals();toast('Case size set to '+state.size+' mm')}
+      else if(a==='open-order'){closeMenu();openOrder(el.dataset.id)}
+      else if(a==='close-modal')closeModals();
+      else if(a==='chat')toggleChat();
+      else if(a==='menu')toggleMenu();
+    } else if(!e.target.closest('#chat-panel'))closeChat();
+    if(e.target.closest('#mobile-menu a'))closeMenu();
   });
-  ['name', 'phone', 'city', 'address'].forEach(function (k) { F[k].addEventListener('input', function () { if (F[k].getAttribute('aria-invalid') === 'true') setErr(k, F[k], ''); }); });
+  function toggleMenu(){var m=$('#mobile-menu');m.classList.toggle('hidden');var o=m.classList.contains('hidden');$('#menu-btn').innerHTML='<i data-lucide="'+(o?'menu':'x')+'" class="h-5 w-5 text-gold-light"></i>';icons()}
+  function closeMenu(){var m=$('#mobile-menu');if(!m.classList.contains('hidden'))m.classList.add('hidden')}
 
-  function openOrder(id) {
-    F.product.value = id || PRODUCTS[0].id; F.size.value = state.size; qty = 1; updateOrder(); openModal('order-modal');
+  function updatePKT(){var pk=new Date(Date.now()+5*3600000);var t=String(pk.getUTCHours()).padStart(2,'0')+':'+String(pk.getUTCMinutes()).padStart(2,'0')+':'+String(pk.getUTCSeconds()).padStart(2,'0');$$('.pkt-clock').forEach(function(el){el.textContent=t})}
+  updatePKT();setInterval(updatePKT,1000);
+
+  function boot(){
+    $('#yr').textContent=new Date().getFullYear();
+    renderFit();updateOrder();icons();
+    setTimeout(function(){
+      measurePin();updateTargets();
+      currentX=targetX;currentWave=targetWave;
+      tick();
+    },200);
+    window.addEventListener('scroll',updateTargets,{passive:true});
+    window.addEventListener('resize',function(){measurePin();updateTargets()});
   }
-
-  var QUICK = [
-    ['Is this watch in stock?', 'Hello 7Even, is the watch I saw on your website in stock?'],
-    ['How long is delivery?', 'Hello 7Even, how long will delivery take to my city?'],
-    ['Help me choose a size', 'Hello 7Even, please help me choose the right case size for my wrist.'],
-    ['I want to place an order', 'Hello 7Even, I want to place a Cash on Delivery order.']
-  ];
-  $('#chat-quick').innerHTML = QUICK.map(function (q) { return '<a href="' + waUrl(q[1]) + '" target="_blank" rel="noopener" class="pill flex min-h-[44px] items-center justify-between gap-2 rounded-2xl px-4 py-2.5 text-sm text-white/85 transition hover:border-gold hover:text-gold-light">' + q[0] + '<i data-lucide="chevron-right" class="h-4 w-4 text-gold"></i></a>'; }).join('') +
-    '<a href="https://wa.me/' + WA + '" target="_blank" rel="noopener" class="gold-btn mt-1 flex h-12 items-center justify-center gap-2 rounded-full text-sm"><svg class="h-4 w-4" fill="currentColor" aria-hidden="true"><use href="#i-wa"></use></svg>Open WhatsApp chat</a>';
-  function closeChat() { $('#chat-panel').classList.remove('open'); $('#chat-panel').setAttribute('aria-hidden', 'true'); $('#chat-btn').setAttribute('aria-expanded', 'false'); }
-  function toggleChat() { var o = $('#chat-panel').classList.toggle('open'); $('#chat-panel').setAttribute('aria-hidden', String(!o)); $('#chat-btn').setAttribute('aria-expanded', String(o)); $('#chat-nudge').classList.add('hidden'); nudgeDone = true; }
-  var nudgeDone = false;
-  setTimeout(function () { if (!nudgeDone) { $('#chat-nudge').classList.remove('hidden'); setTimeout(function () { $('#chat-nudge').classList.add('hidden'); }, 6000); } }, 9000);
-
-  document.addEventListener('click', function (e) {
-    var el = e.target.closest('[data-action]');
-    if (el) {
-      var a = el.dataset.action;
-      if (a === 'theme') { state.theme = el.dataset.theme; syncHero(); }
-      else if (a === 'open-size') { sizeDraft = state.size; $('#wrist').value = Math.max(13, Math.min(21, 14 + (state.size - 38) / .923)).toFixed(1); renderFit(); closeMenu(); openModal('size-modal'); }
-      else if (a === 'use-size') { state.size = sizeDraft; syncHero(); closeModals(); toast('Case size set to ' + state.size + ' mm'); }
-      else if (a === 'open-order') { closeMenu(); openOrder(el.dataset.id); }
-      else if (a === 'close-modal') { closeModals(); }
-      else if (a === 'chat') { toggleChat(); }
-      else if (a === 'menu') { toggleMenu(); }
-    } else if (!e.target.closest('#chat-panel')) { closeChat(); }
-    if (e.target.closest('#mobile-menu a')) closeMenu();
-  });
-  function toggleMenu() { var m = $('#mobile-menu'), o = m.classList.toggle('hidden'); $('#menu-btn').setAttribute('aria-expanded', String(!o)); $('#menu-btn').innerHTML = '<i data-lucide="' + (o ? 'menu' : 'x') + '" class="h-5 w-5 text-gold-light"></i>'; icons(); }
-  function closeMenu() { var m = $('#mobile-menu'); if (!m.classList.contains('hidden')) toggleMenu(); }
-
-  document.addEventListener('pointermove', function (e) {
-    var c = e.target.closest && e.target.closest('.glow-card'); if (!c) return;
-    var r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px');
-  }, { passive: true });
-
-  function updatePKT() {
-    var pk = new Date(Date.now() + 5 * 3600000);
-    var hh = String(pk.getUTCHours()).padStart(2, '0'), mm = String(pk.getUTCMinutes()).padStart(2, '0'), ss = String(pk.getUTCSeconds()).padStart(2, '0');
-    var txt = hh + ':' + mm + ':' + ss;
-    $$('.pkt-clock').forEach(function (el) { el.textContent = txt; });
-  }
-  updatePKT(); setInterval(updatePKT, 1000);
-
-  function boot() {
-    $('#yr').textContent = new Date().getFullYear();
-    syncHero(); renderFit(); updateOrder(); icons();
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
-  else boot();
-  window.addEventListener('load', icons);
-
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+  window.addEventListener('load',function(){icons();measurePin();updateTargets()});
 })();
 </script>
 </body>
