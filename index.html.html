@@ -12,7 +12,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -27,10 +27,30 @@
 <style>
   :root { --gold:#d4af37; --champ:#f3e5ab; --copper:#c8896a; --ink:#09090b; }
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-  body { background: var(--ink); color: #e9e6df; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; overflow-x: hidden; -webkit-tap-highlight-color: transparent; }
+  body { background: var(--ink); color: #e9e6df; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-weight: 400; overflow-x: hidden; -webkit-tap-highlight-color: transparent; }
   section[id], header[id] { scroll-margin-top: 96px; }
 
-  /* Warm ambient backdrop, same mood as the reference dashboards */
+  /* ===== LIGHT FONT WEIGHT ===== */
+  .font-display { font-family: 'Playfair Display', serif; font-weight: 400 !important; letter-spacing: .005em; }
+  h1, h2, h3, h4 { font-weight: 400; }
+  .font-semibold { font-weight: 500 !important; }
+  .font-bold, .gold-btn, strong, b { font-weight: 500; }
+
+  /* ===== PIC CRISP FIX — NO BLUR ===== */
+  img { image-rendering: auto; }
+  .card-media { overflow: hidden; background: #0b0a0b; }
+  .card-media > .zoom { transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+  .glow-card:hover .card-media > .zoom { transform: none; }
+  .glow-card:hover .card-media { filter: brightness(1.05); transition: filter .3s ease; }
+  #product-grid img, #gallery img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+  }
+
+  /* Warm ambient backdrop */
   body::before { content:""; position: fixed; inset: 0; z-index: -2; pointer-events: none;
     background:
       radial-gradient(55% 45% at 88% -5%, rgba(200,137,106,.30), transparent 70%),
@@ -39,12 +59,11 @@
   body::after { content:""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .05; mix-blend-mode: overlay;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
 
-  .font-display { font-family: 'Playfair Display', serif; }
   .glass { background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.025)); border: 1px solid rgba(255,255,255,.09); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); }
   .glass-solid { background: linear-gradient(180deg, #17130f, #0e0c0a); border: 1px solid rgba(212,175,55,.18); }
   .gold-text { background: linear-gradient(120deg, #fff7dc 0%, #f3e5ab 30%, #d4af37 65%, #b8902a 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
-  .gold-btn { background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 55%, #b8902a 100%); color: #1a1205; font-weight: 700;
+  .gold-btn { background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 55%, #b8902a 100%); color: #1a1205; font-weight: 500;
     box-shadow: 0 10px 30px -10px rgba(212,175,55,.6), inset 0 1px 0 rgba(255,255,255,.5); transition: transform .25s ease, box-shadow .25s ease, filter .25s ease; }
   .gold-btn:hover { transform: translateY(-2px); box-shadow: 0 16px 44px -8px rgba(212,175,55,.8), inset 0 1px 0 rgba(255,255,255,.6); filter: brightness(1.05); }
   .gold-btn:active { transform: translateY(0) scale(.98); }
@@ -54,17 +73,12 @@
 
   :focus-visible { outline: 2px solid var(--champ); outline-offset: 3px; border-radius: 12px; }
 
-  /* Cards with cursor-following gold glow */
   .glow-card { position: relative; isolation: isolate; transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease; }
   .glow-card::before { content:""; position:absolute; inset:0; border-radius:inherit; z-index:-1; opacity:0; transition: opacity .3s;
     background: radial-gradient(420px circle at var(--mx,50%) var(--my,0%), rgba(212,175,55,.16), transparent 60%); }
   .glow-card:hover { border-color: rgba(212,175,55,.45); box-shadow: 0 30px 70px -30px rgba(212,175,55,.35); transform: translateY(-4px); }
   .glow-card:hover::before { opacity: 1; }
-  .card-media { overflow: hidden; }
-  .card-media > .zoom { transition: transform .8s cubic-bezier(.2,.7,.2,1); }
-  .glow-card:hover .zoom { transform: scale(1.09); }
 
-  /* Hero */
   .hero-panel { background:
       radial-gradient(60% 80% at 74% 35%, rgba(140,92,52,.38), transparent 65%),
       radial-gradient(40% 50% at 8% 100%, rgba(212,175,55,.09), transparent 70%),
@@ -77,7 +91,6 @@
   .swatch:hover { transform: scale(1.1); }
   .swatch[aria-checked="true"] { box-shadow: 0 0 0 2px #09090b, 0 0 0 4px var(--gold), 0 0 20px rgba(212,175,55,.55); }
 
-  /* Stock pulse */
   .pulse-dot { position: relative; width: 8px; height: 8px; border-radius: 99px; background: #ff8a4c; }
   .pulse-dot::after { content:""; position:absolute; inset:-4px; border-radius:99px; background:#ff8a4c; opacity:.5; animation: ping 1.6s cubic-bezier(0,0,.2,1) infinite; }
   @keyframes ping { 75%,100% { transform: scale(2.2); opacity: 0; } }
@@ -85,7 +98,6 @@
   .gear { animation: spin-slow 18s linear infinite; }
   .gear.rev { animation-direction: reverse; animation-duration: 12s; }
 
-  /* Modals */
   .modal { position: fixed; inset: 0; z-index: 70; display: flex; align-items: flex-end; justify-content: center; padding: 0; opacity: 0; pointer-events: none; transition: opacity .3s ease; }
   .modal[aria-hidden="false"] { opacity: 1; pointer-events: auto; }
   .modal-backdrop { position: absolute; inset: 0; background: rgba(4,4,5,.78); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
@@ -104,13 +116,13 @@
   input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 99px; background: linear-gradient(90deg, #d4af37, #f3e5ab); outline-offset: 6px; }
   input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px; border-radius: 50%; background: #09090b; border: 3px solid #f3e5ab; box-shadow: 0 0 18px rgba(212,175,55,.7); cursor: pointer; }
   input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: #09090b; border: 3px solid #f3e5ab; box-shadow: 0 0 18px rgba(212,175,55,.7); cursor: pointer; }
-  .size-chip { min-width: 62px; padding: 10px 12px; border-radius: 14px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); font-weight: 600; transition: all .2s; position: relative; }
+  .size-chip { min-width: 62px; padding: 10px 12px; border-radius: 14px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); font-weight: 500; transition: all .2s; position: relative; }
   .size-chip:hover { border-color: var(--gold); }
   .size-chip[aria-pressed="true"] { background: linear-gradient(135deg,#f3e5ab,#d4af37); color: #1a1205; border-color: transparent; box-shadow: 0 8px 24px -8px rgba(212,175,55,.7); }
-  .size-chip .rec { position:absolute; top:-8px; left:50%; transform:translateX(-50%); font-size:9px; padding:1px 6px; border-radius:99px; background:#c8896a; color:#1a0d07; font-weight:700; white-space:nowrap; }
+  .size-chip .rec { position:absolute; top:-8px; left:50%; transform:translateX(-50%); font-size:9px; padding:1px 6px; border-radius:99px; background:#c8896a; color:#1a0d07; font-weight:600; white-space:nowrap; }
 
   details.faq { border-bottom: 1px solid rgba(255,255,255,.08); }
-  details.faq summary { list-style: none; cursor: pointer; padding: 20px 4px; display:flex; justify-content: space-between; align-items:center; gap:16px; font-weight: 600; font-size: 17px; }
+  details.faq summary { list-style: none; cursor: pointer; padding: 20px 4px; display:flex; justify-content: space-between; align-items:center; gap:16px; font-weight: 500; font-size: 17px; }
   details.faq summary::-webkit-details-marker { display: none; }
   details.faq[open] summary .chev { transform: rotate(180deg); }
   .chev { transition: transform .3s; color: var(--gold); flex-shrink:0; }
@@ -137,7 +149,7 @@
   <header id="site-header" class="glass mx-auto flex max-w-[1400px] items-center justify-between gap-3 rounded-full py-2.5 pl-5 pr-2.5 transition-colors">
     <a href="#top" class="flex items-center gap-2.5" aria-label="7Even home">
       <svg width="30" height="30" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="26" stroke="url(#lg)" stroke-width="3.5"/><circle cx="32" cy="32" r="20" stroke="#d4af37" stroke-opacity=".4" stroke-width="1"/><path d="M32 32V16M32 32l10 6" stroke="#f3e5ab" stroke-width="3.5" stroke-linecap="round"/><defs><linearGradient id="lg" x1="8" y1="8" x2="56" y2="56"><stop stop-color="#f3e5ab"/><stop offset="1" stop-color="#b8902a"/></linearGradient></defs></svg>
-      <span class="font-display text-[17px] font-semibold tracking-[.18em] text-white sm:text-lg">7<span class="text-gold-light">EVEN</span></span>
+      <span class="font-display text-[17px] tracking-[.18em] text-white sm:text-lg">7<span class="text-gold-light">EVEN</span></span>
     </a>
 
     <nav class="hidden items-center gap-1 lg:flex" aria-label="Main">
@@ -149,13 +161,22 @@
     </nav>
 
     <div class="flex items-center gap-2">
-      <a href="tel:+923258582375" class="ghost-btn flex h-11 items-center gap-2 rounded-full px-4 text-sm font-semibold" aria-label="Call 7Even">
-        <i data-lucide="phone" class="h-4 w-4"></i><span class="hidden md:inline">0325 8582375</span>
+      <!-- PHONE CIRCLE ICON -->
+      <a href="tel:+923258582375" class="ghost-btn flex h-11 items-center gap-2 rounded-full px-4 text-sm font-medium" aria-label="Call 7Even">
+        <span class="flex h-6 w-6 items-center justify-center rounded-full bg-gold/15">
+          <i data-lucide="phone" class="h-3.5 w-3.5 text-gold-light"></i>
+        </span>
+        <span class="hidden md:inline">0325 8582375</span>
       </a>
+      <!-- DM FOR PRICE — WHATSAPP CIRCLE ICON -->
       <a data-wa="header" href="https://wa.me/923258582375?text=Hello%207Even%2C%20I%20want%20to%20know%20the%20price%20of%20a%20watch." target="_blank" rel="noopener" class="gold-btn hidden h-11 items-center gap-2 rounded-full px-5 text-sm sm:flex">
-        <svg class="h-4 w-4" fill="currentColor" aria-hidden="true"><use href="#i-wa"></use></svg>DM for Price
+        <span class="flex h-6 w-6 items-center justify-center rounded-full bg-[#1a1205]/15">
+          <svg class="h-4 w-4" fill="currentColor" aria-hidden="true"><use href="#i-wa"></use></svg>
+        </span>
+        DM for Price
       </a>
-      <button id="menu-btn" data-action="menu" class="pill flex h-11 w-11 items-center justify-center rounded-full lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><i data-lucide="menu" class="h-5 w-5"></i></button>
+      <!-- MENU CIRCLE ICON -->
+      <button id="menu-btn" data-action="menu" class="pill flex h-11 w-11 items-center justify-center rounded-full lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><i data-lucide="menu" class="h-5 w-5 text-gold-light"></i></button>
     </div>
   </header>
   <nav id="mobile-menu" class="glass mx-auto mt-2 hidden max-w-[1400px] rounded-3xl p-3 lg:hidden" aria-label="Mobile">
@@ -174,7 +195,6 @@
 <section class="px-3 pb-6 pt-4 sm:px-6" aria-label="Featured watch">
   <div class="hero-panel relative mx-auto flex max-w-[1400px] flex-col overflow-hidden rounded-[28px] sm:rounded-[36px] lg:min-h-[800px]">
 
-    <!-- 3D canvas -->
     <div id="hero-canvas-wrap" class="relative z-0 order-2 h-[460px] w-full sm:h-[560px] lg:absolute lg:inset-0 lg:order-none lg:h-auto">
       <canvas id="watch-canvas" aria-label="Interactive 3D luxury watch. Drag to rotate." role="img"></canvas>
       <div id="watch-fallback" class="pointer-events-none absolute inset-0 hidden items-center justify-center p-10"></div>
@@ -183,13 +203,12 @@
       </div>
     </div>
 
-    <!-- Copy -->
     <div class="relative z-10 order-1 flex flex-1 flex-col justify-center px-6 pb-2 pt-10 sm:px-12 sm:pt-14 lg:order-none lg:pt-16 lg:pointer-events-none">
       <div class="max-w-[560px] lg:pointer-events-auto">
         <div data-h class="pill mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs text-gold-light">
           <span class="pulse-dot"></span>Limited batch, only a few pieces per finish
         </div>
-        <h1 data-h class="font-display text-[44px] font-semibold leading-[1.04] text-[#fbf3da] sm:text-6xl lg:text-[76px]" style="text-shadow:0 10px 60px rgba(212,175,55,.18)">
+        <h1 data-h class="font-display text-[44px] leading-[1.04] text-[#fbf3da] sm:text-6xl lg:text-[76px]" style="text-shadow:0 10px 60px rgba(212,175,55,.18)">
           Elegance Defined in Every Second
         </h1>
         <p data-h class="mt-6 max-w-[460px] text-base leading-relaxed text-white/65 sm:text-lg">
@@ -202,21 +221,23 @@
 
         <div data-h class="mt-8 flex flex-col gap-3 sm:flex-row">
           <a id="hero-wa" data-wa="hero" href="https://wa.me/923258582375" target="_blank" rel="noopener" class="gold-btn flex h-14 items-center justify-center gap-2.5 rounded-full px-8 text-[15px]">
-            <svg class="h-5 w-5" fill="currentColor" aria-hidden="true"><use href="#i-wa"></use></svg>DM for Price
+            <span class="flex h-7 w-7 items-center justify-center rounded-full bg-[#1a1205]/15">
+              <svg class="h-5 w-5" fill="currentColor" aria-hidden="true"><use href="#i-wa"></use></svg>
+            </span>
+            DM for Price
           </a>
-          <a href="#collection" class="ghost-btn flex h-14 items-center justify-center gap-2 rounded-full px-8 text-[15px] font-semibold">Explore Collection</a>
+          <a href="#collection" class="ghost-btn flex h-14 items-center justify-center gap-2 rounded-full px-8 text-[15px] font-medium">Explore Collection</a>
         </div>
 
         <ul data-h class="mt-7 flex flex-wrap gap-2 text-xs text-white/70">
           <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="banknote" class="h-3.5 w-3.5 text-gold"></i>Cash on delivery</li>
           <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="truck" class="h-3.5 w-3.5 text-gold"></i>Free delivery</li>
           <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="refresh-cw" class="h-3.5 w-3.5 text-gold"></i>7-day replacement</li>
-          <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="clock" class="h-3.5 w-3.5 text-gold"></i>PKT <time class="pkt-clock font-semibold tabular-nums text-gold-light">--:--:--</time></li>
+          <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="clock" class="h-3.5 w-3.5 text-gold"></i>PKT <time class="pkt-clock font-medium tabular-nums text-gold-light">--:--:--</time></li>
         </ul>
       </div>
     </div>
 
-    <!-- Spec card (desktop) -->
     <aside class="glass absolute right-8 top-1/2 z-10 hidden w-60 -translate-y-1/2 rounded-3xl p-5 xl:block" aria-live="polite">
       <div class="text-xs text-white/45">Selected</div>
       <div class="font-display mt-1 text-xl text-white" id="spec-name">7Even Sovereign</div>
@@ -228,17 +249,16 @@
       </ul>
       <div class="mt-4 flex items-center justify-between border-t border-white/10 pt-4 text-xs text-white/45">
         <span>Pakistan Standard Time</span>
-        <time class="pkt-clock font-semibold tabular-nums text-gold-light">--:--:--</time>
+        <time class="pkt-clock font-medium tabular-nums text-gold-light">--:--:--</time>
       </div>
     </aside>
 
-    <!-- Customizer dock -->
     <div class="relative z-10 order-3 px-3 pb-3 pt-2 sm:px-6 sm:pb-6 lg:order-none lg:px-10 lg:pb-10">
       <div class="glass mx-auto flex flex-wrap items-center justify-between gap-x-6 gap-y-4 rounded-[26px] px-4 py-4 sm:px-6 lg:max-w-none">
         <div class="flex items-center gap-4">
           <div>
             <div class="text-xs text-white/45">Finish</div>
-            <div id="finish-label" class="text-sm font-semibold text-white">Gold</div>
+            <div id="finish-label" class="text-sm font-medium text-white">Gold</div>
           </div>
           <div class="flex items-center gap-2.5" role="radiogroup" aria-label="Choose finish">
             <button class="swatch" data-action="theme" data-theme="gold" role="radio" aria-checked="true" aria-label="Gold" style="--sw:linear-gradient(135deg,#f3e5ab,#d4af37 55%,#8a6d1f)"></button>
@@ -253,14 +273,14 @@
           <span class="pill flex h-11 w-11 items-center justify-center rounded-full transition group-hover:border-gold"><i data-lucide="ruler" class="h-5 w-5 text-gold"></i></span>
           <span>
             <span class="block text-xs text-white/45">Case size</span>
-            <span class="block text-sm font-semibold text-white"><span id="size-label">42</span> mm <span class="font-normal text-gold-light/80">· find your fit</span></span>
+            <span class="block text-sm font-medium text-white"><span id="size-label">42</span> mm <span class="font-normal text-gold-light/80">· find your fit</span></span>
           </span>
         </button>
 
         <div class="hidden h-9 w-px bg-white/10 sm:block"></div>
 
         <div class="flex w-full gap-2 sm:w-auto">
-          <button data-action="spin" class="ghost-btn flex h-12 flex-1 items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold sm:flex-none"><i data-lucide="rotate-3d" class="h-4 w-4"></i>360° spin</button>
+          <button data-action="spin" class="ghost-btn flex h-12 flex-1 items-center justify-center gap-2 rounded-full px-5 text-sm font-medium sm:flex-none"><i data-lucide="rotate-3d" class="h-4 w-4"></i>360° spin</button>
           <button data-action="open-order" class="gold-btn flex h-12 flex-1 items-center justify-center gap-2 rounded-full px-6 text-sm sm:flex-none">Buy Now</button>
         </div>
       </div>
@@ -272,28 +292,28 @@
 <section id="why" class="px-3 py-10 sm:px-6 sm:py-16" aria-labelledby="why-title">
   <div class="mx-auto max-w-[1400px]">
     <div class="mb-10 max-w-2xl px-2" data-reveal>
-      <h2 id="why-title" class="font-display text-3xl font-semibold text-white sm:text-5xl">Buy with complete peace of mind</h2>
+      <h2 id="why-title" class="font-display text-3xl text-white sm:text-5xl">Buy with complete peace of mind</h2>
       <p class="mt-4 text-white/60">You see the watch, confirm on WhatsApp, and pay only when it is in your hands.</p>
     </div>
     <div class="glass grid overflow-hidden rounded-[32px] sm:grid-cols-2 lg:grid-cols-4" data-reveal>
       <div class="border-b border-white/[.07] p-7 sm:border-r lg:border-b-0">
         <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 text-gold"><i data-lucide="badge-check" class="h-6 w-6"></i></div>
-        <h3 class="text-lg font-semibold text-white">100% original quality</h3>
+        <h3 class="text-lg font-medium text-white">100% original quality</h3>
         <p class="mt-2 text-sm leading-relaxed text-white/60">Every watch is inspected before dispatch and ships in a protective gift box.</p>
       </div>
       <div class="border-b border-white/[.07] p-7 lg:border-b-0 lg:border-r">
         <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 text-gold"><i data-lucide="truck" class="h-6 w-6"></i></div>
-        <h3 class="text-lg font-semibold text-white">Free nationwide delivery</h3>
+        <h3 class="text-lg font-medium text-white">Free nationwide delivery</h3>
         <p class="mt-2 text-sm leading-relaxed text-white/60">To your door in any city in Pakistan, usually within 2 to 4 working days.</p>
       </div>
       <div class="border-b border-white/[.07] p-7 sm:border-r sm:border-b-0">
         <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 text-gold"><i data-lucide="banknote" class="h-6 w-6"></i></div>
-        <h3 class="text-lg font-semibold text-white">Cash on delivery</h3>
+        <h3 class="text-lg font-medium text-white">Cash on delivery</h3>
         <p class="mt-2 text-sm leading-relaxed text-white/60">No advance payment. Hand the cash to the courier when your watch arrives.</p>
       </div>
       <div class="p-7">
         <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 text-gold"><i data-lucide="shield-check" class="h-6 w-6"></i></div>
-        <h3 class="text-lg font-semibold text-white">7-day replacement warranty</h3>
+        <h3 class="text-lg font-medium text-white">7-day replacement warranty</h3>
         <p class="mt-2 text-sm leading-relaxed text-white/60">Faulty or wrong piece? Message us within 7 days and we replace it.</p>
       </div>
     </div>
@@ -305,10 +325,10 @@
   <div class="mx-auto max-w-[1400px]">
     <div class="mb-10 flex flex-col justify-between gap-5 px-2 sm:flex-row sm:items-end" data-reveal>
       <div class="max-w-2xl">
-        <h2 id="col-title" class="font-display text-3xl font-semibold text-white sm:text-5xl">The 7Even collection</h2>
-        <p class="mt-4 text-white/60">Four signature pieces. Message us on WhatsApp for pricing and current availability.</p>
+        <h2 id="col-title" class="font-display text-3xl text-white sm:text-5xl">The 7Even collection</h2>
+        <p class="mt-4 text-white/60">Our signature pieces. Message us on WhatsApp for pricing and current availability.</p>
       </div>
-      <button data-action="open-size" class="ghost-btn flex h-12 items-center gap-2 self-start rounded-full px-6 text-sm font-semibold sm:self-auto"><i data-lucide="ruler" class="h-4 w-4"></i>Wrist size guide</button>
+      <button data-action="open-size" class="ghost-btn flex h-12 items-center gap-2 self-start rounded-full px-6 text-sm font-medium sm:self-auto"><i data-lucide="ruler" class="h-4 w-4"></i>Wrist size guide</button>
     </div>
     <div id="product-grid" class="grid gap-5 sm:grid-cols-2 xl:grid-cols-4"></div>
   </div>
@@ -318,24 +338,24 @@
 <section id="how" class="px-3 py-10 sm:px-6 sm:py-16" aria-labelledby="how-title">
   <div class="glass-solid mx-auto grid max-w-[1400px] gap-10 rounded-[36px] p-7 sm:p-12 lg:grid-cols-[1fr_1.5fr] lg:gap-16" data-reveal>
     <div>
-      <h2 id="how-title" class="font-display text-3xl font-semibold text-white sm:text-4xl">Order in under two minutes</h2>
+      <h2 id="how-title" class="font-display text-3xl text-white sm:text-4xl">Order in under two minutes</h2>
       <p class="mt-4 text-white/60">No account, no card details. Just your address and a WhatsApp message.</p>
       <button data-action="open-order" class="gold-btn mt-8 flex h-14 items-center gap-2 rounded-full px-8">Place a COD order</button>
     </div>
     <ol class="grid gap-6 sm:grid-cols-3">
       <li class="relative rounded-3xl bg-white/[.03] p-6">
         <div class="font-display text-4xl text-gold/70">1</div>
-        <h3 class="mt-3 font-semibold text-white">Choose your watch</h3>
+        <h3 class="mt-3 font-medium text-white">Choose your watch</h3>
         <p class="mt-2 text-sm text-white/60">Pick a finish and case size, then tap Buy Now.</p>
       </li>
       <li class="relative rounded-3xl bg-white/[.03] p-6">
         <div class="font-display text-4xl text-gold/70">2</div>
-        <h3 class="mt-3 font-semibold text-white">We confirm on WhatsApp</h3>
+        <h3 class="mt-3 font-medium text-white">We confirm on WhatsApp</h3>
         <p class="mt-2 text-sm text-white/60">Your order arrives as a ready message. We confirm the address and dispatch.</p>
       </li>
       <li class="relative rounded-3xl bg-white/[.03] p-6">
         <div class="font-display text-4xl text-gold/70">3</div>
-        <h3 class="mt-3 font-semibold text-white">Pay on delivery</h3>
+        <h3 class="mt-3 font-medium text-white">Pay on delivery</h3>
         <p class="mt-2 text-sm text-white/60">The courier brings it to your door. Pay cash on arrival.</p>
       </li>
     </ol>
@@ -343,15 +363,14 @@
 </section>
 
 <!-- ============ REVIEWS ============ -->
-<!-- NOTE: The reviews below are SAMPLE placeholders. Replace them with real customer reviews before going live. -->
 <section id="reviews" class="px-3 py-10 sm:px-6 sm:py-16" aria-labelledby="rev-title">
   <div class="mx-auto max-w-[1400px]">
     <div class="mb-10 flex flex-col justify-between gap-6 px-2 sm:flex-row sm:items-end" data-reveal>
       <div>
-        <h2 id="rev-title" class="font-display text-3xl font-semibold text-white sm:text-5xl">Loved by watch lovers across Pakistan</h2>
+        <h2 id="rev-title" class="font-display text-3xl text-white sm:text-5xl">Loved by watch lovers across Pakistan</h2>
       </div>
       <div class="glass flex items-center gap-4 self-start rounded-3xl px-6 py-4">
-        <div class="font-display text-5xl font-semibold text-gold-light">4.8</div>
+        <div class="font-display text-5xl text-gold-light">4.8</div>
         <div>
           <div class="flex gap-0.5" id="avg-stars"></div>
           <div class="mt-1 text-xs text-white/55">Average customer rating</div>
@@ -361,7 +380,7 @@
     <div id="review-grid" class="grid gap-5 md:grid-cols-2 lg:grid-cols-3"></div>
 
     <div class="mt-16 px-2" data-reveal>
-      <h3 class="font-display text-2xl font-semibold text-white sm:text-3xl">7Even on the wrist</h3>
+      <h3 class="font-display text-2xl text-white sm:text-3xl">7Even on the wrist</h3>
       <p class="mt-2 text-sm text-white/55">A closer look at the collection.</p>
     </div>
     <div id="gallery" class="mt-6 grid auto-rows-[150px] grid-cols-2 gap-3 sm:auto-rows-[190px] md:grid-cols-4"></div>
@@ -372,7 +391,7 @@
 <section id="faq" class="px-3 py-10 sm:px-6 sm:py-16" aria-labelledby="faq-title">
   <div class="mx-auto grid max-w-[1100px] gap-10 lg:grid-cols-[1fr_1.6fr]">
     <div data-reveal>
-      <h2 id="faq-title" class="font-display text-3xl font-semibold text-white sm:text-4xl">Questions before you order</h2>
+      <h2 id="faq-title" class="font-display text-3xl text-white sm:text-4xl">Questions before you order</h2>
       <p class="mt-4 text-white/60">Still unsure? Message us and a real person replies on WhatsApp.</p>
     </div>
     <div data-reveal>
@@ -387,11 +406,11 @@
 <!-- ============ FINAL CTA ============ -->
 <section class="px-3 pb-16 pt-6 sm:px-6" aria-label="Order now">
   <div class="hero-panel relative mx-auto max-w-[1400px] overflow-hidden rounded-[36px] px-6 py-14 text-center sm:px-12 sm:py-20" data-reveal>
-    <h2 class="font-display mx-auto max-w-3xl text-3xl font-semibold text-[#fbf3da] sm:text-5xl">Your next watch is one message away</h2>
+    <h2 class="font-display mx-auto max-w-3xl text-3xl text-[#fbf3da] sm:text-5xl">Your next watch is one message away</h2>
     <p class="mx-auto mt-5 max-w-xl text-white/65">Free delivery, cash on delivery and a 7-day replacement warranty on every order.</p>
     <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
       <button data-action="open-order" class="gold-btn flex h-14 w-full items-center justify-center gap-2 rounded-full px-9 sm:w-auto">Buy Now</button>
-      <a data-wa="header" href="https://wa.me/923258582375" target="_blank" rel="noopener" class="ghost-btn flex h-14 w-full items-center justify-center gap-2 rounded-full px-9 font-semibold sm:w-auto"><svg class="h-5 w-5" fill="currentColor" aria-hidden="true"><use href="#i-wa"></use></svg>Chat on WhatsApp</a>
+      <a data-wa="header" href="https://wa.me/923258582375" target="_blank" rel="noopener" class="ghost-btn flex h-14 w-full items-center justify-center gap-2 rounded-full px-9 font-medium sm:w-auto"><svg class="h-5 w-5" fill="currentColor" aria-hidden="true"><use href="#i-wa"></use></svg>Chat on WhatsApp</a>
     </div>
   </div>
 </section>
@@ -401,12 +420,12 @@
 <footer class="border-t border-white/[.07] px-6 pb-28 pt-14 sm:pb-16">
   <div class="mx-auto grid max-w-[1400px] gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
     <div>
-      <div class="font-display text-2xl font-semibold tracking-[.18em] text-white">7<span class="font-normal text-gold-light/80">EVEN</span></div>
+      <div class="font-display text-2xl tracking-[.18em] text-white">7<span class="font-normal text-gold-light/80">EVEN</span></div>
       <p class="mt-4 max-w-sm text-sm leading-relaxed text-white/55">Premium-styled watches delivered across Pakistan with cash on delivery. DM us for pricing and availability.</p>
-      <a href="https://www.instagram.com/7even.pk?stkn=ejRrYmdoc3d5Nzc5" target="_blank" rel="noopener" class="ghost-btn mt-5 inline-flex h-11 items-center gap-2 rounded-full px-5 text-sm font-semibold" aria-label="Follow 7Even on Instagram"><i data-lucide="instagram" class="h-4 w-4"></i>Follow @7even.pk</a>
+      <a href="https://www.instagram.com/7even.pk?stkn=ejRrYmdoc3d5Nzc5" target="_blank" rel="noopener" class="ghost-btn mt-5 inline-flex h-11 items-center gap-2 rounded-full px-5 text-sm font-medium" aria-label="Follow 7Even on Instagram"><i data-lucide="instagram" class="h-4 w-4"></i>Follow @7even.pk</a>
     </div>
     <div>
-      <div class="mb-4 text-sm font-semibold text-white">Explore</div>
+      <div class="mb-4 text-sm font-medium text-white">Explore</div>
       <ul class="space-y-2.5 text-sm text-white/60">
         <li><a class="hover:text-gold-light" href="#collection">Collection</a></li>
         <li><a class="hover:text-gold-light" href="#why">Why 7Even</a></li>
@@ -415,7 +434,7 @@
       </ul>
     </div>
     <div>
-      <div class="mb-4 text-sm font-semibold text-white">Contact</div>
+      <div class="mb-4 text-sm font-medium text-white">Contact</div>
       <ul class="space-y-2.5 text-sm text-white/60">
         <li><a class="flex items-center gap-2 hover:text-gold-light" href="tel:+923258582375"><i data-lucide="phone" class="h-4 w-4 text-gold"></i>+92 325 8582375</a></li>
         <li><a class="flex items-center gap-2 hover:text-gold-light" data-wa="header" href="https://wa.me/923258582375" target="_blank" rel="noopener"><svg class="h-4 w-4 text-gold" fill="currentColor" aria-hidden="true"><use href="#i-wa"></use></svg>WhatsApp us</a></li>
@@ -436,7 +455,7 @@
     <div class="flex items-center gap-3">
       <div class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-gold-light to-gold text-[#1a1205]"><i data-lucide="headphones" class="h-5 w-5"></i></div>
       <div>
-        <div class="font-semibold text-white">7Even Concierge</div>
+        <div class="font-medium text-white">7Even Concierge</div>
         <div class="flex items-center gap-1.5 text-xs text-emerald-400"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Replies on WhatsApp</div>
       </div>
     </div>
@@ -458,7 +477,7 @@
   <div class="modal-card glass-solid p-6 sm:p-8">
     <div class="flex items-start justify-between gap-4">
       <div>
-        <h2 id="size-title" class="font-display text-2xl font-semibold text-white sm:text-3xl">Find your fit</h2>
+        <h2 id="size-title" class="font-display text-2xl text-white sm:text-3xl">Find your fit</h2>
         <p class="mt-1 text-sm text-white/55">Sizes from 38 mm to 44 mm. Slide to your wrist size.</p>
       </div>
       <button data-action="close-modal" class="pill flex h-11 w-11 shrink-0 items-center justify-center rounded-full" aria-label="Close"><i data-lucide="x" class="h-5 w-5"></i></button>
@@ -469,7 +488,7 @@
     <div class="mt-6">
       <div class="mb-3 flex items-center justify-between text-sm">
         <label for="wrist" class="text-white/70">Wrist circumference</label>
-        <span class="font-semibold text-gold-light"><span id="wrist-val">16.0</span> cm</span>
+        <span class="font-medium text-gold-light"><span id="wrist-val">16.0</span> cm</span>
       </div>
       <input id="wrist" type="range" min="13" max="21" step="0.5" value="16" aria-describedby="wrist-tip">
       <p id="wrist-tip" class="mt-2 text-xs text-white/45">Wrap a string around your wrist just above the bone, then measure it against a ruler.</p>
@@ -488,7 +507,7 @@
   <div class="modal-card glass-solid p-6 sm:p-8">
     <div class="flex items-start justify-between gap-4">
       <div>
-        <h2 id="order-title" class="font-display text-2xl font-semibold text-white sm:text-3xl">Fast COD order</h2>
+        <h2 id="order-title" class="font-display text-2xl text-white sm:text-3xl">Fast COD order</h2>
         <p class="mt-1 text-sm text-white/55">Fill in your details. We open WhatsApp with your order ready to send — price is confirmed there.</p>
       </div>
       <button data-action="close-modal" class="pill flex h-11 w-11 shrink-0 items-center justify-center rounded-full" aria-label="Close"><i data-lucide="x" class="h-5 w-5"></i></button>
@@ -508,7 +527,7 @@
           <span class="mb-1.5 block text-sm text-white/70" id="qty-label">Quantity</span>
           <div class="field flex items-center justify-between !py-1.5" role="group" aria-labelledby="qty-label">
             <button type="button" data-qty="-1" class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-white/10" aria-label="Decrease quantity"><i data-lucide="minus" class="h-4 w-4"></i></button>
-            <output id="f-qty" class="text-lg font-semibold">1</output>
+            <output id="f-qty" class="text-lg font-medium">1</output>
             <button type="button" data-qty="1" class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-white/10" aria-label="Increase quantity"><i data-lucide="plus" class="h-4 w-4"></i></button>
           </div>
         </div>
@@ -584,7 +603,6 @@
   var camera = new THREE.PerspectiveCamera(28, 1, 0.1, 100);
   camera.position.set(0, 0, 13);
 
-  /* ---------- Procedural studio environment for metal reflections ---------- */
   (function buildEnv() {
     var c = document.createElement('canvas'); c.width = 640; c.height = 320;
     var g = c.getContext('2d');
@@ -603,7 +621,6 @@
     pm.dispose(); tex.dispose();
   })();
 
-  /* ---------- Themes ---------- */
   var THEMES = {
     gold:   { name: 'Gold',           caseC: 0xdcb64c, rough: .2,  bezel: 0xf5dc8c, hands: 0xf6e7b0, sec: 0xc8896a,
               dial: { a: '#17110b', b: '#3d2c18', idx: '#f3e5ab', txt: '#d4af37', ring: '#8a6d1f' },
@@ -634,8 +651,8 @@
       var px = x - w / 2; for (k = 0; k < txt.length; k++) { g.fillText(txt[k], px, y); px += g.measureText(txt[k]).width + sp; }
     }
     g.textAlign = 'left'; g.textBaseline = 'middle';
-    g.fillStyle = d.txt; g.font = '600 58px "Playfair Display", Georgia, serif'; spaced('7EVEN', C, C - 235, 16);
-    g.font = '500 26px "Plus Jakarta Sans", Arial, sans-serif'; g.fillStyle = d.idx; g.globalAlpha = .8; spaced('AUTOMATIC', C, C + 250, 10);
+    g.fillStyle = d.txt; g.font = '500 58px "Playfair Display", Georgia, serif'; spaced('7EVEN', C, C - 235, 16);
+    g.font = '400 26px "Plus Jakarta Sans", Arial, sans-serif'; g.fillStyle = d.idx; g.globalAlpha = .8; spaced('AUTOMATIC', C, C + 250, 10);
     g.globalAlpha = 1;
     var t = new THREE.CanvasTexture(cv); t.encoding = THREE.sRGBEncoding; t.anisotropy = renderer.capabilities.getMaxAnisotropy(); return t;
   }
@@ -654,7 +671,6 @@
     var t = new THREE.CanvasTexture(cv); t.encoding = THREE.sRGBEncoding; t.anisotropy = 8; return t;
   }
 
-  /* ---------- Materials ---------- */
   var caseMat = new THREE.MeshStandardMaterial({ color: 0xdcb64c, metalness: .78, roughness: .5, envMapIntensity: .55 });
   var bezelMat = new THREE.MeshStandardMaterial({ color: 0xf5dc8c, metalness: .8, roughness: .42, envMapIntensity: .65, side: THREE.DoubleSide });
   var dialMat = new THREE.MeshStandardMaterial({ metalness: .25, roughness: .62, envMapIntensity: .4 });
@@ -663,7 +679,6 @@
   var strapMat = new THREE.MeshStandardMaterial({ roughness: .68, metalness: .05, bumpScale: 1.6 });
   var glassMat = new THREE.MeshPhysicalMaterial({ color: 0xffffff, metalness: 0, roughness: .18, transparent: true, opacity: .06, clearcoat: .4, clearcoatRoughness: .2, envMapIntensity: .6, depthWrite: false });
 
-  /* ---------- Geometry ---------- */
   var rig = new THREE.Group(); scene.add(rig);
   var watch = new THREE.Group(); rig.add(watch);
 
@@ -702,7 +717,7 @@
   function drawDate() {
     var g = dateCv.getContext('2d'); g.fillStyle = '#f2efe8'; g.fillRect(0, 0, 128, 96);
     var day = new Date(Date.now() + 5 * 3600000).getUTCDate();
-    g.fillStyle = '#111'; g.font = '700 62px Arial'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(String(day), 64, 52);
+    g.fillStyle = '#111'; g.font = '500 62px Arial'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(String(day), 64, 52);
     dateTex.needsUpdate = true;
   }
   drawDate(); setInterval(drawDate, 60000);
@@ -744,14 +759,12 @@
   var pin = new THREE.Mesh(new THREE.CylinderGeometry(.095, .095, .09, 32), bezelMat); pin.rotation.x = Math.PI / 2; pin.position.z = .3;
   watch.add(hourP, minP, secP, pin);
 
-  /* ---------- Lighting (ambient + gold directional reflections) ---------- */
   scene.add(new THREE.AmbientLight(0x3a2f20, 1.25));
   var key = new THREE.DirectionalLight(0xf3e5ab, 1.05); key.position.set(4, 5, 7); scene.add(key);
   var rim = new THREE.DirectionalLight(0xc8896a, .8); rim.position.set(-6, 2, -3); scene.add(rim);
   var fill = new THREE.DirectionalLight(0xffffff, .4); fill.position.set(-4, -3, 5); scene.add(fill);
   var glow = new THREE.PointLight(0xd4af37, .5, 14); glow.position.set(2, 2, 4); scene.add(glow);
 
-  /* ---------- Theme switching ---------- */
   var pulseRAF = 0;
   function pulseScale() {
     if (reduce) return;
@@ -777,7 +790,6 @@
   setTheme('gold', true);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { setTheme(current, true); });
 
-  /* ---------- Interaction ---------- */
   var S = { tx: 0, ty: 0, px: 0, py: 0, drag: 0, spin: 0, dragging: false, lastX: 0 };
   window.addEventListener('pointermove', function (e) {
     if (e.pointerType === 'touch') return;
@@ -797,7 +809,6 @@
     requestAnimationFrame(step);
   }
 
-  /* ---------- Sizing ---------- */
   var wide = false;
   function resize() {
     var w = wrap.clientWidth, h = wrap.clientHeight; if (!w || !h) return;
@@ -810,7 +821,6 @@
   if (window.ResizeObserver) new ResizeObserver(resize).observe(wrap); else window.addEventListener('resize', resize);
   resize();
 
-  /* ---------- Loop ---------- */
   var clock = new THREE.Clock(), raf = 0, running = false;
   function tick() {
     if (!running) return;
@@ -822,7 +832,7 @@
     rig.rotation.z = (wide ? -.3 : -.18) + S.tx * .05;
     glow.position.set(S.tx * 1.5 + 1, -S.ty * 1.2 + 2, 4);
 
-    var pktSecs = (Math.floor(Date.now() / 1000) + 5 * 3600) % 86400; // seconds since PKT midnight, UTC+5 fixed
+    var pktSecs = (Math.floor(Date.now() / 1000) + 5 * 3600) % 86400;
     var s = pktSecs % 60, m = (Math.floor(pktSecs / 60)) % 60, h = (Math.floor(pktSecs / 3600)) % 12;
     secP.rotation.z = -(s / 60) * Math.PI * 2; minP.rotation.z = -((m + s / 60) / 60) * Math.PI * 2; hourP.rotation.z = -((h + m / 60) / 12) * Math.PI * 2;
 
@@ -850,46 +860,44 @@
   function openWA(t) { var w = window.open(waUrl(t), '_blank'); if (!w) window.location.href = waUrl(t); }
   function icons() { if (window.lucide) lucide.createIcons(); }
 
-  /* ---------- DATA (edit here) ---------- */
-  /* Real product photos, hotlinked (keeps this file light — no base64 bloat). */
+  /* ============ NEW POSTIMAGES LINKS — CRISP & SHARP ============ */
   var PRODUCTS = [
-    { id: '7E-01', name: '7Even Classic Steel',    theme: 'silver', finish: 'Silver',           photo: 'https://i.ibb.co/TDWN8JyJ/Watch-1.webp',  tags: ['Steel case', 'Steel bracelet', 'Gift box'] },
-    { id: '7E-02', name: '7Even Gilt Sport',        theme: 'gold',   finish: 'Gold',             photo: 'https://i.ibb.co/WvwSZJWn/Watch-2.webp',  tags: ['Gold-tone case', 'Sport bezel', 'Gift box'] },
-    { id: '7E-03', name: '7Even Noir Diver',        theme: 'black',  finish: 'Obsidian Black',   photo: 'https://i.ibb.co/hJdfGjJ6/Watch-3-same.webp', tags: ['Black case', 'Diver-style bezel', 'Gift box'] },
-    { id: '7E-04', name: '7Even Noir Diver II',     theme: 'black',  finish: 'Black Steel',      photo: 'https://i.ibb.co/8L37CrGc/Watch-3.webp',  tags: ['Black steel case', 'Sport bracelet', 'Gift box'] },
-    { id: '7E-05', name: '7Even Two-Tone Gold',     theme: 'gold',   finish: 'Two-Tone Gold',    photo: 'https://i.ibb.co/RpQsSbBW/watch-4.webp',  tags: ['Two-tone case', 'Steel & gold bracelet', 'Gift box'] },
-    { id: '7E-06', name: '7Even Argent Sport',      theme: 'silver', finish: 'Silver Sport',     photo: 'https://i.ibb.co/V0t79bRQ/Watch-5.webp',  tags: ['Steel case', 'Sport bezel', 'Gift box'] },
-    { id: '7E-07', name: '7Even Rose Elite',        theme: 'rose',   finish: 'Rose Gold',        photo: 'https://i.ibb.co/fzPNrnFk/watch-6.webp',  tags: ['Rose gold-tone case', 'Steel bracelet', 'Gift box'] },
-    { id: '7E-08', name: '7Even Onyx Square',       theme: 'black',  finish: 'Black Square',     photo: 'https://i.ibb.co/WvFzqzX7/Watch-7.webp',  tags: ['Square case', 'Black dial', 'Gift box'] },
-    { id: '7E-09', name: '7Even Gold Square',       theme: 'gold',   finish: 'Gold Square',      photo: 'https://i.ibb.co/zTqnx04V/Watch-8.webp',  tags: ['Square case', 'Gold-tone finish', 'Gift box'] },
-    { id: '7E-10', name: '7Even Sovereign Gold',    theme: 'gold',   finish: 'Sovereign Gold',   photo: 'https://i.ibb.co/DP74wBBS/Watch-9.webp',  tags: ['Gold-tone case', 'Steel bracelet', 'Gift box'] },
-    { id: '7E-11', name: '7Even Classic Silver',    theme: 'silver', finish: 'Classic Silver',   photo: 'https://i.ibb.co/8Dx08r6H/Watch-10.webp', tags: ['Steel case', 'Classic dial', 'Gift box'] },
-    { id: '7E-12', name: '7Even Heritage Gold',     theme: 'gold',   finish: 'Heritage Gold',    photo: 'https://i.ibb.co/8LJQPp2b/Watch-11.webp', tags: ['Gold-tone case', 'Heritage dial', 'Gift box'] }
+    { id: '7E-01', name: '7Even Classic Steel',    theme: 'silver', finish: 'Silver',           photo: 'https://i.postimg.cc/fLyyfhwd/Watch-1.webp',      tags: ['Steel case', 'Steel bracelet', 'Gift box'] },
+    { id: '7E-02', name: '7Even Gilt Sport',        theme: 'gold',   finish: 'Gold',             photo: 'https://i.postimg.cc/sXxx4RVS/Watch-2.webp',      tags: ['Gold-tone case', 'Sport bezel', 'Gift box'] },
+    { id: '7E-03', name: '7Even Noir Diver',        theme: 'black',  finish: 'Obsidian Black',   photo: 'https://i.postimg.cc/Y900zwpY/Watch-3-same.webp', tags: ['Black case', 'Diver-style bezel', 'Gift box'] },
+    { id: '7E-04', name: '7Even Noir Diver II',     theme: 'black',  finish: 'Black Steel',      photo: 'https://i.postimg.cc/j5224rsh/Watch-3.webp',      tags: ['Black steel case', 'Sport bracelet', 'Gift box'] },
+    { id: '7E-05', name: '7Even Two-Tone Gold',     theme: 'gold',   finish: 'Two-Tone Gold',    photo: 'https://i.postimg.cc/k4GGvdnF/watch-4.webp',      tags: ['Two-tone case', 'Steel & gold bracelet', 'Gift box'] },
+    { id: '7E-06', name: '7Even Argent Sport',      theme: 'silver', finish: 'Silver Sport',     photo: 'https://i.postimg.cc/1tXXrZ9H/Watch-5.webp',      tags: ['Steel case', 'Sport bezel', 'Gift box'] },
+    { id: '7E-07', name: '7Even Rose Elite',        theme: 'rose',   finish: 'Rose Gold',        photo: 'https://i.postimg.cc/DZ00PK26/watch-6.webp',      tags: ['Rose gold-tone case', 'Steel bracelet', 'Gift box'] },
+    { id: '7E-08', name: '7Even Onyx Square',       theme: 'black',  finish: 'Black Square',     photo: 'https://i.postimg.cc/xC883S0t/Watch-7.webp',      tags: ['Square case', 'Black dial', 'Gift box'] },
+    { id: '7E-09', name: '7Even Gold Square',       theme: 'gold',   finish: 'Gold Square',      photo: 'https://i.postimg.cc/mDkkyGbd/Watch-8.webp',      tags: ['Square case', 'Gold-tone finish', 'Gift box'] },
+    { id: '7E-10', name: '7Even Sovereign Gold',    theme: 'gold',   finish: 'Sovereign Gold',   photo: 'https://i.postimg.cc/d133jKqH/Watch-9.webp',      tags: ['Gold-tone case', 'Steel bracelet', 'Gift box'] },
+    { id: '7E-11', name: '7Even Classic Silver',    theme: 'silver', finish: 'Classic Silver',   photo: 'https://i.postimg.cc/FR6RPnR0/Watch-10.webp',     tags: ['Steel case', 'Classic dial', 'Gift box'] },
+    { id: '7E-12', name: '7Even Heritage Gold',     theme: 'gold',   finish: 'Heritage Gold',    photo: 'https://i.postimg.cc/RFYFPbFc/Watch-11.webp',     tags: ['Gold-tone case', 'Heritage dial', 'Gift box'] }
   ];
-  var REVIEWS = [ /* SAMPLE placeholders: replace with real customer reviews before launch */
+  var REVIEWS = [
     { n: 'Hamza R.', c: 'Lahore',      s: 5, t: 'Bought the gold one for my brother\'s wedding. Looks far more expensive than the price, and the strap is soft.', d: '7Even Sovereign' },
     { n: 'Ayesha K.', c: 'Karachi',    s: 5, t: 'Order confirmed on WhatsApp within minutes and it arrived in 3 days. Paid on delivery, no stress at all.', d: '7Even Argent' },
     { n: 'Usman T.', c: 'Faisalabad',  s: 5, t: 'The black case is stunning in person. The size guide helped me pick 42 mm and it fits perfectly.', d: '7Even Obsidian' },
     { n: 'Bilal A.', c: 'Islamabad',   s: 4, t: 'Good packaging and the second hand sweeps smoothly. Would order again.', d: '7Even Sovereign' },
     { n: 'Sana M.', c: 'Multan',       s: 5, t: 'Ordered two, one for me and one as a gift. Both were exactly as shown.', d: '7Even Argent' },
-    { n: 'Zain H.', c: 'Rawalpindi',   s: 5, t: 'The rose gold skeleton gets compliments everywhere I go.', d: '7Even Skeleton Rose' }
+    { n: 'Zain H.', c: 'Rawalpindi',   s: 5, t: 'The rose gold skeleton gets compliments everywhere I go.', d: '7Even Rose Elite' }
   ];
   var GALLERY = [
-    { src: 'https://i.ibb.co/TDWN8JyJ/Watch-1.webp',  theme: 'silver', span: 'row-span-2 col-span-1' },
-    { src: 'https://i.ibb.co/WvwSZJWn/Watch-2.webp',  theme: 'gold',   span: '' },
-    { src: 'https://i.ibb.co/hJdfGjJ6/Watch-3-same.webp', theme: 'black', span: 'md:col-span-2' },
-    { src: 'https://i.ibb.co/8L37CrGc/Watch-3.webp',  theme: 'black',  span: 'row-span-2' },
-    { src: 'https://i.ibb.co/RpQsSbBW/watch-4.webp',  theme: 'gold',   span: '' },
-    { src: 'https://i.ibb.co/V0t79bRQ/Watch-5.webp',  theme: 'silver', span: 'md:col-span-2' },
-    { src: 'https://i.ibb.co/fzPNrnFk/watch-6.webp',  theme: 'rose',   span: '' },
-    { src: 'https://i.ibb.co/WvFzqzX7/Watch-7.webp',  theme: 'black',  span: 'row-span-2' },
-    { src: 'https://i.ibb.co/zTqnx04V/Watch-8.webp',  theme: 'gold',   span: 'md:col-span-2' },
-    { src: 'https://i.ibb.co/DP74wBBS/Watch-9.webp',  theme: 'gold',   span: '' },
-    { src: 'https://i.ibb.co/8Dx08r6H/Watch-10.webp', theme: 'silver', span: '' },
-    { src: 'https://i.ibb.co/8LJQPp2b/Watch-11.webp', theme: 'gold',   span: 'md:col-span-2' }
+    { src: 'https://i.postimg.cc/fLyyfhwd/Watch-1.webp',      theme: 'silver', span: 'row-span-2 col-span-1' },
+    { src: 'https://i.postimg.cc/sXxx4RVS/Watch-2.webp',      theme: 'gold',   span: '' },
+    { src: 'https://i.postimg.cc/Y900zwpY/Watch-3-same.webp', theme: 'black',  span: 'md:col-span-2' },
+    { src: 'https://i.postimg.cc/j5224rsh/Watch-3.webp',      theme: 'black',  span: 'row-span-2' },
+    { src: 'https://i.postimg.cc/k4GGvdnF/watch-4.webp',      theme: 'gold',   span: '' },
+    { src: 'https://i.postimg.cc/1tXXrZ9H/Watch-5.webp',      theme: 'silver', span: 'md:col-span-2' },
+    { src: 'https://i.postimg.cc/DZ00PK26/watch-6.webp',      theme: 'rose',   span: '' },
+    { src: 'https://i.postimg.cc/xC883S0t/Watch-7.webp',      theme: 'black',  span: 'row-span-2' },
+    { src: 'https://i.postimg.cc/mDkkyGbd/Watch-8.webp',      theme: 'gold',   span: 'md:col-span-2' },
+    { src: 'https://i.postimg.cc/d133jKqH/Watch-9.webp',      theme: 'gold',   span: '' },
+    { src: 'https://i.postimg.cc/FR6RPnR0/Watch-10.webp',     theme: 'silver', span: '' },
+    { src: 'https://i.postimg.cc/RFYFPbFc/Watch-11.webp',     theme: 'gold',   span: 'md:col-span-2' }
   ];
 
-  /* ---------- Watch artwork (SVG) ---------- */
   var PAL = {
     gold:   { a: '#f6e7b0', b: '#b8902a', dA: '#17110b', dB: '#3d2c18', idx: '#f3e5ab', strap: '#2d1b10', hi: '#4d3220', st: '#d4af37', hand: '#f3e5ab', sec: '#c8896a', bg: 'rgba(160,110,50,.55)' },
     black:  { a: '#55555e', b: '#131316', dA: '#040405', dB: '#1c1c21', idx: '#d4af37', strap: '#0d0d0f', hi: '#26262b', st: '#c8896a', hand: '#eee6d2', sec: '#d4af37', bg: 'rgba(90,90,110,.45)' },
@@ -924,39 +932,33 @@
   }
   window.__watchSVG = watchSVG;
 
-  /* ---------- State ---------- */
-  var state = { theme: 'gold', size: 42, productId: 'AT-101' };
+  var state = { theme: 'gold', size: 42, productId: '7E-10' };
   var byId = function (id) { return PRODUCTS.filter(function (p) { return p.id === id; })[0] || PRODUCTS[0]; };
 
-  /* ---------- Render: products ---------- */
   var grid = $('#product-grid');
-  /* NOTE: product photos are illustrated placeholders (see watchSVG). Swap p.photo to a real
-     image path (e.g. 'images/7e-101.jpg') per product once you upload your own clear photos —
-     the markup below already falls back to a real <img> automatically when p.photo is set. */
   grid.innerHTML = PRODUCTS.map(function (p) {
     var finish = p.finish || p.theme, tags = p.tags || [];
     var msg = 'Hello 7Even, please share the price for *' + p.name + '* (' + finish + ', code ' + p.id + ').';
     var media = p.photo
-      ? '<img src="' + p.photo + '" alt="' + p.name + ', ' + finish + '" loading="lazy" class="zoom absolute inset-0 h-full w-full object-cover">'
+      ? '<img src="' + p.photo + '" alt="' + p.name + ', ' + finish + '" loading="lazy" decoding="async" class="zoom absolute inset-0 h-full w-full object-cover">'
       : '<div class="zoom absolute inset-0 px-10 pt-6">' + watchSVG(p.theme) + '</div>';
     return '<article class="glass glow-card flex flex-col overflow-hidden rounded-[30px]">' +
       '<div class="card-media relative aspect-[4/4.6] rounded-b-[26px]" style="background:radial-gradient(70% 60% at 50% 40%,' + PAL[p.theme].bg + ',transparent 75%),linear-gradient(180deg,#131114,#0b0a0b)">' +
         media +
-        '<div class="absolute left-4 top-4 rounded-full bg-black/55 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur">' + p.id + '</div>' +
+        '<div class="absolute left-4 top-4 rounded-full bg-black/55 px-3 py-1.5 text-xs font-medium text-white backdrop-blur">' + p.id + '</div>' +
       '</div>' +
       '<div class="flex flex-1 flex-col p-6">' +
-        '<h3 class="font-display mt-1 text-2xl font-semibold text-white">' + p.name + '</h3>' +
+        '<h3 class="font-display mt-1 text-2xl text-white">' + p.name + '</h3>' +
         '<div class="text-sm text-gold-light/80">' + finish + '</div>' +
         '<div class="mt-4 flex flex-wrap gap-1.5">' + tags.map(function (t) { return '<span class="pill rounded-full px-3 py-1 text-[11px] text-white/70">' + t + '</span>'; }).join('') + '</div>' +
         '<div class="mt-5 flex items-center gap-2 text-sm text-white/55"><i data-lucide="lock" class="h-4 w-4 text-gold"></i>Price on request</div>' +
         '<div class="mt-auto flex gap-2 pt-6">' +
-          '<a href="' + waUrl(msg) + '" target="_blank" rel="noopener" class="gold-btn flex h-12 flex-1 items-center justify-center gap-2 rounded-full text-sm"><svg class="h-4 w-4" fill="currentColor" aria-hidden="true"><use href="#i-wa"></use></svg>DM for Price</a>' +
+          '<a href="' + waUrl(msg) + '" target="_blank" rel="noopener" class="gold-btn flex h-12 flex-1 items-center justify-center gap-2 rounded-full text-sm"><span class="flex h-6 w-6 items-center justify-center rounded-full bg-[#1a1205]/15"><svg class="h-4 w-4" fill="currentColor" aria-hidden="true"><use href="#i-wa"></use></svg></span>DM for Price</a>' +
           '<button data-action="open-order" data-id="' + p.id + '" class="ghost-btn flex h-12 w-12 items-center justify-center rounded-full" aria-label="Order ' + p.name + '"><i data-lucide="shopping-bag" class="h-5 w-5"></i></button>' +
         '</div>' +
       '</div></article>';
   }).join('');
 
-  /* ---------- Render: reviews + gallery ---------- */
   function stars(n, cls) { var s = ''; for (var i = 0; i < 5; i++) s += '<svg class="' + (cls || 'h-4 w-4') + '" viewBox="0 0 24 24" fill="' + (i < n ? '#d4af37' : 'none') + '" stroke="#d4af37" stroke-width="1.6" stroke-linejoin="round"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/></svg>'; return s; }
   $('#avg-stars').innerHTML = stars(5, 'h-5 w-5');
   $('#review-grid').innerHTML = REVIEWS.map(function (r) {
@@ -964,22 +966,20 @@
       '<div class="flex gap-0.5" aria-label="' + r.s + ' out of 5 stars">' + stars(r.s) + '</div>' +
       '<blockquote class="mt-4 flex-1 text-[15px] leading-relaxed text-white/80">' + r.t + '</blockquote>' +
       '<figcaption class="mt-6 flex items-center justify-between gap-3">' +
-        '<div class="flex items-center gap-3"><div class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-gold-light to-gold font-semibold text-[#1a1205]">' + r.n[0] + '</div>' +
-        '<div><div class="text-sm font-semibold text-white">' + r.n + '</div><div class="text-xs text-white/45">' + r.c + ' · ' + r.d + '</div></div></div>' +
-        '<span class="flex shrink-0 items-center gap-1 rounded-full bg-emerald-500/10 px-2.5 py-1 text-[11px] font-semibold text-emerald-400"><i data-lucide="badge-check" class="h-3.5 w-3.5"></i>Verified buyer</span>' +
+        '<div class="flex items-center gap-3"><div class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-gold-light to-gold font-medium text-[#1a1205]">' + r.n[0] + '</div>' +
+        '<div><div class="text-sm font-medium text-white">' + r.n + '</div><div class="text-xs text-white/45">' + r.c + ' · ' + r.d + '</div></div></div>' +
+        '<span class="flex shrink-0 items-center gap-1 rounded-full bg-emerald-500/10 px-2.5 py-1 text-[11px] font-medium text-emerald-400"><i data-lucide="badge-check" class="h-3.5 w-3.5"></i>Verified buyer</span>' +
       '</figcaption></figure>';
   }).join('');
   $('#gallery').innerHTML = GALLERY.map(function (g) {
-    var inner = g.src ? '<img src="' + g.src + '" alt="' + (g.alt || '7Even watch') + '" loading="lazy" class="zoom h-full w-full object-cover">'
+    var inner = g.src ? '<img src="' + g.src + '" alt="' + (g.alt || '7Even watch') + '" loading="lazy" decoding="async" class="zoom h-full w-full object-cover">'
                       : '<div class="zoom flex h-full w-full items-center justify-center p-4" style="background:radial-gradient(70% 70% at 50% 40%,' + PAL[g.theme].bg + ',transparent 75%),linear-gradient(180deg,#141215,#0a0a0b)"><div class="h-[135%] -translate-y-3">' + watchSVG(g.theme) + '</div></div>';
     return '<div class="card-media glow-card glass rounded-3xl ' + g.span + '" style="overflow:hidden">' + inner + '</div>';
   }).join('');
 
-  /* ---------- Toast ---------- */
   var toastT;
   function toast(msg) { var t = $('#toast'); t.innerHTML = '<i data-lucide="check-circle-2" class="h-4 w-4 text-emerald-400"></i>' + msg; icons(); t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(function () { t.classList.remove('show'); }, 3200); }
 
-  /* ---------- Modals ---------- */
   var lastFocus = null;
   function openModal(id) {
     var m = document.getElementById(id); lastFocus = document.activeElement;
@@ -992,7 +992,6 @@
   }
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeModals(); closeChat(); } });
 
-  /* ---------- Hero product sync ---------- */
   var FINISH_INFO = {
     gold:   { name: '7Even Sovereign', finish: 'Gold' },
     black:  { name: '7Even Obsidian',  finish: 'Obsidian Black' },
@@ -1008,7 +1007,6 @@
     $('#hero-wa').href = waUrl(msg);
   }
 
-  /* ---------- Size guide ---------- */
   var SIZES = [38, 39, 40, 41, 42, 43, 44], sizeDraft = state.size;
   var recSize = function (w) { return Math.max(38, Math.min(44, Math.round(38 + (w - 14) * .923))); };
   function renderFit() {
@@ -1026,12 +1024,11 @@
       '<text x="' + cx + '" y="196" text-anchor="middle" font-size="11" fill="#f3e5ab" font-family="Plus Jakarta Sans, sans-serif">' + sel + ' mm on a ' + w.toFixed(1) + ' cm wrist</text></svg>';
     $('#size-chips').innerHTML = SIZES.map(function (s) { return '<button type="button" class="size-chip" data-size="' + s + '" aria-pressed="' + (s === sel) + '">' + (s === rec ? '<span class="rec">Best fit</span>' : '') + s + ' mm</button>'; }).join('');
     var lo = (14 + (sel - 38) / .923 - .54).toFixed(1), hi = (14 + (sel - 38) / .923 + .54).toFixed(1);
-    $('#fit-text').innerHTML = '<strong>' + label + '.</strong> A ' + sel + ' mm case suits wrists of about ' + lo + ' to ' + hi + ' cm. ' + (sel === rec ? 'This is our recommended size for your wrist.' : 'For a ' + w.toFixed(1) + ' cm wrist we recommend ' + rec + ' mm.');
+    $('#fit-text').innerHTML = '<strong class="font-medium">' + label + '.</strong> A ' + sel + ' mm case suits wrists of about ' + lo + ' to ' + hi + ' cm. ' + (sel === rec ? 'This is our recommended size for your wrist.' : 'For a ' + w.toFixed(1) + ' cm wrist we recommend ' + rec + ' mm.');
   }
   $('#wrist').addEventListener('input', function () { sizeDraft = recSize(parseFloat(this.value)); renderFit(); });
   $('#size-chips').addEventListener('click', function (e) { var b = e.target.closest('[data-size]'); if (b) { sizeDraft = +b.dataset.size; renderFit(); } });
 
-  /* ---------- Order form ---------- */
   var F = { product: $('#f-product'), size: $('#f-size'), qty: $('#f-qty'), name: $('#f-name'), phone: $('#f-phone'), city: $('#f-city'), address: $('#f-address') };
   F.product.innerHTML = PRODUCTS.map(function (p) { return '<option value="' + p.id + '">' + p.name + ' (' + p.finish + ')</option>'; }).join('');
   F.size.innerHTML = SIZES.map(function (s) { return '<option value="' + s + '">' + s + ' mm</option>'; }).join('');
@@ -1082,9 +1079,8 @@
     F.product.value = id || PRODUCTS[0].id; F.size.value = state.size; qty = 1; updateOrder(); openModal('order-modal');
   }
 
-  /* ---------- Floating chat ---------- */
   var QUICK = [
-    ['Is this watch in stock?', 'Hello 7Even, is the ' + 'watch I saw on your website in stock?'],
+    ['Is this watch in stock?', 'Hello 7Even, is the watch I saw on your website in stock?'],
     ['How long is delivery?', 'Hello 7Even, how long will delivery take to my city?'],
     ['Help me choose a size', 'Hello 7Even, please help me choose the right case size for my wrist.'],
     ['I want to place an order', 'Hello 7Even, I want to place a Cash on Delivery order.']
@@ -1096,7 +1092,6 @@
   var nudgeDone = false;
   setTimeout(function () { if (!nudgeDone) { $('#chat-nudge').classList.remove('hidden'); setTimeout(function () { $('#chat-nudge').classList.add('hidden'); }, 6000); } }, 9000);
 
-  /* ---------- Global click actions ---------- */
   document.addEventListener('click', function (e) {
     var el = e.target.closest('[data-action]');
     if (el) {
@@ -1112,16 +1107,14 @@
     } else if (!e.target.closest('#chat-panel')) { closeChat(); }
     if (e.target.closest('#mobile-menu a')) closeMenu();
   });
-  function toggleMenu() { var m = $('#mobile-menu'), o = m.classList.toggle('hidden'); $('#menu-btn').setAttribute('aria-expanded', String(!o)); $('#menu-btn').innerHTML = '<i data-lucide="' + (o ? 'menu' : 'x') + '" class="h-5 w-5"></i>'; icons(); }
+  function toggleMenu() { var m = $('#mobile-menu'), o = m.classList.toggle('hidden'); $('#menu-btn').setAttribute('aria-expanded', String(!o)); $('#menu-btn').innerHTML = '<i data-lucide="' + (o ? 'menu' : 'x') + '" class="h-5 w-5 text-gold-light"></i>'; icons(); }
   function closeMenu() { var m = $('#mobile-menu'); if (!m.classList.contains('hidden')) toggleMenu(); }
 
-  /* ---------- Card glow follows cursor ---------- */
   document.addEventListener('pointermove', function (e) {
     var c = e.target.closest && e.target.closest('.glow-card'); if (!c) return;
     var r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px');
   }, { passive: true });
 
-  /* ---------- Live Pakistan Standard Time (UTC+5, fixed) ---------- */
   function updatePKT() {
     var pk = new Date(Date.now() + 5 * 3600000);
     var hh = String(pk.getUTCHours()).padStart(2, '0'), mm = String(pk.getUTCMinutes()).padStart(2, '0'), ss = String(pk.getUTCSeconds()).padStart(2, '0');
@@ -1130,10 +1123,14 @@
   }
   updatePKT(); setInterval(updatePKT, 1000);
 
-  /* ---------- Init ---------- */
-  $('#yr').textContent = new Date().getFullYear();
-  var fbEl = $('#watch-fallback'); if (window.__needFallback && fbEl) fbEl.innerHTML = watchSVG('gold');
-  syncHero(); renderFit(); updateOrder(); icons();
+  function boot() {
+    $('#yr').textContent = new Date().getFullYear();
+    var fbEl = $('#watch-fallback'); if (window.__needFallback && fbEl) fbEl.innerHTML = watchSVG('gold');
+    syncHero(); renderFit(); updateOrder(); icons();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+  window.addEventListener('load', icons);
 
 })();
 </script>
