@@ -3,372 +3,680 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>7Even | Luxury Watches with Cash on Delivery in Pakistan</title>
-<meta name="description" content="7Even — premium watches with free nationwide delivery, cash on delivery and 7-day replacement warranty. DM us on WhatsApp for pricing.">
-<meta name="theme-color" content="#09090b">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2309090b'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23d4af37' stroke-width='3'/%3E%3Cpath d='M32 32V18M32 32l9 5' stroke='%23f3e5ab' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<title>7Even — Time, Redefined. Luxury Timepieces in Pakistan</title>
+<meta name="description" content="7Even — curated timepieces delivered across Pakistan with cash on delivery and a 7-day replacement warranty. Message us on WhatsApp for pricing.">
+<meta name="theme-color" content="#070707">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23070707'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23C8A66A' stroke-width='2.5'/%3E%3Cpath d='M32 32V18M32 32l9 5' stroke='%23E3D0A8' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={theme:{extend:{colors:{ink:'#09090b',gold:{DEFAULT:'#d4af37',light:'#f3e5ab'}},fontFamily:{display:['"Playfair Display"','serif'],sans:['"Plus Jakarta Sans"','system-ui','sans-serif']}}}}</script>
+<script>
+tailwind.config={theme:{extend:{
+  colors:{ink:{DEFAULT:'#070707',2:'#0D0D0D',3:'#121212'},gold:{DEFAULT:'#C8A66A',light:'#E3D0A8'},cream:'#F2F0EA',muted:'#96938C'},
+  fontFamily:{serif:['"Cormorant Garamond"','Georgia','serif'],sans:['Inter','system-ui','sans-serif']}
+}}}
+</script>
 
 <style>
-:root{--gold:#d4af37;--champ:#f3e5ab;--ink:#09090b}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--ink);color:#e9e6df;font-family:'Plus Jakarta Sans',system-ui,sans-serif;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
-section[id],header[id]{scroll-margin-top:96px}
-.font-display{font-family:'Playfair Display',serif;font-weight:400!important;letter-spacing:.005em}
-h1,h2,h3,h4{font-weight:400}
-.font-semibold{font-weight:500!important}
-.font-bold,.gold-btn,strong{font-weight:500}
-
-img{image-rendering:auto;display:block}
-.card-media{overflow:hidden;background:#0b0a0b;position:relative}
-.card-media img{width:100%;height:100%;object-fit:cover;object-position:center}
-
-body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(55% 45% at 88% -5%,rgba(200,137,106,.28),transparent 70%),radial-gradient(45% 40% at 5% 25%,rgba(212,175,55,.09),transparent 70%),radial-gradient(60% 50% at 50% 110%,rgba(120,80,45,.20),transparent 70%)}
-
-.glass{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
-.glass-solid{background:linear-gradient(180deg,#17130f,#0e0c0a);border:1px solid rgba(212,175,55,.18)}
-
-.gold-btn{position:relative;overflow:hidden;background:linear-gradient(135deg,#f3e5ab 0%,#d4af37 55%,#b8902a 100%);color:#1a1205;font-weight:500;box-shadow:0 8px 24px -10px rgba(212,175,55,.55);transition:transform .25s,box-shadow .25s,filter .25s}
-.gold-btn::after{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);transition:left .7s ease}
-.gold-btn:hover{transform:translateY(-2px);box-shadow:0 14px 38px -8px rgba(212,175,55,.75);filter:brightness(1.05)}
-.gold-btn:hover::after{left:100%}
-.gold-btn:active{transform:translateY(0) scale(.98)}
-
-.ghost-btn{border:1px solid rgba(212,175,55,.45);color:#f3e5ab;background:rgba(255,255,255,.03);transition:all .25s}
-.ghost-btn:hover{background:rgba(212,175,55,.12);box-shadow:0 0 24px -4px rgba(212,175,55,.45);border-color:var(--gold)}
-.pill{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04)}
-:focus-visible{outline:2px solid var(--champ);outline-offset:3px;border-radius:12px}
-.glow-card{position:relative;transition:transform .35s,border-color .35s,box-shadow .35s}
-.glow-card:hover{border-color:rgba(212,175,55,.45);box-shadow:0 24px 60px -30px rgba(212,175,55,.35);transform:translateY(-4px)}
-
-.hero-panel{background:radial-gradient(60% 80% at 74% 35%,rgba(140,92,52,.38),transparent 65%),radial-gradient(40% 50% at 8% 100%,rgba(212,175,55,.09),transparent 70%),linear-gradient(160deg,#141214 0%,#0a0a0c 60%);border:1px solid rgba(255,255,255,.08);box-shadow:0 50px 120px -40px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.06)}
-.pulse-dot{position:relative;width:8px;height:8px;border-radius:99px;background:#ff8a4c}
-.pulse-dot::after{content:"";position:absolute;inset:-4px;border-radius:99px;background:#ff8a4c;opacity:.5;animation:ping 1.6s cubic-bezier(0,0,.2,1) infinite}
-@keyframes ping{75%,100%{transform:scale(2.2);opacity:0}}
-
-.sec-title{position:relative;display:inline-block;padding-bottom:14px}
-.sec-title::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:60px;background:linear-gradient(90deg,var(--gold),transparent)}
-
-.brand-strip{position:relative;overflow:hidden;padding:12px 0;border-top:1px solid rgba(212,175,55,.18);border-bottom:1px solid rgba(212,175,55,.18);background:linear-gradient(180deg,rgba(212,175,55,.04),rgba(212,175,55,.01));-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.brand-track{display:flex;width:max-content;animation:brandScroll 30s linear infinite;will-change:transform}
-.brand-item{font-family:'Playfair Display',serif;font-size:clamp(14px,1.8vw,20px);letter-spacing:.22em;color:#fbf3da;opacity:.85;padding:0 1.75rem;white-space:nowrap;display:inline-flex;align-items:center;gap:1.75rem}
-.brand-item .dot{display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:.7}
-@keyframes brandScroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
-
-/* ===== WAVE STRIP — clear up/down movement ===== */
-.wave-section{position:relative;overflow:hidden;padding:80px 0;background:linear-gradient(180deg,transparent,rgba(212,175,55,.025),transparent)}
-.wave-outer{width:100%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.wave-track{display:flex;gap:22px;padding:0 24px;width:max-content;transform:translate3d(0,0,0);will-change:transform;align-items:center}
-.wave-item{position:relative;width:180px;height:240px;flex:0 0 auto;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#0b0a0b;box-shadow:0 16px 38px -20px rgba(0,0,0,.9);transform:translate3d(0,var(--y,0px),0);will-change:transform;transition:border-color .4s,box-shadow .4s}
-.wave-item:hover{border-color:rgba(212,175,55,.4);box-shadow:0 22px 48px -18px rgba(212,175,55,.28)}
-.wave-item img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
-@media (min-width:640px){.wave-item{width:210px;height:270px}}
-
-@media (prefers-reduced-motion:reduce){
-  .brand-track{animation-duration:120s}
-  .wave-item{transform:none!important}
+:root{
+  --bg:#070707;--bg2:#0D0D0D;--soft:#121212;
+  --text:#F2F0EA;--text2:#96938C;
+  --gold:#C8A66A;--gold-light:#E3D0A8;
+  --border:rgba(255,255,255,0.10);
+  --gold-border:rgba(200,166,106,0.30);
 }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;font-weight:400;overflow-x:hidden;-webkit-tap-highlight-color:transparent;letter-spacing:0}
+section[id]{scroll-margin-top:80px}
 
-.modal{position:fixed;inset:0;z-index:70;display:flex;align-items:flex-end;justify-content:center;padding:0;opacity:0;pointer-events:none;transition:opacity .3s}
+/* Typography */
+.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;letter-spacing:-0.01em}
+.serif-i{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400}
+.label{font-family:'Inter',sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.4em;text-transform:uppercase;color:var(--gold)}
+
+h1,h2,h3{font-weight:500}
+.hero-h{font-size:clamp(52px,10vw,180px);line-height:.85;letter-spacing:-.02em}
+.sec-h{font-size:clamp(38px,6.5vw,110px);line-height:.9;letter-spacing:-.015em}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Inter',sans-serif;font-weight:500;font-size:11px;letter-spacing:.28em;text-transform:uppercase;padding:18px 34px;border-radius:0;transition:all .4s cubic-bezier(.2,.8,.2,1);cursor:pointer;border:none;white-space:nowrap;position:relative;overflow:hidden}
+.btn-gold{background:var(--gold);color:#070707}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--gold-border)}
+.btn-outline:hover{background:rgba(200,166,106,.06);border-color:var(--gold)}
+.btn-arrow::after{content:"→";display:inline-block;transition:transform .4s cubic-bezier(.2,.8,.2,1);font-family:Inter,sans-serif;font-weight:400}
+.btn-arrow:hover::after{transform:translateX(6px)}
+
+/* Header */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:60;transition:all .45s cubic-bezier(.2,.8,.2,1)}
+.hdr-inner{max-width:1600px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 40px;border-bottom:1px solid transparent;transition:all .45s cubic-bezier(.2,.8,.2,1)}
+.hdr.scrolled{background:rgba(7,7,7,.82);-webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);border-bottom:1px solid var(--border)}
+.hdr.scrolled .hdr-inner{padding:16px 40px}
+@media(max-width:900px){.hdr-inner{padding:20px 22px}.hdr.scrolled .hdr-inner{padding:14px 22px}}
+
+.nav-link{position:relative;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:rgba(242,240,234,.72);padding:6px 0;transition:color .3s;background:none;border:none;cursor:pointer;font-family:Inter,sans-serif}
+.nav-link:hover{color:var(--text)}
+.nav-link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.nav-link:hover::after{transform:scaleX(1)}
+
+/* Custom cursor — desktop only */
+.cursor-dot{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;width:6px;height:6px;background:var(--text);border-radius:50%;transform:translate(-50%,-50%);transition:width .35s cubic-bezier(.2,.8,.2,1),height .35s cubic-bezier(.2,.8,.2,1),background .35s,opacity .3s;mix-blend-mode:difference}
+.cursor-dot.hover{width:64px;height:64px;background:var(--gold)}
+.cursor-label{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;font-family:Inter,sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#070707;font-weight:600;transform:translate(-50%,-50%);opacity:0;transition:opacity .3s}
+.cursor-label.show{opacity:1}
+@media(max-width:1024px){.cursor-dot,.cursor-label{display:none}}
+
+/* Product card */
+.p-card{position:relative;background:var(--soft);border:1px solid transparent;overflow:hidden;transition:transform .5s cubic-bezier(.2,.8,.2,1),border-color .5s}
+.p-card:hover{transform:translateY(-4px);border-color:var(--gold-border)}
+.p-media{position:relative;overflow:hidden;background:linear-gradient(180deg,#101010,#070707)}
+.p-media img{width:100%;height:100%;object-fit:contain;display:block;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.p-card:hover .p-media img{transform:scale(1.05)}
+.p-card .info-arrow{transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.p-card:hover .info-arrow{transform:translateX(6px)}
+
+/* Marquee */
+.mq{position:relative;overflow:hidden;padding:26px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.mq-track{display:flex;width:max-content;animation:mqScroll 50s linear infinite;will-change:transform}
+.mq-item{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(20px,2.2vw,32px);letter-spacing:.3em;color:rgba(242,240,234,.4);padding:0 40px;white-space:nowrap;display:inline-flex;align-items:center;gap:40px}
+.mq-item::after{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:.6}
+@keyframes mqScroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+
+/* Wave strip */
+.wave-sec{position:relative;overflow:hidden;padding:80px 0}
+.wave-outer{width:100%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.wave-track{display:flex;gap:24px;padding:0 24px;width:max-content;will-change:transform;align-items:center}
+.wave-item{position:relative;width:180px;height:240px;flex:0 0 auto;overflow:hidden;border:1px solid var(--border);background:#0d0d0d;transform:translate3d(0,var(--y,0px),0);will-change:transform;transition:border-color .4s}
+.wave-item:hover{border-color:var(--gold-border)}
+.wave-item img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+@media (min-width:640px){.wave-item{width:210px;height:280px}}
+
+/* FAQ */
+.faq{border-bottom:1px solid var(--border)}
+.faq summary{list-style:none;cursor:pointer;padding:32px 0;display:flex;justify-content:space-between;align-items:center;gap:24px;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(20px,2vw,28px);color:var(--text);transition:color .3s;letter-spacing:-.01em}
+.faq summary:hover{color:var(--gold-light)}
+.faq summary::-webkit-details-marker{display:none}
+.faq .plus{width:22px;height:22px;flex-shrink:0;position:relative;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.faq .plus::before,.faq .plus::after{content:"";position:absolute;background:var(--gold);top:50%;left:50%}
+.faq .plus::before{width:16px;height:1px;transform:translate(-50%,-50%)}
+.faq .plus::after{width:1px;height:16px;transform:translate(-50%,-50%);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.faq[open] .plus::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
+.faq[open] .plus{transform:rotate(180deg)}
+.faq-body{padding:0 0 32px;font-size:15px;line-height:1.75;color:var(--text2);max-width:680px}
+
+/* Modals */
+.modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .4s}
 .modal[aria-hidden="false"]{opacity:1;pointer-events:auto}
-.modal-backdrop{position:absolute;inset:0;background:rgba(4,4,5,.78);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
-.modal-card{position:relative;width:100%;max-width:620px;max-height:94dvh;overflow-y:auto;overscroll-behavior:contain;transform:translateY(30px) scale(.98);transition:transform .35s cubic-bezier(.2,.8,.2,1);border-radius:28px 28px 0 0}
+.modal-bg{position:absolute;inset:0;background:rgba(3,3,3,.9);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.modal-card{position:relative;width:100%;max-width:640px;max-height:92dvh;overflow-y:auto;background:var(--bg2);border:1px solid var(--gold-border);padding:48px;transform:translateY(24px);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
 .modal[aria-hidden="false"] .modal-card{transform:none}
-@media(min-width:640px){.modal{align-items:center;padding:24px}.modal-card{border-radius:28px}}
+@media(max-width:640px){.modal{padding:0;align-items:flex-end}.modal-card{padding:32px 24px;border-radius:0;max-width:100%;border-left:none;border-right:none;border-bottom:none}}
 
-.field{width:100%;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:13px 14px;color:#fff;font-size:16px;transition:border-color .2s,box-shadow .2s,background .2s}
-.field::placeholder{color:rgba(255,255,255,.35)}
-.field:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.18);background:rgba(255,255,255,.07)}
-.field[aria-invalid="true"]{border-color:#ff6b6b}
-select.field{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
-select.field option{background:#15120e;color:#fff}
-.err{color:#ff8a8a;font-size:12px;margin-top:4px;min-height:0}
-input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:99px;background:linear-gradient(90deg,#d4af37,#f3e5ab)}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:#09090b;border:3px solid #f3e5ab;box-shadow:0 0 18px rgba(212,175,55,.7);cursor:pointer}
-.size-chip{min-width:62px;padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);font-weight:500;transition:all .2s;position:relative}
-.size-chip:hover{border-color:var(--gold)}
-.size-chip[aria-pressed="true"]{background:linear-gradient(135deg,#f3e5ab,#d4af37);color:#1a1205;border-color:transparent}
-.size-chip .rec{position:absolute;top:-8px;left:50%;transform:translateX(-50%);font-size:9px;padding:1px 6px;border-radius:99px;background:#c8896a;color:#1a0d07;font-weight:600;white-space:nowrap}
+/* Fields */
+.field{width:100%;background:transparent;border:none;border-bottom:1px solid var(--border);padding:14px 0;color:var(--text);font-size:15px;font-family:Inter,sans-serif;transition:border-color .3s;border-radius:0}
+.field::placeholder{color:rgba(150,147,140,.5)}
+.field:focus{outline:none;border-color:var(--gold)}
+.field[aria-invalid="true"]{border-color:#c96e6e}
+select.field{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23C8A66A' stroke-width='1.5'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center;padding-right:30px;cursor:pointer}
+select.field option{background:#0D0D0D;color:var(--text)}
+.err{color:#e08a8a;font-size:12px;margin-top:6px;min-height:0}
 
-details.faq{border-bottom:1px solid rgba(255,255,255,.08)}
-details.faq summary{list-style:none;cursor:pointer;padding:20px 4px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:500;font-size:17px}
-details.faq summary::-webkit-details-marker{display:none}
-details.faq[open] summary .chev{transform:rotate(180deg)}
-.chev{transition:transform .3s;color:var(--gold);flex-shrink:0}
+/* Range */
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:1px;background:linear-gradient(90deg,var(--gold),rgba(200,166,106,.2));outline:none;margin:20px 0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 6px rgba(200,166,106,.12)}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--gold);border:none;cursor:pointer}
 
-#toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:90;transition:all .35s}
+/* Size chip */
+.size-chip{padding:12px 20px;border:1px solid var(--border);background:transparent;color:var(--text);font-size:13px;font-weight:500;transition:all .3s;cursor:pointer;font-family:Inter,sans-serif;letter-spacing:.05em}
+.size-chip:hover{border-color:var(--gold-border);color:var(--gold-light)}
+.size-chip[aria-pressed="true"]{background:var(--gold);color:#070707;border-color:var(--gold)}
+
+/* Toast */
+#toast{position:fixed;left:50%;bottom:34px;transform:translate(-50%,24px);opacity:0;pointer-events:none;z-index:300;transition:all .4s;background:var(--bg2);border:1px solid var(--gold-border);padding:15px 24px;font-size:13px;letter-spacing:.05em}
 #toast.show{opacity:1;transform:translate(-50%,0)}
-#chat-panel{transform-origin:bottom right;transform:scale(.92) translateY(10px);opacity:0;pointer-events:none;transition:all .28s cubic-bezier(.2,.8,.2,1)}
+
+/* Chat */
+#chat-panel{transform-origin:bottom right;transform:scale(.96) translateY(8px);opacity:0;pointer-events:none;transition:all .35s cubic-bezier(.2,.8,.2,1)}
 #chat-panel.open{transform:none;opacity:1;pointer-events:auto}
 
-.watch-name-badge{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.92));pointer-events:none;z-index:2}
-.watch-name-badge h4{font-family:'Playfair Display',serif;color:#fbf3da;font-size:16px;letter-spacing:.22em;line-height:1.2;text-shadow:0 2px 10px rgba(0,0,0,.9);font-weight:400}
-.watch-name-badge span{display:block;font-size:11px;color:rgba(243,229,171,.85);margin-top:3px;letter-spacing:.06em;text-transform:uppercase}
+/* Animations */
+@keyframes riseIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+@keyframes lineIn{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.anim-rise{animation:riseIn 1.1s cubic-bezier(.2,.8,.2,1) both}
+.anim-fade{animation:fadeIn 1s cubic-bezier(.2,.8,.2,1) both}
+.anim-scale{animation:scaleIn 1.4s cubic-bezier(.2,.8,.2,1) both}
+.anim-line{transform-origin:left;animation:lineIn 1.4s cubic-bezier(.2,.8,.2,1) both}
+.d-1{animation-delay:.2s}.d-2{animation-delay:.4s}.d-3{animation-delay:.6s}.d-4{animation-delay:.8s}.d-5{animation-delay:1s}.d-6{animation-delay:1.2s}
 
-.tag-badge{position:absolute;right:14px;top:14px;z-index:10;font-size:9px;letter-spacing:.18em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:linear-gradient(135deg,#f3e5ab,#d4af37);color:#1a1205;font-weight:600;box-shadow:0 6px 18px -6px rgba(212,175,55,.7)}
+/* Reveal on scroll */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity 1s cubic-bezier(.2,.8,.2,1),transform 1s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal-mask{clip-path:inset(0 0 100% 0);transition:clip-path 1.1s cubic-bezier(.2,.8,.2,1)}
+.reveal-mask.in{clip-path:inset(0 0 0 0)}
+.reveal-scale{opacity:0;transform:scale(1.06);transition:opacity 1.2s cubic-bezier(.2,.8,.2,1),transform 1.6s cubic-bezier(.2,.8,.2,1)}
+.reveal-scale.in{opacity:1;transform:scale(1)}
 
-svg.lucide,i[data-lucide]{display:inline-block}
+/* Divider */
+.divider{width:44px;height:1px;background:var(--gold);opacity:.6}
+.divider-long{width:100%;height:1px;background:var(--border)}
+.divider-v{width:1px;background:var(--gold-border)}
 
-@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-.fade-up{animation:fadeUp .9s cubic-bezier(.2,.8,.2,1) both}
-.d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}
+/* Star */
+.star{width:13px;height:13px}
+
+/* Scroll indicator */
+@keyframes scrollDown{0%{transform:translateY(0);opacity:1}70%{transform:translateY(10px);opacity:0}100%{transform:translateY(0);opacity:0}}
+.scroll-ind::after{content:"";display:block;width:1px;height:36px;background:linear-gradient(180deg,var(--gold),transparent);animation:scrollDown 2.4s ease-in-out infinite}
+
+/* Feature number */
+.num{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(60px,8vw,120px);line-height:1;color:var(--gold);opacity:.35}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+  .mq-track{animation:none}
+  .wave-item{transform:none!important}
+  .reveal,.reveal-mask,.reveal-scale{opacity:1!important;transform:none!important;clip-path:none!important}
+}
 </style>
 </head>
 
-<body class="antialiased">
+<body>
 
+<!-- Custom cursor (desktop only) -->
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-label" id="cursor-label">View</div>
+
+<!-- WhatsApp icon -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-wa" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></symbol></svg>
 
-<!-- HEADER -->
-<div class="sticky top-0 z-50 px-3 pt-3 sm:px-6" style="padding-top:max(12px,env(safe-area-inset-top))">
-  <header id="site-header" class="glass mx-auto flex max-w-[1400px] items-center justify-between gap-3 rounded-full py-2.5 pl-5 pr-2.5">
-    <a href="#top" class="flex items-center gap-2.5">
-      <svg width="30" height="30" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="26" stroke="url(#lg)" stroke-width="3.5"/><circle cx="32" cy="32" r="20" stroke="#d4af37" stroke-opacity=".4" stroke-width="1"/><path d="M32 32V16M32 32l10 6" stroke="#f3e5ab" stroke-width="3.5" stroke-linecap="round"/><defs><linearGradient id="lg" x1="8" y1="8" x2="56" y2="56"><stop stop-color="#f3e5ab"/><stop offset="1" stop-color="#b8902a"/></linearGradient></defs></svg>
-      <span class="font-display text-[17px] tracking-[.18em] text-white sm:text-lg">7<span class="text-gold-light">EVEN</span></span>
+<!-- ============ HEADER ============ -->
+<div class="hdr" id="hdr">
+  <div class="hdr-inner">
+    <a href="#top" class="flex items-center gap-3">
+      <svg width="26" height="26" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <circle cx="32" cy="32" r="26" stroke="#C8A66A" stroke-width="1.5"/>
+        <circle cx="32" cy="32" r="20" stroke="#C8A66A" stroke-opacity=".3" stroke-width=".6"/>
+        <path d="M32 32V17M32 32l9 6" stroke="#E3D0A8" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="serif text-[22px] tracking-[.3em] text-cream">7<span style="color:var(--gold)">EVEN</span></span>
     </a>
-    <nav class="hidden items-center gap-1 lg:flex">
-      <a class="rounded-full px-4 py-2 text-sm text-white/70 hover:bg-white/5 hover:text-gold-light" href="#collection">Collection</a>
-      <a class="rounded-full px-4 py-2 text-sm text-white/70 hover:bg-white/5 hover:text-gold-light" href="#why">Why 7Even</a>
-      <a class="rounded-full px-4 py-2 text-sm text-white/70 hover:bg-white/5 hover:text-gold-light" href="#reviews">Reviews</a>
-      <a class="rounded-full px-4 py-2 text-sm text-white/70 hover:bg-white/5 hover:text-gold-light" href="#faq">FAQ</a>
-      <button data-action="open-size" class="rounded-full px-4 py-2 text-sm text-white/70 hover:bg-white/5 hover:text-gold-light">Size guide</button>
+
+    <nav class="hidden lg:flex items-center gap-10" aria-label="Main">
+      <a class="nav-link" href="#collection">Collection</a>
+      <a class="nav-link" href="#story">Story</a>
+      <a class="nav-link" href="#journal">Journal</a>
+      <a class="nav-link" href="#reviews">Reviews</a>
+      <a class="nav-link" href="#faq">FAQ</a>
     </nav>
-    <div class="flex items-center gap-2">
-      <a href="tel:+923258582375" class="ghost-btn flex h-11 items-center gap-2 rounded-full px-4 text-sm font-medium">
-        <span class="flex h-6 w-6 items-center justify-center rounded-full bg-gold/15"><i data-lucide="phone" class="h-3.5 w-3.5 text-gold-light"></i></span>
-        <span class="hidden md:inline">0325 8582375</span>
+
+    <div class="flex items-center gap-4">
+      <button data-action="open-size" class="nav-link hidden lg:block">Size Guide</button>
+      <a href="https://wa.me/923258582375?text=Hello%207Even%2C%20I%20want%20to%20know%20the%20price%20of%20a%20watch." target="_blank" rel="noopener" class="btn btn-gold hidden sm:inline-flex" style="padding:13px 24px;font-size:10px">
+        <svg width="13" height="13" fill="currentColor"><use href="#i-wa"></use></svg>
+        Order Now
       </a>
-      <a href="https://wa.me/923258582375?text=Hello%207Even%2C%20I%20want%20to%20know%20the%20price%20of%20a%20watch." target="_blank" rel="noopener" class="gold-btn hidden h-11 items-center gap-2 rounded-full px-5 text-sm sm:flex">
-        <span class="flex h-6 w-6 items-center justify-center rounded-full bg-[#1a1205]/15"><svg class="h-4 w-4" fill="currentColor"><use href="#i-wa"></use></svg></span>DM for Price
-      </a>
-      <button id="menu-btn" data-action="menu" class="pill flex h-11 w-11 items-center justify-center rounded-full lg:hidden"><i data-lucide="menu" class="h-5 w-5 text-gold-light"></i></button>
+      <button id="menu-btn" data-action="menu" class="lg:hidden flex items-center justify-center w-10 h-10" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F2F0EA" stroke-width="1.2"><path d="M3 7h18M3 17h18"/></svg>
+      </button>
     </div>
-  </header>
-  <nav id="mobile-menu" class="glass mx-auto mt-2 hidden max-w-[1400px] rounded-3xl p-3 lg:hidden">
-    <a class="block rounded-2xl px-4 py-3 text-white/85 active:bg-white/5" href="#collection">Collection</a>
-    <a class="block rounded-2xl px-4 py-3 text-white/85 active:bg-white/5" href="#why">Why 7Even</a>
-    <a class="block rounded-2xl px-4 py-3 text-white/85 active:bg-white/5" href="#reviews">Reviews</a>
-    <a class="block rounded-2xl px-4 py-3 text-white/85 active:bg-white/5" href="#faq">FAQ</a>
-    <button data-action="open-size" class="block w-full rounded-2xl px-4 py-3 text-left text-white/85">Size guide</button>
+  </div>
+  <nav id="mobile-menu" class="lg:hidden hidden bg-ink border-t border-white/[.08]">
+    <div class="px-7 py-5 flex flex-col">
+      <a class="py-5 border-b border-white/[.06] text-[13px] tracking-[.25em] uppercase text-cream" href="#collection">Collection</a>
+      <a class="py-5 border-b border-white/[.06] text-[13px] tracking-[.25em] uppercase text-cream" href="#story">Story</a>
+      <a class="py-5 border-b border-white/[.06] text-[13px] tracking-[.25em] uppercase text-cream" href="#journal">Journal</a>
+      <a class="py-5 border-b border-white/[.06] text-[13px] tracking-[.25em] uppercase text-cream" href="#reviews">Reviews</a>
+      <a class="py-5 border-b border-white/[.06] text-[13px] tracking-[.25em] uppercase text-cream" href="#faq">FAQ</a>
+      <button class="py-5 text-left text-[13px] tracking-[.25em] uppercase text-cream" data-action="open-size">Size Guide</button>
+      <a href="https://wa.me/923258582375" target="_blank" rel="noopener" class="btn btn-gold mt-7">Order on WhatsApp</a>
+    </div>
   </nav>
 </div>
 
 <main id="top">
 
-<!-- HERO -->
-<section class="px-3 pb-6 pt-4 sm:px-6">
-  <div class="hero-panel relative mx-auto max-w-[1400px] overflow-hidden rounded-[28px] p-6 sm:rounded-[36px] sm:p-10 lg:p-14">
-    <div class="relative z-10 mx-auto max-w-3xl text-center">
-      <div class="pill fade-up d1 mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs text-gold-light"><span class="pulse-dot"></span>Limited batch, only a few pieces per finish</div>
-      <h1 class="fade-up d2 font-display text-[40px] leading-[1.06] text-[#fbf3da] sm:text-5xl lg:text-[68px]" style="text-shadow:0 10px 60px rgba(212,175,55,.18)">Elegance Defined in Every Second</h1>
-      <p class="fade-up d3 mx-auto mt-6 max-w-[520px] text-base leading-relaxed text-white/65 sm:text-lg">Refined steel-cased timepieces with a sweeping second hand and a hand-finished strap, delivered across Pakistan. Pay when it reaches your door.</p>
-      <div class="fade-up d4 mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-        <a id="hero-wa" href="https://wa.me/923258582375" target="_blank" rel="noopener" class="gold-btn flex h-14 items-center justify-center gap-2.5 rounded-full px-8 text-[15px]"><span class="flex h-7 w-7 items-center justify-center rounded-full bg-[#1a1205]/15"><svg class="h-5 w-5" fill="currentColor"><use href="#i-wa"></use></svg></span>DM for Price</a>
-        <a href="#collection" class="ghost-btn flex h-14 items-center justify-center gap-2 rounded-full px-8 text-[15px] font-medium">Explore Collection</a>
-      </div>
-      <ul class="fade-up d4 mt-7 flex flex-wrap justify-center gap-2 text-xs text-white/70">
-        <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="banknote" class="h-3.5 w-3.5 text-gold"></i>Cash on delivery</li>
-        <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="truck" class="h-3.5 w-3.5 text-gold"></i>Free delivery</li>
-        <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="refresh-cw" class="h-3.5 w-3.5 text-gold"></i>7-day replacement</li>
-        <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="clock" class="h-3.5 w-3.5 text-gold"></i>PKT <time class="pkt-clock font-medium tabular-nums text-gold-light">--:--:--</time></li>
-      </ul>
+<!-- ============ HERO — CINEMATIC EDITORIAL ============ -->
+<section class="relative min-h-[100svh] px-6 sm:px-10 lg:px-14 pt-36 lg:pt-44 pb-24 lg:pb-16 overflow-hidden" aria-label="Hero">
+  <!-- Background watch image -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="anim-scale d-2 absolute right-[-10%] sm:right-[-5%] lg:right-[2%] top-[12%] lg:top-[10%] w-[80%] sm:w-[65%] lg:w-[52%] h-[70%] lg:h-[82%] flex items-center justify-center">
+      <img src="https://res.cloudinary.com/jfqrpdw4/image/upload/w_1400,q_auto:best,f_auto,dpr_2.0,c_fit/v1790192384/Watch_9.webp" alt="7Even Sovereign timepiece" width="1400" height="1400" fetchpriority="high" decoding="async" class="max-w-full max-h-full object-contain" style="filter:drop-shadow(0 60px 100px rgba(0,0,0,.85)) drop-shadow(0 20px 40px rgba(0,0,0,.6))">
     </div>
   </div>
-</section>
 
-<!-- BRAND TEXT STRIP -->
-<section class="px-3 sm:px-6">
-  <div class="mx-auto max-w-[1400px] rounded-2xl overflow-hidden">
-    <div class="brand-strip">
-      <div class="brand-track">
-        <span class="brand-item">SEIKO <span class="dot"></span></span>
-        <span class="brand-item">ROLEX <span class="dot"></span></span>
-        <span class="brand-item">CURREN <span class="dot"></span></span>
-        <span class="brand-item">TURBINE <span class="dot"></span></span>
-        <span class="brand-item">SEIKO <span class="dot"></span></span>
-        <span class="brand-item">ROLEX <span class="dot"></span></span>
-        <span class="brand-item">CURREN <span class="dot"></span></span>
-        <span class="brand-item">TURBINE <span class="dot"></span></span>
+  <!-- Content -->
+  <div class="relative z-10 mx-auto max-w-[1600px] min-h-[70svh] lg:min-h-[78svh] flex flex-col justify-between">
+    <div class="max-w-[900px]">
+      <div class="anim-fade d-1 flex items-center gap-5 mb-8 lg:mb-12">
+        <span class="anim-line d-2 divider block"></span>
+        <span class="label">The Art of Time</span>
+      </div>
+      <h1 class="anim-rise d-2 serif hero-h text-cream">
+        TIME,<br>
+        <span class="serif-i" style="color:var(--gold-light)">redefined.</span>
+      </h1>
+      <p class="anim-rise d-3 mt-8 lg:mt-10 max-w-[420px] text-[15px] leading-[1.85] text-muted">
+        A curated collection of steel-cased timepieces. Crafted for presence. Delivered across Pakistan with cash on delivery.
+      </p>
+      <div class="anim-rise d-4 mt-10 lg:mt-12 flex flex-wrap gap-3">
+        <a href="#collection" class="btn btn-gold btn-arrow">Explore Collection</a>
+        <a href="https://wa.me/923258582375" target="_blank" rel="noopener" class="btn btn-outline">
+          <svg width="13" height="13" fill="currentColor"><use href="#i-wa"></use></svg>
+          Order on WhatsApp
+        </a>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- WHY -->
-<section id="why" class="px-3 py-10 sm:px-6 sm:py-16">
-  <div class="mx-auto max-w-[1400px]">
-    <div class="mb-10 max-w-2xl px-2">
-      <h2 class="sec-title font-display text-3xl text-white sm:text-5xl">Buy with complete peace of mind</h2>
-      <p class="mt-4 text-white/60">You see the watch, confirm on WhatsApp, and pay only when it is in your hands.</p>
-    </div>
-    <div class="glass grid overflow-hidden rounded-[32px] sm:grid-cols-2 lg:grid-cols-4">
-      <div class="border-b border-white/[.07] p-7 sm:border-r lg:border-b-0"><div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 text-gold"><i data-lucide="badge-check" class="h-6 w-6"></i></div><h3 class="text-lg font-medium text-white">100% original quality</h3><p class="mt-2 text-sm leading-relaxed text-white/60">Every watch is inspected before dispatch and ships in a protective gift box.</p></div>
-      <div class="border-b border-white/[.07] p-7 lg:border-b-0 lg:border-r"><div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 text-gold"><i data-lucide="truck" class="h-6 w-6"></i></div><h3 class="text-lg font-medium text-white">Free nationwide delivery</h3><p class="mt-2 text-sm leading-relaxed text-white/60">To your door in any city in Pakistan, usually within 2 to 4 working days.</p></div>
-      <div class="border-b border-white/[.07] p-7 sm:border-r sm:border-b-0"><div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 text-gold"><i data-lucide="banknote" class="h-6 w-6"></i></div><h3 class="text-lg font-medium text-white">Cash on delivery</h3><p class="mt-2 text-sm leading-relaxed text-white/60">No advance payment. Hand the cash to the courier when your watch arrives.</p></div>
-      <div class="p-7"><div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 text-gold"><i data-lucide="shield-check" class="h-6 w-6"></i></div><h3 class="text-lg font-medium text-white">7-day replacement warranty</h3><p class="mt-2 text-sm leading-relaxed text-white/60">Faulty or wrong piece? Message us within 7 days and we replace it.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- COLLECTION -->
-<section id="collection" class="px-3 py-10 sm:px-6 sm:py-16">
-  <div class="mx-auto max-w-[1400px]">
-    <div class="mb-10 flex flex-col justify-between gap-5 px-2 sm:flex-row sm:items-end">
-      <div class="max-w-2xl">
-        <h2 class="sec-title font-display text-3xl text-white sm:text-5xl">The 7Even collection</h2>
-        <p class="mt-4 text-white/60">Our signature pieces. Message us on WhatsApp for pricing and current availability.</p>
+    <!-- Footer of hero: meta + scroll indicator -->
+    <div class="anim-fade d-5 mt-16 lg:mt-0 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-8">
+      <div class="flex flex-wrap items-center gap-x-8 gap-y-3 text-[10px] tracking-[.3em] uppercase text-muted/70">
+        <span>Cash on Delivery</span>
+        <span class="w-4 h-px bg-muted/30"></span>
+        <span>Free Delivery</span>
+        <span class="w-4 h-px bg-muted/30"></span>
+        <span>7-Day Replacement</span>
       </div>
-      <button data-action="open-size" class="ghost-btn flex h-12 items-center gap-2 self-start rounded-full px-6 text-sm font-medium sm:self-auto"><i data-lucide="ruler" class="h-4 w-4"></i>Wrist size guide</button>
-    </div>
-    <div id="product-grid" class="grid gap-5 sm:grid-cols-2 xl:grid-cols-4"></div>
-  </div>
-</section>
-
-<!-- WAVE STRIP — clear up/down wave on scroll -->
-<section class="wave-section" id="wave-section">
-  <div class="wave-outer">
-    <div class="wave-track" id="wave-track"></div>
-  </div>
-</section>
-
-<!-- HOW -->
-<section id="how" class="px-3 py-10 sm:px-6 sm:py-16">
-  <div class="glass-solid mx-auto grid max-w-[1400px] gap-10 rounded-[36px] p-7 sm:p-12 lg:grid-cols-[1fr_1.5fr] lg:gap-16">
-    <div>
-      <h2 class="font-display text-3xl text-white sm:text-4xl">Order in under two minutes</h2>
-      <p class="mt-4 text-white/60">No account, no card details. Just your address and a WhatsApp message.</p>
-      <button data-action="open-order" class="gold-btn mt-8 flex h-14 items-center gap-2 rounded-full px-8">Place a COD order</button>
-    </div>
-    <ol class="grid gap-6 sm:grid-cols-3">
-      <li class="rounded-3xl bg-white/[.03] p-6 border border-white/[.05] hover:border-gold/30 transition"><div class="font-display text-4xl text-gold/70">1</div><h3 class="mt-3 font-medium text-white">Choose your watch</h3><p class="mt-2 text-sm text-white/60">Pick a finish and case size, then tap Buy Now.</p></li>
-      <li class="rounded-3xl bg-white/[.03] p-6 border border-white/[.05] hover:border-gold/30 transition"><div class="font-display text-4xl text-gold/70">2</div><h3 class="mt-3 font-medium text-white">We confirm on WhatsApp</h3><p class="mt-2 text-sm text-white/60">Your order arrives as a ready message. We confirm the address and dispatch.</p></li>
-      <li class="rounded-3xl bg-white/[.03] p-6 border border-white/[.05] hover:border-gold/30 transition"><div class="font-display text-4xl text-gold/70">3</div><h3 class="mt-3 font-medium text-white">Pay on delivery</h3><p class="mt-2 text-sm text-white/60">The courier brings it to your door. Pay cash on arrival.</p></li>
-    </ol>
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section id="reviews" class="px-3 py-10 sm:px-6 sm:py-16">
-  <div class="mx-auto max-w-[1400px]">
-    <div class="mb-10 flex flex-col justify-between gap-6 px-2 sm:flex-row sm:items-end">
-      <h2 class="sec-title font-display text-3xl text-white sm:text-5xl">Loved by watch lovers across Pakistan</h2>
-      <div class="glass flex items-center gap-4 self-start rounded-3xl px-6 py-4">
-        <div class="font-display text-5xl text-gold-light">4.8</div>
-        <div><div class="flex gap-0.5" id="avg-stars"></div><div class="mt-1 text-xs text-white/55">Average customer rating</div></div>
+      <div class="hidden sm:flex flex-col items-center gap-3 text-[10px] tracking-[.3em] uppercase text-muted/60">
+        <span>Scroll</span>
+        <span class="scroll-ind"></span>
       </div>
     </div>
-    <div id="review-grid" class="grid gap-5 md:grid-cols-2 lg:grid-cols-3"></div>
-    <div class="mt-16 px-2"><h3 class="font-display text-2xl text-white sm:text-3xl">7Even on the wrist</h3><p class="mt-2 text-sm text-white/55">A closer look at the collection.</p></div>
-    <div id="gallery" class="mt-6 grid auto-rows-[180px] grid-cols-2 gap-3 sm:auto-rows-[220px] md:grid-cols-4"></div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section id="faq" class="px-3 py-10 sm:px-6 sm:py-16">
-  <div class="mx-auto grid max-w-[1100px] gap-10 lg:grid-cols-[1fr_1.6fr]">
-    <div><h2 class="sec-title font-display text-3xl text-white sm:text-4xl">Questions before you order</h2><p class="mt-4 text-white/60">Still unsure? Message us and a real person replies on WhatsApp.</p></div>
-    <div>
-      <details class="faq"><summary>How does cash on delivery work?<i data-lucide="chevron-down" class="chev h-5 w-5"></i></summary><p class="pb-5 pr-8 text-sm leading-relaxed text-white/60">You place the order on WhatsApp, we confirm it, and the courier delivers the watch to your address. You pay the courier in cash. No advance payment is needed.</p></details>
-      <details class="faq"><summary>How long does delivery take?<i data-lucide="chevron-down" class="chev h-5 w-5"></i></summary><p class="pb-5 pr-8 text-sm leading-relaxed text-white/60">Most orders reach major cities in 2 to 4 working days. Remote areas can take a little longer. Delivery is free everywhere in Pakistan.</p></details>
-      <details class="faq"><summary>What if the watch has a problem?<i data-lucide="chevron-down" class="chev h-5 w-5"></i></summary><p class="pb-5 pr-8 text-sm leading-relaxed text-white/60">Message us within 7 days of delivery with a photo or short video. If the piece is faulty or not what you ordered, we replace it.</p></details>
-      <details class="faq"><summary>How do I choose the right size?<i data-lucide="chevron-down" class="chev h-5 w-5"></i></summary><p class="pb-5 pr-8 text-sm leading-relaxed text-white/60">Open the size guide, enter your wrist measurement and we show the best case size from 38 mm to 44 mm, with a live preview on a wrist.</p></details>
+<!-- ============ MARQUEE ============ -->
+<div class="mq">
+  <div class="mq-track">
+    <span class="mq-item">SEIKO</span><span class="mq-item">ROLEX</span><span class="mq-item">CURREN</span><span class="mq-item">TURBINE</span>
+    <span class="mq-item" aria-hidden="true">SEIKO</span><span class="mq-item" aria-hidden="true">ROLEX</span><span class="mq-item" aria-hidden="true">CURREN</span><span class="mq-item" aria-hidden="true">TURBINE</span>
+  </div>
+</div>
+
+<!-- ============ SECTION 01 — BRAND STATEMENT ============ -->
+<section class="px-6 sm:px-10 lg:px-14 py-32 sm:py-48 lg:py-64">
+  <div class="mx-auto max-w-[1600px]">
+    <div class="max-w-[1100px]">
+      <div class="reveal flex items-center gap-5 mb-10 lg:mb-14">
+        <span class="divider block"></span>
+        <span class="label">Manifesto</span>
+      </div>
+      <h2 class="reveal serif sec-h text-cream">
+        Time is not<br>
+        just measured.<br>
+        <span class="serif-i" style="color:var(--gold-light)">It is experienced.</span>
+      </h2>
+    </div>
+    <div class="mt-20 lg:mt-28 grid md:grid-cols-3 gap-10 lg:gap-20 max-w-[1200px]">
+      <div class="reveal md:col-start-2 md:col-span-2 md:pl-8" style="border-left:1px solid var(--gold-border);padding-left:32px">
+        <p class="text-[15px] leading-[1.9] text-muted">
+          A timepiece is more than an instrument. It marks moments, opinions and the quiet confidence of the person wearing it. We curate pieces with character — not noise.
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="px-3 pb-16 pt-6 sm:px-6">
-  <div class="hero-panel relative mx-auto max-w-[1400px] overflow-hidden rounded-[36px] px-6 py-14 text-center sm:px-12 sm:py-20">
-    <h2 class="font-display mx-auto max-w-3xl text-3xl text-[#fbf3da] sm:text-5xl">Your next watch is one message away</h2>
-    <p class="mx-auto mt-5 max-w-xl text-white/65">Free delivery, cash on delivery and a 7-day replacement warranty on every order.</p>
-    <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-      <button data-action="open-order" class="gold-btn flex h-14 w-full items-center justify-center gap-2 rounded-full px-9 sm:w-auto">Buy Now</button>
-      <a href="https://wa.me/923258582375" target="_blank" rel="noopener" class="ghost-btn flex h-14 w-full items-center justify-center gap-2 rounded-full px-9 font-medium sm:w-auto"><svg class="h-5 w-5" fill="currentColor"><use href="#i-wa"></use></svg>Chat on WhatsApp</a>
+<!-- ============ SECTION 02 — FEATURED WATCH ============ -->
+<section class="relative px-6 sm:px-10 lg:px-14 py-20 sm:py-28 lg:py-40 border-t border-white/[.06]" id="journal">
+  <div class="mx-auto max-w-[1600px] grid lg:grid-cols-12 gap-10 lg:gap-20 items-center">
+    <!-- Image -->
+    <div class="reveal-scale lg:col-span-6 lg:order-2 relative aspect-[4/5] max-w-[600px] mx-auto lg:mx-0" style="background:radial-gradient(55% 55% at 50% 45%,rgba(200,166,106,.10),transparent 65%),linear-gradient(180deg,#101010,#070707)">
+      <div class="absolute inset-0 flex items-center justify-center p-12 lg:p-16">
+        <img src="https://res.cloudinary.com/jf jfqrpdw4/image/upload/w_1000,q_auto:best,f_auto,dpr_2.0,c_fit/v1790192381/Watch_2.webp" onerror="this.src='https://res.cloudinary.com/jfqrpdw4/image/upload/w_1000,q_auto:best,f_auto,dpr_2.0,c_fit/v1790192381/Watch_2.webp'" alt="Featured timepiece — 7Even Gilt Sport" loading="lazy" decoding="async" class="w-full h-full object-contain" style="filter:drop-shadow(0 40px 70px rgba(0,0,0,.85))">
+      </div>
+      <div class="absolute top-6 left-6 text-[10px] tracking-[.35em] uppercase" style="color:var(--gold)">Featured Timepiece</div>
+      <div class="absolute bottom-6 right-6 text-[10px] tracking-[.35em] uppercase text-muted/70">07E-02</div>
+    </div>
+
+    <!-- Copy -->
+    <div class="lg:col-span-6 lg:order-1 lg:pr-8">
+      <div class="reveal flex items-center gap-5 mb-8">
+        <span class="divider block"></span>
+        <span class="label">Signature</span>
+      </div>
+      <h2 class="reveal serif text-[44px] sm:text-[60px] lg:text-[80px] leading-[.95] text-cream mb-6">
+        Gilt Sport.<br>
+        <span class="serif-i" style="color:var(--gold-light)">Warm gold. Sport edge.</span>
+      </h2>
+      <div class="reveal divider mb-8"></div>
+      <p class="reveal text-[15px] leading-[1.85] text-muted mb-12 max-w-[500px]">
+        A warm gold-tone case paired with a sport-driven bezel and a hand-finished strap. Balanced presence for the wrist.
+      </p>
+
+      <div class="reveal grid grid-cols-2 gap-y-8 gap-x-10 mb-12 max-w-[520px]">
+        <div>
+          <div class="text-[10px] tracking-[.35em] uppercase mb-2" style="color:var(--gold)">Brand</div>
+          <div class="text-[15px] text-cream">SEIKO</div>
+        </div>
+        <div>
+          <div class="text-[10px] tracking-[.35em] uppercase mb-2" style="color:var(--gold)">Finish</div>
+          <div class="text-[15px] text-cream">Gold</div>
+        </div>
+        <div>
+          <div class="text-[10px] tracking-[.35em] uppercase mb-2" style="color:var(--gold)">Code</div>
+          <div class="text-[15px] text-cream">7E-02</div>
+        </div>
+        <div>
+          <div class="text-[10px] tracking-[.35em] uppercase mb-2" style="color:var(--gold)">Price</div>
+          <div class="text-[15px] text-cream">On Request</div>
+        </div>
+      </div>
+
+      <div class="reveal flex flex-wrap gap-3">
+        <button data-action="open-order" data-id="7E-02" class="btn btn-gold btn-arrow">Order Now</button>
+        <a href="https://wa.me/923258582375?text=Hello%207Even%2C%20please%20share%20the%20price%20for%20SEIKO%20Gilt%20Sport%20(7E-02)." target="_blank" rel="noopener" class="btn btn-outline">Enquire</a>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- ============ SECTION 03 — COLLECTION ============ -->
+<section id="collection" class="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 lg:py-40 border-t border-white/[.06]">
+  <div class="mx-auto max-w-[1600px]">
+    <div class="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16 lg:mb-24">
+      <div>
+        <div class="flex items-center gap-5 mb-6">
+          <span class="divider block"></span>
+          <span class="label">The Collection</span>
+        </div>
+        <h2 class="serif text-[42px] sm:text-[64px] lg:text-[88px] leading-[.92] text-cream">
+          Timepieces<br>
+          <span class="serif-i" style="color:var(--gold-light)">with character.</span>
+        </h2>
+      </div>
+      <p class="max-w-[340px] text-[14px] leading-[1.85] text-muted md:text-right">
+        Curated designs. Real photography. Message us on WhatsApp for pricing and availability.
+      </p>
+    </div>
+
+    <!-- Asymmetric editorial grid -->
+    <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 lg:gap-6"></div>
+  </div>
+</section>
+
+<!-- ============ SECTION 04 — CINEMATIC IMAGE BREAK ============ -->
+<section class="relative overflow-hidden" aria-label="Campaign">
+  <div class="relative h-[70vh] sm:h-[80vh] lg:h-[90vh] overflow-hidden" style="background:linear-gradient(180deg,#070707,#0d0d0d,#070707)">
+    <div class="parallax-img absolute inset-[-10%] flex items-center justify-center" data-parallax="0.15">
+      <img src="https://res.cloudinary.com/jfqrpdw4/image/upload/w_1400,q_auto:best,f_auto,dpr_2.0,c_fit/v1790192381/Watch_5.webp" alt="7Even — campaign" loading="lazy" decoding="async" class="max-w-full max-h-full object-contain" style="filter:drop-shadow(0 60px 100px rgba(0,0,0,.85))">
+    </div>
+    <div class="absolute bottom-10 left-6 sm:left-10 lg:left-14 text-[11px] tracking-[.4em] uppercase" style="color:var(--gold)">Crafted for Presence</div>
+    <div class="absolute top-10 right-6 sm:right-10 lg:right-14 text-[11px] tracking-[.4em] uppercase text-muted/60">7E-06 · CURREN</div>
+  </div>
+</section>
+
+<!-- ============ WAVE STRIP ============ -->
+<section class="wave-sec" id="wave-section" aria-label="Featured timepieces">
+  <div class="wave-outer"><div class="wave-track" id="wave-track"></div></div>
+</section>
+
+<!-- ============ SECTION 05 — BRAND STORY ============ -->
+<section id="story" class="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 lg:py-44 border-t border-white/[.06]">
+  <div class="mx-auto max-w-[1600px] grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+    <div class="lg:col-span-5">
+      <div class="reveal flex items-center gap-5 mb-8">
+        <span class="divider block"></span>
+        <span class="label">Our Philosophy</span>
+      </div>
+      <h2 class="reveal serif text-[44px] sm:text-[60px] lg:text-[78px] leading-[.95] text-cream mb-8">
+        More than<br>
+        <span class="serif-i" style="color:var(--gold-light)">a watch.</span>
+      </h2>
+      <div class="reveal divider mb-8"></div>
+      <p class="reveal text-[15px] leading-[1.9] text-muted mb-6 max-w-[520px]">
+        A timepiece is a statement. Every piece in our collection is chosen for its character, its finish, and the quiet confidence it brings to the wrist.
+      </p>
+      <p class="reveal text-[15px] leading-[1.9] text-muted max-w-[520px] mb-12">
+        We deliver across Pakistan with cash on delivery — so you can see the watch in person before you pay.
+      </p>
+      <div class="reveal flex items-center gap-6 text-[10px] tracking-[.35em] uppercase text-muted/70">
+        <span>Est. 2024</span>
+        <span class="w-6 h-px" style="background:var(--gold);opacity:.6"></span>
+        <span>Pakistan</span>
+      </div>
+    </div>
+    <div class="lg:col-span-7 relative">
+      <div class="reveal-scale relative aspect-[5/4] max-w-[720px] ml-auto" style="background:radial-gradient(55% 55% at 50% 45%,rgba(200,166,106,.08),transparent 65%),#0d0d0d">
+        <div class="absolute inset-0 flex items-center justify-center p-14">
+          <img src="https://res.cloudinary.com/jfqrpdw4/image/upload/w_1200,q_auto:best,f_auto,dpr_2.0,c_fit/v1790192381/Watch_1.webp" alt="7Even Classic Steel SEIKO" loading="lazy" decoding="async" class="max-w-full max-h-full object-contain" style="filter:drop-shadow(0 40px 70px rgba(0,0,0,.85))">
+        </div>
+        <div class="absolute bottom-6 right-6 text-[10px] tracking-[.35em] uppercase text-muted/60">7E-01 · SEIKO</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 06 — PRECISION ============ -->
+<section class="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 lg:py-40 border-t border-white/[.06]">
+  <div class="mx-auto max-w-[1600px]">
+    <div class="reveal flex items-center gap-5 mb-16">
+      <span class="divider block"></span>
+      <span class="label">The Details</span>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-y-14 gap-x-10">
+      <div class="reveal">
+        <div class="num mb-5">01</div>
+        <div class="text-[11px] tracking-[.35em] uppercase mb-4" style="color:var(--gold)">Precision</div>
+        <p class="text-[14px] leading-[1.8] text-muted max-w-[260px]">Every piece is inspected before dispatch. Sweeping second hand, balanced weight in hand.</p>
+      </div>
+      <div class="reveal">
+        <div class="num mb-5">02</div>
+        <div class="text-[11px] tracking-[.35em] uppercase mb-4" style="color:var(--gold)">Craft</div>
+        <p class="text-[14px] leading-[1.8] text-muted max-w-[260px]">Steel-cased construction, hand-finished straps, and a protective gift box.</p>
+      </div>
+      <div class="reveal">
+        <div class="num mb-5">03</div>
+        <div class="text-[11px] tracking-[.35em] uppercase mb-4" style="color:var(--gold)">Detail</div>
+        <p class="text-[14px] leading-[1.8] text-muted max-w-[260px]">Refined dials, considered proportions, and clean finishes across the collection.</p>
+      </div>
+      <div class="reveal">
+        <div class="num mb-5">04</div>
+        <div class="text-[11px] tracking-[.35em] uppercase mb-4" style="color:var(--gold)">Presence</div>
+        <p class="text-[14px] leading-[1.8] text-muted max-w-[260px]">A watch that commands attention quietly — at meetings, weddings, and everyday wear.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 07 — REVIEWS ============ -->
+<section id="reviews" class="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 lg:py-40 border-t border-white/[.06]">
+  <div class="mx-auto max-w-[1600px]">
+    <div class="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16 lg:mb-24">
+      <div>
+        <div class="flex items-center gap-5 mb-6">
+          <span class="divider block"></span>
+          <span class="label">Voices</span>
+        </div>
+        <h2 class="serif text-[42px] sm:text-[64px] lg:text-[88px] leading-[.92] text-cream">
+          From our<br>
+          <span class="serif-i" style="color:var(--gold-light)">customers.</span>
+        </h2>
+      </div>
+      <div class="flex items-baseline gap-5">
+        <div class="serif text-[80px] lg:text-[100px] leading-none" style="color:var(--gold-light)">4.8</div>
+        <div>
+          <div class="flex gap-0.5 mb-1" id="avg-stars"></div>
+          <div class="text-[10px] tracking-[.35em] uppercase text-muted">Average Rating</div>
+        </div>
+      </div>
+    </div>
+    <div id="review-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-14"></div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="px-6 sm:px-10 lg:px-14 pb-24 sm:pb-32 border-t border-white/[.06] pt-24">
+  <div class="mx-auto max-w-[1600px]">
+    <div class="reveal flex items-center gap-5 mb-10 lg:mb-14">
+      <span class="divider block"></span>
+      <span class="label">On the Wrist</span>
+    </div>
+    <h3 class="reveal serif text-[34px] sm:text-[48px] lg:text-[60px] leading-[1] text-cream mb-14">
+      A closer look at the collection.
+    </h3>
+    <div id="gallery" class="grid auto-rows-[220px] grid-cols-2 gap-3 sm:auto-rows-[260px] md:grid-cols-4 lg:auto-rows-[300px]"></div>
+  </div>
+</section>
+
+<!-- ============ SECTION 08 — FAQ ============ -->
+<section id="faq" class="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 lg:py-40 border-t border-white/[.06]">
+  <div class="mx-auto max-w-[1400px] grid lg:grid-cols-12 gap-14 lg:gap-20">
+    <div class="lg:col-span-5">
+      <div class="reveal flex items-center gap-5 mb-8">
+        <span class="divider block"></span>
+        <span class="label">Questions</span>
+      </div>
+      <h2 class="reveal serif text-[42px] sm:text-[60px] lg:text-[80px] leading-[.95] text-cream mb-8">
+        Before you<br>
+        <span class="serif-i" style="color:var(--gold-light)">order.</span>
+      </h2>
+      <p class="reveal text-[14.5px] leading-[1.85] text-muted max-w-[380px]">Still unsure? Message us on WhatsApp — a real person replies.</p>
+    </div>
+    <div class="lg:col-span-7 reveal">
+      <details class="faq"><summary>How does cash on delivery work?<span class="plus"></span></summary><div class="faq-body">You place the order on WhatsApp, we confirm it, and the courier delivers the watch to your address. You pay the courier in cash. No advance payment is needed.</div></details>
+      <details class="faq"><summary>How long does delivery take?<span class="plus"></span></summary><div class="faq-body">Most orders reach major cities in 2 to 4 working days. Remote areas can take a little longer. Delivery is free everywhere in Pakistan.</div></details>
+      <details class="faq"><summary>What if the watch has a problem?<span class="plus"></span></summary><div class="faq-body">Message us within 7 days of delivery with a photo or short video. If the piece is faulty or not what you ordered, we replace it.</div></details>
+      <details class="faq"><summary>How do I choose the right size?<span class="plus"></span></summary><div class="faq-body">Open the size guide, enter your wrist measurement and we show the best case size from 38 mm to 44 mm, with a live preview on a wrist.</div></details>
+      <details class="faq"><summary>Is the price shown on the website?<span class="plus"></span></summary><div class="faq-body">Pricing is shared privately on WhatsApp so we can confirm the current rate and availability for the exact piece you're interested in.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="relative overflow-hidden" style="background:#070707;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="relative min-h-[80svh] flex items-center justify-center px-6 sm:px-10 lg:px-14 py-32 lg:py-40">
+    <div class="absolute inset-0 flex items-center justify-center opacity-[.35] pointer-events-none">
+      <img src="https://res.cloudinary.com/jfqrpdw4/image/upload/w_1200,q_auto:best,f_auto,dpr_2.0,c_fit/v1790192384/Watch_9.webp" alt="" loading="lazy" aria-hidden="true" class="max-w-[80%] max-h-[80%] object-contain" style="filter:blur(1px)">
+    </div>
+    <div class="relative z-10 text-center max-w-[900px]">
+      <div class="reveal flex items-center justify-center gap-5 mb-8">
+        <span class="divider block"></span>
+        <span class="label">Begin</span>
+        <span class="divider block"></span>
+      </div>
+      <h2 class="reveal serif text-[46px] sm:text-[72px] lg:text-[110px] leading-[.9] text-cream mb-8">
+        Your Time.<br>
+        <span class="serif-i" style="color:var(--gold-light)">Your Statement.</span>
+      </h2>
+      <p class="reveal mx-auto max-w-[520px] text-[15px] leading-[1.85] text-muted mb-12">
+        Free delivery, cash on delivery and a 7-day replacement warranty on every order.
+      </p>
+      <div class="reveal flex flex-wrap justify-center gap-3">
+        <a href="#collection" class="btn btn-gold btn-arrow">Explore the Collection</a>
+        <a href="https://wa.me/923258582375" target="_blank" rel="noopener" class="btn btn-outline"><svg width="13" height="13" fill="currentColor"><use href="#i-wa"></use></svg>Order on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
-<!-- FOOTER -->
-<footer class="border-t border-white/[.07] px-6 pb-28 pt-14 sm:pb-16">
-  <div class="mx-auto grid max-w-[1400px] gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
-    <div>
-      <div class="font-display text-2xl tracking-[.18em] text-white">7<span class="font-normal text-gold-light/80">EVEN</span></div>
-      <p class="mt-4 max-w-sm text-sm leading-relaxed text-white/55">Premium-styled watches delivered across Pakistan with cash on delivery. DM us for pricing and availability.</p>
-      <a href="https://www.instagram.com/7even.pk" target="_blank" rel="noopener" class="ghost-btn mt-5 inline-flex h-11 items-center gap-2 rounded-full px-5 text-sm font-medium"><i data-lucide="instagram" class="h-4 w-4"></i>Follow @7even.pk</a>
+<!-- ============ FOOTER ============ -->
+<footer class="px-6 sm:px-10 lg:px-14 pt-24 pb-12">
+  <div class="mx-auto max-w-[1600px]">
+    <div class="grid md:grid-cols-12 gap-12 lg:gap-16 pb-16 border-b border-white/[.08]">
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-3 mb-6">
+          <svg width="24" height="24" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="26" stroke="#C8A66A" stroke-width="1.5"/><path d="M32 32V17M32 32l9 6" stroke="#E3D0A8" stroke-width="2" stroke-linecap="round"/></svg>
+          <span class="serif text-[20px] tracking-[.3em] text-cream">7<span style="color:var(--gold)">EVEN</span></span>
+        </div>
+        <p class="text-[13.5px] leading-[1.8] text-muted max-w-[340px]">Curated timepieces delivered across Pakistan with cash on delivery.</p>
+      </div>
+      <div class="md:col-span-3 md:col-start-7">
+        <div class="text-[10px] tracking-[.35em] uppercase mb-6" style="color:var(--gold)">Explore</div>
+        <ul class="space-y-3 text-[13.5px] text-muted">
+          <li><a class="hover:text-cream transition-colors" href="#collection">Collection</a></li>
+          <li><a class="hover:text-cream transition-colors" href="#story">Story</a></li>
+          <li><a class="hover:text-cream transition-colors" href="#reviews">Reviews</a></li>
+          <li><a class="hover:text-cream transition-colors" href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-4">
+        <div class="text-[10px] tracking-[.35em] uppercase mb-6" style="color:var(--gold)">Contact</div>
+        <ul class="space-y-3 text-[13.5px] text-muted">
+          <li><a class="hover:text-cream transition-colors" href="tel:+923258582375">+92 325 8582375</a></li>
+          <li><a class="hover:text-cream transition-colors" href="https://wa.me/923258582375" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a class="hover:text-cream transition-colors" href="https://www.instagram.com/7even.pk" target="_blank" rel="noopener">Instagram — @7even.pk</a></li>
+        </ul>
+      </div>
     </div>
-    <div><div class="mb-4 text-sm font-medium text-white">Explore</div><ul class="space-y-2.5 text-sm text-white/60"><li><a class="hover:text-gold-light" href="#collection">Collection</a></li><li><a class="hover:text-gold-light" href="#why">Why 7Even</a></li><li><a class="hover:text-gold-light" href="#reviews">Reviews</a></li><li><a class="hover:text-gold-light" href="#faq">FAQ</a></li></ul></div>
-    <div><div class="mb-4 text-sm font-medium text-white">Contact</div><ul class="space-y-2.5 text-sm text-white/60">
-      <li><a class="flex items-center gap-2 hover:text-gold-light" href="tel:+923258582375"><i data-lucide="phone" class="h-4 w-4 text-gold"></i>+92 325 8582375</a></li>
-      <li><a class="flex items-center gap-2 hover:text-gold-light" href="https://wa.me/923258582375" target="_blank" rel="noopener"><svg class="h-4 w-4 text-gold" fill="currentColor"><use href="#i-wa"></use></svg>WhatsApp us</a></li>
-      <li><a class="flex items-center gap-2 hover:text-gold-light" href="https://www.instagram.com/7even.pk" target="_blank" rel="noopener"><i data-lucide="instagram" class="h-4 w-4 text-gold"></i>@7even.pk</a></li>
-      <li class="flex items-center gap-2"><i data-lucide="map-pin" class="h-4 w-4 text-gold"></i>Delivering all over Pakistan</li>
-    </ul></div>
+    <div class="pt-8 flex flex-col sm:flex-row justify-between gap-4 text-[11px] tracking-[.2em] uppercase text-muted/50">
+      <span>© <span id="yr"></span> 7Even. All rights reserved.</span>
+      <span>Prices in Pakistani Rupees. Images are illustrative.</span>
+    </div>
   </div>
-  <div class="mx-auto mt-12 flex max-w-[1400px] flex-col justify-between gap-2 border-t border-white/[.07] pt-6 text-xs text-white/40 sm:flex-row"><span>© <span id="yr"></span> 7Even. All rights reserved.</span><span>Prices in Pakistani Rupees. Images are illustrative.</span></div>
 </footer>
 
-<!-- FLOATING WHATSAPP -->
-<div class="fixed bottom-4 right-4 z-[60] sm:bottom-6 sm:right-6" style="bottom:max(16px,env(safe-area-inset-bottom));right:max(16px,env(safe-area-inset-right))">
-  <div id="chat-panel" class="glass-solid absolute bottom-[72px] right-0 w-[min(340px,calc(100vw-32px))] rounded-3xl p-5 shadow-2xl" role="dialog" aria-hidden="true">
-    <div class="flex items-center gap-3"><div class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-gold-light to-gold text-[#1a1205]"><i data-lucide="headphones" class="h-5 w-5"></i></div><div><div class="font-medium text-white">7Even Concierge</div><div class="flex items-center gap-1.5 text-xs text-emerald-400"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Replies on WhatsApp</div></div></div>
-    <p class="mt-4 rounded-2xl rounded-tl-sm bg-white/[.06] p-3 text-sm text-white/80">Assalam o Alaikum! How can we help you today?</p>
-    <div id="chat-quick" class="mt-3 grid gap-2"></div>
+<!-- ============ FLOATING WHATSAPP ============ -->
+<div class="fixed bottom-6 right-6 z-[80] sm:bottom-8 sm:right-8">
+  <div id="chat-panel" class="absolute bottom-[72px] right-0 w-[min(300px,calc(100vw-40px))] p-6" style="background:var(--bg2);border:1px solid var(--gold-border)">
+    <div class="flex items-center gap-3 mb-5 pb-5 border-b border-white/[.08]">
+      <div class="w-10 h-10 flex items-center justify-center" style="background:var(--gold)"><svg width="18" height="18" fill="#070707"><use href="#i-wa"></use></svg></div>
+      <div><div class="text-[13.5px] text-cream" style="font-weight:500">7Even Concierge</div><div class="text-[10.5px] tracking-[.2em] uppercase mt-0.5" style="color:var(--gold-light)">Replies on WhatsApp</div></div>
+    </div>
+    <p class="text-[13px] leading-[1.7] text-muted mb-5">Assalam o Alaikum! How can we help you today?</p>
+    <div id="chat-quick" class="grid gap-2"></div>
   </div>
-  <button id="chat-btn" data-action="chat" class="relative flex h-16 w-16 items-center justify-center rounded-full text-white shadow-[0_12px_40px_-8px_rgba(37,211,102,.7)] transition hover:scale-105 active:scale-95" style="background:linear-gradient(135deg,#2be075,#12a24a)"><span class="absolute inset-0 animate-ping rounded-full bg-[#25d366]/40" style="animation-duration:2.4s"></span><svg class="relative h-7 w-7" fill="currentColor"><use href="#i-wa"></use></svg></button>
+  <button id="chat-btn" data-action="chat" class="w-14 h-14 flex items-center justify-center transition-transform hover:scale-105 active:scale-95" style="background:var(--gold)" aria-label="Open WhatsApp chat">
+    <svg width="22" height="22" fill="#070707"><use href="#i-wa"></use></svg>
+  </button>
 </div>
 
-<div id="toast" class="glass-solid flex items-center gap-2 rounded-full px-5 py-3 text-sm text-white shadow-xl" role="status" aria-live="polite"></div>
+<div id="toast" role="status" aria-live="polite"></div>
 
-<!-- SIZE MODAL -->
+<!-- ============ SIZE MODAL ============ -->
 <div id="size-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="modal-backdrop" data-action="close-modal"></div>
-  <div class="modal-card glass-solid p-6 sm:p-8">
-    <div class="flex items-start justify-between gap-4">
-      <div><h2 class="font-display text-2xl text-white sm:text-3xl">Find your fit</h2><p class="mt-1 text-sm text-white/55">Sizes from 38 mm to 44 mm. Slide to your wrist size.</p></div>
-      <button data-action="close-modal" class="pill flex h-11 w-11 items-center justify-center rounded-full"><i data-lucide="x" class="h-5 w-5"></i></button>
+  <div class="modal-bg" data-action="close-modal"></div>
+  <div class="modal-card">
+    <div class="flex items-start justify-between gap-6 mb-10">
+      <div><div class="flex items-center gap-3 mb-4"><span class="divider block"></span><span class="label">Size Guide</span></div><h2 class="serif text-[36px] leading-none text-cream">Find your fit</h2></div>
+      <button data-action="close-modal" class="w-10 h-10 flex items-center justify-center border border-white/[.1] hover:border-gold transition-colors" aria-label="Close"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F2F0EA" stroke-width="1.2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
     </div>
-    <div class="mt-6 rounded-3xl bg-black/30 p-3"><div id="fit-svg" class="mx-auto max-w-[360px]"></div></div>
-    <div class="mt-6">
-      <div class="mb-3 flex items-center justify-between text-sm"><label for="wrist" class="text-white/70">Wrist circumference</label><span class="font-medium text-gold-light"><span id="wrist-val">16.0</span> cm</span></div>
+    <div class="p-5 mb-8" style="background:rgba(0,0,0,.4);border:1px solid var(--border)"><div id="fit-svg" class="mx-auto max-w-[360px]"></div></div>
+    <div class="mb-8">
+      <div class="flex items-center justify-between mb-4">
+        <label for="wrist" class="text-[10.5px] tracking-[.3em] uppercase text-muted">Wrist Circumference</label>
+        <span class="text-[15px]" style="color:var(--gold-light);font-weight:500"><span id="wrist-val">16.0</span> cm</span>
+      </div>
       <input id="wrist" type="range" min="13" max="21" step="0.5" value="16">
+      <p class="text-[12px] text-muted/70 mt-2 leading-[1.6]">Wrap a string around your wrist just above the bone, then measure it against a ruler.</p>
     </div>
-    <div id="size-chips" class="mt-8 flex flex-wrap gap-2.5"></div>
-    <div id="fit-text" class="mt-5 rounded-2xl bg-gold/10 p-4 text-sm leading-relaxed text-gold-light"></div>
-    <button data-action="use-size" class="gold-btn mt-6 flex h-14 w-full items-center justify-center gap-2 rounded-full">Use <span id="use-size-label" class="mx-1">42</span> mm</button>
+    <div id="size-chips" class="flex flex-wrap gap-2.5 mb-7"></div>
+    <div id="fit-text" class="text-[13.5px] leading-[1.75] p-5 mb-7" style="background:rgba(200,166,106,.05);border:1px solid var(--gold-border);color:var(--gold-light)"></div>
+    <button data-action="use-size" class="btn btn-gold w-full">Use <span id="use-size-label" class="mx-1">42</span> mm</button>
   </div>
 </div>
 
-<!-- ORDER MODAL -->
+<!-- ============ ORDER MODAL ============ -->
 <div id="order-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="modal-backdrop" data-action="close-modal"></div>
-  <div class="modal-card glass-solid p-6 sm:p-8">
-    <div class="flex items-start justify-between gap-4">
-      <div><h2 class="font-display text-2xl text-white sm:text-3xl">Fast COD order</h2><p class="mt-1 text-sm text-white/55">Fill in your details. We open WhatsApp with your order ready to send.</p></div>
-      <button data-action="close-modal" class="pill flex h-11 w-11 items-center justify-center rounded-full"><i data-lucide="x" class="h-5 w-5"></i></button>
+  <div class="modal-bg" data-action="close-modal"></div>
+  <div class="modal-card" style="max-width:680px">
+    <div class="flex items-start justify-between gap-6 mb-10">
+      <div><div class="flex items-center gap-3 mb-4"><span class="divider block"></span><span class="label">Order</span></div><h2 class="serif text-[36px] leading-none text-cream">Fast COD order</h2><p class="text-[13.5px] text-muted mt-3 max-w-[420px]">Fill in your details. We open WhatsApp with your order ready to send.</p></div>
+      <button data-action="close-modal" class="w-10 h-10 flex items-center justify-center border border-white/[.1] hover:border-gold transition-colors" aria-label="Close"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F2F0EA" stroke-width="1.2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
     </div>
-    <form id="order-form" class="mt-6 grid gap-4" novalidate>
-      <div class="grid gap-4 sm:grid-cols-2">
-        <div class="sm:col-span-2"><label class="mb-1.5 block text-sm text-white/70" for="f-product">Watch</label><select id="f-product" class="field"></select></div>
-        <div><label class="mb-1.5 block text-sm text-white/70" for="f-size">Case size</label><select id="f-size" class="field"></select></div>
-        <div><span class="mb-1.5 block text-sm text-white/70">Quantity</span><div class="field flex items-center justify-between !py-1.5"><button type="button" data-qty="-1" class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-white/10"><i data-lucide="minus" class="h-4 w-4"></i></button><output id="f-qty" class="text-lg font-medium">1</output><button type="button" data-qty="1" class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-white/10"><i data-lucide="plus" class="h-4 w-4"></i></button></div></div>
+    <form id="order-form" class="grid gap-6" novalidate>
+      <div class="grid gap-6 sm:grid-cols-2">
+        <div class="sm:col-span-2"><label class="block text-[10.5px] tracking-[.3em] uppercase text-muted mb-2" for="f-product">Timepiece</label><select id="f-product" class="field"></select></div>
+        <div><label class="block text-[10.5px] tracking-[.3em] uppercase text-muted mb-2" for="f-size">Case Size</label><select id="f-size" class="field"></select></div>
+        <div><span class="block text-[10.5px] tracking-[.3em] uppercase text-muted mb-2">Quantity</span><div class="flex items-center justify-between border-b border-white/[.1] py-3"><button type="button" data-qty="-1" class="w-7 h-7 flex items-center justify-center hover:opacity-70"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8A66A" stroke-width="1.6"><path d="M5 12h14"/></svg></button><output id="f-qty" class="text-[16px]" style="color:var(--gold-light);font-weight:500">1</output><button type="button" data-qty="1" class="w-7 h-7 flex items-center justify-center hover:opacity-70"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8A66A" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg></button></div></div>
       </div>
-      <div><label class="mb-1.5 block text-sm text-white/70" for="f-name">Full name</label><input id="f-name" class="field" type="text" autocomplete="name" placeholder="Your full name"><p id="e-name" class="err"></p></div>
-      <div><label class="mb-1.5 block text-sm text-white/70" for="f-phone">Phone number</label><input id="f-phone" class="field" type="tel" inputmode="tel" autocomplete="tel" placeholder="03XX XXXXXXX"><p id="e-phone" class="err"></p></div>
-      <div><label class="mb-1.5 block text-sm text-white/70" for="f-city">City</label><input id="f-city" class="field" type="text" list="cities" placeholder="Your city"><datalist id="cities"><option>Lahore</option><option>Karachi</option><option>Islamabad</option><option>Rawalpindi</option><option>Faisalabad</option><option>Multan</option><option>Peshawar</option><option>Quetta</option></datalist><p id="e-city" class="err"></p></div>
-      <div><label class="mb-1.5 block text-sm text-white/70" for="f-address">Delivery address</label><textarea id="f-address" class="field resize-none" rows="3" placeholder="House no., street, area, nearest landmark"></textarea><p id="e-address" class="err"></p></div>
-      <div class="flex items-center gap-3 rounded-2xl bg-white/[.04] px-4 py-3 text-sm text-white/60"><i data-lucide="lock" class="h-4 w-4 shrink-0 text-gold"></i>Price confirmed on WhatsApp. COD, free delivery.</div>
-      <button type="submit" class="gold-btn flex h-14 w-full items-center justify-center gap-2 rounded-full text-[15px]"><svg class="h-5 w-5" fill="currentColor"><use href="#i-wa"></use></svg>Send order on WhatsApp</button>
+      <div><label class="block text-[10.5px] tracking-[.3em] uppercase text-muted mb-2" for="f-name">Full Name</label><input id="f-name" class="field" type="text" autocomplete="name" placeholder="Your full name"><p id="e-name" class="err"></p></div>
+      <div><label class="block text-[10.5px] tracking-[.3em] uppercase text-muted mb-2" for="f-phone">Phone Number</label><input id="f-phone" class="field" type="tel" inputmode="tel" autocomplete="tel" placeholder="03XX XXXXXXX"><p id="e-phone" class="err"></p></div>
+      <div><label class="block text-[10.5px] tracking-[.3em] uppercase text-muted mb-2" for="f-city">City</label><input id="f-city" class="field" type="text" list="cities" placeholder="Your city"><datalist id="cities"><option>Lahore</option><option>Karachi</option><option>Islamabad</option><option>Rawalpindi</option><option>Faisalabad</option><option>Multan</option><option>Peshawar</option><option>Quetta</option></datalist><p id="e-city" class="err"></p></div>
+      <div><label class="block text-[10.5px] tracking-[.3em] uppercase text-muted mb-2" for="f-address">Delivery Address</label><textarea id="f-address" class="field resize-none" rows="2" placeholder="House no., street, area, nearest landmark"></textarea><p id="e-address" class="err"></p></div>
+      <div class="flex items-start gap-3 p-5 text-[13px] leading-[1.7] text-muted" style="background:rgba(200,166,106,.04);border:1px solid var(--gold-border)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8A66A" stroke-width="1.4" class="shrink-0 mt-0.5"><rect x="4" y="10" width="16" height="10" rx="1"/><path d="M8 10V7a4 4 0 118 0v3"/></svg>Price is confirmed on WhatsApp before dispatch. Cash on delivery, free delivery across Pakistan.</div>
+      <button type="submit" class="btn btn-gold w-full"><svg width="13" height="13" fill="currentColor"><use href="#i-wa"></use></svg>Send Order on WhatsApp</button>
     </form>
   </div>
 </div>
-
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
 <script>
 (function(){
@@ -378,23 +686,24 @@ svg.lucide,i[data-lucide]{display:inline-block}
   var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
   var waUrl=function(t){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(t)};
   function openWA(t){var w=window.open(waUrl(t),'_blank');if(!w)window.location.href=waUrl(t)}
-  function icons(){try{if(window.lucide&&lucide.createIcons)lucide.createIcons()}catch(e){}}
 
+  /* Crisp image transform — best quality, no crop, retina sharp */
   function cld(url,w){return url.replace('/upload/','/upload/w_'+w+',q_auto:best,f_auto,dpr_2.0,c_fit/')}
 
+  /* ============ PRODUCTS — CORRECT BRAND MAPPING ============ */
   var PRODUCTS=[
-    {id:'7E-01',brand:'SEIKO',  model:'Classic Steel',  finish:'Silver',        photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192381/Watch_1.webp',      tag:''},
-    {id:'7E-02',brand:'SEIKO',  model:'Gilt Sport',     finish:'Gold',          photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192381/Watch_2.webp',      tag:'NEW'},
-    {id:'7E-03',brand:'ROLEX',  model:'Noir Diver',     finish:'Obsidian',      photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192381/Watch_3_same.webp', tag:'HOT'},
-    {id:'7E-04',brand:'ROLEX',  model:'Noir Diver II',  finish:'Black Steel',   photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192381/Watch_3.webp',      tag:''},
-    {id:'7E-05',brand:'SEIKO',  model:'Two-Tone Gold',  finish:'Two-Tone Gold', photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192381/watch_4.webp',      tag:''},
-    {id:'7E-06',brand:'CURREN', model:'Argent Sport',   finish:'Silver Sport',  photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192381/Watch_5.webp',      tag:''},
-    {id:'7E-07',brand:'TURBINE',model:'Rose Elite',     finish:'Rose Gold',     photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192382/watch_6.webp',      tag:'HOT'},
-    {id:'7E-08',brand:'TURBINE',model:'Onyx Square',    finish:'Black Square',  photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192383/Watch_7.webp',      tag:''},
-    {id:'7E-09',brand:'TURBINE',model:'Gold Square',    finish:'Gold Square',   photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192386/Watch_8.webp',      tag:''},
-    {id:'7E-10',brand:'CURREN', model:'Sovereign Gold', finish:'Sovereign Gold',photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192384/Watch_9.webp',      tag:'NEW'},
-    {id:'7E-11',brand:'TURBINE',model:'Classic Silver', finish:'Classic Silver',photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192385/Watch_10.webp',     tag:''},
-    {id:'7E-12',brand:'CURREN', model:'Heritage Gold',  finish:'Heritage Gold', photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192385/Watch_11.webp',     tag:''}
+    {id:'7E-01',brand:'SEIKO',  model:'Classic Steel',  finish:'Silver',     photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192381/Watch_1.webp',      tag:'',    desc:'A clean, minimal silhouette in brushed steel.'},
+    {id:'7E-02',brand:'SEIKO',  model:'Gilt Sport',     finish:'Gold',       photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192381/Watch_2.webp',      tag:'NEW', desc:'Warm gold tone with a sport-driven edge.'},
+    {id:'7E-03',brand:'ROLEX',  model:'Noir Diver',     finish:'Obsidian',   photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192381/Watch_3_same.webp', tag:'HOT', desc:'Deep black dial with a diver-inspired bezel.'},
+    {id:'7E-04',brand:'ROLEX',  model:'Noir Diver II',  finish:'Black Steel',photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192381/Watch_3.webp',      tag:'',    desc:'Blackened steel case with a bold sport bracelet.'},
+    {id:'7E-05',brand:'SEIKO',  model:'Two-Tone Gold',  finish:'Two-Tone',   photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192381/watch_4.webp',      tag:'',    desc:'Steel and gold in quiet, confident balance.'},
+    {id:'7E-06',brand:'CURREN', model:'Argent Sport',   finish:'Silver',     photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192381/Watch_5.webp',      tag:'',    desc:'A sporty silver piece with a clean, modern face.'},
+    {id:'7E-07',brand:'TURBINE',model:'Rose Elite',     finish:'Rose Gold',  photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192382/watch_6.webp',      tag:'HOT', desc:'Rose gold tones with a refined, open dial.'},
+    {id:'7E-08',brand:'TURBINE',model:'Onyx Square',    finish:'Black',      photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192383/Watch_7.webp',      tag:'',    desc:'A square case for the quietly unconventional.'},
+    {id:'7E-09',brand:'TURBINE',model:'Gold Square',    finish:'Gold',       photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192386/Watch_8.webp',      tag:'',    desc:'Rectangular form with a warm gold finish.'},
+    {id:'7E-10',brand:'CURREN', model:'Sovereign Gold', finish:'Gold',       photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192384/Watch_9.webp',      tag:'NEW', desc:'The flagship gold piece — bold and refined.'},
+    {id:'7E-11',brand:'TURBINE',model:'Classic Silver', finish:'Silver',     photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192385/Watch_10.webp',     tag:'',    desc:'Understated silver with a timeless profile.'},
+    {id:'7E-12',brand:'CURREN', model:'Heritage Gold',  finish:'Gold',       photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192385/Watch_11.webp',     tag:'',    desc:'A heritage-styled gold piece with presence.'}
   ];
 
   var REVIEWS=[
@@ -409,35 +718,55 @@ svg.lucide,i[data-lucide]{display:inline-block}
   var state={size:42};
   var byId=function(id){return PRODUCTS.filter(function(p){return p.id===id})[0]||PRODUCTS[0]};
 
+  /* ============ PRODUCT GRID — asymmetric editorial layout ============ */
+  var layout=[
+    {col:'lg:col-span-3', aspect:'aspect-[4/5]'},   // feature
+    {col:'lg:col-span-3', aspect:'aspect-[4/5]'},   // feature
+    {col:'lg:col-span-2', aspect:'aspect-[4/5]'},   // small
+    {col:'lg:col-span-2', aspect:'aspect-[4/5]'},   // small
+    {col:'lg:col-span-2', aspect:'aspect-[4/5]'},   // small
+    {col:'lg:col-span-3', aspect:'aspect-[4/5]'},   // feature
+    {col:'lg:col-span-3', aspect:'aspect-[4/5]'},   // feature
+    {col:'lg:col-span-2', aspect:'aspect-[4/5]'},
+    {col:'lg:col-span-2', aspect:'aspect-[4/5]'},
+    {col:'lg:col-span-2', aspect:'aspect-[4/5]'},
+    {col:'lg:col-span-3', aspect:'aspect-[4/5]'},
+    {col:'lg:col-span-3', aspect:'aspect-[4/5]'}
+  ];
+
   $('#product-grid').innerHTML=PRODUCTS.map(function(p,i){
     var msg='Hello 7Even, please share the price for *'+p.brand+' '+p.model+'* (code '+p.id+').';
-    var eager=i<8?'loading="eager" fetchpriority="high"':'loading="lazy" fetchpriority="low"';
-    var tagHtml=p.tag==='HOT'?'<div class="tag-badge">HOT</div>':p.tag==='NEW'?'<div class="tag-badge">NEW</div>':'';
-    return '<article class="glass glow-card flex flex-col overflow-hidden rounded-[30px]">'+
-      '<div class="card-media relative aspect-[4/4.6] rounded-b-[26px]" style="background:#0b0a0b">'+
-        '<img src="'+cld(p.photo,800)+'" alt="'+p.brand+' '+p.model+'" '+eager+' decoding="async" style="object-fit:contain">'+
-        '<div class="absolute left-4 top-4 rounded-full bg-black/55 px-3 py-1.5 text-xs font-medium text-white backdrop-blur z-10">'+p.id+'</div>'+
+    var eager=i<4?'loading="eager" fetchpriority="high"':'loading="lazy" fetchpriority="low"';
+    var L=layout[i]||layout[0];
+    var tagHtml=p.tag==='HOT'?'<div class="absolute left-5 top-5 z-10 text-[9.5px] tracking-[.4em] uppercase px-3 py-1.5" style="background:var(--gold);color:#070707;font-weight:600">HOT</div>':p.tag==='NEW'?'<div class="absolute left-5 top-5 z-10 text-[9.5px] tracking-[.4em] uppercase px-3 py-1.5" style="border:1px solid var(--gold);color:var(--gold)">NEW</div>':'';
+    return '<article class="p-card reveal '+L.col+'" data-cursor="view">'+
+      '<div class="p-media relative '+L.aspect+'">'+
+        '<img src="'+cld(p.photo,800)+'" alt="'+p.brand+' '+p.model+'" '+eager+' decoding="async">'+
         tagHtml+
-        '<div class="watch-name-badge"><h4>'+p.brand+'</h4><span>'+p.model+'</span></div>'+
+        '<div class="absolute right-5 top-5 z-10 text-[9.5px] tracking-[.35em] uppercase text-muted/70">'+p.id+'</div>'+
       '</div>'+
-      '<div class="flex flex-1 flex-col p-6">'+
-        '<h3 class="font-display text-2xl text-white">'+p.brand+'</h3>'+
-        '<div class="text-sm text-gold-light/80 mt-1">'+p.model+'</div>'+
-        '<div class="text-xs text-white/45 mt-1">'+p.finish+'</div>'+
-        '<div class="mt-6 flex gap-2 pt-6 border-t border-white/[.06]">'+
-          '<a href="'+waUrl(msg)+'" target="_blank" rel="noopener" class="gold-btn flex h-12 flex-1 items-center justify-center gap-2 rounded-full text-sm"><span class="flex h-6 w-6 items-center justify-center rounded-full bg-[#1a1205]/15"><svg class="h-4 w-4" fill="currentColor"><use href="#i-wa"></use></svg></span>DM for Price</a>'+
-          '<button data-action="open-order" data-id="'+p.id+'" class="ghost-btn flex h-12 w-12 items-center justify-center rounded-full"><i data-lucide="shopping-bag" class="h-5 w-5"></i></button>'+
+      '<div class="p-7 lg:p-8">'+
+        '<div class="flex items-baseline justify-between gap-4 mb-3">'+
+          '<span class="text-[10px] tracking-[.4em] uppercase" style="color:var(--gold)">'+p.brand+'</span>'+
+          '<span class="text-[10px] tracking-[.3em] uppercase text-muted/60">'+p.finish+'</span>'+
         '</div>'+
-      '</div></article>';
+        '<h3 class="serif text-[26px] lg:text-[30px] leading-tight text-cream mb-3">'+p.model+'</h3>'+
+        '<p class="text-[13px] leading-[1.7] text-muted mb-7">'+p.desc+'</p>'+
+        '<div class="flex items-center justify-between gap-4 pt-5 border-t border-white/[.06]">'+
+          '<a href="'+waUrl(msg)+'" target="_blank" rel="noopener" class="text-[10.5px] tracking-[.3em] uppercase text-cream hover:text-gold-light transition-colors flex items-center gap-2" data-cursor="link">DM for Price <span class="info-arrow">→</span></a>'+
+          '<button data-action="open-order" data-id="'+p.id+'" class="text-[10.5px] tracking-[.3em] uppercase text-muted hover:text-gold-light transition-colors" data-cursor="link">Order</button>'+
+        '</div>'+
+      '</div>'+
+    '</article>';
   }).join('');
 
-  /* WAVE STRIP */
+  /* ============ WAVE STRIP ============ */
   var waveTrack=$('#wave-track');
   var waveSection=document.getElementById('wave-section');
   var waveItems;
   var oneSet=PRODUCTS.map(function(p,i){
     var dir=(i%2===0)?-1:1;
-    return '<div class="wave-item" data-dir="'+dir+'"><img src="'+cld(p.photo,500)+'" alt="'+p.brand+' '+p.model+'" loading="lazy" decoding="async"></div>';
+    return '<div class="wave-item" data-dir="'+dir+'" data-cursor="view"><img src="'+cld(p.photo,500)+'" alt="'+p.brand+' '+p.model+'" loading="lazy" decoding="async"></div>';
   }).join('');
   waveTrack.innerHTML=oneSet+oneSet;
   waveItems=$$('.wave-item');
@@ -445,72 +774,65 @@ svg.lucide,i[data-lucide]{display:inline-block}
   var trackWidth=0,sectionTop=0,sectionHeight=0;
   var targetX=0,currentX=0,targetWave=0,currentWave=0;
 
-  function measureWave(){
-    if(!waveSection||!waveTrack) return;
-    trackWidth=waveTrack.scrollWidth;
-    var r=waveSection.getBoundingClientRect();
-    sectionTop=r.top+window.scrollY;
-    sectionHeight=r.height;
-  }
+  function measureWave(){if(!waveSection||!waveTrack)return;trackWidth=waveTrack.scrollWidth;var r=waveSection.getBoundingClientRect();sectionTop=r.top+window.scrollY;sectionHeight=r.height}
   function updateWaveTargets(){
-    if(!waveSection||!sectionHeight) return;
-    var scrollY=window.scrollY||window.pageYOffset;
-    var winH=window.innerHeight;
-    var start=sectionTop-winH;
-    var end=sectionTop+sectionHeight;
-    var raw=(scrollY-start)/(end-start);
-    raw=Math.max(0,Math.min(1,raw));
-
+    if(!waveSection||!sectionHeight)return;
+    var scrollY=window.scrollY||window.pageYOffset,winH=window.innerHeight;
+    var start=sectionTop-winH,end=sectionTop+sectionHeight;
+    var raw=(scrollY-start)/(end-start);raw=Math.max(0,Math.min(1,raw));
     var maxMove=Math.max(0,trackWidth/2-window.innerWidth);
     targetX=-raw*maxMove;
-
-    // 1.8 oscillations — clear wave
     targetWave=Math.sin(raw*Math.PI*1.8);
   }
   function tickWave(){
     var dx=targetX-currentX;
-    if(Math.abs(dx)>0.05){
-      currentX+=dx*0.10;
-      waveTrack.style.transform='translate3d('+currentX.toFixed(1)+'px,0,0)';
-    }
+    if(Math.abs(dx)>0.05){currentX+=dx*0.10;waveTrack.style.transform='translate3d('+currentX.toFixed(1)+'px,0,0)'}
     var dw=targetWave-currentWave;
     if(Math.abs(dw)>0.003){
       currentWave+=dw*0.12;
       for(var i=0;i<waveItems.length;i++){
-        var el=waveItems[i];
-        var dir=parseFloat(el.dataset.dir);
-        var y=currentWave*dir*55; // Strong 55px up/down
+        var el=waveItems[i],dir=parseFloat(el.dataset.dir);
+        var y=currentWave*dir*55;
         el.style.transform='translate3d(0,'+y.toFixed(1)+'px,0)';
       }
     }
     requestAnimationFrame(tickWave);
   }
 
-  function stars(n,c){var s='';for(var i=0;i<5;i++)s+='<svg class="'+(c||'h-4 w-4')+'" viewBox="0 0 24 24" fill="'+(i<n?'#d4af37':'none')+'" stroke="#d4af37" stroke-width="1.6" stroke-linejoin="round"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/></svg>';return s}
-  $('#avg-stars').innerHTML=stars(5,'h-5 w-5');
+  /* ============ STARS + REVIEWS ============ */
+  function stars(n,c){var s='';for(var i=0;i<5;i++)s+='<svg class="'+(c||'star')+'" viewBox="0 0 24 24" fill="'+(i<n?'#C8A66A':'none')+'" stroke="#C8A66A" stroke-width="1.2" stroke-linejoin="round"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/></svg>';return s}
+  $('#avg-stars').innerHTML=stars(5);
+
   $('#review-grid').innerHTML=REVIEWS.map(function(r){
-    return '<figure class="glass glow-card flex flex-col rounded-[28px] p-6">'+
-      '<div class="flex gap-0.5">'+stars(r.s)+'</div>'+
-      '<blockquote class="mt-4 flex-1 text-[15px] leading-relaxed text-white/80">'+r.t+'</blockquote>'+
-      '<figcaption class="mt-6 flex items-center justify-between gap-3">'+
-        '<div class="flex items-center gap-3"><div class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-gold-light to-gold font-medium text-[#1a1205]">'+r.n[0]+'</div>'+
-        '<div><div class="text-sm font-medium text-white">'+r.n+'</div><div class="text-xs text-white/45">'+r.c+' · '+r.d+'</div></div></div>'+
-        '<span class="flex shrink-0 items-center gap-1 rounded-full bg-emerald-500/10 px-2.5 py-1 text-[11px] font-medium text-emerald-400"><i data-lucide="badge-check" class="h-3.5 w-3.5"></i>Verified</span>'+
-      '</figcaption></figure>';
+    return '<figure class="reveal pb-14 border-b border-white/[.06]">'+
+      '<div class="serif leading-none mb-6" style="font-size:80px;color:var(--gold);opacity:.3">"</div>'+
+      '<div class="flex gap-1 mb-6">'+stars(r.s,'star')+'</div>'+
+      '<blockquote class="serif text-[22px] lg:text-[26px] leading-[1.55] text-cream mb-8 italic" style="font-weight:400">'+r.t+'</blockquote>'+
+      '<figcaption class="flex items-center gap-4">'+
+        '<div class="w-10 h-px" style="background:var(--gold);opacity:.6"></div>'+
+        '<div>'+
+          '<div class="text-[12.5px] tracking-[.15em] uppercase text-cream" style="font-weight:500">'+r.n+'</div>'+
+          '<div class="text-[10px] tracking-[.3em] uppercase text-muted/70 mt-1">'+r.c+' · '+r.d+'</div>'+
+        '</div>'+
+      '</figcaption>'+
+    '</figure>';
   }).join('');
 
-  var spans=['row-span-2','','md:col-span-2','row-span-2','','md:col-span-2','','row-span-2','md:col-span-2','','','md:col-span-2'];
-  $('#gallery').innerHTML=PRODUCTS.map(function(p,i){
-    return '<div class="card-media glow-card rounded-3xl '+spans[i]+'"><img src="'+cld(p.photo,500)+'" alt="'+p.brand+'" loading="lazy" decoding="async" style="object-fit:cover"><div class="watch-name-badge"><h4>'+p.brand+'</h4></div></div>';
+  /* ============ GALLERY ============ */
+  $('#gallery').innerHTML=PRODUCTS.slice(0,8).map(function(p,i){
+    var spans=['col-span-2 row-span-2','','','','','col-span-2','',''];
+    return '<div class="reveal-scale relative overflow-hidden '+(spans[i]||'')+'" style="border:1px solid var(--border)" data-cursor="view"><img src="'+cld(p.photo,600)+'" alt="'+p.brand+' '+p.model+'" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"><div class="absolute left-5 bottom-5 text-[10px] tracking-[.35em] uppercase" style="color:var(--gold);text-shadow:0 2px 10px rgba(0,0,0,.95)">'+p.brand+'</div></div>';
   }).join('');
 
+  /* ============ TOAST + MODALS ============ */
   var toastT;
-  function toast(m){var t=$('#toast');t.innerHTML='<i data-lucide="check-circle-2" class="h-4 w-4 text-emerald-400"></i>'+m;icons();t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('show')},3200)}
+  function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('show')},3000)}
   var lastFocus=null;
-  function openModal(id){var m=document.getElementById(id);lastFocus=document.activeElement;m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';setTimeout(function(){var f=$('input:not([type=range]),select,textarea',m);if(f&&window.innerWidth>640)f.focus()},60)}
+  function openModal(id){var m=document.getElementById(id);lastFocus=document.activeElement;m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';setTimeout(function(){var f=$('input:not([type=range]),select,textarea',m);if(f&&window.innerWidth>640)f.focus()},80)}
   function closeModals(){$$('.modal[aria-hidden="false"]').forEach(function(m){m.setAttribute('aria-hidden','true')});document.body.style.overflow='';if(lastFocus&&lastFocus.focus)lastFocus.focus()}
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeModals();closeChat()}});
 
+  /* ============ SIZE GUIDE ============ */
   var SIZES=[38,39,40,41,42,43,44],sizeDraft=state.size;
   var recSize=function(w){return Math.max(38,Math.min(44,Math.round(38+(w-14)*.923)))};
   function renderFit(){
@@ -518,18 +840,15 @@ svg.lucide,i[data-lucide]{display:inline-block}
     $('#wrist-val').textContent=w.toFixed(1);$('#use-size-label').textContent=sel;
     var k=3.4,ww=(w*10/Math.PI)*1.12*k,r=sel/2*k,cx=180;
     var ratio=sel/((w*10/Math.PI)*1.12),label=ratio<.62?'Slim and understated':ratio<=.78?'Ideal proportion':'Bold, oversized look';
-    $('#fit-svg').innerHTML='<svg viewBox="0 0 360 200" class="w-full"><defs><linearGradient id="skin" x1="0" x2="1"><stop offset="0" stop-color="#8d5f45"/><stop offset=".5" stop-color="#b98564"/><stop offset="1" stop-color="#8d5f45"/></linearGradient><linearGradient id="fc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e7b0"/><stop offset=".55" stop-color="#b8902a"/><stop offset="1" stop-color="#f6e7b0"/></linearGradient></defs>'+
-      '<rect x="'+(cx-ww/2)+'" y="10" width="'+ww+'" height="180" rx="34" fill="url(#skin)"/>'+
-      '<rect x="'+(cx-ww/2)+'" y="74" width="'+ww+'" height="52" fill="#1c130d" opacity=".9"/>'+
-      '<circle cx="'+cx+'" cy="100" r="'+r+'" fill="url(#fc)"/><circle cx="'+cx+'" cy="100" r="'+(r*.88)+'" fill="#120d08"/>'+
-      '<text x="'+cx+'" y="196" text-anchor="middle" font-size="11" fill="#f3e5ab">'+sel+' mm on a '+w.toFixed(1)+' cm wrist</text></svg>';
-    $('#size-chips').innerHTML=SIZES.map(function(s){return '<button type="button" class="size-chip" data-size="'+s+'" aria-pressed="'+(s===sel)+'">'+(s===rec?'<span class="rec">Best fit</span>':'')+s+' mm</button>'}).join('');
+    $('#fit-svg').innerHTML='<svg viewBox="0 0 360 200" class="w-full"><defs><linearGradient id="sk" x1="0" x2="1"><stop offset="0" stop-color="#8d5f45"/><stop offset=".5" stop-color="#b98564"/><stop offset="1" stop-color="#8d5f45"/></linearGradient><linearGradient id="fc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E3D0A8"/><stop offset=".55" stop-color="#C8A66A"/><stop offset="1" stop-color="#E3D0A8"/></linearGradient></defs><rect x="'+(cx-ww/2)+'" y="10" width="'+ww+'" height="180" rx="34" fill="url(#sk)"/><rect x="'+(cx-ww/2)+'" y="74" width="'+ww+'" height="52" fill="#1c130d" opacity=".9"/><circle cx="'+cx+'" cy="100" r="'+r+'" fill="url(#fc)"/><circle cx="'+cx+'" cy="100" r="'+(r*.88)+'" fill="#120d08"/><text x="'+cx+'" y="196" text-anchor="middle" font-size="11" fill="#E3D0A8" font-family="Inter,sans-serif" letter-spacing="1.5">'+sel+' mm · '+w.toFixed(1)+' cm wrist</text></svg>';
+    $('#size-chips').innerHTML=SIZES.map(function(s){return '<button type="button" class="size-chip" data-size="'+s+'" aria-pressed="'+(s===sel)+'">'+s+' mm</button>'}).join('');
     var lo=(14+(sel-38)/.923-.54).toFixed(1),hi=(14+(sel-38)/.923+.54).toFixed(1);
-    $('#fit-text').innerHTML='<strong>'+label+'.</strong> A '+sel+' mm case suits wrists of about '+lo+' to '+hi+' cm.';
+    $('#fit-text').innerHTML='<strong style="font-weight:500">'+label+'.</strong> A '+sel+' mm case suits wrists of about '+lo+' to '+hi+' cm.';
   }
   $('#wrist').addEventListener('input',function(){sizeDraft=recSize(parseFloat(this.value));renderFit()});
   $('#size-chips').addEventListener('click',function(e){var b=e.target.closest('[data-size]');if(b){sizeDraft=+b.dataset.size;renderFit()}});
 
+  /* ============ ORDER FORM ============ */
   var F={product:$('#f-product'),size:$('#f-size'),qty:$('#f-qty'),name:$('#f-name'),phone:$('#f-phone'),city:$('#f-city'),address:$('#f-address')};
   F.product.innerHTML=PRODUCTS.map(function(p){return '<option value="'+p.id+'">'+p.brand+' — '+p.model+'</option>'}).join('');
   F.size.innerHTML=SIZES.map(function(s){return '<option value="'+s+'">'+s+' mm</option>'}).join('');
@@ -551,15 +870,18 @@ svg.lucide,i[data-lucide]{display:inline-block}
       setErr('address',F.address,F.address.value.trim().length<10?'Add your full address.':'')
     ].every(Boolean);
   }
-  $('#order-form').addEventListener('submit',function(e){e.preventDefault();if(!validate())return;openWA(buildMsg());toast('Opening WhatsApp');closeModals()});
+  $('#order-form').addEventListener('submit',function(e){e.preventDefault();if(!validate())return;openWA(buildMsg());toast('Opening WhatsApp…');closeModals()});
   function openOrder(id){F.product.value=id||PRODUCTS[0].id;F.size.value=state.size;qty=1;updateOrder();openModal('order-modal')}
 
-  $('#chat-quick').innerHTML='<a href="'+waUrl('Hello 7Even, is the watch in stock?')+'" target="_blank" class="pill flex items-center justify-between gap-2 rounded-2xl px-4 py-2.5 text-sm text-white/85">Is this watch in stock?<i data-lucide="chevron-right" class="h-4 w-4 text-gold"></i></a>'+
-    '<a href="'+waUrl('Hello 7Even, how long will delivery take?')+'" target="_blank" class="pill flex items-center justify-between gap-2 rounded-2xl px-4 py-2.5 text-sm text-white/85">Delivery time?<i data-lucide="chevron-right" class="h-4 w-4 text-gold"></i></a>'+
-    '<a href="https://wa.me/'+WA+'" target="_blank" class="gold-btn mt-1 flex h-12 items-center justify-center gap-2 rounded-full text-sm"><svg class="h-4 w-4" fill="currentColor"><use href="#i-wa"></use></svg>Open WhatsApp</a>';
+  /* ============ CHAT ============ */
+  $('#chat-quick').innerHTML=
+    '<a href="'+waUrl('Hello 7Even, is the watch in stock?')+'" target="_blank" class="flex items-center justify-between gap-3 px-4 py-3 text-[12.5px] text-cream hover:border-gold transition-colors" style="border:1px solid var(--border)">Is this watch in stock?<span style="color:var(--gold)">→</span></a>'+
+    '<a href="'+waUrl('Hello 7Even, how long will delivery take?')+'" target="_blank" class="flex items-center justify-between gap-3 px-4 py-3 text-[12.5px] text-cream hover:border-gold transition-colors" style="border:1px solid var(--border)">Delivery time?<span style="color:var(--gold)">→</span></a>'+
+    '<a href="https://wa.me/'+WA+'" target="_blank" class="btn btn-gold mt-1" style="padding:12px;font-size:10.5px"><svg width="12" height="12" fill="currentColor"><use href="#i-wa"></use></svg>Open WhatsApp</a>';
   function closeChat(){$('#chat-panel').classList.remove('open')}
   function toggleChat(){$('#chat-panel').classList.toggle('open')}
 
+  /* ============ EVENTS ============ */
   document.addEventListener('click',function(e){
     var el=e.target.closest('[data-action]');
     if(el){
@@ -570,29 +892,76 @@ svg.lucide,i[data-lucide]{display:inline-block}
       else if(a==='close-modal')closeModals();
       else if(a==='chat')toggleChat();
       else if(a==='menu')toggleMenu();
-    } else if(!e.target.closest('#chat-panel'))closeChat();
+    } else if(!e.target.closest('#chat-panel')&&!e.target.closest('#chat-btn'))closeChat();
     if(e.target.closest('#mobile-menu a'))closeMenu();
   });
-  function toggleMenu(){var m=$('#mobile-menu');m.classList.toggle('hidden');var o=m.classList.contains('hidden');$('#menu-btn').innerHTML='<i data-lucide="'+(o?'menu':'x')+'" class="h-5 w-5 text-gold-light"></i>';icons()}
+  function toggleMenu(){var m=$('#mobile-menu');m.classList.toggle('hidden')}
   function closeMenu(){var m=$('#mobile-menu');if(!m.classList.contains('hidden'))m.classList.add('hidden')}
 
-  function updatePKT(){var pk=new Date(Date.now()+5*3600000);var t=String(pk.getUTCHours()).padStart(2,'0')+':'+String(pk.getUTCMinutes()).padStart(2,'0')+':'+String(pk.getUTCSeconds()).padStart(2,'0');$$('.pkt-clock').forEach(function(el){el.textContent=t})}
-  updatePKT();setInterval(updatePKT,1000);
+  /* ============ HEADER SCROLL ============ */
+  var hdr=document.getElementById('hdr');
+  function onScroll(){if(window.scrollY>40)hdr.classList.add('scrolled');else hdr.classList.remove('scrolled')}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 
+  /* ============ SCROLL REVEAL ============ */
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
+  },{threshold:0.1,rootMargin:'0px 0px -60px 0px'});
+  $$('.reveal, .reveal-mask, .reveal-scale').forEach(function(el){io.observe(el)});
+
+  /* ============ PARALLAX ============ */
+  var parallaxEls=$$('[data-parallax]');
+  if(parallaxEls.length&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var ticking=false;
+    function updateParallax(){
+      var winH=window.innerHeight;
+      parallaxEls.forEach(function(el){
+        var rect=el.getBoundingClientRect();
+        if(rect.bottom<0||rect.top>winH) return;
+        var speed=parseFloat(el.dataset.parallax)||0.15;
+        var offset=(rect.top+rect.height/2-winH/2)*speed;
+        el.style.transform='translate3d(0,'+(-offset).toFixed(1)+'px,0)';
+      });
+      ticking=false;
+    }
+    window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(updateParallax);ticking=true}},{passive:true});
+    updateParallax();
+  }
+
+  /* ============ CUSTOM CURSOR (desktop) ============ */
+  var dot=$('#cursor-dot'),label=$('#cursor-label');
+  if(window.matchMedia('(hover: hover)').matches){
+    var mx=0,my=0,dx=0,dy=0;
+    document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY});
+    (function loop(){
+      dx+=(mx-dx)*0.22;dy+=(my-dy)*0.22;
+      dot.style.transform='translate('+dx+'px,'+dy+'px) translate(-50%,-50%)';
+      label.style.transform='translate('+dx+'px,'+dy+'px) translate(-50%,-50%)';
+      requestAnimationFrame(loop);
+    })();
+    document.addEventListener('mouseover',function(e){
+      var t=e.target.closest('[data-cursor="view"]');
+      var l=e.target.closest('[data-cursor="link"],a,button');
+      if(t){dot.classList.add('hover');label.classList.add('show')}
+      else if(l){dot.style.transform+=' scale(1.5)'}
+      else{dot.classList.remove('hover');label.classList.remove('show')}
+    });
+  }
+
+  /* ============ BOOT ============ */
   function boot(){
     $('#yr').textContent=new Date().getFullYear();
     renderFit();updateOrder();
-    icons();setTimeout(icons,300);setTimeout(icons,1000);setTimeout(icons,2000);
     setTimeout(function(){
       measureWave();updateWaveTargets();
       currentX=targetX;currentWave=targetWave;
       tickWave();
-    },200);
+    },150);
     window.addEventListener('scroll',updateWaveTargets,{passive:true});
     window.addEventListener('resize',function(){measureWave();updateWaveTargets()});
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
-  window.addEventListener('load',function(){icons();setTimeout(icons,300);measureWave();updateWaveTargets()});
+  window.addEventListener('load',function(){measureWave();updateWaveTargets()});
 })();
 </script>
 </body>
