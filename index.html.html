@@ -362,7 +362,7 @@
 
     <div class="mt-16 px-2" data-reveal>
       <h3 class="font-display text-2xl font-semibold text-white sm:text-3xl">7Even on the wrist</h3>
-      <p class="mt-2 text-sm text-white/55">Swap in your own customer photos by editing the GALLERY list in the page script.</p>
+      <p class="mt-2 text-sm text-white/55">A closer look at the collection.</p>
     </div>
     <div id="gallery" class="mt-6 grid auto-rows-[150px] grid-cols-2 gap-3 sm:auto-rows-[190px] md:grid-cols-4"></div>
   </div>
@@ -874,13 +874,19 @@
     { n: 'Sana M.', c: 'Multan',       s: 5, t: 'Ordered two, one for me and one as a gift. Both were exactly as shown.', d: '7Even Argent' },
     { n: 'Zain H.', c: 'Rawalpindi',   s: 5, t: 'The rose gold skeleton gets compliments everywhere I go.', d: '7Even Skeleton Rose' }
   ];
-  var GALLERY = [ /* add { src: 'photos/customer1.jpg', alt: '...' } to show real photos; empty src shows artwork */
-    { src: '', theme: 'gold',   span: 'row-span-2 col-span-1' },
-    { src: '', theme: 'black',  span: '' },
-    { src: '', theme: 'silver', span: 'md:col-span-2' },
-    { src: '', theme: 'rose',   span: 'row-span-2' },
-    { src: '', theme: 'gold',   span: '' },
-    { src: '', theme: 'black',  span: 'md:col-span-2' }
+  var GALLERY = [
+    { src: 'https://i.ibb.co/TDWN8JyJ/Watch-1.webp',  theme: 'silver', span: 'row-span-2 col-span-1' },
+    { src: 'https://i.ibb.co/WvwSZJWn/Watch-2.webp',  theme: 'gold',   span: '' },
+    { src: 'https://i.ibb.co/hJdfGjJ6/Watch-3-same.webp', theme: 'black', span: 'md:col-span-2' },
+    { src: 'https://i.ibb.co/8L37CrGc/Watch-3.webp',  theme: 'black',  span: 'row-span-2' },
+    { src: 'https://i.ibb.co/RpQsSbBW/watch-4.webp',  theme: 'gold',   span: '' },
+    { src: 'https://i.ibb.co/V0t79bRQ/Watch-5.webp',  theme: 'silver', span: 'md:col-span-2' },
+    { src: 'https://i.ibb.co/fzPNrnFk/watch-6.webp',  theme: 'rose',   span: '' },
+    { src: 'https://i.ibb.co/WvFzqzX7/Watch-7.webp',  theme: 'black',  span: 'row-span-2' },
+    { src: 'https://i.ibb.co/zTqnx04V/Watch-8.webp',  theme: 'gold',   span: 'md:col-span-2' },
+    { src: 'https://i.ibb.co/DP74wBBS/Watch-9.webp',  theme: 'gold',   span: '' },
+    { src: 'https://i.ibb.co/8Dx08r6H/Watch-10.webp', theme: 'silver', span: '' },
+    { src: 'https://i.ibb.co/8LJQPp2b/Watch-11.webp', theme: 'gold',   span: 'md:col-span-2' }
   ];
 
   /* ---------- Watch artwork (SVG) ---------- */
@@ -964,7 +970,7 @@
       '</figcaption></figure>';
   }).join('');
   $('#gallery').innerHTML = GALLERY.map(function (g) {
-    var inner = g.src ? '<img src="' + g.src + '" alt="' + (g.alt || 'Customer photo') + '" loading="lazy" class="zoom h-full w-full object-cover">'
+    var inner = g.src ? '<img src="' + g.src + '" alt="' + (g.alt || '7Even watch') + '" loading="lazy" class="zoom h-full w-full object-cover">'
                       : '<div class="zoom flex h-full w-full items-center justify-center p-4" style="background:radial-gradient(70% 70% at 50% 40%,' + PAL[g.theme].bg + ',transparent 75%),linear-gradient(180deg,#141215,#0a0a0b)"><div class="h-[135%] -translate-y-3">' + watchSVG(g.theme) + '</div></div>';
     return '<div class="card-media glow-card glass rounded-3xl ' + g.span + '" style="overflow:hidden">' + inner + '</div>';
   }).join('');
