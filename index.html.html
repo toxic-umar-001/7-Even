@@ -12,6 +12,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://wsrv.nl" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <script src="https://cdn.tailwindcss.com"></script>
@@ -30,13 +31,13 @@
   body { background: var(--ink); color: #e9e6df; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-weight: 400; overflow-x: hidden; -webkit-tap-highlight-color: transparent; }
   section[id], header[id] { scroll-margin-top: 96px; }
 
-  /* ===== LIGHT FONT WEIGHT ===== */
+  /* LIGHT FONT WEIGHT */
   .font-display { font-family: 'Playfair Display', serif; font-weight: 400 !important; letter-spacing: .005em; }
   h1, h2, h3, h4 { font-weight: 400; }
   .font-semibold { font-weight: 500 !important; }
   .font-bold, .gold-btn, strong, b { font-weight: 500; }
 
-  /* ===== PIC CRISP FIX — NO BLUR ===== */
+  /* CRISP PICS */
   img { image-rendering: auto; }
   .card-media { overflow: hidden; background: #0b0a0b; }
   .card-media > .zoom { transition: transform .5s cubic-bezier(.2,.7,.2,1); }
@@ -46,11 +47,8 @@
     width: 100%; height: 100%;
     object-fit: cover;
     object-position: center;
-    backface-visibility: visible;
-    -webkit-backface-visibility: visible;
   }
 
-  /* Warm ambient backdrop */
   body::before { content:""; position: fixed; inset: 0; z-index: -2; pointer-events: none;
     background:
       radial-gradient(55% 45% at 88% -5%, rgba(200,137,106,.30), transparent 70%),
@@ -61,7 +59,6 @@
 
   .glass { background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.025)); border: 1px solid rgba(255,255,255,.09); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); }
   .glass-solid { background: linear-gradient(180deg, #17130f, #0e0c0a); border: 1px solid rgba(212,175,55,.18); }
-  .gold-text { background: linear-gradient(120deg, #fff7dc 0%, #f3e5ab 30%, #d4af37 65%, #b8902a 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
   .gold-btn { background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 55%, #b8902a 100%); color: #1a1205; font-weight: 500;
     box-shadow: 0 10px 30px -10px rgba(212,175,55,.6), inset 0 1px 0 rgba(255,255,255,.5); transition: transform .25s ease, box-shadow .25s ease, filter .25s ease; }
@@ -84,8 +81,6 @@
       radial-gradient(40% 50% at 8% 100%, rgba(212,175,55,.09), transparent 70%),
       linear-gradient(160deg, #141214 0%, #0a0a0c 60%); border: 1px solid rgba(255,255,255,.08);
       box-shadow: 0 50px 120px -40px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,255,255,.06); }
-  #watch-canvas { display:block; width:100%; height:100%; touch-action: pan-y; cursor: grab; }
-  #watch-canvas:active { cursor: grabbing; }
   .swatch { width: 36px; height: 36px; border-radius: 999px; background: var(--sw); border: 1px solid rgba(255,255,255,.25);
     box-shadow: inset 0 0 0 2px rgba(0,0,0,.35); transition: box-shadow .25s, transform .25s; }
   .swatch:hover { transform: scale(1.1); }
@@ -94,9 +89,6 @@
   .pulse-dot { position: relative; width: 8px; height: 8px; border-radius: 99px; background: #ff8a4c; }
   .pulse-dot::after { content:""; position:absolute; inset:-4px; border-radius:99px; background:#ff8a4c; opacity:.5; animation: ping 1.6s cubic-bezier(0,0,.2,1) infinite; }
   @keyframes ping { 75%,100% { transform: scale(2.2); opacity: 0; } }
-  @keyframes spin-slow { to { transform: rotate(360deg); } }
-  .gear { animation: spin-slow 18s linear infinite; }
-  .gear.rev { animation-direction: reverse; animation-duration: 12s; }
 
   .modal { position: fixed; inset: 0; z-index: 70; display: flex; align-items: flex-end; justify-content: center; padding: 0; opacity: 0; pointer-events: none; transition: opacity .3s ease; }
   .modal[aria-hidden="false"] { opacity: 1; pointer-events: auto; }
@@ -127,11 +119,15 @@
   details.faq[open] summary .chev { transform: rotate(180deg); }
   .chev { transition: transform .3s; color: var(--gold); flex-shrink:0; }
 
-  .fade-edge { -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent); mask-image: linear-gradient(180deg, #000 70%, transparent); }
   #toast { position: fixed; left: 50%; bottom: 96px; transform: translate(-50%, 20px); opacity: 0; pointer-events: none; z-index: 90; transition: all .35s ease; }
   #toast.show { opacity: 1; transform: translate(-50%, 0); }
   #chat-panel { transform-origin: bottom right; transform: scale(.92) translateY(10px); opacity: 0; pointer-events: none; transition: all .28s cubic-bezier(.2,.8,.2,1); }
   #chat-panel.open { transform: none; opacity: 1; pointer-events: auto; }
+
+  /* Product name badge overlay */
+  .watch-name-badge { position: absolute; left: 0; right: 0; bottom: 0; padding: 30px 16px 14px; background: linear-gradient(180deg, transparent, rgba(0,0,0,.85)); pointer-events: none; }
+  .watch-name-badge h4 { font-family: 'Playfair Display', serif; font-weight: 400; color: #fbf3da; font-size: 15px; letter-spacing: .01em; line-height: 1.2; text-shadow: 0 2px 10px rgba(0,0,0,.9); }
+  .watch-name-badge span { display: block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 11px; color: rgba(243,229,171,.85); margin-top: 2px; letter-spacing: .04em; text-transform: uppercase; }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -161,21 +157,18 @@
     </nav>
 
     <div class="flex items-center gap-2">
-      <!-- PHONE CIRCLE ICON -->
       <a href="tel:+923258582375" class="ghost-btn flex h-11 items-center gap-2 rounded-full px-4 text-sm font-medium" aria-label="Call 7Even">
         <span class="flex h-6 w-6 items-center justify-center rounded-full bg-gold/15">
           <i data-lucide="phone" class="h-3.5 w-3.5 text-gold-light"></i>
         </span>
         <span class="hidden md:inline">0325 8582375</span>
       </a>
-      <!-- DM FOR PRICE — WHATSAPP CIRCLE ICON -->
       <a data-wa="header" href="https://wa.me/923258582375?text=Hello%207Even%2C%20I%20want%20to%20know%20the%20price%20of%20a%20watch." target="_blank" rel="noopener" class="gold-btn hidden h-11 items-center gap-2 rounded-full px-5 text-sm sm:flex">
         <span class="flex h-6 w-6 items-center justify-center rounded-full bg-[#1a1205]/15">
           <svg class="h-4 w-4" fill="currentColor" aria-hidden="true"><use href="#i-wa"></use></svg>
         </span>
         DM for Price
       </a>
-      <!-- MENU CIRCLE ICON -->
       <button id="menu-btn" data-action="menu" class="pill flex h-11 w-11 items-center justify-center rounded-full lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><i data-lucide="menu" class="h-5 w-5 text-gold-light"></i></button>
     </div>
   </header>
@@ -191,35 +184,23 @@
 
 <main id="top">
 
-<!-- ============ HERO ============ -->
+<!-- ============ HERO (NO 3D) ============ -->
 <section class="px-3 pb-6 pt-4 sm:px-6" aria-label="Featured watch">
-  <div class="hero-panel relative mx-auto flex max-w-[1400px] flex-col overflow-hidden rounded-[28px] sm:rounded-[36px] lg:min-h-[800px]">
+  <div class="hero-panel relative mx-auto grid max-w-[1400px] gap-6 overflow-hidden rounded-[28px] p-6 sm:rounded-[36px] sm:p-10 lg:grid-cols-[1.15fr_1fr] lg:gap-10 lg:p-14">
 
-    <div id="hero-canvas-wrap" class="relative z-0 order-2 h-[460px] w-full sm:h-[560px] lg:absolute lg:inset-0 lg:order-none lg:h-auto">
-      <canvas id="watch-canvas" aria-label="Interactive 3D luxury watch. Drag to rotate." role="img"></canvas>
-      <div id="watch-fallback" class="pointer-events-none absolute inset-0 hidden items-center justify-center p-10"></div>
-      <div class="pointer-events-none absolute bottom-3 left-1/2 hidden -translate-x-1/2 items-center gap-2 rounded-full bg-black/40 px-4 py-2 text-xs text-white/60 sm:flex lg:bottom-auto lg:left-auto lg:right-8 lg:top-8 lg:translate-x-0">
-        <i data-lucide="move-horizontal" class="h-3.5 w-3.5 text-gold"></i>Drag to rotate, move your cursor to tilt
-      </div>
-    </div>
-
-    <div class="relative z-10 order-1 flex flex-1 flex-col justify-center px-6 pb-2 pt-10 sm:px-12 sm:pt-14 lg:order-none lg:pt-16 lg:pointer-events-none">
-      <div class="max-w-[560px] lg:pointer-events-auto">
-        <div data-h class="pill mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs text-gold-light">
+    <div class="relative z-10 flex flex-col justify-center">
+      <div class="max-w-[560px]">
+        <div class="pill mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs text-gold-light">
           <span class="pulse-dot"></span>Limited batch, only a few pieces per finish
         </div>
-        <h1 data-h class="font-display text-[44px] leading-[1.04] text-[#fbf3da] sm:text-6xl lg:text-[76px]" style="text-shadow:0 10px 60px rgba(212,175,55,.18)">
+        <h1 class="font-display text-[40px] leading-[1.06] text-[#fbf3da] sm:text-5xl lg:text-[64px]" style="text-shadow:0 10px 60px rgba(212,175,55,.18)">
           Elegance Defined in Every Second
         </h1>
-        <p data-h class="mt-6 max-w-[460px] text-base leading-relaxed text-white/65 sm:text-lg">
+        <p class="mt-6 max-w-[460px] text-base leading-relaxed text-white/65 sm:text-lg">
           Refined steel-cased timepieces with a sweeping second hand and a hand-finished strap, delivered across Pakistan. Pay when it reaches your door.
         </p>
 
-        <div data-h class="mt-7 flex items-center gap-3">
-          <div class="pill flex items-center gap-2 rounded-full px-4 py-2 text-sm text-white/70"><i data-lucide="lock" class="h-4 w-4 text-gold"></i>Pricing shared privately on WhatsApp</div>
-        </div>
-
-        <div data-h class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
           <a id="hero-wa" data-wa="hero" href="https://wa.me/923258582375" target="_blank" rel="noopener" class="gold-btn flex h-14 items-center justify-center gap-2.5 rounded-full px-8 text-[15px]">
             <span class="flex h-7 w-7 items-center justify-center rounded-full bg-[#1a1205]/15">
               <svg class="h-5 w-5" fill="currentColor" aria-hidden="true"><use href="#i-wa"></use></svg>
@@ -229,7 +210,7 @@
           <a href="#collection" class="ghost-btn flex h-14 items-center justify-center gap-2 rounded-full px-8 text-[15px] font-medium">Explore Collection</a>
         </div>
 
-        <ul data-h class="mt-7 flex flex-wrap gap-2 text-xs text-white/70">
+        <ul class="mt-7 flex flex-wrap gap-2 text-xs text-white/70">
           <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="banknote" class="h-3.5 w-3.5 text-gold"></i>Cash on delivery</li>
           <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="truck" class="h-3.5 w-3.5 text-gold"></i>Free delivery</li>
           <li class="pill flex items-center gap-1.5 rounded-full px-3 py-1.5"><i data-lucide="refresh-cw" class="h-3.5 w-3.5 text-gold"></i>7-day replacement</li>
@@ -238,23 +219,21 @@
       </div>
     </div>
 
-    <aside class="glass absolute right-8 top-1/2 z-10 hidden w-60 -translate-y-1/2 rounded-3xl p-5 xl:block" aria-live="polite">
-      <div class="text-xs text-white/45">Selected</div>
-      <div class="font-display mt-1 text-xl text-white" id="spec-name">7Even Sovereign</div>
-      <div class="text-sm text-gold-light" id="spec-finish">Gold finish</div>
-      <ul class="mt-4 space-y-2.5 text-[13px] text-white/65">
-        <li class="flex items-center gap-2"><i data-lucide="gem" class="h-4 w-4 text-gold"></i>Premium steel case</li>
-        <li class="flex items-center gap-2"><i data-lucide="watch" class="h-4 w-4 text-gold"></i>Sweeping second hand</li>
-        <li class="flex items-center gap-2"><i data-lucide="package" class="h-4 w-4 text-gold"></i>Comes in a gift box</li>
-      </ul>
-      <div class="mt-4 flex items-center justify-between border-t border-white/10 pt-4 text-xs text-white/45">
-        <span>Pakistan Standard Time</span>
-        <time class="pkt-clock font-medium tabular-nums text-gold-light">--:--:--</time>
+    <!-- Hero visual: featured watch image -->
+    <div class="relative z-10 flex items-center justify-center">
+      <div class="relative w-full max-w-[420px] aspect-[4/4.6] overflow-hidden rounded-[32px]" style="background:radial-gradient(70% 60% at 50% 40%,rgba(160,110,50,.55),transparent 75%),linear-gradient(180deg,#131114,#0b0a0b)">
+        <img id="hero-feature-img" src="https://wsrv.nl/?url=https%3A%2F%2Fi.postimg.cc%2Fd133jKqH%2FWatch-9.webp&w=800&output=webp&q=82&we&il" alt="7Even Sovereign Gold — featured watch" width="800" height="920" fetchpriority="high" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        <div class="pointer-events-none absolute inset-0 rounded-[32px]" style="box-shadow:inset 0 0 80px rgba(0,0,0,.5)"></div>
+        <div class="watch-name-badge" id="hero-feature-label">
+          <h4>7Even Sovereign Gold</h4>
+          <span>Sovereign Gold · 7E-10</span>
+        </div>
       </div>
-    </aside>
+    </div>
 
-    <div class="relative z-10 order-3 px-3 pb-3 pt-2 sm:px-6 sm:pb-6 lg:order-none lg:px-10 lg:pb-10">
-      <div class="glass mx-auto flex flex-wrap items-center justify-between gap-x-6 gap-y-4 rounded-[26px] px-4 py-4 sm:px-6 lg:max-w-none">
+    <!-- Customizer dock -->
+    <div class="relative z-10 lg:col-span-2">
+      <div class="glass mx-auto flex flex-wrap items-center justify-between gap-x-6 gap-y-4 rounded-[26px] px-4 py-4 sm:px-6">
         <div class="flex items-center gap-4">
           <div>
             <div class="text-xs text-white/45">Finish</div>
@@ -279,10 +258,7 @@
 
         <div class="hidden h-9 w-px bg-white/10 sm:block"></div>
 
-        <div class="flex w-full gap-2 sm:w-auto">
-          <button data-action="spin" class="ghost-btn flex h-12 flex-1 items-center justify-center gap-2 rounded-full px-5 text-sm font-medium sm:flex-none"><i data-lucide="rotate-3d" class="h-4 w-4"></i>360° spin</button>
-          <button data-action="open-order" class="gold-btn flex h-12 flex-1 items-center justify-center gap-2 rounded-full px-6 text-sm sm:flex-none">Buy Now</button>
-        </div>
+        <button data-action="open-order" class="gold-btn flex h-12 w-full items-center justify-center gap-2 rounded-full px-6 text-sm sm:w-auto">Buy Now</button>
       </div>
     </div>
   </div>
@@ -291,11 +267,11 @@
 <!-- ============ VALUE GRID ============ -->
 <section id="why" class="px-3 py-10 sm:px-6 sm:py-16" aria-labelledby="why-title">
   <div class="mx-auto max-w-[1400px]">
-    <div class="mb-10 max-w-2xl px-2" data-reveal>
+    <div class="mb-10 max-w-2xl px-2">
       <h2 id="why-title" class="font-display text-3xl text-white sm:text-5xl">Buy with complete peace of mind</h2>
       <p class="mt-4 text-white/60">You see the watch, confirm on WhatsApp, and pay only when it is in your hands.</p>
     </div>
-    <div class="glass grid overflow-hidden rounded-[32px] sm:grid-cols-2 lg:grid-cols-4" data-reveal>
+    <div class="glass grid overflow-hidden rounded-[32px] sm:grid-cols-2 lg:grid-cols-4">
       <div class="border-b border-white/[.07] p-7 sm:border-r lg:border-b-0">
         <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 text-gold"><i data-lucide="badge-check" class="h-6 w-6"></i></div>
         <h3 class="text-lg font-medium text-white">100% original quality</h3>
@@ -323,7 +299,7 @@
 <!-- ============ COLLECTION ============ -->
 <section id="collection" class="px-3 py-10 sm:px-6 sm:py-16" aria-labelledby="col-title">
   <div class="mx-auto max-w-[1400px]">
-    <div class="mb-10 flex flex-col justify-between gap-5 px-2 sm:flex-row sm:items-end" data-reveal>
+    <div class="mb-10 flex flex-col justify-between gap-5 px-2 sm:flex-row sm:items-end">
       <div class="max-w-2xl">
         <h2 id="col-title" class="font-display text-3xl text-white sm:text-5xl">The 7Even collection</h2>
         <p class="mt-4 text-white/60">Our signature pieces. Message us on WhatsApp for pricing and current availability.</p>
@@ -336,7 +312,7 @@
 
 <!-- ============ HOW IT WORKS ============ -->
 <section id="how" class="px-3 py-10 sm:px-6 sm:py-16" aria-labelledby="how-title">
-  <div class="glass-solid mx-auto grid max-w-[1400px] gap-10 rounded-[36px] p-7 sm:p-12 lg:grid-cols-[1fr_1.5fr] lg:gap-16" data-reveal>
+  <div class="glass-solid mx-auto grid max-w-[1400px] gap-10 rounded-[36px] p-7 sm:p-12 lg:grid-cols-[1fr_1.5fr] lg:gap-16">
     <div>
       <h2 id="how-title" class="font-display text-3xl text-white sm:text-4xl">Order in under two minutes</h2>
       <p class="mt-4 text-white/60">No account, no card details. Just your address and a WhatsApp message.</p>
@@ -365,7 +341,7 @@
 <!-- ============ REVIEWS ============ -->
 <section id="reviews" class="px-3 py-10 sm:px-6 sm:py-16" aria-labelledby="rev-title">
   <div class="mx-auto max-w-[1400px]">
-    <div class="mb-10 flex flex-col justify-between gap-6 px-2 sm:flex-row sm:items-end" data-reveal>
+    <div class="mb-10 flex flex-col justify-between gap-6 px-2 sm:flex-row sm:items-end">
       <div>
         <h2 id="rev-title" class="font-display text-3xl text-white sm:text-5xl">Loved by watch lovers across Pakistan</h2>
       </div>
@@ -379,22 +355,22 @@
     </div>
     <div id="review-grid" class="grid gap-5 md:grid-cols-2 lg:grid-cols-3"></div>
 
-    <div class="mt-16 px-2" data-reveal>
+    <div class="mt-16 px-2">
       <h3 class="font-display text-2xl text-white sm:text-3xl">7Even on the wrist</h3>
       <p class="mt-2 text-sm text-white/55">A closer look at the collection.</p>
     </div>
-    <div id="gallery" class="mt-6 grid auto-rows-[150px] grid-cols-2 gap-3 sm:auto-rows-[190px] md:grid-cols-4"></div>
+    <div id="gallery" class="mt-6 grid auto-rows-[180px] grid-cols-2 gap-3 sm:auto-rows-[220px] md:grid-cols-4"></div>
   </div>
 </section>
 
 <!-- ============ FAQ ============ -->
 <section id="faq" class="px-3 py-10 sm:px-6 sm:py-16" aria-labelledby="faq-title">
   <div class="mx-auto grid max-w-[1100px] gap-10 lg:grid-cols-[1fr_1.6fr]">
-    <div data-reveal>
+    <div>
       <h2 id="faq-title" class="font-display text-3xl text-white sm:text-4xl">Questions before you order</h2>
       <p class="mt-4 text-white/60">Still unsure? Message us and a real person replies on WhatsApp.</p>
     </div>
-    <div data-reveal>
+    <div>
       <details class="faq"><summary>How does cash on delivery work?<i data-lucide="chevron-down" class="chev h-5 w-5"></i></summary><p class="pb-5 pr-8 text-sm leading-relaxed text-white/60">You place the order on WhatsApp, we confirm it, and the courier delivers the watch to your address. You pay the courier in cash. No advance payment is needed.</p></details>
       <details class="faq"><summary>How long does delivery take?<i data-lucide="chevron-down" class="chev h-5 w-5"></i></summary><p class="pb-5 pr-8 text-sm leading-relaxed text-white/60">Most orders reach major cities in 2 to 4 working days. Remote areas can take a little longer. Delivery is free everywhere in Pakistan.</p></details>
       <details class="faq"><summary>What if the watch has a problem?<i data-lucide="chevron-down" class="chev h-5 w-5"></i></summary><p class="pb-5 pr-8 text-sm leading-relaxed text-white/60">Message us within 7 days of delivery with a photo or short video. If the piece is faulty or not what you ordered, we replace it.</p></details>
@@ -405,7 +381,7 @@
 
 <!-- ============ FINAL CTA ============ -->
 <section class="px-3 pb-16 pt-6 sm:px-6" aria-label="Order now">
-  <div class="hero-panel relative mx-auto max-w-[1400px] overflow-hidden rounded-[36px] px-6 py-14 text-center sm:px-12 sm:py-20" data-reveal>
+  <div class="hero-panel relative mx-auto max-w-[1400px] overflow-hidden rounded-[36px] px-6 py-14 text-center sm:px-12 sm:py-20">
     <h2 class="font-display mx-auto max-w-3xl text-3xl text-[#fbf3da] sm:text-5xl">Your next watch is one message away</h2>
     <p class="mx-auto mt-5 max-w-xl text-white/65">Free delivery, cash on delivery and a 7-day replacement warranty on every order.</p>
     <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -570,283 +546,7 @@
 </div>
 
 <!-- ============ LIBRARIES ============ -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
-
-<!-- ============ 3D WATCH (Three.js) ============ -->
-<script>
-(function () {
-  'use strict';
-  var canvas = document.getElementById('watch-canvas');
-  var wrap = document.getElementById('hero-canvas-wrap');
-  var fallback = document.getElementById('watch-fallback');
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function showFallback() {
-    canvas.style.display = 'none';
-    fallback.classList.remove('hidden'); fallback.classList.add('flex');
-    window.__needFallback = true;
-  }
-  if (!window.THREE) { showFallback(); return; }
-
-  var renderer;
-  try {
-    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
-  } catch (e) { showFallback(); return; }
-
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
-  renderer.outputEncoding = THREE.sRGBEncoding;
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = .85;
-
-  var scene = new THREE.Scene();
-  var camera = new THREE.PerspectiveCamera(28, 1, 0.1, 100);
-  camera.position.set(0, 0, 13);
-
-  (function buildEnv() {
-    var c = document.createElement('canvas'); c.width = 640; c.height = 320;
-    var g = c.getContext('2d');
-    var gr = g.createLinearGradient(0, 0, 0, 320);
-    gr.addColorStop(0, '#4a3822'); gr.addColorStop(.42, '#15100b'); gr.addColorStop(.55, '#0a0a0b'); gr.addColorStop(1, '#2c1f12');
-    g.fillStyle = gr; g.fillRect(0, 0, 640, 320);
-    function box(x, y, w, h, col) { g.fillStyle = col; g.fillRect(x, y, w, h); }
-    box(38, 69, 94, 138, '#7a6748'); box(250, 31, 150, 56, '#9a9488'); box(463, 81, 81, 144, '#8a7538');
-    box(181, 188, 56, 75, '#6a4b3a'); box(563, 31, 56, 44, '#8f8a80'); box(350, 206, 100, 25, '#7a6024');
-    var tex = new THREE.CanvasTexture(c); tex.encoding = THREE.sRGBEncoding;
-    var envScene = new THREE.Scene();
-    envScene.add(new THREE.Mesh(new THREE.SphereGeometry(50, 64, 32), new THREE.MeshBasicMaterial({ map: tex, side: THREE.BackSide })));
-    var pm = new THREE.PMREMGenerator(renderer);
-    var rt = pm.fromScene(envScene, 0.02);
-    scene.environment = rt.texture;
-    pm.dispose(); tex.dispose();
-  })();
-
-  var THEMES = {
-    gold:   { name: 'Gold',           caseC: 0xdcb64c, rough: .2,  bezel: 0xf5dc8c, hands: 0xf6e7b0, sec: 0xc8896a,
-              dial: { a: '#17110b', b: '#3d2c18', idx: '#f3e5ab', txt: '#d4af37', ring: '#8a6d1f' },
-              strap: { base: '#3a2416', stitch: '#d4af37', perf: false } },
-    black:  { name: 'Obsidian Black', caseC: 0x1a1a1e, rough: .3,  bezel: 0x35353c, hands: 0xeee6d2, sec: 0xd4af37,
-              dial: { a: '#040405', b: '#1b1b20', idx: '#d4af37', txt: '#c8896a', ring: '#3a3a40' },
-              strap: { base: '#101012', stitch: '#c8896a', perf: true } },
-    silver: { name: 'Silver',         caseC: 0xdadce0, rough: .16, bezel: 0xf3f4f6, hands: 0x15161a, sec: 0xb23a2e,
-              dial: { a: '#a9afb8', b: '#eceef1', idx: '#1a1a1c', txt: '#2f343c', ring: '#8b9099' },
-              strap: { base: '#1a1c22', stitch: '#cfd3d9', perf: false } }
-  };
-
-  function makeDial(d) {
-    var S = 800, C = S / 2, cv = document.createElement('canvas'); cv.width = cv.height = S;
-    var g = cv.getContext('2d');
-    var rg = g.createRadialGradient(C, C, 20, C, C, C); rg.addColorStop(0, d.b); rg.addColorStop(1, d.a);
-    g.fillStyle = rg; g.fillRect(0, 0, S, S);
-    g.save(); g.translate(C, C);
-    for (var i = 0; i < 360; i++) { g.rotate(Math.PI / 180); g.strokeStyle = i % 2 ? 'rgba(255,255,255,.04)' : 'rgba(0,0,0,.06)'; g.lineWidth = 2; g.beginPath(); g.moveTo(0, 0); g.lineTo(0, C); g.stroke(); }
-    g.restore();
-    g.strokeStyle = 'rgba(255,255,255,.05)'; g.lineWidth = 1.5;
-    for (var r = 70; r < 380; r += 26) { g.beginPath(); g.arc(C, C, r, 0, 6.2832); g.stroke(); }
-    g.save(); g.translate(C, C); g.fillStyle = d.idx;
-    for (var m = 0; m < 60; m++) { g.rotate(Math.PI * 2 / 60); var big = m % 5 === 4; g.fillRect(-(big ? 3 : 1.5), -(C - 34), big ? 6 : 3, big ? 34 : 16); }
-    g.restore();
-    function spaced(txt, x, y, sp) {
-      var w = 0, k; for (k = 0; k < txt.length; k++) w += g.measureText(txt[k]).width + sp; w -= sp;
-      var px = x - w / 2; for (k = 0; k < txt.length; k++) { g.fillText(txt[k], px, y); px += g.measureText(txt[k]).width + sp; }
-    }
-    g.textAlign = 'left'; g.textBaseline = 'middle';
-    g.fillStyle = d.txt; g.font = '500 58px "Playfair Display", Georgia, serif'; spaced('7EVEN', C, C - 235, 16);
-    g.font = '400 26px "Plus Jakarta Sans", Arial, sans-serif'; g.fillStyle = d.idx; g.globalAlpha = .8; spaced('AUTOMATIC', C, C + 250, 10);
-    g.globalAlpha = 1;
-    var t = new THREE.CanvasTexture(cv); t.encoding = THREE.sRGBEncoding; t.anisotropy = renderer.capabilities.getMaxAnisotropy(); return t;
-  }
-
-  function makeStrap(s) {
-    var W = 512, H = 512, cv = document.createElement('canvas'); cv.width = W; cv.height = H;
-    var g = cv.getContext('2d'); g.fillStyle = s.base; g.fillRect(0, 0, W, H);
-    for (var i = 0; i < 11000; i++) { g.fillStyle = Math.random() < .5 ? 'rgba(255,255,255,.05)' : 'rgba(0,0,0,.11)'; g.fillRect(Math.random() * W, Math.random() * H, 1 + Math.random() * 2.2, 1 + Math.random() * 2.2); }
-    g.strokeStyle = 'rgba(0,0,0,.18)'; g.lineWidth = 1.2;
-    for (var k = 0; k < 40; k++) { var y = Math.random() * H; g.beginPath(); g.moveTo(0, y); g.bezierCurveTo(W * .3, y + 6, W * .6, y - 6, W, y + 2); g.stroke(); }
-    if (s.perf) { g.fillStyle = 'rgba(0,0,0,.7)'; for (var py = 30; py < H; py += 46) for (var px = 150; px < 380; px += 46) { g.beginPath(); g.arc(px, py, 9, 0, 6.2832); g.fill(); } }
-    var eg = g.createLinearGradient(0, 0, W, 0); eg.addColorStop(0, 'rgba(0,0,0,.55)'); eg.addColorStop(.09, 'rgba(0,0,0,0)'); eg.addColorStop(.91, 'rgba(0,0,0,0)'); eg.addColorStop(1, 'rgba(0,0,0,.55)');
-    g.fillStyle = eg; g.fillRect(0, 0, W, H);
-    g.setLineDash([16, 10]); g.strokeStyle = s.stitch; g.lineWidth = 5; g.lineCap = 'round';
-    g.beginPath(); g.moveTo(40, 0); g.lineTo(40, H); g.moveTo(W - 40, 0); g.lineTo(W - 40, H); g.stroke();
-    var t = new THREE.CanvasTexture(cv); t.encoding = THREE.sRGBEncoding; t.anisotropy = 8; return t;
-  }
-
-  var caseMat = new THREE.MeshStandardMaterial({ color: 0xdcb64c, metalness: .78, roughness: .5, envMapIntensity: .55 });
-  var bezelMat = new THREE.MeshStandardMaterial({ color: 0xf5dc8c, metalness: .8, roughness: .42, envMapIntensity: .65, side: THREE.DoubleSide });
-  var dialMat = new THREE.MeshStandardMaterial({ metalness: .25, roughness: .62, envMapIntensity: .4 });
-  var handMat = new THREE.MeshStandardMaterial({ color: 0xf6e7b0, metalness: .7, roughness: .48, envMapIntensity: .55 });
-  var secMat = new THREE.MeshStandardMaterial({ color: 0xc8896a, metalness: .55, roughness: .52, emissive: 0x120701, envMapIntensity: .5 });
-  var strapMat = new THREE.MeshStandardMaterial({ roughness: .68, metalness: .05, bumpScale: 1.6 });
-  var glassMat = new THREE.MeshPhysicalMaterial({ color: 0xffffff, metalness: 0, roughness: .18, transparent: true, opacity: .06, clearcoat: .4, clearcoatRoughness: .2, envMapIntensity: .6, depthWrite: false });
-
-  var rig = new THREE.Group(); scene.add(rig);
-  var watch = new THREE.Group(); rig.add(watch);
-
-  function rr(s, x, y, w, h, r) {
-    s.moveTo(x + r, y); s.lineTo(x + w - r, y); s.quadraticCurveTo(x + w, y, x + w, y + r); s.lineTo(x + w, y + h - r);
-    s.quadraticCurveTo(x + w, y + h, x + w - r, y + h); s.lineTo(x + r, y + h); s.quadraticCurveTo(x, y + h, x, y + h - r);
-    s.lineTo(x, y + r); s.quadraticCurveTo(x, y, x + r, y);
-  }
-
-  var body = new THREE.Mesh(new THREE.CylinderGeometry(1.6, 1.6, .56, 128), caseMat); body.rotation.x = Math.PI / 2; watch.add(body);
-  var back = new THREE.Mesh(new THREE.CylinderGeometry(1.42, 1.52, .3, 96), caseMat); back.rotation.x = Math.PI / 2; back.position.z = -.42; watch.add(back);
-
-  var pts = [[1.36, .26], [1.4, .33], [1.5, .375], [1.6, .345], [1.665, .27], [1.665, .1]].map(function (p) { return new THREE.Vector2(p[0], p[1]); });
-  var bezelGeo = new THREE.LatheGeometry(pts, 128); bezelGeo.rotateX(Math.PI / 2);
-  watch.add(new THREE.Mesh(bezelGeo, bezelMat));
-
-  var flutes = new THREE.InstancedMesh(new THREE.BoxGeometry(.075, .07, .3), bezelMat, 96), dummy = new THREE.Object3D();
-  for (var i = 0; i < 96; i++) { var a = i / 96 * Math.PI * 2; dummy.position.set(Math.cos(a) * 1.64, Math.sin(a) * 1.64, .09); dummy.rotation.set(0, 0, a); dummy.updateMatrix(); flutes.setMatrixAt(i, dummy.matrix); }
-  watch.add(flutes);
-
-  var dial = new THREE.Mesh(new THREE.CircleGeometry(1.38, 128), dialMat); dial.position.z = .2; watch.add(dial);
-
-  var markerGeo = new THREE.BoxGeometry(.05, .16, .022);
-  [0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11].forEach(function (n) {
-    var big = n % 3 === 0, geo = big ? new THREE.BoxGeometry(.075, .2, .026) : markerGeo;
-    var mk = new THREE.Mesh(geo, handMat), a = n / 12 * Math.PI * 2, r = 1.14;
-    mk.position.set(Math.sin(a) * r, Math.cos(a) * r, .225); mk.rotation.z = -a; watch.add(mk);
-  });
-
-  var dateCv = document.createElement('canvas'); dateCv.width = 128; dateCv.height = 96;
-  var dateTex = new THREE.CanvasTexture(dateCv); dateTex.encoding = THREE.sRGBEncoding;
-  var dateMat = new THREE.MeshBasicMaterial({ map: dateTex });
-  var dateWin = new THREE.Mesh(new THREE.PlaneGeometry(.16, .12), dateMat); dateWin.position.set(1.12, 0, .228); watch.add(dateWin);
-  var frameMat = new THREE.MeshStandardMaterial({ color: 0x0c0a08, metalness: .5, roughness: .5 });
-  var dateFrame = new THREE.Mesh(new THREE.RingGeometry(.09, .105, 4), frameMat); dateFrame.position.set(1.12, 0, .226); watch.add(dateFrame);
-  function drawDate() {
-    var g = dateCv.getContext('2d'); g.fillStyle = '#f2efe8'; g.fillRect(0, 0, 128, 96);
-    var day = new Date(Date.now() + 5 * 3600000).getUTCDate();
-    g.fillStyle = '#111'; g.font = '500 62px Arial'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(String(day), 64, 52);
-    dateTex.needsUpdate = true;
-  }
-  drawDate(); setInterval(drawDate, 60000);
-
-  var glass = new THREE.Mesh(new THREE.CircleGeometry(1.4, 96), glassMat); glass.position.z = .335; watch.add(glass);
-
-  var lugShape = new THREE.Shape(); rr(lugShape, -.3, -.45, .6, .9, .17);
-  var lugGeo = new THREE.ExtrudeGeometry(lugShape, { depth: .3, bevelEnabled: true, bevelThickness: .05, bevelSize: .05, bevelSegments: 3, curveSegments: 12 });
-  [[-.92, 1.55], [.92, 1.55], [-.92, -1.55], [.92, -1.55]].forEach(function (p) { var l = new THREE.Mesh(lugGeo, caseMat); l.position.set(p[0], p[1], -.15); watch.add(l); });
-
-  var crown = new THREE.Group();
-  var cyl = new THREE.Mesh(new THREE.CylinderGeometry(.17, .17, .34, 22), caseMat); cyl.rotation.z = Math.PI / 2; crown.add(cyl);
-  var cap = new THREE.Mesh(new THREE.CylinderGeometry(.13, .13, .07, 22), bezelMat); cap.rotation.z = Math.PI / 2; cap.position.x = .19; crown.add(cap);
-  for (var r = 0; r < 14; r++) { var ra = r / 14 * Math.PI * 2; var rib = new THREE.Mesh(new THREE.BoxGeometry(.3, .028, .04), bezelMat); rib.position.set(0, Math.cos(ra) * .17, Math.sin(ra) * .17); rib.rotation.x = -ra; crown.add(rib); }
-  crown.position.set(1.8, 0, .02); watch.add(crown);
-
-  function buildStrap(dir) {
-    var g = new THREE.Group(), parent = g;
-    for (var i = 0; i < 4; i++) {
-      var seg = new THREE.Group(), w = 1.34 * (1 - i * .035), len = 1.1;
-      var m = new THREE.Mesh(new THREE.BoxGeometry(w, len, .16), strapMat); m.position.y = dir * len / 2; seg.add(m);
-      var nxt = new THREE.Group(); nxt.position.y = dir * len; nxt.rotation.x = -dir * .17; seg.add(nxt);
-      parent.add(seg); parent = nxt;
-    }
-    g.position.set(0, dir * 1.95, -.02); g.rotation.x = -dir * .05; return g;
-  }
-  watch.add(buildStrap(1)); watch.add(buildStrap(-1));
-
-  function handMesh(len, wid, tail, mat, depth) {
-    var s = new THREE.Shape(); s.moveTo(0, -tail); s.lineTo(-wid * .55, -tail * .4); s.lineTo(-wid, len * .18); s.lineTo(0, len); s.lineTo(wid, len * .18); s.lineTo(wid * .55, -tail * .4); s.closePath();
-    return new THREE.Mesh(new THREE.ExtrudeGeometry(s, { depth: depth, bevelEnabled: true, bevelThickness: .008, bevelSize: .008, bevelSegments: 1 }), mat);
-  }
-  var hourP = new THREE.Group(), minP = new THREE.Group(), secP = new THREE.Group();
-  var hourH = handMesh(.86, .078, .22, handMat, .02); hourP.add(hourH); hourP.position.z = .225;
-  var minH = handMesh(1.24, .056, .26, handMat, .02); minP.add(minH); minP.position.z = .255;
-  var rod = new THREE.Mesh(new THREE.BoxGeometry(.022, 1.5, .012), secMat); rod.position.y = .35;
-  var cw = new THREE.Mesh(new THREE.CylinderGeometry(.065, .065, .014, 24), secMat); cw.rotation.x = Math.PI / 2; cw.position.y = -.33;
-  secP.add(rod, cw); secP.position.z = .29;
-  var pin = new THREE.Mesh(new THREE.CylinderGeometry(.095, .095, .09, 32), bezelMat); pin.rotation.x = Math.PI / 2; pin.position.z = .3;
-  watch.add(hourP, minP, secP, pin);
-
-  scene.add(new THREE.AmbientLight(0x3a2f20, 1.25));
-  var key = new THREE.DirectionalLight(0xf3e5ab, 1.05); key.position.set(4, 5, 7); scene.add(key);
-  var rim = new THREE.DirectionalLight(0xc8896a, .8); rim.position.set(-6, 2, -3); scene.add(rim);
-  var fill = new THREE.DirectionalLight(0xffffff, .4); fill.position.set(-4, -3, 5); scene.add(fill);
-  var glow = new THREE.PointLight(0xd4af37, .5, 14); glow.position.set(2, 2, 4); scene.add(glow);
-
-  var pulseRAF = 0;
-  function pulseScale() {
-    if (reduce) return;
-    cancelAnimationFrame(pulseRAF);
-    var dur = 420, t0 = performance.now();
-    function step(now) {
-      var p = Math.min(1, (now - t0) / dur), e = p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
-      var s = .95 + .05 * e; watch.scale.set(s, s, s);
-      if (p < 1) pulseRAF = requestAnimationFrame(step); else watch.scale.set(1, 1, 1);
-    }
-    pulseRAF = requestAnimationFrame(step);
-  }
-
-  var current = null;
-  function setTheme(key, instant) {
-    var T = THEMES[key]; if (!T) return; current = key;
-    caseMat.color.setHex(T.caseC); caseMat.roughness = T.rough; bezelMat.color.setHex(T.bezel);
-    handMat.color.setHex(T.hands); secMat.color.setHex(T.sec);
-    if (dialMat.map) dialMat.map.dispose(); dialMat.map = makeDial(T.dial); dialMat.needsUpdate = true;
-    if (strapMat.map) strapMat.map.dispose(); var st = makeStrap(T.strap); strapMat.map = st; strapMat.bumpMap = st; strapMat.needsUpdate = true;
-    if (!instant) pulseScale();
-  }
-  setTheme('gold', true);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { setTheme(current, true); });
-
-  var S = { tx: 0, ty: 0, px: 0, py: 0, drag: 0, spin: 0, dragging: false, lastX: 0 };
-  window.addEventListener('pointermove', function (e) {
-    if (e.pointerType === 'touch') return;
-    S.px = (e.clientX / window.innerWidth - .5) * 2; S.py = (e.clientY / window.innerHeight - .5) * 2;
-  }, { passive: true });
-  canvas.addEventListener('pointerdown', function (e) { S.dragging = true; S.lastX = e.clientX; try { canvas.setPointerCapture(e.pointerId); } catch (_) {} });
-  canvas.addEventListener('pointermove', function (e) { if (!S.dragging) return; S.drag += (e.clientX - S.lastX) * .011; S.lastX = e.clientX; });
-  ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (n) { canvas.addEventListener(n, function () { S.dragging = false; }); });
-
-  function spin360() {
-    var startSpin = S.spin, target = startSpin + Math.PI * 2, dur = 1300, t0 = performance.now();
-    function step(now) {
-      var p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
-      S.spin = startSpin + (target - startSpin) * e;
-      if (p < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-
-  var wide = false;
-  function resize() {
-    var w = wrap.clientWidth, h = wrap.clientHeight; if (!w || !h) return;
-    renderer.setSize(w, h, false); camera.aspect = w / h;
-    wide = window.innerWidth >= 1024;
-    if (wide) { rig.position.x = w > 1200 ? 1.55 : 1.9; camera.position.z = 13; rig.scale.setScalar(1); }
-    else { rig.position.x = 0; camera.position.z = 12.4 + Math.max(0, 1 - camera.aspect) * 3.2; rig.scale.setScalar(1); }
-    camera.updateProjectionMatrix();
-  }
-  if (window.ResizeObserver) new ResizeObserver(resize).observe(wrap); else window.addEventListener('resize', resize);
-  resize();
-
-  var clock = new THREE.Clock(), raf = 0, running = false;
-  function tick() {
-    if (!running) return;
-    var dt = Math.min(clock.getDelta(), .05);
-    S.tx += (S.px - S.tx) * Math.min(1, dt * 4); S.ty += (S.py - S.ty) * Math.min(1, dt * 4);
-    if (!S.dragging) S.drag *= (1 - Math.min(1, dt * .7));
-    rig.rotation.y = S.spin + S.drag + S.tx * .42;
-    rig.rotation.x = -S.ty * .3;
-    rig.rotation.z = (wide ? -.3 : -.18) + S.tx * .05;
-    glow.position.set(S.tx * 1.5 + 1, -S.ty * 1.2 + 2, 4);
-
-    var pktSecs = (Math.floor(Date.now() / 1000) + 5 * 3600) % 86400;
-    var s = pktSecs % 60, m = (Math.floor(pktSecs / 60)) % 60, h = (Math.floor(pktSecs / 3600)) % 12;
-    secP.rotation.z = -(s / 60) * Math.PI * 2; minP.rotation.z = -((m + s / 60) / 60) * Math.PI * 2; hourP.rotation.z = -((h + m / 60) / 12) * Math.PI * 2;
-
-    renderer.render(scene, camera);
-    raf = requestAnimationFrame(tick);
-  }
-  function start() { if (running) return; running = true; clock.getDelta(); raf = requestAnimationFrame(tick); }
-  function stop() { running = false; cancelAnimationFrame(raf); }
-  if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { en[0].isIntersecting ? start() : stop(); }, { threshold: 0 }).observe(wrap); else start();
-  document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
-
-  window.AuraWatch = { setTheme: setTheme, spin360: spin360 };
-})();
-</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
 
 <!-- ============ APP LOGIC ============ -->
 <script>
@@ -855,12 +555,16 @@
   var WA = '923258582375';
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
-  var fmt = function (n) { return 'PKR ' + Number(n).toLocaleString('en-US'); };
   var waUrl = function (t) { return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(t); };
   function openWA(t) { var w = window.open(waUrl(t), '_blank'); if (!w) window.location.href = waUrl(t); }
   function icons() { if (window.lucide) lucide.createIcons(); }
 
-  /* ============ NEW POSTIMAGES LINKS — CRISP & SHARP ============ */
+  /* ⚡ IMAGE OPTIMIZER — wsrv.nl (free CDN, converts to WebP, super fast) */
+  function img(url, w) {
+    return 'https://wsrv.nl/?url=' + encodeURIComponent(url) + '&w=' + w + '&output=webp&q=82&we&il';
+  }
+
+  /* ============ PRODUCTS ============ */
   var PRODUCTS = [
     { id: '7E-01', name: '7Even Classic Steel',    theme: 'silver', finish: 'Silver',           photo: 'https://i.postimg.cc/fLyyfhwd/Watch-1.webp',      tags: ['Steel case', 'Steel bracelet', 'Gift box'] },
     { id: '7E-02', name: '7Even Gilt Sport',        theme: 'gold',   finish: 'Gold',             photo: 'https://i.postimg.cc/sXxx4RVS/Watch-2.webp',      tags: ['Gold-tone case', 'Sport bezel', 'Gift box'] },
@@ -884,68 +588,34 @@
     { n: 'Zain H.', c: 'Rawalpindi',   s: 5, t: 'The rose gold skeleton gets compliments everywhere I go.', d: '7Even Rose Elite' }
   ];
   var GALLERY = [
-    { src: 'https://i.postimg.cc/fLyyfhwd/Watch-1.webp',      theme: 'silver', span: 'row-span-2 col-span-1' },
-    { src: 'https://i.postimg.cc/sXxx4RVS/Watch-2.webp',      theme: 'gold',   span: '' },
-    { src: 'https://i.postimg.cc/Y900zwpY/Watch-3-same.webp', theme: 'black',  span: 'md:col-span-2' },
-    { src: 'https://i.postimg.cc/j5224rsh/Watch-3.webp',      theme: 'black',  span: 'row-span-2' },
-    { src: 'https://i.postimg.cc/k4GGvdnF/watch-4.webp',      theme: 'gold',   span: '' },
-    { src: 'https://i.postimg.cc/1tXXrZ9H/Watch-5.webp',      theme: 'silver', span: 'md:col-span-2' },
-    { src: 'https://i.postimg.cc/DZ00PK26/watch-6.webp',      theme: 'rose',   span: '' },
-    { src: 'https://i.postimg.cc/xC883S0t/Watch-7.webp',      theme: 'black',  span: 'row-span-2' },
-    { src: 'https://i.postimg.cc/mDkkyGbd/Watch-8.webp',      theme: 'gold',   span: 'md:col-span-2' },
-    { src: 'https://i.postimg.cc/d133jKqH/Watch-9.webp',      theme: 'gold',   span: '' },
-    { src: 'https://i.postimg.cc/FR6RPnR0/Watch-10.webp',     theme: 'silver', span: '' },
-    { src: 'https://i.postimg.cc/RFYFPbFc/Watch-11.webp',     theme: 'gold',   span: 'md:col-span-2' }
+    { src: 'https://i.postimg.cc/fLyyfhwd/Watch-1.webp',      name: 'Classic Steel',   theme: 'silver', span: 'row-span-2 col-span-1' },
+    { src: 'https://i.postimg.cc/sXxx4RVS/Watch-2.webp',      name: 'Gilt Sport',      theme: 'gold',   span: '' },
+    { src: 'https://i.postimg.cc/Y900zwpY/Watch-3-same.webp', name: 'Noir Diver',      theme: 'black',  span: 'md:col-span-2' },
+    { src: 'https://i.postimg.cc/j5224rsh/Watch-3.webp',      name: 'Noir Diver II',   theme: 'black',  span: 'row-span-2' },
+    { src: 'https://i.postimg.cc/k4GGvdnF/watch-4.webp',      name: 'Two-Tone Gold',   theme: 'gold',   span: '' },
+    { src: 'https://i.postimg.cc/1tXXrZ9H/Watch-5.webp',      name: 'Argent Sport',    theme: 'silver', span: 'md:col-span-2' },
+    { src: 'https://i.postimg.cc/DZ00PK26/watch-6.webp',      name: 'Rose Elite',      theme: 'rose',   span: '' },
+    { src: 'https://i.postimg.cc/xC883S0t/Watch-7.webp',      name: 'Onyx Square',     theme: 'black',  span: 'row-span-2' },
+    { src: 'https://i.postimg.cc/mDkkyGbd/Watch-8.webp',      name: 'Gold Square',     theme: 'gold',   span: 'md:col-span-2' },
+    { src: 'https://i.postimg.cc/d133jKqH/Watch-9.webp',      name: 'Sovereign Gold',  theme: 'gold',   span: '' },
+    { src: 'https://i.postimg.cc/FR6RPnR0/Watch-10.webp',     name: 'Classic Silver',  theme: 'silver', span: '' },
+    { src: 'https://i.postimg.cc/RFYFPbFc/Watch-11.webp',     name: 'Heritage Gold',   theme: 'gold',   span: 'md:col-span-2' }
   ];
-
-  var PAL = {
-    gold:   { a: '#f6e7b0', b: '#b8902a', dA: '#17110b', dB: '#3d2c18', idx: '#f3e5ab', strap: '#2d1b10', hi: '#4d3220', st: '#d4af37', hand: '#f3e5ab', sec: '#c8896a', bg: 'rgba(160,110,50,.55)' },
-    black:  { a: '#55555e', b: '#131316', dA: '#040405', dB: '#1c1c21', idx: '#d4af37', strap: '#0d0d0f', hi: '#26262b', st: '#c8896a', hand: '#eee6d2', sec: '#d4af37', bg: 'rgba(90,90,110,.45)' },
-    silver: { a: '#ffffff', b: '#8f959e', dA: '#a9afb8', dB: '#eceef1', idx: '#1a1a1c', strap: '#15171c', hi: '#2a2d36', st: '#cfd3d9', hand: '#15161a', sec: '#b23a2e', bg: 'rgba(150,160,180,.4)' },
-    rose:   { a: '#f8d3bd', b: '#a8654a', dA: '#150e0c', dB: '#2a1c17', idx: '#f5cbb4', strap: '#140e0c', hi: '#2b1d18', st: '#c8896a', hand: '#f5cbb4', sec: '#f3e5ab', bg: 'rgba(200,120,90,.5)' }
-  };
-  var uid = 0;
-  function watchSVG(k) {
-    var P = PAL[k], i = ++uid, ticks = '', n;
-    for (n = 0; n < 12; n++) { var big = n % 3 === 0; ticks += '<rect x="' + (200 - (big ? 4 : 2.5)) + '" y="' + (big ? 176 : 178) + '" width="' + (big ? 8 : 5) + '" height="' + (big ? 22 : 15) + '" rx="1.5" fill="' + P.idx + '" transform="rotate(' + (n * 30) + ' 200 260)"/>'; }
-    var gears = k === 'rose'
-      ? '<g class="gear" style="transform-origin:172px 246px"><circle cx="172" cy="246" r="28" fill="none" stroke="' + P.st + '" stroke-width="7" stroke-dasharray="4 3" opacity=".8"/><circle cx="172" cy="246" r="6" fill="' + P.st + '"/></g>' +
-        '<g class="gear rev" style="transform-origin:232px 282px"><circle cx="232" cy="282" r="22" fill="none" stroke="' + P.idx + '" stroke-width="6" stroke-dasharray="3 3" opacity=".75"/><circle cx="232" cy="282" r="5" fill="' + P.idx + '"/></g>' : '';
-    return '<svg viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="' + k + ' watch illustration" class="h-full w-full">' +
-      '<defs><linearGradient id="c' + i + '" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="' + P.a + '"/><stop offset=".5" stop-color="' + P.b + '"/><stop offset="1" stop-color="' + P.a + '"/></linearGradient>' +
-      '<radialGradient id="d' + i + '" cx=".5" cy=".38" r=".75"><stop offset="0" stop-color="' + P.dB + '"/><stop offset="1" stop-color="' + P.dA + '"/></radialGradient>' +
-      '<linearGradient id="s' + i + '" x1="0" x2="1"><stop offset="0" stop-color="' + P.strap + '"/><stop offset=".5" stop-color="' + P.hi + '"/><stop offset="1" stop-color="' + P.strap + '"/></linearGradient>' +
-      '<filter id="sh' + i + '"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".6"/></filter></defs>' +
-      '<g filter="url(#sh' + i + ')">' +
-      '<rect x="142" y="-10" width="116" height="150" rx="10" fill="url(#s' + i + ')"/><rect x="142" y="380" width="116" height="160" rx="10" fill="url(#s' + i + ')"/>' +
-      '<path d="M151 0V140M249 0V140M151 380V520M249 380V520" stroke="' + P.st + '" stroke-width="1.6" stroke-dasharray="6 5" opacity=".65" fill="none"/>' +
-      '<rect x="128" y="112" width="26" height="50" rx="11" fill="url(#c' + i + ')"/><rect x="246" y="112" width="26" height="50" rx="11" fill="url(#c' + i + ')"/>' +
-      '<rect x="128" y="358" width="26" height="50" rx="11" fill="url(#c' + i + ')"/><rect x="246" y="358" width="26" height="50" rx="11" fill="url(#c' + i + ')"/>' +
-      '<rect x="308" y="247" width="18" height="26" rx="5" fill="url(#c' + i + ')"/>' +
-      '<circle cx="200" cy="260" r="120" fill="url(#c' + i + ')"/><circle cx="200" cy="260" r="109" fill="#000" opacity=".4"/><circle cx="200" cy="260" r="104" fill="url(#c' + i + ')" opacity=".9"/>' +
-      '<circle cx="200" cy="260" r="98" fill="url(#d' + i + ')"/>' + gears + ticks +
-      '<text x="200" y="222" text-anchor="middle" font-family="Playfair Display, serif" font-size="13" letter-spacing="4" fill="' + P.idx + '">7EVEN</text>' +
-      '<path d="M200 274 L194.5 255 L200 198 L205.5 255Z" fill="' + P.hand + '" transform="rotate(305 200 260)"/>' +
-      '<path d="M200 276 L196.5 255 L200 170 L203.5 255Z" fill="' + P.hand + '" transform="rotate(60 200 260)"/>' +
-      '<line x1="200" y1="284" x2="200" y2="168" stroke="' + P.sec + '" stroke-width="1.6" transform="rotate(150 200 260)"/><circle cx="200" cy="260" r="5.5" fill="' + P.a + '"/>' +
-      '<path d="M118 205 A100 100 0 0 1 240 166" stroke="#fff" stroke-opacity=".14" stroke-width="9" stroke-linecap="round" fill="none"/></g></svg>';
-  }
-  window.__watchSVG = watchSVG;
 
   var state = { theme: 'gold', size: 42, productId: '7E-10' };
   var byId = function (id) { return PRODUCTS.filter(function (p) { return p.id === id; })[0] || PRODUCTS[0]; };
 
+  /* ============ PRODUCT GRID (with watch NAME overlay on image) ============ */
   var grid = $('#product-grid');
-  grid.innerHTML = PRODUCTS.map(function (p) {
+  grid.innerHTML = PRODUCTS.map(function (p, idx) {
     var finish = p.finish || p.theme, tags = p.tags || [];
     var msg = 'Hello 7Even, please share the price for *' + p.name + '* (' + finish + ', code ' + p.id + ').';
-    var media = p.photo
-      ? '<img src="' + p.photo + '" alt="' + p.name + ', ' + finish + '" loading="lazy" decoding="async" class="zoom absolute inset-0 h-full w-full object-cover">'
-      : '<div class="zoom absolute inset-0 px-10 pt-6">' + watchSVG(p.theme) + '</div>';
+    var eager = idx < 4 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy" fetchpriority="low"';
     return '<article class="glass glow-card flex flex-col overflow-hidden rounded-[30px]">' +
-      '<div class="card-media relative aspect-[4/4.6] rounded-b-[26px]" style="background:radial-gradient(70% 60% at 50% 40%,' + PAL[p.theme].bg + ',transparent 75%),linear-gradient(180deg,#131114,#0b0a0b)">' +
-        media +
+      '<div class="card-media relative aspect-[4/4.6] rounded-b-[26px]" style="background:radial-gradient(70% 60% at 50% 40%,rgba(160,110,50,.4),transparent 75%),linear-gradient(180deg,#131114,#0b0a0b)">' +
+        '<img src="' + img(p.photo, 700) + '" alt="' + p.name + ' — ' + finish + ' watch by 7Even" width="700" height="805" ' + eager + ' decoding="async" class="absolute inset-0 h-full w-full object-cover">' +
         '<div class="absolute left-4 top-4 rounded-full bg-black/55 px-3 py-1.5 text-xs font-medium text-white backdrop-blur">' + p.id + '</div>' +
+        '<div class="watch-name-badge"><h4>' + p.name + '</h4><span>' + finish + '</span></div>' +
       '</div>' +
       '<div class="flex flex-1 flex-col p-6">' +
         '<h3 class="font-display mt-1 text-2xl text-white">' + p.name + '</h3>' +
@@ -962,7 +632,7 @@
   function stars(n, cls) { var s = ''; for (var i = 0; i < 5; i++) s += '<svg class="' + (cls || 'h-4 w-4') + '" viewBox="0 0 24 24" fill="' + (i < n ? '#d4af37' : 'none') + '" stroke="#d4af37" stroke-width="1.6" stroke-linejoin="round"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/></svg>'; return s; }
   $('#avg-stars').innerHTML = stars(5, 'h-5 w-5');
   $('#review-grid').innerHTML = REVIEWS.map(function (r) {
-    return '<figure class="glass glow-card flex flex-col rounded-[28px] p-6" data-reveal>' +
+    return '<figure class="glass glow-card flex flex-col rounded-[28px] p-6">' +
       '<div class="flex gap-0.5" aria-label="' + r.s + ' out of 5 stars">' + stars(r.s) + '</div>' +
       '<blockquote class="mt-4 flex-1 text-[15px] leading-relaxed text-white/80">' + r.t + '</blockquote>' +
       '<figcaption class="mt-6 flex items-center justify-between gap-3">' +
@@ -971,10 +641,13 @@
         '<span class="flex shrink-0 items-center gap-1 rounded-full bg-emerald-500/10 px-2.5 py-1 text-[11px] font-medium text-emerald-400"><i data-lucide="badge-check" class="h-3.5 w-3.5"></i>Verified buyer</span>' +
       '</figcaption></figure>';
   }).join('');
+
+  /* ============ GALLERY (with watch NAME on each image) ============ */
   $('#gallery').innerHTML = GALLERY.map(function (g) {
-    var inner = g.src ? '<img src="' + g.src + '" alt="' + (g.alt || '7Even watch') + '" loading="lazy" decoding="async" class="zoom h-full w-full object-cover">'
-                      : '<div class="zoom flex h-full w-full items-center justify-center p-4" style="background:radial-gradient(70% 70% at 50% 40%,' + PAL[g.theme].bg + ',transparent 75%),linear-gradient(180deg,#141215,#0a0a0b)"><div class="h-[135%] -translate-y-3">' + watchSVG(g.theme) + '</div></div>';
-    return '<div class="card-media glow-card glass rounded-3xl ' + g.span + '" style="overflow:hidden">' + inner + '</div>';
+    return '<div class="card-media glow-card rounded-3xl ' + g.span + '" style="overflow:hidden;background:#0b0a0b;position:relative">' +
+      '<img src="' + img(g.src, 500) + '" alt="' + g.name + ' watch by 7Even" loading="lazy" fetchpriority="low" decoding="async" class="h-full w-full object-cover">' +
+      '<div class="watch-name-badge"><h4>' + g.name + '</h4></div>' +
+    '</div>';
   }).join('');
 
   var toastT;
@@ -993,15 +666,19 @@
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeModals(); closeChat(); } });
 
   var FINISH_INFO = {
-    gold:   { name: '7Even Sovereign', finish: 'Gold' },
-    black:  { name: '7Even Obsidian',  finish: 'Obsidian Black' },
-    silver: { name: '7Even Argent',    finish: 'Silver' },
-    rose:   { name: '7Even Rose Elite', finish: 'Rose Gold' }
+    gold:   { name: '7Even Sovereign Gold', finish: 'Gold',          photo: 'https://i.postimg.cc/d133jKqH/Watch-9.webp',  code: '7E-10' },
+    black:  { name: '7Even Obsidian',       finish: 'Obsidian Black', photo: 'https://i.postimg.cc/j5224rsh/Watch-3.webp',  code: '7E-04' },
+    silver: { name: '7Even Argent',         finish: 'Silver',         photo: 'https://i.postimg.cc/1tXXrZ9H/Watch-5.webp',  code: '7E-06' },
+    rose:   { name: '7Even Rose Elite',     finish: 'Rose Gold',      photo: 'https://i.postimg.cc/DZ00PK26/watch-6.webp',  code: '7E-07' }
   };
   function syncHero() {
     var f = FINISH_INFO[state.theme];
-    $('#spec-name').textContent = f.name; $('#spec-finish').textContent = f.finish + ' finish'; $('#finish-label').textContent = f.finish;
+    $('#finish-label').textContent = f.finish;
     $('#size-label').textContent = state.size;
+    var feat = $('#hero-feature-img');
+    var lbl = $('#hero-feature-label');
+    if (feat) feat.src = img(f.photo, 800);
+    if (lbl) lbl.innerHTML = '<h4>' + f.name + '</h4><span>' + f.finish + ' · ' + f.code + '</span>';
     $$('.swatch').forEach(function (b) { b.setAttribute('aria-checked', b.dataset.theme === state.theme ? 'true' : 'false'); });
     var msg = 'Hello 7Even, please share the price for *' + f.name + '* (' + f.finish + '), case size ' + state.size + ' mm.';
     $('#hero-wa').href = waUrl(msg);
@@ -1017,9 +694,9 @@
     $('#fit-svg').innerHTML = '<svg viewBox="0 0 360 200" class="w-full" role="img" aria-label="Preview of a ' + sel + ' millimetre watch on a wrist">' +
       '<defs><linearGradient id="skin" x1="0" x2="1"><stop offset="0" stop-color="#8d5f45"/><stop offset=".5" stop-color="#b98564"/><stop offset="1" stop-color="#8d5f45"/></linearGradient>' +
       '<linearGradient id="fc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e7b0"/><stop offset=".55" stop-color="#b8902a"/><stop offset="1" stop-color="#f6e7b0"/></linearGradient></defs>' +
-      '<rect x="' + (cx - ww / 2) + '" y="' + top + '" width="' + ww + '" height="180" rx="34" fill="url(#skin)" style="transition:all .3s"/>' +
+      '<rect x="' + (cx - ww / 2) + '" y="' + top + '" width="' + ww + '" height="180" rx="34" fill="url(#skin)"/>' +
       '<rect x="' + (cx - ww / 2) + '" y="' + (100 - 26) + '" width="' + ww + '" height="52" fill="#1c130d" opacity=".9"/>' +
-      '<circle cx="' + cx + '" cy="100" r="' + r + '" fill="url(#fc)" style="transition:all .3s"/><circle cx="' + cx + '" cy="100" r="' + (r * .88) + '" fill="#120d08"/>' +
+      '<circle cx="' + cx + '" cy="100" r="' + r + '" fill="url(#fc)"/><circle cx="' + cx + '" cy="100" r="' + (r * .88) + '" fill="#120d08"/>' +
       '<g stroke="#f3e5ab" stroke-width="2" stroke-linecap="round"><line x1="' + cx + '" y1="100" x2="' + cx + '" y2="' + (100 - r * .6) + '"/><line x1="' + cx + '" y1="100" x2="' + (cx + r * .45) + '" y2="' + (100 + r * .2) + '"/></g>' +
       '<text x="' + cx + '" y="196" text-anchor="middle" font-size="11" fill="#f3e5ab" font-family="Plus Jakarta Sans, sans-serif">' + sel + ' mm on a ' + w.toFixed(1) + ' cm wrist</text></svg>';
     $('#size-chips').innerHTML = SIZES.map(function (s) { return '<button type="button" class="size-chip" data-size="' + s + '" aria-pressed="' + (s === sel) + '">' + (s === rec ? '<span class="rec">Best fit</span>' : '') + s + ' mm</button>'; }).join('');
@@ -1050,9 +727,7 @@
       '━━━━━━━━━━━━━━\n' +
       'Please confirm the price and my order. Thank you!';
   }
-  function updateOrder() {
-    F.qty.textContent = qty; $('#msg-preview').textContent = buildMsg();
-  }
+  function updateOrder() { F.qty.textContent = qty; $('#msg-preview').textContent = buildMsg(); }
   ['input', 'change'].forEach(function (ev) { $('#order-form').addEventListener(ev, updateOrder); });
   $$('[data-qty]').forEach(function (b) { b.addEventListener('click', function () { qty = Math.max(1, Math.min(5, qty + (+b.dataset.qty))); updateOrder(); }); });
 
@@ -1096,8 +771,7 @@
     var el = e.target.closest('[data-action]');
     if (el) {
       var a = el.dataset.action;
-      if (a === 'theme') { state.theme = el.dataset.theme; if (window.AuraWatch) AuraWatch.setTheme(state.theme); syncHero(); }
-      else if (a === 'spin') { if (window.AuraWatch) AuraWatch.spin360(); }
+      if (a === 'theme') { state.theme = el.dataset.theme; syncHero(); }
       else if (a === 'open-size') { sizeDraft = state.size; $('#wrist').value = Math.max(13, Math.min(21, 14 + (state.size - 38) / .923)).toFixed(1); renderFit(); closeMenu(); openModal('size-modal'); }
       else if (a === 'use-size') { state.size = sizeDraft; syncHero(); closeModals(); toast('Case size set to ' + state.size + ' mm'); }
       else if (a === 'open-order') { closeMenu(); openOrder(el.dataset.id); }
@@ -1125,7 +799,6 @@
 
   function boot() {
     $('#yr').textContent = new Date().getFullYear();
-    var fbEl = $('#watch-fallback'); if (window.__needFallback && fbEl) fbEl.innerHTML = watchSVG('gold');
     syncHero(); renderFit(); updateOrder(); icons();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
