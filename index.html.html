@@ -90,9 +90,8 @@ h1,h2,h3{font-weight:500}
 /* Wave strip */
 .wave-sec{position:relative;overflow:hidden;padding:80px 0}
 .wave-outer{width:100%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.wave-track{display:flex;gap:24px;padding:0 24px;width:max-content;will-change:transform;align-items:center}
-.wave-item{position:relative;width:180px;height:240px;flex:0 0 auto;overflow:hidden;border:1px solid var(--border);background:#0d0d0d;transform:translate3d(0,var(--y,0px),0);will-change:transform;transition:border-color .4s}
-.wave-item:hover{border-color:var(--gold-border)}
+.wave-track{display:flex;gap:0;padding:0;width:max-content;will-change:transform;align-items:center}
+.wave-item{position:relative;width:180px;height:240px;flex:0 0 auto;overflow:hidden;border:none;background:#0d0d0d;transform:translate3d(0,var(--y,0px),0);will-change:transform}
 .wave-item img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
 @media (min-width:640px){.wave-item{width:210px;height:280px}}
 
@@ -189,14 +188,12 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
 
 <body>
 
-<!-- Custom cursor (desktop only) -->
 <div class="cursor-dot" id="cursor-dot"></div>
 <div class="cursor-label" id="cursor-label">View</div>
 
-<!-- WhatsApp icon -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-wa" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></symbol></svg>
 
-<!-- ============ HEADER ============ -->
+<!-- HEADER -->
 <div class="hdr" id="hdr">
   <div class="hdr-inner">
     <a href="#top" class="flex items-center gap-3">
@@ -242,16 +239,14 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
 
 <main id="top">
 
-<!-- ============ HERO — CINEMATIC EDITORIAL ============ -->
+<!-- HERO -->
 <section class="relative min-h-[100svh] px-6 sm:px-10 lg:px-14 pt-36 lg:pt-44 pb-24 lg:pb-16 overflow-hidden" aria-label="Hero">
-  <!-- Background watch image -->
   <div class="absolute inset-0 pointer-events-none">
     <div class="anim-scale d-2 absolute right-[-10%] sm:right-[-5%] lg:right-[2%] top-[12%] lg:top-[10%] w-[80%] sm:w-[65%] lg:w-[52%] h-[70%] lg:h-[82%] flex items-center justify-center">
       <img src="https://res.cloudinary.com/jfqrpdw4/image/upload/w_1400,q_auto:best,f_auto,dpr_2.0,c_fit/v1790192384/Watch_9.webp" alt="7Even Sovereign timepiece" width="1400" height="1400" fetchpriority="high" decoding="async" class="max-w-full max-h-full object-contain" style="filter:drop-shadow(0 60px 100px rgba(0,0,0,.85)) drop-shadow(0 20px 40px rgba(0,0,0,.6))">
     </div>
   </div>
 
-  <!-- Content -->
   <div class="relative z-10 mx-auto max-w-[1600px] min-h-[70svh] lg:min-h-[78svh] flex flex-col justify-between">
     <div class="max-w-[900px]">
       <div class="anim-fade d-1 flex items-center gap-5 mb-8 lg:mb-12">
@@ -274,7 +269,6 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
       </div>
     </div>
 
-    <!-- Footer of hero: meta + scroll indicator -->
     <div class="anim-fade d-5 mt-16 lg:mt-0 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-8">
       <div class="flex flex-wrap items-center gap-x-8 gap-y-3 text-[10px] tracking-[.3em] uppercase text-muted/70">
         <span>Cash on Delivery</span>
@@ -291,7 +285,7 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
   </div>
 </section>
 
-<!-- ============ MARQUEE ============ -->
+<!-- MARQUEE -->
 <div class="mq">
   <div class="mq-track">
     <span class="mq-item">SEIKO</span><span class="mq-item">ROLEX</span><span class="mq-item">CURREN</span><span class="mq-item">TURBINE</span>
@@ -299,7 +293,7 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
   </div>
 </div>
 
-<!-- ============ SECTION 01 — BRAND STATEMENT ============ -->
+<!-- SECTION 01 — BRAND STATEMENT -->
 <section class="px-6 sm:px-10 lg:px-14 py-32 sm:py-48 lg:py-64">
   <div class="mx-auto max-w-[1600px]">
     <div class="max-w-[1100px]">
@@ -323,19 +317,17 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
   </div>
 </section>
 
-<!-- ============ SECTION 02 — FEATURED WATCH ============ -->
+<!-- SECTION 02 — FEATURED WATCH -->
 <section class="relative px-6 sm:px-10 lg:px-14 py-20 sm:py-28 lg:py-40 border-t border-white/[.06]" id="journal">
   <div class="mx-auto max-w-[1600px] grid lg:grid-cols-12 gap-10 lg:gap-20 items-center">
-    <!-- Image -->
     <div class="reveal-scale lg:col-span-6 lg:order-2 relative aspect-[4/5] max-w-[600px] mx-auto lg:mx-0" style="background:radial-gradient(55% 55% at 50% 45%,rgba(200,166,106,.10),transparent 65%),linear-gradient(180deg,#101010,#070707)">
       <div class="absolute inset-0 flex items-center justify-center p-12 lg:p-16">
-        <img src="https://res.cloudinary.com/jf jfqrpdw4/image/upload/w_1000,q_auto:best,f_auto,dpr_2.0,c_fit/v1790192381/Watch_2.webp" onerror="this.src='https://res.cloudinary.com/jfqrpdw4/image/upload/w_1000,q_auto:best,f_auto,dpr_2.0,c_fit/v1790192381/Watch_2.webp'" alt="Featured timepiece — 7Even Gilt Sport" loading="lazy" decoding="async" class="w-full h-full object-contain" style="filter:drop-shadow(0 40px 70px rgba(0,0,0,.85))">
+        <img src="https://res.cloudinary.com/jfqrpdw4/image/upload/w_1000,q_auto:best,f_auto,dpr_2.0,c_fit/v1790192381/Watch_2.webp" alt="Featured timepiece — 7Even Gilt Sport" loading="lazy" decoding="async" class="w-full h-full object-contain" style="filter:drop-shadow(0 40px 70px rgba(0,0,0,.85))">
       </div>
       <div class="absolute top-6 left-6 text-[10px] tracking-[.35em] uppercase" style="color:var(--gold)">Featured Timepiece</div>
       <div class="absolute bottom-6 right-6 text-[10px] tracking-[.35em] uppercase text-muted/70">07E-02</div>
     </div>
 
-    <!-- Copy -->
     <div class="lg:col-span-6 lg:order-1 lg:pr-8">
       <div class="reveal flex items-center gap-5 mb-8">
         <span class="divider block"></span>
@@ -377,10 +369,10 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
   </div>
 </section>
 
-<!-- ============ SECTION 03 — COLLECTION ============ -->
-<section id="collection" class="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 lg:py-40 border-t border-white/[.06]">
-  <div class="mx-auto max-w-[1600px]">
-    <div class="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16 lg:mb-24">
+<!-- ============ SECTION 03 — COLLECTION (FULL WIDTH, 0 PADDING, SIDE BY SIDE) ============ -->
+<section id="collection" class="py-24 sm:py-32 lg:py-40 border-t border-white/[.06]">
+  <div class="px-6 sm:px-10 lg:px-14 mb-16 lg:mb-24">
+    <div class="mx-auto max-w-[1600px] reveal flex flex-col md:flex-row md:items-end md:justify-between gap-8">
       <div>
         <div class="flex items-center gap-5 mb-6">
           <span class="divider block"></span>
@@ -395,13 +387,13 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
         Curated designs. Real photography. Message us on WhatsApp for pricing and availability.
       </p>
     </div>
-
-    <!-- Asymmetric editorial grid -->
-    <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 lg:gap-6"></div>
   </div>
+
+  <!-- FULL WIDTH GRID — no padding, no gap, side by side -->
+  <div id="product-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-0 w-full"></div>
 </section>
 
-<!-- ============ SECTION 04 — CINEMATIC IMAGE BREAK ============ -->
+<!-- SECTION 04 — CINEMATIC IMAGE BREAK -->
 <section class="relative overflow-hidden" aria-label="Campaign">
   <div class="relative h-[70vh] sm:h-[80vh] lg:h-[90vh] overflow-hidden" style="background:linear-gradient(180deg,#070707,#0d0d0d,#070707)">
     <div class="parallax-img absolute inset-[-10%] flex items-center justify-center" data-parallax="0.15">
@@ -412,12 +404,12 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
   </div>
 </section>
 
-<!-- ============ WAVE STRIP ============ -->
+<!-- WAVE STRIP -->
 <section class="wave-sec" id="wave-section" aria-label="Featured timepieces">
   <div class="wave-outer"><div class="wave-track" id="wave-track"></div></div>
 </section>
 
-<!-- ============ SECTION 05 — BRAND STORY ============ -->
+<!-- SECTION 05 — BRAND STORY -->
 <section id="story" class="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 lg:py-44 border-t border-white/[.06]">
   <div class="mx-auto max-w-[1600px] grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
     <div class="lg:col-span-5">
@@ -453,7 +445,7 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
   </div>
 </section>
 
-<!-- ============ SECTION 06 — PRECISION ============ -->
+<!-- SECTION 06 — PRECISION -->
 <section class="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 lg:py-40 border-t border-white/[.06]">
   <div class="mx-auto max-w-[1600px]">
     <div class="reveal flex items-center gap-5 mb-16">
@@ -485,7 +477,7 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
   </div>
 </section>
 
-<!-- ============ SECTION 07 — REVIEWS ============ -->
+<!-- SECTION 07 — REVIEWS -->
 <section id="reviews" class="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 lg:py-40 border-t border-white/[.06]">
   <div class="mx-auto max-w-[1600px]">
     <div class="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16 lg:mb-24">
@@ -511,21 +503,23 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
   </div>
 </section>
 
-<!-- ============ GALLERY ============ -->
-<section class="px-6 sm:px-10 lg:px-14 pb-24 sm:pb-32 border-t border-white/[.06] pt-24">
-  <div class="mx-auto max-w-[1600px]">
-    <div class="reveal flex items-center gap-5 mb-10 lg:mb-14">
-      <span class="divider block"></span>
-      <span class="label">On the Wrist</span>
+<!-- ============ GALLERY (FULL WIDTH, 0 PADDING, 0 GAP) ============ -->
+<section class="border-t border-white/[.06] pt-24 pb-24 sm:pb-32">
+  <div class="px-6 sm:px-10 lg:px-14 mb-10 lg:mb-14">
+    <div class="mx-auto max-w-[1600px]">
+      <div class="reveal flex items-center gap-5 mb-10">
+        <span class="divider block"></span>
+        <span class="label">On the Wrist</span>
+      </div>
+      <h3 class="reveal serif text-[34px] sm:text-[48px] lg:text-[60px] leading-[1] text-cream">
+        A closer look at the collection.
+      </h3>
     </div>
-    <h3 class="reveal serif text-[34px] sm:text-[48px] lg:text-[60px] leading-[1] text-cream mb-14">
-      A closer look at the collection.
-    </h3>
-    <div id="gallery" class="grid auto-rows-[220px] grid-cols-2 gap-3 sm:auto-rows-[260px] md:grid-cols-4 lg:auto-rows-[300px]"></div>
   </div>
+  <div id="gallery" class="grid auto-rows-[220px] grid-cols-2 gap-0 sm:auto-rows-[260px] md:grid-cols-4 lg:auto-rows-[300px] w-full"></div>
 </section>
 
-<!-- ============ SECTION 08 — FAQ ============ -->
+<!-- SECTION 08 — FAQ -->
 <section id="faq" class="px-6 sm:px-10 lg:px-14 py-24 sm:py-32 lg:py-40 border-t border-white/[.06]">
   <div class="mx-auto max-w-[1400px] grid lg:grid-cols-12 gap-14 lg:gap-20">
     <div class="lg:col-span-5">
@@ -549,7 +543,7 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
   </div>
 </section>
 
-<!-- ============ FINAL CTA ============ -->
+<!-- FINAL CTA -->
 <section class="relative overflow-hidden" style="background:#070707;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="relative min-h-[80svh] flex items-center justify-center px-6 sm:px-10 lg:px-14 py-32 lg:py-40">
     <div class="absolute inset-0 flex items-center justify-center opacity-[.35] pointer-events-none">
@@ -578,7 +572,7 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
 
 </main>
 
-<!-- ============ FOOTER ============ -->
+<!-- FOOTER -->
 <footer class="px-6 sm:px-10 lg:px-14 pt-24 pb-12">
   <div class="mx-auto max-w-[1600px]">
     <div class="grid md:grid-cols-12 gap-12 lg:gap-16 pb-16 border-b border-white/[.08]">
@@ -614,7 +608,7 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
   </div>
 </footer>
 
-<!-- ============ FLOATING WHATSAPP ============ -->
+<!-- FLOATING WHATSAPP -->
 <div class="fixed bottom-6 right-6 z-[80] sm:bottom-8 sm:right-8">
   <div id="chat-panel" class="absolute bottom-[72px] right-0 w-[min(300px,calc(100vw-40px))] p-6" style="background:var(--bg2);border:1px solid var(--gold-border)">
     <div class="flex items-center gap-3 mb-5 pb-5 border-b border-white/[.08]">
@@ -631,7 +625,7 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
 
 <div id="toast" role="status" aria-live="polite"></div>
 
-<!-- ============ SIZE MODAL ============ -->
+<!-- SIZE MODAL -->
 <div id="size-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
   <div class="modal-bg" data-action="close-modal"></div>
   <div class="modal-card">
@@ -654,7 +648,7 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
   </div>
 </div>
 
-<!-- ============ ORDER MODAL ============ -->
+<!-- ORDER MODAL -->
 <div id="order-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
   <div class="modal-bg" data-action="close-modal"></div>
   <div class="modal-card" style="max-width:680px">
@@ -687,10 +681,8 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
   var waUrl=function(t){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(t)};
   function openWA(t){var w=window.open(waUrl(t),'_blank');if(!w)window.location.href=waUrl(t)}
 
-  /* Crisp image transform — best quality, no crop, retina sharp */
   function cld(url,w){return url.replace('/upload/','/upload/w_'+w+',q_auto:best,f_auto,dpr_2.0,c_fit/')}
 
-  /* ============ PRODUCTS — CORRECT BRAND MAPPING ============ */
   var PRODUCTS=[
     {id:'7E-01',brand:'SEIKO',  model:'Classic Steel',  finish:'Silver',     photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192381/Watch_1.webp',      tag:'',    desc:'A clean, minimal silhouette in brushed steel.'},
     {id:'7E-02',brand:'SEIKO',  model:'Gilt Sport',     finish:'Gold',       photo:'https://res.cloudinary.com/jfqrpdw4/image/upload/v1790192381/Watch_2.webp',      tag:'NEW', desc:'Warm gold tone with a sport-driven edge.'},
@@ -718,40 +710,24 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
   var state={size:42};
   var byId=function(id){return PRODUCTS.filter(function(p){return p.id===id})[0]||PRODUCTS[0]};
 
-  /* ============ PRODUCT GRID — asymmetric editorial layout ============ */
-  var layout=[
-    {col:'lg:col-span-3', aspect:'aspect-[4/5]'},   // feature
-    {col:'lg:col-span-3', aspect:'aspect-[4/5]'},   // feature
-    {col:'lg:col-span-2', aspect:'aspect-[4/5]'},   // small
-    {col:'lg:col-span-2', aspect:'aspect-[4/5]'},   // small
-    {col:'lg:col-span-2', aspect:'aspect-[4/5]'},   // small
-    {col:'lg:col-span-3', aspect:'aspect-[4/5]'},   // feature
-    {col:'lg:col-span-3', aspect:'aspect-[4/5]'},   // feature
-    {col:'lg:col-span-2', aspect:'aspect-[4/5]'},
-    {col:'lg:col-span-2', aspect:'aspect-[4/5]'},
-    {col:'lg:col-span-2', aspect:'aspect-[4/5]'},
-    {col:'lg:col-span-3', aspect:'aspect-[4/5]'},
-    {col:'lg:col-span-3', aspect:'aspect-[4/5]'}
-  ];
-
+  /* PRODUCT GRID — 2 cols mobile / 4 cols desktop, 0 gap, edge to edge */
   $('#product-grid').innerHTML=PRODUCTS.map(function(p,i){
     var msg='Hello 7Even, please share the price for *'+p.brand+' '+p.model+'* (code '+p.id+').';
     var eager=i<4?'loading="eager" fetchpriority="high"':'loading="lazy" fetchpriority="low"';
-    var L=layout[i]||layout[0];
-    var tagHtml=p.tag==='HOT'?'<div class="absolute left-5 top-5 z-10 text-[9.5px] tracking-[.4em] uppercase px-3 py-1.5" style="background:var(--gold);color:#070707;font-weight:600">HOT</div>':p.tag==='NEW'?'<div class="absolute left-5 top-5 z-10 text-[9.5px] tracking-[.4em] uppercase px-3 py-1.5" style="border:1px solid var(--gold);color:var(--gold)">NEW</div>':'';
-    return '<article class="p-card reveal '+L.col+'" data-cursor="view">'+
-      '<div class="p-media relative '+L.aspect+'">'+
+    var tagHtml=p.tag==='HOT'?'<div class="absolute left-4 top-4 z-10 text-[9px] tracking-[.4em] uppercase px-2.5 py-1" style="background:var(--gold);color:#070707;font-weight:600">HOT</div>':p.tag==='NEW'?'<div class="absolute left-4 top-4 z-10 text-[9px] tracking-[.4em] uppercase px-2.5 py-1" style="border:1px solid var(--gold);color:var(--gold)">NEW</div>':'';
+    return '<article class="p-card reveal" data-cursor="view">'+
+      '<div class="p-media relative aspect-[4/5]">'+
         '<img src="'+cld(p.photo,800)+'" alt="'+p.brand+' '+p.model+'" '+eager+' decoding="async">'+
         tagHtml+
-        '<div class="absolute right-5 top-5 z-10 text-[9.5px] tracking-[.35em] uppercase text-muted/70">'+p.id+'</div>'+
+        '<div class="absolute right-4 top-4 z-10 text-[9px] tracking-[.35em] uppercase text-muted/70">'+p.id+'</div>'+
       '</div>'+
-      '<div class="p-7 lg:p-8">'+
+      '<div class="p-6 lg:p-7">'+
         '<div class="flex items-baseline justify-between gap-4 mb-3">'+
           '<span class="text-[10px] tracking-[.4em] uppercase" style="color:var(--gold)">'+p.brand+'</span>'+
           '<span class="text-[10px] tracking-[.3em] uppercase text-muted/60">'+p.finish+'</span>'+
         '</div>'+
-        '<h3 class="serif text-[26px] lg:text-[30px] leading-tight text-cream mb-3">'+p.model+'</h3>'+
-        '<p class="text-[13px] leading-[1.7] text-muted mb-7">'+p.desc+'</p>'+
+        '<h3 class="serif text-[22px] lg:text-[26px] leading-tight text-cream mb-3">'+p.model+'</h3>'+
+        '<p class="text-[12.5px] leading-[1.7] text-muted mb-7">'+p.desc+'</p>'+
         '<div class="flex items-center justify-between gap-4 pt-5 border-t border-white/[.06]">'+
           '<a href="'+waUrl(msg)+'" target="_blank" rel="noopener" class="text-[10.5px] tracking-[.3em] uppercase text-cream hover:text-gold-light transition-colors flex items-center gap-2" data-cursor="link">DM for Price <span class="info-arrow">→</span></a>'+
           '<button data-action="open-order" data-id="'+p.id+'" class="text-[10.5px] tracking-[.3em] uppercase text-muted hover:text-gold-light transition-colors" data-cursor="link">Order</button>'+
@@ -760,7 +736,7 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
     '</article>';
   }).join('');
 
-  /* ============ WAVE STRIP ============ */
+  /* WAVE STRIP */
   var waveTrack=$('#wave-track');
   var waveSection=document.getElementById('wave-section');
   var waveItems;
@@ -799,7 +775,6 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
     requestAnimationFrame(tickWave);
   }
 
-  /* ============ STARS + REVIEWS ============ */
   function stars(n,c){var s='';for(var i=0;i<5;i++)s+='<svg class="'+(c||'star')+'" viewBox="0 0 24 24" fill="'+(i<n?'#C8A66A':'none')+'" stroke="#C8A66A" stroke-width="1.2" stroke-linejoin="round"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/></svg>';return s}
   $('#avg-stars').innerHTML=stars(5);
 
@@ -818,13 +793,12 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
     '</figure>';
   }).join('');
 
-  /* ============ GALLERY ============ */
+  /* GALLERY — full width, 0 gap */
   $('#gallery').innerHTML=PRODUCTS.slice(0,8).map(function(p,i){
     var spans=['col-span-2 row-span-2','','','','','col-span-2','',''];
-    return '<div class="reveal-scale relative overflow-hidden '+(spans[i]||'')+'" style="border:1px solid var(--border)" data-cursor="view"><img src="'+cld(p.photo,600)+'" alt="'+p.brand+' '+p.model+'" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"><div class="absolute left-5 bottom-5 text-[10px] tracking-[.35em] uppercase" style="color:var(--gold);text-shadow:0 2px 10px rgba(0,0,0,.95)">'+p.brand+'</div></div>';
+    return '<div class="reveal-scale relative overflow-hidden '+(spans[i]||'')+'" data-cursor="view"><img src="'+cld(p.photo,600)+'" alt="'+p.brand+' '+p.model+'" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"><div class="absolute left-5 bottom-5 text-[10px] tracking-[.35em] uppercase" style="color:var(--gold);text-shadow:0 2px 10px rgba(0,0,0,.95)">'+p.brand+'</div></div>';
   }).join('');
 
-  /* ============ TOAST + MODALS ============ */
   var toastT;
   function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('show')},3000)}
   var lastFocus=null;
@@ -832,7 +806,6 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
   function closeModals(){$$('.modal[aria-hidden="false"]').forEach(function(m){m.setAttribute('aria-hidden','true')});document.body.style.overflow='';if(lastFocus&&lastFocus.focus)lastFocus.focus()}
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeModals();closeChat()}});
 
-  /* ============ SIZE GUIDE ============ */
   var SIZES=[38,39,40,41,42,43,44],sizeDraft=state.size;
   var recSize=function(w){return Math.max(38,Math.min(44,Math.round(38+(w-14)*.923)))};
   function renderFit(){
@@ -848,7 +821,6 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
   $('#wrist').addEventListener('input',function(){sizeDraft=recSize(parseFloat(this.value));renderFit()});
   $('#size-chips').addEventListener('click',function(e){var b=e.target.closest('[data-size]');if(b){sizeDraft=+b.dataset.size;renderFit()}});
 
-  /* ============ ORDER FORM ============ */
   var F={product:$('#f-product'),size:$('#f-size'),qty:$('#f-qty'),name:$('#f-name'),phone:$('#f-phone'),city:$('#f-city'),address:$('#f-address')};
   F.product.innerHTML=PRODUCTS.map(function(p){return '<option value="'+p.id+'">'+p.brand+' — '+p.model+'</option>'}).join('');
   F.size.innerHTML=SIZES.map(function(s){return '<option value="'+s+'">'+s+' mm</option>'}).join('');
@@ -873,7 +845,6 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
   $('#order-form').addEventListener('submit',function(e){e.preventDefault();if(!validate())return;openWA(buildMsg());toast('Opening WhatsApp…');closeModals()});
   function openOrder(id){F.product.value=id||PRODUCTS[0].id;F.size.value=state.size;qty=1;updateOrder();openModal('order-modal')}
 
-  /* ============ CHAT ============ */
   $('#chat-quick').innerHTML=
     '<a href="'+waUrl('Hello 7Even, is the watch in stock?')+'" target="_blank" class="flex items-center justify-between gap-3 px-4 py-3 text-[12.5px] text-cream hover:border-gold transition-colors" style="border:1px solid var(--border)">Is this watch in stock?<span style="color:var(--gold)">→</span></a>'+
     '<a href="'+waUrl('Hello 7Even, how long will delivery take?')+'" target="_blank" class="flex items-center justify-between gap-3 px-4 py-3 text-[12.5px] text-cream hover:border-gold transition-colors" style="border:1px solid var(--border)">Delivery time?<span style="color:var(--gold)">→</span></a>'+
@@ -881,7 +852,6 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
   function closeChat(){$('#chat-panel').classList.remove('open')}
   function toggleChat(){$('#chat-panel').classList.toggle('open')}
 
-  /* ============ EVENTS ============ */
   document.addEventListener('click',function(e){
     var el=e.target.closest('[data-action]');
     if(el){
@@ -898,18 +868,15 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
   function toggleMenu(){var m=$('#mobile-menu');m.classList.toggle('hidden')}
   function closeMenu(){var m=$('#mobile-menu');if(!m.classList.contains('hidden'))m.classList.add('hidden')}
 
-  /* ============ HEADER SCROLL ============ */
   var hdr=document.getElementById('hdr');
   function onScroll(){if(window.scrollY>40)hdr.classList.add('scrolled');else hdr.classList.remove('scrolled')}
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 
-  /* ============ SCROLL REVEAL ============ */
   var io=new IntersectionObserver(function(entries){
     entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
   },{threshold:0.1,rootMargin:'0px 0px -60px 0px'});
   $$('.reveal, .reveal-mask, .reveal-scale').forEach(function(el){io.observe(el)});
 
-  /* ============ PARALLAX ============ */
   var parallaxEls=$$('[data-parallax]');
   if(parallaxEls.length&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     var ticking=false;
@@ -928,7 +895,6 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
     updateParallax();
   }
 
-  /* ============ CUSTOM CURSOR (desktop) ============ */
   var dot=$('#cursor-dot'),label=$('#cursor-label');
   if(window.matchMedia('(hover: hover)').matches){
     var mx=0,my=0,dx=0,dy=0;
@@ -948,7 +914,6 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
     });
   }
 
-  /* ============ BOOT ============ */
   function boot(){
     $('#yr').textContent=new Date().getFullYear();
     renderFit();updateOrder();
