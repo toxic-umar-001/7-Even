@@ -60,31 +60,18 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;ba
 .brand-item .dot{display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:.7}
 @keyframes brandScroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
 
-/* ===== PINNED WAVE STRIP — 1 SCROLL ===== */
-.wave-pin{position:relative;height:180vh} /* was 400vh — ab 1 scroll */
-.wave-pin-inner{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center}
-.wave-hint{text-align:center;margin-bottom:22px;transition:opacity .4s}
-.wave-hint span{display:inline-block;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:rgba(243,229,171,.75);animation:hintPulse 2s ease-in-out infinite}
-@keyframes hintPulse{0%,100%{opacity:.5}50%{opacity:1}}
-.wave-hint .line{display:block;width:36px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:10px auto 0}
-.wave-outer{width:100%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
-.wave-track{display:flex;gap:22px;padding:0 24px;width:max-content;transform:translate3d(0,0,0);will-change:transform}
+/* ===== WAVE STRIP — clear up/down movement ===== */
+.wave-section{position:relative;overflow:hidden;padding:80px 0;background:linear-gradient(180deg,transparent,rgba(212,175,55,.025),transparent)}
+.wave-outer{width:100%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.wave-track{display:flex;gap:22px;padding:0 24px;width:max-content;transform:translate3d(0,0,0);will-change:transform;align-items:center}
 .wave-item{position:relative;width:180px;height:240px;flex:0 0 auto;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#0b0a0b;box-shadow:0 16px 38px -20px rgba(0,0,0,.9);transform:translate3d(0,var(--y,0px),0);will-change:transform;transition:border-color .4s,box-shadow .4s}
 .wave-item:hover{border-color:rgba(212,175,55,.4);box-shadow:0 22px 48px -18px rgba(212,175,55,.28)}
 .wave-item img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
-.wave-item .wave-label{position:absolute;left:0;right:0;bottom:0;padding:30px 10px 12px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.92));text-align:center;pointer-events:none}
-.wave-item .wave-label strong{display:block;font-family:'Playfair Display',serif;font-weight:400;font-size:12px;letter-spacing:.24em;color:#fbf3da;text-shadow:0 2px 8px rgba(0,0,0,.9)}
-.wave-item .wave-label em{display:block;font-style:normal;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(243,229,171,.68);margin-top:3px}
 @media (min-width:640px){.wave-item{width:210px;height:270px}}
-
-.wave-progress{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);width:200px;height:2px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden}
-.wave-progress-bar{height:100%;width:0%;background:linear-gradient(90deg,#f3e5ab,#d4af37);transition:width .1s linear}
 
 @media (prefers-reduced-motion:reduce){
   .brand-track{animation-duration:120s}
   .wave-item{transform:none!important}
-  .wave-pin{height:auto}
-  .wave-pin-inner{position:static;height:auto;padding:80px 0}
 }
 
 .modal{position:fixed;inset:0;z-index:70;display:flex;align-items:flex-end;justify-content:center;padding:0;opacity:0;pointer-events:none;transition:opacity .3s}
@@ -124,6 +111,8 @@ details.faq[open] summary .chev{transform:rotate(180deg)}
 .watch-name-badge span{display:block;font-size:11px;color:rgba(243,229,171,.85);margin-top:3px;letter-spacing:.06em;text-transform:uppercase}
 
 .tag-badge{position:absolute;right:14px;top:14px;z-index:10;font-size:9px;letter-spacing:.18em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:linear-gradient(135deg,#f3e5ab,#d4af37);color:#1a1205;font-weight:600;box-shadow:0 6px 18px -6px rgba(212,175,55,.7)}
+
+svg.lucide,i[data-lucide]{display:inline-block}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 .fade-up{animation:fadeUp .9s cubic-bezier(.2,.8,.2,1) both}
@@ -240,19 +229,10 @@ details.faq[open] summary .chev{transform:rotate(180deg)}
   </div>
 </section>
 
-<!-- PINNED WAVE STRIP — 1 SCROLL -->
-<section class="wave-pin" id="wave-pin">
-  <div class="wave-pin-inner">
-    <div class="wave-hint" id="wave-hint">
-      <span>Scroll to explore</span>
-      <span class="line"></span>
-    </div>
-    <div class="wave-outer">
-      <div class="wave-track" id="wave-track"></div>
-    </div>
-    <div class="wave-progress">
-      <div class="wave-progress-bar" id="wave-progress"></div>
-    </div>
+<!-- WAVE STRIP — clear up/down wave on scroll -->
+<section class="wave-section" id="wave-section">
+  <div class="wave-outer">
+    <div class="wave-track" id="wave-track"></div>
   </div>
 </section>
 
@@ -388,7 +368,7 @@ details.faq[open] summary .chev{transform:rotate(180deg)}
   </div>
 </div>
 
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
 <script>
 (function(){
@@ -398,13 +378,8 @@ details.faq[open] summary .chev{transform:rotate(180deg)}
   var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
   var waUrl=function(t){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(t)};
   function openWA(t){var w=window.open(waUrl(t),'_blank');if(!w)window.location.href=waUrl(t)}
-  function icons(){if(window.lucide)lucide.createIcons()}
+  function icons(){try{if(window.lucide&&lucide.createIcons)lucide.createIcons()}catch(e){}}
 
-  /* ⚡ CRISP + LIGHT IMAGES
-     c_fit → no cropping/zoom (original aspect ratio preserved)
-     q_auto:best → high quality (no blur)
-     dpr_2.0 → retina sharp
-     w_800 for cards, w_500 for strip */
   function cld(url,w){return url.replace('/upload/','/upload/w_'+w+',q_auto:best,f_auto,dpr_2.0,c_fit/')}
 
   var PRODUCTS=[
@@ -434,7 +409,6 @@ details.faq[open] summary .chev{transform:rotate(180deg)}
   var state={size:42};
   var byId=function(id){return PRODUCTS.filter(function(p){return p.id===id})[0]||PRODUCTS[0]};
 
-  /* PRODUCT GRID — bigger image (800) + c_fit (no zoom/crop) */
   $('#product-grid').innerHTML=PRODUCTS.map(function(p,i){
     var msg='Hello 7Even, please share the price for *'+p.brand+' '+p.model+'* (code '+p.id+').';
     var eager=i<8?'loading="eager" fetchpriority="high"':'loading="lazy" fetchpriority="low"';
@@ -457,61 +431,46 @@ details.faq[open] summary .chev{transform:rotate(180deg)}
       '</div></article>';
   }).join('');
 
-  /* PINNED WAVE STRIP */
+  /* WAVE STRIP */
   var waveTrack=$('#wave-track');
+  var waveSection=document.getElementById('wave-section');
   var waveItems;
-  var pinSection=document.getElementById('wave-pin');
-  var pinHint=document.getElementById('wave-hint');
-  var pinProgress=document.getElementById('wave-progress');
-
   var oneSet=PRODUCTS.map(function(p,i){
     var dir=(i%2===0)?-1:1;
-    return '<div class="wave-item" data-dir="'+dir+'">'+
-      '<img src="'+cld(p.photo,500)+'" alt="'+p.brand+' '+p.model+'" loading="lazy" decoding="async">'+
-      '<div class="wave-label"><strong>'+p.brand+'</strong><em>'+p.model+'</em></div>'+
-    '</div>';
+    return '<div class="wave-item" data-dir="'+dir+'"><img src="'+cld(p.photo,500)+'" alt="'+p.brand+' '+p.model+'" loading="lazy" decoding="async"></div>';
   }).join('');
   waveTrack.innerHTML=oneSet+oneSet;
   waveItems=$$('.wave-item');
 
-  var trackWidth=0,pinTop=0,pinScrollDistance=0;
+  var trackWidth=0,sectionTop=0,sectionHeight=0;
   var targetX=0,currentX=0,targetWave=0,currentWave=0;
-  var lastHintOpacity=1;
 
-  function measurePin(){
-    if(!pinSection||!waveTrack) return;
+  function measureWave(){
+    if(!waveSection||!waveTrack) return;
     trackWidth=waveTrack.scrollWidth;
-    var r=pinSection.getBoundingClientRect();
-    pinTop=r.top+window.scrollY;
-    pinScrollDistance=pinSection.offsetHeight-window.innerHeight;
+    var r=waveSection.getBoundingClientRect();
+    sectionTop=r.top+window.scrollY;
+    sectionHeight=r.height;
   }
-
-  function updateTargets(){
-    if(!pinSection||!pinScrollDistance) return;
+  function updateWaveTargets(){
+    if(!waveSection||!sectionHeight) return;
     var scrollY=window.scrollY||window.pageYOffset;
-    var raw=(scrollY-pinTop)/pinScrollDistance;
+    var winH=window.innerHeight;
+    var start=sectionTop-winH;
+    var end=sectionTop+sectionHeight;
+    var raw=(scrollY-start)/(end-start);
     raw=Math.max(0,Math.min(1,raw));
 
-    // Move whole track across
-    var maxMove=Math.max(0,trackWidth-window.innerWidth);
+    var maxMove=Math.max(0,trackWidth/2-window.innerWidth);
     targetX=-raw*maxMove;
 
-    // Wave: 1.5 oscillations (smooth)
-    targetWave=Math.sin(raw*Math.PI*1.5);
-
-    if(pinProgress) pinProgress.style.width=(raw*100).toFixed(1)+'%';
-
-    var hintOp=raw<0.08?1:(raw>0.4?0:1-(raw-0.08)/0.32);
-    if(Math.abs(hintOp-lastHintOpacity)>0.02){
-      pinHint.style.opacity=hintOp.toFixed(2);
-      lastHintOpacity=hintOp;
-    }
+    // 1.8 oscillations — clear wave
+    targetWave=Math.sin(raw*Math.PI*1.8);
   }
-
-  function tick(){
+  function tickWave(){
     var dx=targetX-currentX;
     if(Math.abs(dx)>0.05){
-      currentX+=dx*0.16;
+      currentX+=dx*0.10;
       waveTrack.style.transform='translate3d('+currentX.toFixed(1)+'px,0,0)';
     }
     var dw=targetWave-currentWave;
@@ -520,11 +479,11 @@ details.faq[open] summary .chev{transform:rotate(180deg)}
       for(var i=0;i<waveItems.length;i++){
         var el=waveItems[i];
         var dir=parseFloat(el.dataset.dir);
-        var y=currentWave*dir*30;
+        var y=currentWave*dir*55; // Strong 55px up/down
         el.style.transform='translate3d(0,'+y.toFixed(1)+'px,0)';
       }
     }
-    requestAnimationFrame(tick);
+    requestAnimationFrame(tickWave);
   }
 
   function stars(n,c){var s='';for(var i=0;i<5;i++)s+='<svg class="'+(c||'h-4 w-4')+'" viewBox="0 0 24 24" fill="'+(i<n?'#d4af37':'none')+'" stroke="#d4af37" stroke-width="1.6" stroke-linejoin="round"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/></svg>';return s}
@@ -622,17 +581,18 @@ details.faq[open] summary .chev{transform:rotate(180deg)}
 
   function boot(){
     $('#yr').textContent=new Date().getFullYear();
-    renderFit();updateOrder();icons();
+    renderFit();updateOrder();
+    icons();setTimeout(icons,300);setTimeout(icons,1000);setTimeout(icons,2000);
     setTimeout(function(){
-      measurePin();updateTargets();
+      measureWave();updateWaveTargets();
       currentX=targetX;currentWave=targetWave;
-      tick();
+      tickWave();
     },200);
-    window.addEventListener('scroll',updateTargets,{passive:true});
-    window.addEventListener('resize',function(){measurePin();updateTargets()});
+    window.addEventListener('scroll',updateWaveTargets,{passive:true});
+    window.addEventListener('resize',function(){measureWave();updateWaveTargets()});
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
-  window.addEventListener('load',function(){icons();measurePin();updateTargets()});
+  window.addEventListener('load',function(){icons();setTimeout(icons,300);measureWave();updateWaveTargets()});
 })();
 </script>
 </body>
